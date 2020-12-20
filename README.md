@@ -18,19 +18,19 @@
 - [Introduzione](#Introduzione)
 - [Installazione](#Installazione)
 - [Contributors](#Contributors)
-- [COTS](#Component Off-the-Shelf)
+- [COTS](#Component)
   - [Tools](#tools)
   - [Libraries](#libraries)
 
-#Introduzione
+# Introduzione
 
 Piattaforma web per la gestione e prenotazione dei lidi balneari presenti 
 all'interno del consorzio SorrentoMarina.
 
-#Installazione
+# Installazione
 
 
-#Contributors
+# Contributors
 
 <a href="https://github.com/GPS-IS-The-Boys/SorrentoMarina/graphs/contributors">
   <img
@@ -39,7 +39,7 @@ all'interno del consorzio SorrentoMarina.
 </a>
 
 
-#Component Off-the-Shelf
+# Component Off-the-Shelf
 
 ### Tools
 
@@ -61,4 +61,3 @@ all'interno del consorzio SorrentoMarina.
 | [JSTL](https://javaee.github.io/jstl-api/)                 | ![License](https://img.shields.io/aur/license/weka)            |
 | [Lombok](https://projectlombok.org/)                       | ![License](https://img.shields.io/apm/l/vim-mode?style=plastic)|
 | [Mockito](https://site.mockito.org/)                       | ![License](https://img.shields.io/apm/l/vim-mode?style=plastic)|
-| 
