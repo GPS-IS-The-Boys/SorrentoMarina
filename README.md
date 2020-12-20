@@ -18,17 +18,20 @@
 - [Introduzione](#Introduzione)
 - [Installazione](#Installazione)
 - [Contributors](#Contributors)
-- [COTS](##Component Off-the-Shelf)
+- [COTS](#Component Off-the-Shelf)
   - [Tools](#tools)
   - [Libraries](#libraries)
 
 #Introduzione
+
 Piattaforma web per la gestione e prenotazione dei lidi balneari presenti 
 all'interno del consorzio SorrentoMarina.
+
 #Installazione
 
 
 #Contributors
+
 <a href="https://github.com/GPS-IS-The-Boys/SorrentoMarina/graphs/contributors">
   <img
   src="https://contrib.rocks/image?repo=GPS-IS-The-Boys/SorrentoMarina"
