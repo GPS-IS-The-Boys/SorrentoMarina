@@ -1,6 +1,3 @@
-
-![Logo](src/main/webapp/images/sorrentoMarina.png)
-
 <img src="src/main/webapp/images/sorrentoMarina.png" width="200" height="200" alt="Logo">
 
 [![Build Status](https://travis-ci.com/GPS-IS-The-Boys/SorrentoMarina.svg?branch=main)](https://travis-ci.com/GPS-IS-The-Boys/SorrentoMarina)
