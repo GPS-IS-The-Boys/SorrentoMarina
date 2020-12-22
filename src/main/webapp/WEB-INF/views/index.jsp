@@ -4,6 +4,6 @@
     <h1>
         Hello Sorrento Marina
         <br>
-        Valerio Scarinzi
+        Luigi Maiorano
     </h1>
 </sm:layout>
