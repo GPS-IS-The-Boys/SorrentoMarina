@@ -9,6 +9,7 @@ import java.util.Optional;
 public interface TuristaManager {
     //CRUD
     void create(String nome, String cognome, String email, String username, String password) throws SQLException;
+    void create(String nome, String cognome, String email) throws SQLException;
     Turista retriveById(int id) throws SQLException;
     List<Turista> retriveAll() throws SQLException;
     void update(Turista turista) throws SQLException;
