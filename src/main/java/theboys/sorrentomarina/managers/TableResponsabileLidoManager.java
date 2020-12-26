@@ -33,8 +33,8 @@ public class TableResponsabileLidoManager extends TableManager implements Respon
      * @throws SQLException
      */
     @Override
-    public void create(String nome, String cognome, String email, String username, String password) throws SQLException {
-        runner.update("INSERT INTO TURISTA(nome,cognome,email,username,password_responsabile_lido) VALUES (?, ?, ?, ?, ?)",nome, cognome, email, username, password);
+    public void create(String nome, String cognome, String email, String username, String password,int id_lido) throws SQLException {
+        runner.update("INSERT INTO TURISTA(nome,cognome,email,username,password_responsabile_lido,id_lido) VALUES (?, ?, ?, ?, ?, ?)",nome, cognome, email, username, password,id_lido);
     }
 
     /**
