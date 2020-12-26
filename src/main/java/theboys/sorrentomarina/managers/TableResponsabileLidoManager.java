@@ -46,7 +46,7 @@ public class TableResponsabileLidoManager extends TableManager implements Respon
      */
     @Override
     public ResponsabileLido retriveById(int id) throws SQLException {
-        ResponsabileLido responsabileLido = runner.query("SELECT nome,cognome, email, username, password_responsabile_lido FROM TURISTA WHERE id = ?",RES_LIDO_MAPPER,id);
+        ResponsabileLido responsabileLido = runner.query("SELECT nome, cognome, email, username, password_responsabile_lido FROM TURISTA WHERE id = ?",RES_LIDO_MAPPER,id);
         return responsabileLido;
     }
 
