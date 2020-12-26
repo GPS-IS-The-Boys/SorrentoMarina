@@ -32,7 +32,7 @@ public class TableAnnuncioManager extends TableManager implements AnnuncioManage
    */
   @Override
   public void create(String titolo, String contenuto, String foto, String id_lido) throws SQLException{
-    runner.update("INSERT INTO ANNUNCIO(titolo,contenuto,foto,id_lido) VALUES (?, ?, ?, ?)",titolo, contenuto, foto, id_lido);
+    runner.update("INSERT INTO ANNUNCIO(titolo,contenuto,foto,id_lido) VALUES (?, ?, ?, ?)", titolo, contenuto, foto, id_lido);
   }
 
   /**
@@ -44,7 +44,7 @@ public class TableAnnuncioManager extends TableManager implements AnnuncioManage
    */
   @Override
   public Annuncio retriveById(int id) throws SQLException{
-    Annuncio annuncio=runner.query("SELECT titolo, contenuto, foto, id_lido FROM ANNUNCIO WHERE id = ?",ANNUNCIO_MAPPER,id);
+    Annuncio annuncio=runner.query("SELECT titolo, contenuto, foto, id_lido FROM ANNUNCIO WHERE id = ?", ANNUNCIO_MAPPER, id);
     return annuncio;
   }
 
