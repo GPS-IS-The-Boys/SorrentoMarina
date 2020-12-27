@@ -26,9 +26,8 @@
                             <h4>Quick Links</h4>
                             <ul>
                                 <li><a href="#">About</a></li>
-                                <li><a href="#"> Offers & Discounts</a></li>
-                                <li><a href="#"> Get Coupon</a></li>
-                                <li><a href="#">  Contact Us</a></li>
+                                <li><a href="#">Offerte</a></li>
+                                <li><a href="#">Contattaci</a></li>
                             </ul>
                         </div>
                     </div>
@@ -69,13 +68,7 @@
                     </div>
                 </div>
                 <div class="col-xl-5 col-lg-5 col-md-5">
-                    <!-- social -->
-                    <div class="footer-social f-right">
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-behance"></i></a>
-                        <a href="#"><i class="fas fa-globe"></i></a>
-                    </div>
+
                 </div>
             </div>
         </div>

@@ -11,7 +11,7 @@ import javax.sql.DataSource;
 import java.sql.SQLException;
 import java.util.List;
 
-public class TableRecensioneManager extends TableManager implements RecensioneManager{
+public class TableRecensioneManager extends TableManager implements RecensioneManager {
 
   private static final ResultSetHandler<Recensione> RECENSIONE_MAPPER =
       new BeanHandler<>(Recensione.class);
@@ -33,7 +33,7 @@ public class TableRecensioneManager extends TableManager implements RecensioneMa
    */
   @Override
   public void create(int giudizio, String id_lido, String id_turista) throws SQLException {
-    runner.update("INSERT INTO RECENSIONE VALUES(?,?,?)",giudizio,id_lido,id_turista);
+    runner.update("INSERT INTO RECENSIONE VALUES(?,?,?)", giudizio, id_lido, id_turista);
   }
 
   /**
@@ -45,7 +45,7 @@ public class TableRecensioneManager extends TableManager implements RecensioneMa
    */
   @Override
   public Recensione retriveById(int id) throws SQLException {
-    Recensione recensione = runner.query("SELECT * FROM RECENSIONE WHERE id = ?",RECENSIONE_MAPPER,id);
+    Recensione recensione = runner.query("SELECT * FROM RECENSIONE WHERE id = ?", RECENSIONE_MAPPER, id);
     return recensione;
   }
 
@@ -58,7 +58,7 @@ public class TableRecensioneManager extends TableManager implements RecensioneMa
    */
   @Override
   public List<Recensione> retriveById_Lido(String id_lido) throws SQLException {
-    List<Recensione> lista = runner.query("SELECT * FROM RECENSIONE WHERE id_lido = ?",RECENSIONE_MAPPER_LIST,id_lido);
+    List<Recensione> lista = runner.query("SELECT * FROM RECENSIONE WHERE id_lido = ?", RECENSIONE_MAPPER_LIST, id_lido);
     return lista;
   }
 
@@ -71,7 +71,7 @@ public class TableRecensioneManager extends TableManager implements RecensioneMa
    */
   @Override
   public List<Recensione> retriveById_Turista(String id_turista) throws SQLException {
-    List<Recensione> lista = runner.query("SELECT * FROM RECENSIONE WHERE id_turista = ?",RECENSIONE_MAPPER_LIST,id_turista);
+    List<Recensione> lista = runner.query("SELECT * FROM RECENSIONE WHERE id_turista = ?", RECENSIONE_MAPPER_LIST, id_turista);
     return lista;
   }
 
@@ -83,7 +83,7 @@ public class TableRecensioneManager extends TableManager implements RecensioneMa
    */
   @Override
   public List<Recensione> retriveAll(String id_lido) throws SQLException {
-    List<Recensione> lista = runner.query("SELECT * FROM RECENSIONE",RECENSIONE_MAPPER_LIST);
+    List<Recensione> lista = runner.query("SELECT * FROM RECENSIONE", RECENSIONE_MAPPER_LIST);
     return lista;
   }
 
@@ -96,7 +96,7 @@ public class TableRecensioneManager extends TableManager implements RecensioneMa
   @Override
   public void update(Recensione recensione) throws SQLException {
     runner.update("UPDATE RECENSIONE SET giudizio = ?,id_lido = ?,id_turista = ? WHERE id = ?",
-        recensione.getGiudizio(),recensione.getId_lido(),recensione.getId_turista(),recensione.getId());
+        recensione.getGiudizio(), recensione.getId_lido(), recensione.getId_turista(), recensione.getId());
   }
 
   /**
@@ -107,7 +107,7 @@ public class TableRecensioneManager extends TableManager implements RecensioneMa
    */
   @Override
   public void delete(int id) throws SQLException {
-    runner.update("DELETE FROM RECENSIONE WHERE id = ?",id);
+    runner.update("DELETE FROM RECENSIONE WHERE id = ?", id);
   }
 
   /**
@@ -118,7 +118,7 @@ public class TableRecensioneManager extends TableManager implements RecensioneMa
    */
   @Override
   public void deleteById_Lido(String id_lido) throws SQLException {
-    runner.update("DELETE FROM RECENSIONE WHERE id_lido = ?",id_lido);
+    runner.update("DELETE FROM RECENSIONE WHERE id_lido = ?", id_lido);
   }
 
   /**
@@ -129,6 +129,6 @@ public class TableRecensioneManager extends TableManager implements RecensioneMa
    */
   @Override
   public void deleteById_Turista(String id_turista) throws SQLException {
-    runner.update("DELETE FROM RECENSIONE WHERE id_lido = ?",id_turista);
+    runner.update("DELETE FROM RECENSIONE WHERE id_lido = ?", id_turista);
   }
 }
