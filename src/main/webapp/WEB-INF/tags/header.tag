@@ -1,5 +1,18 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<header>
+
+  <!--caricamento pre-pagina
+  <div id="preloader-active">
+    <div class="preloader d-flex align-items-center justify-content-center">
+      <div class="preloader-inner position-relative">
+        <div class="preloader-circle"></div>
+        <div class="preloader-img pere-text">
+          <img src="<c:url value="/images/sorrentoMarina.png"/>" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+-->
+  <header id="page-top">
   <!-- Header Start -->
   <div class="header-area">
     <div class="main-header ">
@@ -12,16 +25,6 @@
                   <li>sorrentoMarina@gmail.com</li>
                   <li>0826 43 289</li>
                   <li>Marina di Sorrento, Italy</li>
-                </ul>
-              </div>
-            </div>
-            <div class="col-lg-4">
-              <div class="header-info-right f-right">
-                <ul class="header-social">
-                  <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                  <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-                  <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                  <li><a href="#"><i class="fab fa-pinterest-p"></i></a></li>
                 </ul>
               </div>
             </div>
@@ -47,27 +50,7 @@
                     <li><a href="">Info</a></li>
                     <c:choose>
                       <c:when test="${utente == null}">
-                        <li><a href="#">Log in</a>
-                          <form method="post" action="" name="login">
-                            <ul class="submenu">
-                              <li style="margin-bottom: 2px">
-                                <label for="email"></label>
-                                <input type="email" id="email" name="e-mail" placeholder="E-mail"
-                                       onfocus="this.placeholder = ''" onblur="this.placeholder = 'E-mail'" required
-                                       class="single-input-primary">
-                              </li>
-                              <li style="margin-bottom: 2px">
-                                <label for="password"></label>
-                                <input type="password" id="password" name="password" placeholder="Password"
-                                       onfocus="this.placeholder = ''" onblur="this.placeholder = 'Password'" required
-                                       class="single-input-primary">
-                              </li>
-                              <li style="margin: 2px">
-                                <button type="submit" class="genric-btn default circle arrow">Login</button>
-                              </li>
-                            </ul>
-                          </form>
-                        </li>
+                        <li><a href="login">Log in</a></li>
                         <li><a href="registrazione">Registrati</a></li>
                       </c:when>
                       <c:otherwise>
@@ -89,10 +72,15 @@
             <div class="col-12">
               <div class="mobile_menu d-block d-lg-none"></div>
             </div>
+
           </div>
         </div>
       </div>
     </div>
   </div>
   <!-- Header End -->
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fas fa-angle-up"></i>
+    </a>
 </header>

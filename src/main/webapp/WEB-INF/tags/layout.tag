@@ -31,7 +31,7 @@
         <!-- JS here -->
 
         <!-- All JS Custom Plugins Link Here here -->
-        <script src="/assets/js/vendor/modernizr-3.5.0.min.js"></script>
+        <script src="<c:url value="/assets/js/vendor/modernizr-3.5.0.min.js"/>"></script>
 
         <!-- Jquery, Popper, Bootstrap -->
         <script src="/assets/js/vendor/jquery-1.12.4.min.js"></script>
@@ -61,8 +61,8 @@
         <script src="/assets/js/jquery.ajaxchimp.min.js"></script>
 
         <!-- Jquery Plugins, main Jquery -->
-        <script src="/assets/js/plugins.js"></script>
-        <script src="/assets/js/main.js"></script>
+        <script src="<c:url value="/assets/js/plugins.js"/>"></script>
+        <script src="<c:url value="/assets/js/main.js"/>"></script>
         <c:choose>
             <c:when test="${admin}">
                 <link rel="stylesheet" href="<c:url value="/webjars/startbootstrap-sb-admin-2/4.0.6/css/sb-admin-2.min.css"/>">

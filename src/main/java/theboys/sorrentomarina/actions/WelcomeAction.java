@@ -4,7 +4,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * @author Diequ
+ * @author theBoys
  */
 public class WelcomeAction implements Action {
 

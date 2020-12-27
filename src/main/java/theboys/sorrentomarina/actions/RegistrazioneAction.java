@@ -6,19 +6,22 @@ import theboys.sorrentomarina.models.Turista;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 import java.sql.SQLException;
 
 public class RegistrazioneAction implements Action {
 
   /**
-   * Esegue la registrazione dell'utente
+   * Esegue la registrazione dell'utente, previo controllo dei campi
    *
    * @param request  la request
    * @param response la response
    * @return ritorna nell'index se la registrazione è andata a buon fine o un errore altrimenti
+   * @author Francesco Pio Covino
    */
   @Override
   public String execute(HttpServletRequest request, HttpServletResponse response) {
+    //controlliamo i parametri anche lato server
     String username = request.getParameter("username");
     if (!(username != null && username.length() >= 6 && username.matches("^[0-9a-zA-Z]+$"))) {
       request.setAttribute("messaggio", "Campo Username non valido");
@@ -55,14 +58,20 @@ public class RegistrazioneAction implements Action {
       request.setAttribute("messaggio", "Campo Email non valido");
       return view("registrazione");
     }
+    //dopo aver controllato i campi passiamo alla memorizzazione del turista vero
+
     try {
+
+
       Turista t = new Turista(nome, cognome, email, username, password);
       TuristaManager tm = new TableTuristaManager(this.getSource(request));
       tm.create(t.getNome(), t.getCognome(), t.getEmail(), t.getUsername(), t.getPassword());
       request.getSession().setAttribute("utente", t);
+
       return view("index");
 
-    } catch (SQLException throwables) {
+    } catch (SQLException ex) {
+      request.setAttribute("messaggio", "Non hai riempito correttamente i campi");
       return view("registrazione");
     }
   }

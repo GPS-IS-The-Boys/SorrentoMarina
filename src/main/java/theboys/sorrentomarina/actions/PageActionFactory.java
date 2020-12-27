@@ -4,12 +4,12 @@ import theboys.sorrentomarina.actions.account.AuthorizeAdminAction;
 
 
 /**
- * @author Diequ
+ * @author theBoys
  */
 public class PageActionFactory implements ActionFactory {
 
-  //private static final UnauthorizedAction UN_ACTION = new UnauthorizedAction();
-  //private static final AuthorizeAdminAction AA_ACTION = new AuthorizeAdminAction();
+  private static final UnauthorizedAction UN_ACTION = new UnauthorizedAction();
+  private static final AuthorizeAdminAction AA_ACTION = new AuthorizeAdminAction();
 
   @Override
   public Action create(String type) {
@@ -17,6 +17,8 @@ public class PageActionFactory implements ActionFactory {
       case "AdminDashboard" -> new ShowDashboardAction();
       case "MostraFormRegistrazioneAction" -> new MostraFormRegistrazioneAction();
       case "RegistrazioneAction" -> new RegistrazioneAction();
+      case "MostraFormLoginAction" -> new MostraFormLoginAction();
+      case "LoginAction" -> new LoginAction();
       default -> new WelcomeAction();
     };
   }

@@ -3,61 +3,121 @@
 
 
 <sm:layout title="Registrazione" admin="false">
-<sm:header/>
-  <!-- slider Area Start-->
-  <div class="slider-area ">
-    <!-- Mobile Menu -->
-    <div class="slider-active">
-      <div class="single-slider hero-overly  slider-height d-flex align-items-center" style="background-image: url('/images/sfondoSorrento.jpg')">
-        <div class="container">
-          <!-- Form Box -->
+  <script src="<c:url value="/js/formControl.js"/>"></script>
+  <link href="<c:url value="/css/formRegister.css"/>" type="text/css">
+
+  <div class="container">
+    <div class="row py-5 mt-4 align-items-center">
+      <!--  -->
+      <div class="col-md-5 pr-lg-5 mb-5 mb-md-0">
+        <img src="/images/sorrentoMarina.png" alt="" class="img-fluid mb-3 d-none d-md-block">
+        <h1>Crea un Account</h1>
+        <p class="font-italic text-muted mb-0">Usufruisci di tutti i servizi della piattaforma.</p>
+      </div>
+
+      <!-- Form -->
+      <div class="col-md-7 col-lg-6 ml-auto">
+        <form action="registrazione_account" name="registrazioneForm" id="registrazioneForm" method="post">
           <div class="row">
-            <div class="col-xl-12">
-              <!-- form -->
-              <h2>Non sei registrato? Dai su ti stiamo aspettando!</h2>
-              <h3>*Ricordati di riempire tutti i campi*</h3>
-              <form action="avviaRegistrazione" name="registrazione" method="post">
-                <div class="form-row">
-                  <div class="form-group col-md-4">
-                    <label for="username" style="color: black">Username</label>
-                    <input type="text" name="username" oninput="validaUsername()" class="form-control" id="username">
-                  </div>
-                  <div class="form-group col-md-4">
-                    <label for="email" style="color: black">Email</label>
-                    <input type="email" class="form-control" oninput="validaEmail()" name="email"  id="email">
-                  </div>
-                </div>
-                <div class="form-row">
-                  <div class="form-group col-md-4">
-                    <label for="password" style="color: black">Password (8 caratteri, maiuscola, cifra)</label>
-                    <input type="password" name="password" oninput="validaPassword()" class="form-control" id="password">
-                  </div>
-                  <div class="form-group col-md-4">
-                    <label for="confPassword" style="color: black">Conferma Password</label>
-                    <input type="password" class="form-control" name="passwordConferma" oninput="validaPassword()" id="confPassword">
-                  </div>
-                </div>
-                <div class="form-row">
-                  <div class="form-group col-md-4">
-                    <label for="nome" style="color: black">Nome</label>
-                    <input type="text" name="nome" oninput="validaNome()" class="form-control" id="nome">
-                  </div>
-                  <div class="form-group col-md-4">
-                    <label for="cognome" style="color: black">Cognome</label>
-                    <input type="text" name="cognome" oninput="validaCognome()" class="form-control" id="cognome">
-                  </div>
-                </div>
-                <div class="form-row">
-                </div>
-                <input id="registrami" class="btn-lg btn-light" type="submit" value="REGISTRAMI">
-                <span id="registramimessaggio">${messaggio}</span>
-              </form>
+            <h2>Compila tutti i campi:</h2>
+            <p>
+              <br>*username di almeno 8 caratteri
+              <br>*La password di almeno 8 caratteri e deve contenere almeno una maiuscola ed un numero</p>
+            <br>
+            <span id="registramimessaggio" class="text-lg" style="color: black">${messaggio}</span>
+          </div>
+          <div class="row">
+
+            <!-- Nome -->
+            <div class="input-group col-lg-6 mb-4">
+              <div class="input-group-prepend">
+                            <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                <i class="fa fa-user text-muted"></i>
+                            </span>
+              </div>
+              <input type="text" name="nome" oninput="validaNome()"
+                     class="form-control bg-white border-left-0 border-md" id="nome" placeholder="Nome" required>
+            </div>
+
+            <!-- Cognome -->
+            <div class="input-group col-lg-6 mb-4">
+              <div class="input-group-prepend">
+                            <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                <i class="fa fa-user text-muted"></i>
+                            </span>
+              </div>
+              <input type="text" name="cognome" oninput="validaCognome()"
+                     class="form-control bg-white border-left-0 border-md" id="cognome" placeholder="Cognome" required>
+            </div>
+
+            <!-- Email Address -->
+            <div class="input-group col-lg-6 mb-4">
+              <div class="input-group-prepend">
+                            <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                <i class="fa fa-envelope text-muted"></i>
+                            </span>
+              </div>
+              <input type="email" class="form-control bg-white border-left-0 border-md" oninput="validaEmail()"
+                     name="email" placeholder="Email address" required id="email">
+            </div>
+
+            <!-- Cognome -->
+            <div class="input-group col-lg-6 mb-4">
+              <div class="input-group-prepend">
+                            <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                <i class="fa fa-user text-muted"></i>
+                            </span>
+              </div>
+              <input type="text" name="username" oninput="validaUsername()"
+                     class="form-control bg-white border-left-0 border-md" id="username" placeholder="Username" required>
+            </div>
+
+            <!-- Password -->
+            <div class="input-group col-lg-6 mb-4">
+              <div class="input-group-prepend">
+                            <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                <i class="fa fa-lock text-muted"></i>
+                            </span>
+              </div>
+              <input type="password" name="password" oninput="validaPassword()"
+                     class="form-control bg-white border-left-0 border-md" placeholder="Password" required
+                     id="password">
+            </div>
+
+            <!-- Conferma Password -->
+            <div class="input-group col-lg-6 mb-4">
+              <div class="input-group-prepend">
+                            <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                <i class="fa fa-lock text-muted"></i>
+                            </span>
+              </div>
+              <input type="password" class="form-control bg-white border-left-0 border-md" name="passwordConferma"
+                     placeholder="Conferma Password" required oninput="validaPassword()" id="confPassword">
+            </div>
+
+            <!-- Submit Button -->
+            <div class="form-group col-lg-12 mx-auto mb-0">
+                <button type="submit" class="btn-primary btn-block py-2" style="border-radius: 5px">Crea il tuo account</button>
+            </div>
+
+            <!-- Divider Text -->
+            <div class="form-group col-lg-12 mx-auto d-flex align-items-center my-4">
+              <div class="border-bottom w-100 ml-5"></div>
+              <span class="px-2 small text-muted font-weight-bold text-muted">OPPURE</span>
+              <div class="border-bottom w-100 mr-5"></div>
+            </div>
+
+            <!-- Sei già registrato -->
+            <div class="text-center w-100">
+              <p class="text-muted font-weight-bold">Sei gi&agrave; registrato? <a href="login" class="text-primary ml-2">Login</a>
+              </p>
             </div>
           </div>
-        </div>
+
+        </form>
       </div>
     </div>
   </div>
-  <!-- slider Area End-->
-<sm:footer/>
+
+  <sm:footer/>
 </sm:layout>

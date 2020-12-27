@@ -3,21 +3,18 @@ package theboys.sorrentomarina.actions;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class MostraFormRegistrazioneAction implements Action {
+public class MostraFormLoginAction implements Action{
+
   /**
-   * Apre il form di registrazione del turista
-   *
+   * Mostra il form di login
+   * @author Francesco Pio Covino
    * @param request  la request
    * @param response la response
-   * @return la jsp adibita alla registrazione del turista
-   * @author Francesco Pio Covino
+   * @return ritorna la view del form di login
    */
   @Override
   public String execute(HttpServletRequest request, HttpServletResponse response) {
-    if (request.getSession().getAttribute("utente") != null) {
-      return view("index");
-    }
     response.setStatus(HttpServletResponse.SC_ACCEPTED);
-    return view("registrazione");
+    return view("login");
   }
 }

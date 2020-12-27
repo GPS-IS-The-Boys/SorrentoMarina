@@ -5,7 +5,7 @@
 <sm:header/>
     <main>
 
-        <!-- slider Area Start-->
+        <!-- Form di ricerca Start-->
         <div class="slider-area ">
             <!-- Mobile Menu -->
             <div class="slider-active">
@@ -49,10 +49,18 @@
                 </div>
             </div>
         </div>
-        <!-- slider Area End-->
+        <!-- Form di ricerca End-->
         <!-- Our Services Start -->
         <div class="our-services servic-padding">
             <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="section-tittle text-center">
+                            <span>Sei il responsabile di un lido? ecco cosa possiamo offrirti</span>
+                            <h2>I NOSTRI SERVIZI</h2>
+                        </div>
+                    </div>
+                </div>
                 <div class="row d-flex justify-contnet-center">
                     <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6">
                         <div class="single-services text-center mb-30">
@@ -60,7 +68,7 @@
                                 <span class="flaticon-tour"></span>
                             </div>
                             <div class="services-cap">
-                                <h5>Gestisci il tuo lido <br>con pochi click</h5>
+                                <h5>Gestisci il tuo lido <br>dalla tua dashboard con pochi click</h5>
                             </div>
                         </div>
                     </div>
@@ -70,7 +78,7 @@
                                 <span class="flaticon-pay"></span>
                             </div>
                             <div class="services-cap">
-                                <h5>Dati sempre al sicuro <br></h5>
+                                <h5>Dati sempre al sicuro <br> e pronti per essere analizzati</h5>
                             </div>
                         </div>
                     </div>
@@ -98,15 +106,15 @@
             </div>
         </div>
         <!-- Our Services End -->
-        <!-- Favourite Places Start -->
+        <!-- Suggeriti Start -->
         <div class="favourite-place place-padding">
             <div class="container">
                 <!-- Section Tittle -->
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="section-tittle text-center">
-                            <span>FEATURED TOURS Packages</span>
-                            <h2>Favourite Places</h2>
+                            <span>I lidi preferiti dai nostri utenti</span>
+                            <h2>LE METE POPOLARI</h2>
                         </div>
                     </div>
                 </div>
@@ -243,7 +251,7 @@
                         <div class="support-location-img mb-50">
                             <img src="<c:url value="/images/sfondoSorrento.jpg"/>" alt="">
                             <div class="support-img-cap">
-                                <span>Since 1992</span>
+                                <span>Since 2020</span>
                             </div>
                         </div>
                     </div>
@@ -251,30 +259,31 @@
                         <div class="right-caption">
                             <!-- Section Tittle -->
                             <div class="section-tittle section-tittle2">
-                                <span>About Our Company</span>
-                                <h2>We are Go Trip <br>Ravels Support Company</h2>
+                                <span>Ente Balneare Marina di Sorrento <br>Napoli, Campania, Italy</span>
+                                <h2>Qualcosa su di noi</h2>
                             </div>
                             <div class="support-caption">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud</p>
+                                <p>Sorrento Marina ti offre uno scorcio su una delle costiere pi&ugrave; belle d'Italia.
+                                Scegli comodomente seduto sul tuo divano la meta perfetta tra i lidi di Sorrento. Vieni a trovarci...ti aspettiamo</p>
                                 <div class="select-suport-items">
-                                    <label class="single-items">Lorem ipsum dolor sit amet
+                                    <label class="single-items">Semplicit&agrave;
                                         <input type="checkbox" checked="checked">
                                         <span class="checkmark"></span>
                                     </label>
-                                    <label class="single-items">Consectetur adipisicing sed do
+                                    <label class="single-items">Convenienza
                                         <input type="checkbox" checked="checked">
                                         <span class="checkmark"></span>
                                     </label>
-                                    <label class="single-items">Eiusmod tempor incididunt
+                                    <label class="single-items">Precisione
                                         <input type="checkbox" checked="checked">
                                         <span class="checkmark"></span>
                                     </label>
-                                    <label class="single-items">Ad minim veniam, quis nostrud.
+                                    <label class="single-items">Affidabilit&agrave;.
                                         <input type="checkbox" checked="checked">
                                         <span class="checkmark"></span>
                                     </label>
                                 </div>
-                                <a href="#" class="btn border-btn">About us</a>
+                                <button class="btn-primary btn-lg">About us</button>
                             </div>
                         </div>
                     </div>
