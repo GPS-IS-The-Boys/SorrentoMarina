@@ -9,7 +9,7 @@ import java.util.List;
 public interface RecensioneManager {
   //CRUD
   void create(int giudizio, String id_lido, String id_turista) throws SQLException;
-  Lido retriveById(int id) throws SQLException;
+  Recensione retriveById(int id) throws SQLException;
   List<Recensione> retriveById_Lido(String id_lido) throws SQLException;
   List<Recensione> retriveById_Turista(String id_turista) throws SQLException;
   List<Recensione> retriveAll(String id_lido) throws SQLException;
