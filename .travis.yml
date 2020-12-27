@@ -5,7 +5,7 @@ cache:
   directories:
     - $HOME/.m2
 dist: focal
-script: | 
-    mvn test
+script: |
+  mvn test
 after_success:
   - bash <(curl -s https://codecov.io/bash)
