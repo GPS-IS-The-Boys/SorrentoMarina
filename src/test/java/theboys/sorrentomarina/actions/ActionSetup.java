@@ -6,7 +6,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.mockito.Mockito;
 
 /**
- * @author Diequ
+ * @author theBoys
  */
 public class ActionSetup {
 
@@ -16,5 +16,6 @@ public class ActionSetup {
   public void setup() {
     mockReq = Mockito.mock(HttpServletRequest.class);
     mockRes = Mockito.mock(HttpServletResponse.class);
+
   }
 }

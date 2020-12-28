@@ -2,7 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 
-<sm:layout title="Registrazione" admin="false">
+<sm:layout title="Login" admin="false">
   <script src="<c:url value="/js/formControl.js"/>"></script>
   <link href="<c:url value="/css/formRegister.css"/>" type="text/css">
 
@@ -10,16 +10,17 @@
     <div class="row py-5 mt-4 align-items-center">
       <!--  -->
       <div class="col-md-5 pr-lg-5 mb-5 mb-md-0">
-        <img src="/images/sorrentoMarina.png" alt="" class="img-fluid mb-3 d-none d-md-block">
+        <img src="<c:url value="/images/sorrentoMarina.png"/>" alt="" class="img-fluid mb-3 d-none d-md-block">
         <h1>Accedi al tuo account</h1>
-        <p class="font-italic text-muted mb-0">Usufruisci di tutti i servizi della piattaforma.</p>
+        <p class="font-italic text-muted mb-1">Usufruisci di tutti i servizi della piattaforma.</p>
       </div>
 
       <!-- Form -->
       <div class="col-md-7 col-lg-6 ml-auto">
-        <form action="login_account" name="registrazioneForm" id="registrazioneForm" method="post">
+        <form action="login_account" name="LoginForm" id="LoginForm" method="post">
           <div class="row">
-            <h2>Inserisci le credenziali d'accesso</h2>
+            <h2 style="margin-bottom: 5px">Inserisci le credenziali d'accesso</h2>
+            <p class="font-italic text-muted mb-1">${message}</p>
           </div>
           <div class="row">
             <!-- Username -->

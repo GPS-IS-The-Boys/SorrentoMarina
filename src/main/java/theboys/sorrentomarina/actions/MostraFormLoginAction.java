@@ -3,7 +3,7 @@ package theboys.sorrentomarina.actions;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class MostraFormLoginAction implements Action{
+public class MostraFormLoginAction implements Action {
 
   /**
    * Mostra il form di login

@@ -10,7 +10,7 @@
     <div class="row py-5 mt-4 align-items-center">
       <!--  -->
       <div class="col-md-5 pr-lg-5 mb-5 mb-md-0">
-        <img src="/images/sorrentoMarina.png" alt="" class="img-fluid mb-3 d-none d-md-block">
+        <img src="<c:url value="/images/sorrentoMarina.png"/>" alt="" class="img-fluid mb-3 d-none d-md-block">
         <h1>Crea un Account</h1>
         <p class="font-italic text-muted mb-0">Usufruisci di tutti i servizi della piattaforma.</p>
       </div>
@@ -21,8 +21,9 @@
           <div class="row">
             <h2>Compila tutti i campi:</h2>
             <p>
-              <br>*username di almeno 8 caratteri
-              <br>*La password di almeno 8 caratteri e deve contenere almeno una maiuscola ed un numero</p>
+              <br>*username di almeno 6 caratteri
+              <br>*password almeno 8 caratteri e deve contenere almeno una maiuscola ed un numero
+            </p>
             <br>
             <span id="registramimessaggio" class="text-lg" style="color: black">${messaggio}</span>
           </div>

@@ -18,7 +18,7 @@ public class PageActionFactory implements ActionFactory {
       case "MostraFormRegistrazioneAction" -> new MostraFormRegistrazioneAction();
       case "RegistrazioneAction" -> new RegistrazioneAction();
       case "MostraFormLoginAction" -> new MostraFormLoginAction();
-      case "LoginAction" -> new LoginAction();
+      case "CheckLogin" -> new CheckLoginTurista();
       default -> new WelcomeAction();
     };
   }

@@ -6,7 +6,6 @@ import theboys.sorrentomarina.models.Turista;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
 import java.sql.SQLException;
 
 public class RegistrazioneAction implements Action {
@@ -48,7 +47,9 @@ public class RegistrazioneAction implements Action {
     }
 
     String cognome = request.getParameter("cognome");
-    if (!(cognome != null && cognome.trim().length() > 0 && cognome.matches("^[ a-zA-Z\u00C0-\u00ff]+$"))) {
+    if (!(cognome != null && cognome.trim().length() > 0
+        &&
+        cognome.matches("^[ a-zA-Z\u00C0-\u00ff]+$"))) {
       request.setAttribute("messaggio", "Campo Cognome non valido");
       return view("registrazione");
     }
