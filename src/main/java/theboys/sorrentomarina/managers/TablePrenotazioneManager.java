@@ -1,16 +1,12 @@
 package theboys.sorrentomarina.managers;
 
-import org.apache.commons.dbutils.BaseResultSetHandler;
-import org.apache.commons.dbutils.ColumnHandler;
 import org.apache.commons.dbutils.ResultSetHandler;
 import org.apache.commons.dbutils.handlers.BeanHandler;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
-import org.apache.commons.dbutils.handlers.columns.FloatColumnHandler;
 import theboys.sorrentomarina.models.Lido;
 import theboys.sorrentomarina.models.Prenotazione;
 
 import javax.sql.DataSource;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -18,9 +14,6 @@ public class TablePrenotazioneManager extends TableManager implements Prenotazio
 
   private static final ResultSetHandler<Prenotazione> PRE_MAPPER =
       new BeanHandler<>(Prenotazione.class);
-
-  private static final ResultSetHandler<Float> PRE_MAPPER_FLOAT =
-      new BeanHandler<>(Float.class);
 
   private static final ResultSetHandler<List<Prenotazione>> PRE_MAPPER_LIST =
       new BeanListHandler<>(Prenotazione.class);
