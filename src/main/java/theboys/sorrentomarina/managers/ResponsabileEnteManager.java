@@ -8,8 +8,11 @@ import java.util.Optional;
 
 public interface ResponsabileEnteManager {
 
-    ResponsabileEnte retriveById(int id) throws SQLException;
-    List<ResponsabileEnte> retriveAll() throws SQLException;
-    void update(ResponsabileEnte responsabileEnte) throws SQLException;
-    Optional<ResponsabileEnte> findResponsabileEnte(String username, String password) throws SQLException;
+  ResponsabileEnte retriveById(int id) throws SQLException;
+
+  List<ResponsabileEnte> retriveAll() throws SQLException;
+
+  void update(ResponsabileEnte responsabileEnte) throws SQLException;
+
+  Optional<ResponsabileEnte> findResponsabileEnte(String username, String password) throws SQLException;
 }
