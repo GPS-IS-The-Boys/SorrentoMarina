@@ -19,16 +19,14 @@
 - [Installazione](#Installazione)
 - [Contributors](#Contributors)
 - [COTS](#Component)
-  - [Tools](#tools)
-  - [Libraries](#libraries)
+    - [Tools](#tools)
+    - [Libraries](#libraries)
 
 # Introduzione
 
-Piattaforma web per la gestione e prenotazione dei lidi balneari presenti 
-all'interno del consorzio SorrentoMarina.
+Piattaforma web per la gestione e prenotazione dei lidi balneari presenti all'interno del consorzio SorrentoMarina.
 
 # Installazione
-
 
 # Contributors
 
@@ -37,7 +35,6 @@ all'interno del consorzio SorrentoMarina.
   src="https://contrib.rocks/image?repo=GPS-IS-The-Boys/SorrentoMarina"
   />
 </a>
-
 
 # Component Off-the-Shelf
 
@@ -49,8 +46,6 @@ all'interno del consorzio SorrentoMarina.
 | [Maven](https://maven.apache.org/)                          | ![License](https://img.shields.io/aur/license/android-studio)  |
 | [Tomcat](http://tomcat.apache.org/)                         | ![License](https://img.shields.io/aur/license/android-studio)  |
 | [Bootstrap](https://getbootstrap.com/)                      | ![License](https://img.shields.io/apm/l/vim-mode?style=plastic)|
-
-
 
 ### Libraries
 
