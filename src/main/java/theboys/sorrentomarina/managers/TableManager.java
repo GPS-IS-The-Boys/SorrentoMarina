@@ -1,17 +1,17 @@
 package theboys.sorrentomarina.managers;
 
 import javax.sql.DataSource;
+
 import org.apache.commons.dbutils.QueryRunner;
 
 /**
- *
- * @author Diequ
+ * @author theboys
  */
 public abstract class TableManager {
-    
-    protected final QueryRunner runner;
 
-    public TableManager(DataSource dataSource) {
-        this.runner = new QueryRunner(dataSource);
-    }
+  protected final QueryRunner runner;
+
+  public TableManager(DataSource dataSource) {
+    this.runner = new QueryRunner(dataSource);
+  }
 }
