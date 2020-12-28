@@ -39,7 +39,7 @@ public class TablePrenotazioneManager extends TableManager implements Prenotazio
   }
 
   @Override
-  public List<Prenotazione> retriveAll(int id) throws SQLException {
+  public List<Prenotazione> retriveAll() throws SQLException {
     List<Prenotazione> lista = runner.query("SELECT * FROM PRENOTAZIONE",PRE_MAPPER_LIST);
     return lista;
   }

@@ -37,4 +37,12 @@ public class Servizio {
     this.beach_volley = beach_volley;
     this.canoa = canoa;
   }
+
+  public boolean isEmpty(){
+    if(!(this.bar || this.ristorante || this.animazione || this.wifi || this.cabina || this.beach_volley || this.canoa)){
+      return true;
+    }else
+      return false;
+  }
+
 }

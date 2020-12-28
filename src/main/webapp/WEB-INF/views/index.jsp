@@ -23,24 +23,36 @@
                         <div class="row">
                             <div class="col-xl-12">
                                 <!-- form -->
-                                <form action="#" class="search-box">
+                                <form action="" class="search-box">
                                     <div class="input-form mb-30">
                                         <label for="nomeRicerca"></label>
-                                        <input id="nomeRicerca" type="text" placeholder="When Would you like to go ?">
+                                        <input id="nomeRicerca" name="nomeRicerca" type="text" placeholder="When Would you like to go ?">
                                     </div>
                                     <div class="select-form mb-30">
                                         <div class="select-itms">
-                                            <label for="select1"></label>
-                                            <select name="select" id="select1">
-                                                <option value="">When</option>
-                                                <option value="">Services-1</option>
-                                                <option value="">Services-2</option>
-                                                <option value="">Services-3</option>
-                                            </select>
+                                            <input type="checkbox" id="servizio1" name="servizio1" value="true">
+                                            <label for="servizio1"> Bar</label><br>
+                                            <input type="checkbox" id="servizio2" name="servizio2" value="true">
+                                            <label for="servizio2"> Ristorante</label><br>
+                                            <input type="checkbox" id="servizio3" name="servizio3" value="true">
+                                            <label for="servizio3"> Animazione</label><br>
+                                            <input type="checkbox" id="servizio4" name="servizio4" value="true">
+                                            <label for="servizio4"> Wi-fi</label><br>
+                                        </div>
+                                    </div>
+                                    <div class="select-form mb-30">
+                                        <div class="select-itms">
+                                            <input type="checkbox" id="servizio5" name="servizio5" value="true">
+                                            <label for="servizio5"> Cabina</label><br>
+                                            <input type="checkbox" id="servizio6" name="servizio6" value="true">
+                                            <label for="servizio6"> Beach Volley</label><br>
+                                            <input type="checkbox" id="servizio7" name="servizio7" value="true">
+                                            <label for="servizio7"> Canoa</label><br>
+
                                         </div>
                                     </div>
                                     <div class="search-form mb-30">
-                                        <a href="#">Cerca</a>
+                                        <Button type="submit"> Cerca</Button>
                                     </div>
                                 </form>
                             </div>
@@ -50,6 +62,45 @@
             </div>
         </div>
         <!-- Form di ricerca End-->
+        <c:choose>
+            <c:when test="${lidoRicerca != null}">
+        <div class="favourite-place place-padding">
+            <div class="container">
+                <!-- Section Tittle -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="section-tittle text-center">
+                            <span>I lidi preferiti dai nostri utenti</span>
+                            <h2>LE METE POPOLARI</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                <div class="col-xl-4 col-lg-4 col-md-6">
+                    <div class="single-place mb-30">
+                        <div class="place-img">
+                            <img src="<c:url value="${lidoRicerca.logo}"/>" alt="/images/sorrentoFooter.jpg">
+                        </div>
+                        <div class="place-cap">
+                            <div class="place-cap-top">
+                                <span><i class="fas fa-star"></i><span></span> </span>
+                                <h3><a href="#">${lidoRicerca.nome}</a></h3>
+                                <p class="dolor">$${lidoRicerca.costo} <span>/ Per Person</span></p>
+                            </div>
+                            <div class="place-cap-bottom">
+                                <ul>
+                                    <li><i class="far fa-clock"></i>1 Day</li>
+                                    <li><i class="fas fa-map-marker-alt"></i>${lidoRicerca.indirizzo}</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+            </c:when>
+            <c:otherwise>
         <!-- Our Services Start -->
         <div class="our-services servic-padding">
             <div class="container">
@@ -291,7 +342,8 @@
             </div>
         </div>
         <!-- Support Company End-->
-
+            </c:otherwise>
+        </c:choose>
     </main>
 <sm:footer/>
 </sm:layout>
