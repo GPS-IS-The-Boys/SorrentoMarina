@@ -1,7 +1,7 @@
 package theboys.sorrentomarina.models;
 
 /**
- * @author theboys
+ * @author Diequ
  */
 public class Account {
 

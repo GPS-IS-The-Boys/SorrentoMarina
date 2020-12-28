@@ -6,7 +6,7 @@ import java.util.Optional;
 import theboys.sorrentomarina.models.Account;
 
 /**
- *@author theboys
+ * @author Diequ
  */
 public interface AccountManager {
 

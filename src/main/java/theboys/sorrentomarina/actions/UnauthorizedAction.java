@@ -6,7 +6,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 /**
- * @author theboys
+ * @author Diequ
  */
 public class UnauthorizedAction extends ChainableAction {
 

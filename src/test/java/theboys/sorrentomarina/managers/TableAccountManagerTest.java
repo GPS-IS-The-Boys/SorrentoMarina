@@ -10,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import theboys.sorrentomarina.models.Account;
 
 /**
- * @author theboys
+ * @author Diequ
  */
 public class TableAccountManagerTest extends IntegrationTestCase {
 

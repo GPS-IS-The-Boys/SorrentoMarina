@@ -12,7 +12,7 @@ import theboys.sorrentomarina.actions.ChainableAction;
 import theboys.sorrentomarina.actions.NotFoundAction;
 
 /**
- *@author theboys
+ * @author Diequ
  */
 public class RouterTest {
 
