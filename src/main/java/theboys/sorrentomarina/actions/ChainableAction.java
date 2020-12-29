@@ -5,7 +5,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * @author theboys
+ * @author theBoys
  */
 public abstract class ChainableAction implements Action {
 
@@ -17,8 +17,7 @@ public abstract class ChainableAction implements Action {
 
   @Override
   public String execute(HttpServletRequest request, HttpServletResponse response) {
-    return Objects.nonNull(next) ? next.execute(request, response) :
-        view("500");
+    return Objects.nonNull(next) ? next.execute(request, response) : view("500");
   }
 
 

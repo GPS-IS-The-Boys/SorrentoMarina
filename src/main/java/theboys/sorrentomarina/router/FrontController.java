@@ -23,14 +23,18 @@ public class FrontController extends HttpServlet {
   private static final Router ROUTER = new Router(new HashMap<>());
   private static final PageActionFactory PAF = new PageActionFactory();
 
-  //@Resource(name = "jdbc/SorrentoDB")
-  //private DataSource dataSource;
+  @Resource(name = "jdbc/SorrentoDB")
+  private DataSource dataSource;
 
   @Override
   public void init() throws ServletException {
-    //getServletContext().setAttribute("db", dataSource);
+    getServletContext().setAttribute("db", dataSource);
     ROUTER.get("/", PAF.create("WelcomeAction"));
     ROUTER.get("/dashboard", PAF.create("AdminDashboard"));
+    ROUTER.get("/registrazione", PAF.create("MostraFormRegistrazioneAction"));
+    ROUTER.post("/registrazione_account", PAF.create("RegistrazioneAction"));
+    ROUTER.get("/login", PAF.create("MostraFormLoginAction"));
+    ROUTER.post("/login_account", PAF.create("CheckLogin"));
   }
 
   @Override

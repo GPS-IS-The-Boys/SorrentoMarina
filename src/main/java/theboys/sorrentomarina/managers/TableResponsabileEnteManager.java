@@ -32,7 +32,7 @@ public class TableResponsabileEnteManager extends TableManager implements Respon
    */
   @Override
   public ResponsabileEnte retriveById(int id) throws SQLException {
-    ResponsabileEnte responsabileEnte = runner.query("SELECT nome,cognome,email,username,password_ente FROM responsabile_ente WHERE id = ?", ENTE_MAPPER, id);
+    ResponsabileEnte responsabileEnte = runner.query("SELECT nome,cognome,email,username,password_ente FROM RESPONSABILE_ENTE WHERE id = ?", ENTE_MAPPER, id);
     return responsabileEnte;
   }
 
@@ -44,7 +44,7 @@ public class TableResponsabileEnteManager extends TableManager implements Respon
    */
   @Override
   public List<ResponsabileEnte> retriveAll() throws SQLException {
-    List<ResponsabileEnte> lista = runner.query("SELECT * FROM responsabile_ente", ENTE_MAPPER_LIST);
+    List<ResponsabileEnte> lista = runner.query("SELECT * FROM RESPONSABILE_ENTE", ENTE_MAPPER_LIST);
     return lista;
   }
 
@@ -56,7 +56,7 @@ public class TableResponsabileEnteManager extends TableManager implements Respon
    */
   @Override
   public void update(ResponsabileEnte responsabile) throws SQLException {
-    runner.update("UPDATE responsabile_ente SET nome = ?,cognome = ?,email = ?,username = ?,password_turista = ? WHERE id = ?",
+    runner.update("UPDATE RESPONSABILE_ENTE SET nome = ?,cognome = ?,email = ?,username = ?,password_turista = ? WHERE id = ?",
         responsabile.getNome(), responsabile.getCognome(), responsabile.getEmail(), responsabile.getUsername(), responsabile.getPassword(), responsabile.getId());
   }
 
@@ -70,7 +70,7 @@ public class TableResponsabileEnteManager extends TableManager implements Respon
    */
   @Override
   public Optional<ResponsabileEnte> findResponsabileEnte(String username, String password) throws SQLException {
-    ResponsabileEnte responsabileEnte = runner.query("SELECT * FROM responsabile_ente WHERE username= ? AND password_ente= ?", ENTE_MAPPER, username, password);
+    ResponsabileEnte responsabileEnte = runner.query("SELECT * FROM RESPONSABILE_ENTE WHERE username= ? AND password_ente= ?", ENTE_MAPPER, username, password);
     return Optional.ofNullable(responsabileEnte);
   }
 }
