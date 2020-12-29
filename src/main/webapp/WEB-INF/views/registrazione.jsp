@@ -21,11 +21,14 @@
           <div class="row">
             <h2>Compila tutti i campi:</h2>
             <p>
-              <br>*username di almeno 6 caratteri
-              <br>*password almeno 8 caratteri e deve contenere almeno una maiuscola ed un numero
+              <br>*username di almeno 6 caratteri.
+              <br>*password di almeno 8 caratteri (almeno una maiuscola ed un numero).
+              <br>
+              <br>
+              <span id="registramimessaggio" style="color: red">${messaggio}</span>
             </p>
             <br>
-            <span id="registramimessaggio" class="text-lg" style="color: black">${messaggio}</span>
+
           </div>
           <div class="row">
 

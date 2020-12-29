@@ -1,5 +1,6 @@
 package theboys.sorrentomarina.actions;
 
+import org.apache.commons.codec.digest.DigestUtils;
 import theboys.sorrentomarina.managers.TableTuristaManager;
 import theboys.sorrentomarina.managers.TuristaManager;
 import theboys.sorrentomarina.models.Turista;
@@ -66,9 +67,9 @@ public class RegistrazioneAction implements Action {
 
       Turista t = new Turista(nome, cognome, email, username, password);
       TuristaManager tm = new TableTuristaManager(this.getSource(request));
-      tm.create(t.getNome(), t.getCognome(), t.getEmail(), t.getUsername(), t.getPassword());
+      String hashPassword = DigestUtils.sha1Hex(t.getPassword());
+      tm.create(t.getNome(), t.getCognome(), t.getEmail(), t.getUsername(), hashPassword);
       request.getSession().setAttribute("utente", t);
-
       return view("index");
 
     } catch (SQLException ex) {

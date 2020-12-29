@@ -20,7 +20,7 @@
         <form action="login_account" name="LoginForm" id="LoginForm" method="post">
           <div class="row">
             <h2 style="margin-bottom: 5px">Inserisci le credenziali d'accesso</h2>
-            <p class="font-italic text-muted mb-1">${message}</p>
+            <p class="font-italic text-muted mb-1">${messaggio}</p>
           </div>
           <div class="row">
             <!-- Username -->
