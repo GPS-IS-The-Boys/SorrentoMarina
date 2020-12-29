@@ -57,7 +57,7 @@
                         <li><a href="#">Account</a>
                           <ul class="submenu">
                             <li><p>Ciao ${utente.username}</p></li>
-                            <li><a href="#">Le mie prenotazioni</a></li>
+                            <li><a href="prenotazioniTurista">Le mie prenotazioni</a></li>
                             <li><a href="#">I miei dati</a></li>
                           </ul>
                         </li>

@@ -3,13 +3,15 @@ package theboys.sorrentomarina.managers;
 import org.apache.commons.dbutils.ResultSetHandler;
 import org.apache.commons.dbutils.handlers.BeanHandler;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
-import theboys.sorrentomarina.models.Lido;
 import theboys.sorrentomarina.models.Recensione;
-import theboys.sorrentomarina.models.ResponsabileLido;
-
 import javax.sql.DataSource;
 import java.sql.SQLException;
 import java.util.List;
+
+/**
+ * @author Luigi Maiorano
+ * @version 0.1
+ */
 
 public class TableRecensioneManager extends TableManager implements RecensioneManager {
 
@@ -19,6 +21,11 @@ public class TableRecensioneManager extends TableManager implements RecensioneMa
   private static final ResultSetHandler<List<Recensione>> RECENSIONE_MAPPER_LIST =
       new BeanListHandler<>(Recensione.class);
 
+  /**
+   * Creazione TableRecensioneManager e collegamento al database
+   *
+   * @param dataSource - oggetto che permette la connessione al database
+   */
   public TableRecensioneManager(DataSource dataSource) {
     super(dataSource);
   }
@@ -26,22 +33,23 @@ public class TableRecensioneManager extends TableManager implements RecensioneMa
   /**
    * Inserimento recensione
    *
-   * @param giudizio
-   * @param id_lido
-   * @param id_turista
-   * @throws SQLException
+   * @param giudizio - voto da 1 a 5
+   * @param contenuto - testo della recensione
+   * @param id_lido - codice del lido a cui è riferita la recensione
+   * @param id_turista - codice del turista che fa la recensione
+   * @throws SQLException - eccezione lanciata a causa di problemi con la query
    */
   @Override
-  public void create(int giudizio, String id_lido, String id_turista) throws SQLException {
-    runner.update("INSERT INTO RECENSIONE VALUES(?,?,?)", giudizio, id_lido, id_turista);
+  public void create(int giudizio,String contenuto, int id_lido, int id_turista) throws SQLException {
+    runner.update("INSERT INTO RECENSIONE(giudizio,contenuto,id_lido,id_turista) VALUES (?,?,?,?)", giudizio, contenuto, id_lido, id_turista);
   }
 
   /**
    * Ricerca recensione per id
    *
-   * @param id
-   * @return Recensione
-   * @throws SQLException
+   * @param id - codice univoco di una recensione
+   * @return Recensione - una recensione con quello specifico id o null se non esistesse
+   * @throws SQLException - eccezione lanciata a causa di problemi con la query
    */
   @Override
   public Recensione retriveById(int id) throws SQLException {
@@ -52,12 +60,12 @@ public class TableRecensioneManager extends TableManager implements RecensioneMa
   /**
    * Ricerca recensioni per id_lido
    *
-   * @param id_lido
-   * @return List<Recensione>
-   * @throws SQLException
+   * @param id_lido - codice del lido di cui cercare le recensioni
+   * @return List<Recensione> una lista di recensioni riferiti a qeullo specifico lido che sarà vuota se non ci sono
+   * @throws SQLException - eccezione lanciata a causa di problemi con la query
    */
   @Override
-  public List<Recensione> retriveById_Lido(String id_lido) throws SQLException {
+  public List<Recensione> retriveById_Lido(int id_lido) throws SQLException {
     List<Recensione> lista = runner.query("SELECT * FROM RECENSIONE WHERE id_lido = ?", RECENSIONE_MAPPER_LIST, id_lido);
     return lista;
   }
@@ -65,24 +73,25 @@ public class TableRecensioneManager extends TableManager implements RecensioneMa
   /**
    * Ricerca recensioni per id_turista
    *
-   * @param id_turista
-   * @return List<Recensione>
-   * @throws SQLException
+   * @param id_turista - codice del turista di cui cercare le recensioni
+   * @return List<Recensione>una lista di recensioni riferiti a qeullo specifico turista che sarà vuota se non ci sono
+   * @throws SQLException - eccezione lanciata a causa di problemi con la query
    */
   @Override
-  public List<Recensione> retriveById_Turista(String id_turista) throws SQLException {
+  public List<Recensione> retriveById_Turista(int id_turista) throws SQLException {
     List<Recensione> lista = runner.query("SELECT * FROM RECENSIONE WHERE id_turista = ?", RECENSIONE_MAPPER_LIST, id_turista);
     return lista;
   }
 
+
   /**
    * Ricerca di tutte le recensioni
    *
-   * @return List<Recensione>
-   * @throws SQLException
+   * @return List<Recensione> - una lista di tutte le recensioni che sarà vuota se non ci sono
+   * @throws SQLException - eccezione lanciata a causa di problemi con la query
    */
   @Override
-  public List<Recensione> retriveAll(String id_lido) throws SQLException {
+  public List<Recensione> retriveAll() throws SQLException {
     List<Recensione> lista = runner.query("SELECT * FROM RECENSIONE", RECENSIONE_MAPPER_LIST);
     return lista;
   }
@@ -90,8 +99,8 @@ public class TableRecensioneManager extends TableManager implements RecensioneMa
   /**
    * Modifica di una recensione
    *
-   * @param recensione
-   * @throws SQLException
+   * @param recensione - recensione da modificare
+   * @throws SQLException - eccezione lanciata a causa di problemi con la query
    */
   @Override
   public void update(Recensione recensione) throws SQLException {
@@ -102,8 +111,8 @@ public class TableRecensioneManager extends TableManager implements RecensioneMa
   /**
    * Eliminazione di una recensione tramite id
    *
-   * @param id
-   * @throws SQLException
+   * @param id - codice della recensione da eliminare
+   * @throws SQLException - eccezione lanciata a causa di problemi con la query
    */
   @Override
   public void delete(int id) throws SQLException {
@@ -113,22 +122,22 @@ public class TableRecensioneManager extends TableManager implements RecensioneMa
   /**
    * Eliminazione di recensioni tramite id_lido
    *
-   * @param id_lido
-   * @throws SQLException
+   * @param id_lido - codice del lido di cui eliminare le recensioni
+   * @throws SQLException - eccezione lanciata a causa di problemi con la query
    */
   @Override
-  public void deleteById_Lido(String id_lido) throws SQLException {
+  public void deleteById_Lido(int id_lido) throws SQLException {
     runner.update("DELETE FROM RECENSIONE WHERE id_lido = ?", id_lido);
   }
 
   /**
    * Eliminazione di recensioni tramite id_turista
    *
-   * @param id_turista
-   * @throws SQLException
+   * @param id_turista - codice del turista di cui eliminare le recensioni
+   * @throws SQLException - eccezione lanciata a causa di problemi con la query
    */
   @Override
-  public void deleteById_Turista(String id_turista) throws SQLException {
+  public void deleteById_Turista(int id_turista) throws SQLException {
     runner.update("DELETE FROM RECENSIONE WHERE id_lido = ?", id_turista);
   }
 }

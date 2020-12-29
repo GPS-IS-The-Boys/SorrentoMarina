@@ -73,7 +73,7 @@ create table if not exists PRENOTAZIONE (
 create table if not exists ANNUNCIO (
     id int not null auto_increment,
     titolo varchar(32) not null,
-    contenuto varchar(32) not null,
+    contenuto varchar(64) not null,
     foto varchar(64),
     id_lido int not null,
     foreign key (id_lido) references LIDO(id) on update cascade on delete cascade,
@@ -83,7 +83,7 @@ create table if not exists ANNUNCIO (
 create table if not exists RECENSIONE (
     id int not null auto_increment,
     giudizio int not null check (giudizio between 1 AND 5),
-    contenuto varchar(32),
+    contenuto varchar(64),
     id_lido int not null,
     id_turista int not null,
     primary key (id),
@@ -99,17 +99,42 @@ create table if not exists OMBRELLONE (
     foreign key (id_prenotazione) references PRENOTAZIONE(id) on update cascade on delete cascade
 );
 
-
-insert into RESPONSABILE_ENTE(nome, cognome, email, username, password_ente) values ('Mario', 'Rossi', 'm.rossi@unisa.it', 'mrossi', 'rossimario');
-insert into RESPONSABILE_ENTE(nome, cognome, email, username, password_ente) values ('Luigi', 'Bianchi', 'l.bianchi@unisa.it', 'lbianchi', 'bianchiluigi');
-
-insert into RESPONSABILE_LIDO(nome, cognome, email, username, password_lido, id_lido) values ('Guido', 'Lavespa', 'guido.l@unisa.it', 'Gvespa', 'LavespaGuido',1);
-insert into RESPONSABILE_LIDO(nome, cognome, email, username, password_lido, id_lido) values ('Antonio', 'Verdi', 'A-Verdi@unisa.it', 'A_Verdi', 'VerdiAntonio',7);
-
-
-INSERT into TURISTA values(1,'Mario','Disco','marioDisco@gmail.com','userMario','passDisco');
-INSERT into SERVIZI values(1,0,0,0,0,0,0,0);
-INSERT into LIDO values(1,'LidoCinzia','Battibatti','330303603','cinzia@gmail.com','',12.5,4,5,1);
-INSERT into PRENOTAZIONE values(1,'2020-06-12','2020-06-14',2,30,1,1);
-insert into SERVIZI(id,bar,ristorante,animazione,wifi,cabina,beach_volley,canoa) values (1, true,false,true,false,true,false,true);
-insert into SERVIZI(id,bar,ristorante,animazione,wifi,cabina,beach_volley,canoa) values (2, false,false,true,true,true,false,true);
+insert into SERVIZI(bar,ristorante,animazione,wifi,cabina,beach_volley,canoa) values (true,false,true,false,true,false,true);
+insert into SERVIZI(bar,ristorante,animazione,wifi,cabina,beach_volley,canoa) values (false,false,true,true,true,false,true);
+insert into SERVIZI(bar,ristorante,animazione,wifi,cabina,beach_volley,canoa) values (false,true,true,true,true,false,true);
+insert into SERVIZI(bar,ristorante,animazione,wifi,cabina,beach_volley,canoa) values (true,false,false,true,false,false,true);
+INSERT into LIDO (nome, indirizzo, telefono, email, logo,prezzo_singolo,num_righe,num_colonne,id_servizi) values('Nome1','Indirizzo1','Telefono1','email1','logo1',12.5,4,5,1);
+INSERT into LIDO (nome, indirizzo, telefono, email, logo,prezzo_singolo,num_righe,num_colonne,id_servizi) values('Nome2','Indirizzo2','Telefono2','email2','logo2',12.5,4,5,2);
+INSERT into LIDO (nome, indirizzo, telefono, email, logo,prezzo_singolo,num_righe,num_colonne,id_servizi) values('Nome3','Indirizzo3','Telefono3','email3','logo3',12.5,4,5,3);
+INSERT into LIDO (nome, indirizzo, telefono, email, logo,prezzo_singolo,num_righe,num_colonne,id_servizi) values('Nome4','Indirizzo4','Telefono4','email4','logo4',12.5,4,5,4);
+insert into RESPONSABILE_ENTE(nome, cognome, email, username, password_ente) values ('Nome1', 'Cognome1', 'Email1', 'Username1', 'password1');
+insert into RESPONSABILE_ENTE(nome, cognome, email, username, password_ente) values ('Nome2', 'Cognome2', 'Email2', 'Username2', 'password2');
+insert into RESPONSABILE_ENTE(nome, cognome, email, username, password_ente) values ('Nome3', 'Cognome3', 'Email3', 'Username3', 'password3');
+insert into RESPONSABILE_ENTE(nome, cognome, email, username, password_ente) values ('Nome4', 'Cognome4', 'Email4', 'Username4', 'password4');
+insert into RESPONSABILE_LIDO(nome, cognome, email, username, password_lido, id_lido) values ('Nome1', 'Cognome1', 'Email1', 'Username1', 'password1',1);
+insert into RESPONSABILE_LIDO(nome, cognome, email, username, password_lido, id_lido) values ('Nome2', 'Cognome2', 'Email2', 'Username2', 'password2',2);
+insert into RESPONSABILE_LIDO(nome, cognome, email, username, password_lido, id_lido) values ('Nome3', 'Cognome3', 'Email3', 'Username3', 'password3',3);
+insert into RESPONSABILE_LIDO(nome, cognome, email, username, password_lido, id_lido) values ('Nome4', 'Cognome4', 'Email4', 'Username4', 'password4',4);
+INSERT into TURISTA(nome, cognome, email, username, password_turista) values ('Nome1', 'Cognome1', 'Email1', 'Username1', 'password1');
+INSERT into TURISTA(nome, cognome, email, username, password_turista) values ('Nome2', 'Cognome2', 'Email2', 'Username2', 'password2');
+INSERT into TURISTA(nome, cognome, email, username, password_turista) values ('Nome3', 'Cognome3', 'Email3', 'Username3', 'password3');
+INSERT into TURISTA(nome, cognome, email, username, password_turista) values ('Nome3', 'Cognome4', 'Email4', 'Username4', 'password4');
+INSERT into PRENOTAZIONE(data_inizio, data_fine, num_posti, costo, id_lido, id_turista) values('2020-06-09','2020-06-09',2,30,1,1);
+INSERT into PRENOTAZIONE(data_inizio, data_fine, num_posti, costo, id_lido, id_turista) values('2020-07-09','2020-07-09',2,30,2,2);
+INSERT into PRENOTAZIONE(data_inizio, data_fine, num_posti, costo, id_lido, id_turista) values('2020-08-09','2020-08-09',2,30,3,3);
+INSERT into PRENOTAZIONE(data_inizio, data_fine, num_posti, costo, id_lido, id_turista) values('2020-09-09','2020-09-09',2,30,4,4);
+insert into ANNUNCIO(titolo, contenuto, foto, id_lido) values
+( 'Riapertura','Grande riapertura ','C:\\Users\\User\\Desktop\\Uni\\IS\\foto1.jpg',1),
+( 'Sconti','Sconti la prossima settimana','C:\\Users\\User\\Desktop\\Uni\\IS\\foto2.jpg',1 ),
+( 'Chiusura','Chiusura per il fine settimana','C:\\Users\\User\\Desktop\\Uni\\IS\\foto3.jpg',2),
+( 'Riapertura','Riapertura il giorno 10 Maggio','C:\\Users\\User\\Desktop\\Uni\\IS\\foto4.jpg',3);
+insert into RECENSIONE(giudizio, contenuto, id_lido, id_turista) values
+(3,'Struttura sufficiente',1,1),
+(4,'Struttura molto attrezzata',1,2),
+(2,'Ristorante deludente',2,1),
+(5,'Eccezzionale',3,3),
+(4,'Ottimo paesaggio',4,4);
+INSERT into OMBRELLONE(num_riga, num_colonna, id_prenotazione) values ( 2,3,1 );
+INSERT into OMBRELLONE(num_riga, num_colonna, id_prenotazione) values ( 1,1,2 );
+INSERT into OMBRELLONE(num_riga, num_colonna, id_prenotazione) values ( 4,7,3 );
+INSERT into OMBRELLONE(num_riga, num_colonna, id_prenotazione) values ( 5,5,4 );
