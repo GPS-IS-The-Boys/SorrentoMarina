@@ -15,7 +15,7 @@ public class WelcomeActionTest extends ActionSetup{
   }
 
   /**
-   * Controlla che la view ritornata è quella corretta, ossia la index
+   * Controlla che la view ritornata Ã¨ quella corretta, ossia la index
    *
    * @author Francesco Pio Covino
    */
