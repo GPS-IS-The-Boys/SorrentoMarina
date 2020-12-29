@@ -28,5 +28,4 @@ public class PageActionFactory implements ActionFactory {
         return new WelcomeAction();
     }
   }
-
 }
