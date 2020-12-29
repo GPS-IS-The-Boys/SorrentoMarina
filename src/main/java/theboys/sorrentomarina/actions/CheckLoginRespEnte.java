@@ -1,5 +1,6 @@
 package theboys.sorrentomarina.actions;
 
+import org.apache.commons.codec.digest.DigestUtils;
 import theboys.sorrentomarina.managers.ResponsabileEnteManager;
 import theboys.sorrentomarina.managers.TableResponsabileEnteManager;
 import theboys.sorrentomarina.models.ResponsabileEnte;
@@ -24,7 +25,7 @@ public class CheckLoginRespEnte extends ChainableAction {
   public String execute(HttpServletRequest request, HttpServletResponse response) {
     try {
       String username = request.getParameter("username");
-      String password = request.getParameter("password");
+      String password = DigestUtils.sha1Hex(request.getParameter("password"));
       ResponsabileEnteManager em = new TableResponsabileEnteManager(this.getSource(request));
       Optional<ResponsabileEnte> opt = em.findResponsabileEnte(username, password);
       if (opt.isPresent()) {
@@ -34,7 +35,7 @@ public class CheckLoginRespEnte extends ChainableAction {
     } catch (SQLException ex) {
       return view("500");
     }
-    request.setAttribute("messagge", "Credenziali non corrette! Riprova.");
+    request.setAttribute("messaggio", "Credenziali non corrette! Riprova.");
     setNext(new MostraFormLoginAction());
     return super.execute(request, response);
   }

@@ -4,19 +4,16 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
-import java.io.FileNotFoundException;
-import java.sql.SQLException;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class RegistrazioneActionTest extends ActionSetup{
+public class RegistrazioneActionTest extends ActionSetup {
 
   private RegistrazioneAction rgAction;
 
   @Override
   @BeforeEach
-  public void setup(){
-    this.rgAction = new RegistrazioneAction();
+  public void setup() {
+    rgAction = new RegistrazioneAction();
     super.setup();
   }
 

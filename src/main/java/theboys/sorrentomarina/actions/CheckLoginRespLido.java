@@ -1,5 +1,6 @@
 package theboys.sorrentomarina.actions;
 
+import org.apache.commons.codec.digest.DigestUtils;
 import theboys.sorrentomarina.managers.ResponsabileLidoManager;
 import theboys.sorrentomarina.managers.TableResponsabileLidoManager;
 import theboys.sorrentomarina.models.ResponsabileLido;
@@ -23,7 +24,7 @@ public class CheckLoginRespLido extends ChainableAction {
   public String execute(HttpServletRequest request, HttpServletResponse response) {
     try {
       String username = request.getParameter("username");
-      String password = request.getParameter("password");
+      String password = DigestUtils.sha1Hex(request.getParameter("password"));
       ResponsabileLidoManager lm = new TableResponsabileLidoManager(this.getSource(request));
       Optional<ResponsabileLido> opt = lm.findResponsabileLido(username, password);
       if (opt.isPresent()) {
