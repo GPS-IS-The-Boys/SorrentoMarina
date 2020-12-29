@@ -11,7 +11,7 @@ public interface PrenotazioneManager {
   void create(int id, String data_inizio, String data_fine, int num_posti, float costo, int id_lido, int id_turista) throws SQLException;
   void create(String data_inizio, String data_fine, int num_posti, float costo, int id_lido, int id_turista) throws SQLException;
   Prenotazione retriveById(int id) throws SQLException;
-  List<Prenotazione> retriveAll(int id) throws SQLException;
+  List<Prenotazione> retriveAll() throws SQLException;
   void update(Prenotazione prenotazione) throws SQLException;
   void delete(int id) throws SQLException;
 
