@@ -1,59 +1,58 @@
 package theboys.sorrentomarina.models;
 
 /**
- *
- * @author Diequ
+ * @author theboys
  */
 public class Account {
-    
-    private String email, password;
-    private int roleId, id;
 
-    public Account() {
-        super();
-    }
+  private String email, password;
+  private int roleId, id;
 
-    public int getId() {
-        return id;
-    }
+  public Account() {
+    super();
+  }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-    
-    public String getEmail() {
-        return email;
-    }
+  public int getId() {
+    return id;
+  }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
+  public void setId(int id) {
+    this.id = id;
+  }
 
-    public String getPassword() {
-        return password;
-    }
+  public String getEmail() {
+    return email;
+  }
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
+  public void setEmail(String email) {
+    this.email = email;
+  }
 
-    public int getRoleId() {
-        return roleId;
-    }
+  public String getPassword() {
+    return password;
+  }
 
-    public void setRoleId(int roleId) {
-        this.roleId = roleId;
-    }
-    
-    public boolean isAdmin(){
-        return roleId == 1;
-    }
-    
-    public boolean isOwner() {
-        return roleId == 2;
-    }
-    
-    public boolean isGuest(){
-        return roleId == 3;
-    }
+  public void setPassword(String password) {
+    this.password = password;
+  }
+
+  public int getRoleId() {
+    return roleId;
+  }
+
+  public void setRoleId(int roleId) {
+    this.roleId = roleId;
+  }
+
+  public boolean isAdmin() {
+    return roleId == 1;
+  }
+
+  public boolean isOwner() {
+    return roleId == 2;
+  }
+
+  public boolean isGuest() {
+    return roleId == 3;
+  }
 }

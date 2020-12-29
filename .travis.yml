@@ -4,8 +4,12 @@ jdk: openjdk15
 cache:
   directories:
     - $HOME/.m2
+# safelist
+branches:
+  only:
+    - main
 dist: focal
-script: | 
-    mvn test
+script: |
+  mvn test
 after_success:
   - bash <(curl -s https://codecov.io/bash)

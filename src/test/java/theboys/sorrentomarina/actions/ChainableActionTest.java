@@ -1,38 +1,39 @@
 package theboys.sorrentomarina.actions;
 
 import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.*;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.mockito.Mockito;
 
 /**
- *
- * @author Diequ
+ * @author theboys
  */
 public class ChainableActionTest extends ActionSetup {
 
-    @Override
-    @BeforeEach
-    public void setup() {
-        super.setup();
-    }
-    
-    @Test
-    public void textExecuteWithoutNext(){
-        ChainableAction ca = Mockito.mock(ChainableAction.class, 
-                Mockito.CALLS_REAL_METHODS);
-        String result = ca.execute(mockReq, mockRes);
-        assertEquals("/WEB-INF/views/500.jsp", result, 
-                "It should return internal error view  without next");
-    }
-    
-    @Test
-    public void testExecuteWithNext() {
-        ChainableAction ca = Mockito.mock(ChainableAction.class, 
-                Mockito.CALLS_REAL_METHODS);
-        ca.setNext(new NotFoundAction());
-        String result = ca.execute(mockReq, mockRes);
-        assertEquals("/WEB-INF/views/404.jsp", result, 
-                "It should return not found view path");
-    } 
+  @Override
+  @BeforeEach
+  public void setup() {
+    super.setup();
+  }
+
+  @Test
+  public void textExecuteWithoutNext() {
+    ChainableAction ca = Mockito.mock(ChainableAction.class,
+        Mockito.CALLS_REAL_METHODS);
+    String result = ca.execute(mockReq, mockRes);
+    assertEquals("/WEB-INF/views/500.jsp", result,
+        "It should return internal error view  without next");
+  }
+
+  @Test
+  public void testExecuteWithNext() {
+    ChainableAction ca = Mockito.mock(ChainableAction.class,
+        Mockito.CALLS_REAL_METHODS);
+    ca.setNext(new NotFoundAction());
+    String result = ca.execute(mockReq, mockRes);
+    assertEquals("/WEB-INF/views/404.jsp", result,
+        "It should return not found view path");
+  }
 }

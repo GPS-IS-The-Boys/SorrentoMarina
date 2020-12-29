@@ -6,20 +6,19 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 /**
- *
- * @author Diequ
+ * @author theboys
  */
 public class UnauthorizedAction extends ChainableAction {
 
-    @Override
-    public String execute(HttpServletRequest request, HttpServletResponse response) {
-        HttpSession session = request.getSession(false);
-        if(Objects.nonNull(session)){
-            return super.execute(request, response);
-        } else {
-            response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
-            return view("401");
-        }
+  @Override
+  public String execute(HttpServletRequest request, HttpServletResponse response) {
+    HttpSession session = request.getSession(false);
+    if (Objects.nonNull(session)) {
+      return super.execute(request, response);
+    } else {
+      response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+      return view("401");
     }
-    
+  }
+
 }
