@@ -17,7 +17,9 @@ public class Lido {
   private int num_colonne;
   private int id_servizi;
 
-  public Lido() { super(); }
+  public Lido() {
+    super();
+  }
 
   public Lido(int id, String nome, String indirizzo, String telefono, String email, String logo, float prezzo_singolo, int num_righe, int num_colonne, int id_servizi) {
     this.id = id;
@@ -34,6 +36,6 @@ public class Lido {
 
   @Override
   public String toString() {
-    return "Lido[id="+this.id+", nome="+this.nome+", indirizzo="+this.indirizzo+", telefono="+this.telefono+", email="+this.email+", prezzo_singolo="+this.prezzo_singolo+"]";
+    return "Lido[id=" + this.id + ", nome=" + this.nome + ", indirizzo=" + this.indirizzo + ", telefono=" + this.telefono + ", email=" + this.email + ", prezzo_singolo=" + this.prezzo_singolo + "]";
   }
 }
