@@ -15,7 +15,7 @@ public class ShowDashboardActionTest extends ActionSetup{
   }
 
   /**
-   * Controlla che la view ritornata è quella corretta, ossia la dashboard
+   * Controlla che la view ritornata Ã¨ quella corretta, ossia la dashboard
    *
    * @author Francesco Pio Covino
    */

@@ -13,14 +13,20 @@ public class PageActionFactory implements ActionFactory {
 
   @Override
   public Action create(String type) {
-    return switch (type) {
-      case "AdminDashboard" -> new ShowDashboardAction();
-      case "MostraFormRegistrazioneAction" -> new MostraFormRegistrazioneAction();
-      case "RegistrazioneAction" -> new RegistrazioneAction();
-      case "MostraFormLoginAction" -> new MostraFormLoginAction();
-      case "CheckLogin" -> new CheckLoginTurista();
-      default -> new WelcomeAction();
-    };
+    switch (type) {
+      case "AdminDashboard":
+        return new ShowDashboardAction();
+      case "MostraFormRegistrazioneAction":
+        return new MostraFormRegistrazioneAction();
+      case "RegistrazioneAction":
+        return new RegistrazioneAction();
+      case "MostraFormLoginAction":
+        return new MostraFormLoginAction();
+      case "CheckLogin":
+        return new CheckLoginTurista();
+      default:
+        return new WelcomeAction();
+    }
   }
 
 }
