@@ -42,6 +42,7 @@ public class WelcomeAction implements Action {
 
       // controllo se nomeLido e servizi sono vuoti, se lo sono non faccio nessuna ricerca
       if(nomeLido == null && servizio.isEmpty()){
+        response.setStatus(HttpServletResponse.SC_ACCEPTED);
         return view("index");
       }
       // se è stato inserito solo il nome effettuo una ricerca tramite nome
@@ -52,11 +53,12 @@ public class WelcomeAction implements Action {
           System.out.println(lido);
           request.setAttribute("lidoRicerca",lido);
         }
+        response.setStatus(HttpServletResponse.SC_ACCEPTED);
         return view("index");
       }
 
 
-
+      response.setStatus(HttpServletResponse.SC_ACCEPTED);
       return view("index");
     } catch (SQLException throwables) {
       return view("500");
