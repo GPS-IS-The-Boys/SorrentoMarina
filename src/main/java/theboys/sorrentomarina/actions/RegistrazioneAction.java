@@ -68,7 +68,6 @@ public class RegistrazioneAction implements Action {
       TuristaManager tm = new TableTuristaManager(this.getSource(request));
       tm.create(t.getNome(), t.getCognome(), t.getEmail(), t.getUsername(), t.getPassword());
       request.getSession().setAttribute("utente", t);
-
       return view("index");
 
     } catch (SQLException ex) {

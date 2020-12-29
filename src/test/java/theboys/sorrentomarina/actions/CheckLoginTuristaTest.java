@@ -39,6 +39,6 @@ public class CheckLoginTuristaTest extends ActionSetup{
     CheckLoginTurista ca = Mockito.mock(CheckLoginTurista.class, Mockito.CALLS_REAL_METHODS);
     ca.setNext(new CheckLoginRespLido());
     String result = ca.execute(mockReq, mockRes);
-    assertEquals("/WEB-INF/views/index.jsp", result, "Porta ");
+    assertEquals("/WEB-INF/views/index.jsp", result, "Porta da qualche parte");
   }
 }
