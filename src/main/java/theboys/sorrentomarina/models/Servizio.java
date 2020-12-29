@@ -15,7 +15,9 @@ public class Servizio {
   private boolean beach_volley;
   private boolean canoa;
 
-  public Servizio() { super(); }
+  public Servizio() {
+    super();
+  }
 
   public Servizio(int id, boolean bar, boolean ristorante, boolean animazione, boolean wifi, boolean cabina, boolean beach_volley, boolean canoa) {
     this.id = id;
