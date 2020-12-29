@@ -7,7 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
 /**
- * @author Diequ
+ *@author theboys
  */
 public class SystemTestCase {
 

@@ -4,7 +4,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * @author theBoys
+ * @author SorrentoMarina
  */
 public class NotFoundAction implements Action {
 

@@ -4,7 +4,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * @author Diequ
+ * @author theboys
  */
 public class ShowDashboardAction implements Action {
 
