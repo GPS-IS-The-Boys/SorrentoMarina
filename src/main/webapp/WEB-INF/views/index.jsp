@@ -28,32 +28,40 @@
                                         <label for="nomeRicerca"></label>
                                         <input id="nomeRicerca" name="nomeRicerca" type="text" placeholder="When Would you like to go ?">
                                     </div>
-                                    <div class="select-form mb-30">
+
+
+
+                                    <div>
                                         <div class="select-itms">
                                             <input type="checkbox" id="servizio1" name="servizio1" value="true">
-                                            <label for="servizio1"> Bar</label><br>
+                                            <label for="servizio1"><h4 class="mb-20">Bar</h4></label><br>
                                             <input type="checkbox" id="servizio2" name="servizio2" value="true">
-                                            <label for="servizio2"> Ristorante</label><br>
+                                            <label for="servizio2"><h4 class="mb-20">Ristorante</h4></label><br>
                                             <input type="checkbox" id="servizio3" name="servizio3" value="true">
-                                            <label for="servizio3"> Animazione</label><br>
+                                            <label for="servizio3"><h4 class="mb-20">Animazione</h4></label><br>
                                             <input type="checkbox" id="servizio4" name="servizio4" value="true">
-                                            <label for="servizio4"> Wi-fi</label><br>
+                                            <label for="servizio4"><h4 class="mb-20">Wi-fi</h4></label><br>
                                         </div>
                                     </div>
-                                    <div class="select-form mb-30">
+
+                                    <div>
                                         <div class="select-itms">
                                             <input type="checkbox" id="servizio5" name="servizio5" value="true">
-                                            <label for="servizio5"> Cabina</label><br>
+                                            <label for="servizio5"><h4 class="mb-20">Cabina</h4></label><br>
                                             <input type="checkbox" id="servizio6" name="servizio6" value="true">
-                                            <label for="servizio6"> Beach Volley</label><br>
+                                            <label for="servizio6"><h4 class="mb-20">Beach Volley</h4></label><br>
                                             <input type="checkbox" id="servizio7" name="servizio7" value="true">
-                                            <label for="servizio7"> Canoa</label><br>
+                                            <label for="servizio7"><h4 class="mb-20">Canoa</h4></label><br>
 
                                         </div>
                                     </div>
-                                    <div class="search-form mb-30">
-                                        <Button type="submit"> Cerca</Button>
+
+                                    <div >
+                                        <Button class="genric-btn warning radius" type="submit"> Cerca</Button>
                                     </div>
+
+
+
                                 </form>
                             </div>
                         </div>
@@ -70,35 +78,74 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="section-tittle text-center">
-                            <span>I lidi preferiti dai nostri utenti</span>
-                            <h2>LE METE POPOLARI</h2>
+                            <span>Il lido perfetto per te</span>
+                            <h2>I TUOI RISULTATI</h2>
                         </div>
                     </div>
                 </div>
                 <div class="row">
-                <div class="col-xl-4 col-lg-4 col-md-6">
-                    <div class="single-place mb-30">
-                        <div class="place-img">
-                            <img src="<c:url value="${lidoRicerca.logo}"/>" alt="/images/sorrentoFooter.jpg">
-                        </div>
-                        <div class="place-cap">
-                            <div class="place-cap-top">
-                                <span><i class="fas fa-star"></i><span></span> </span>
-                                <h3><a href="#">${lidoRicerca.nome}</a></h3>
-                                <p class="dolor">$${lidoRicerca.costo} <span>/ Per Person</span></p>
+                    <div class="col-xl-4 col-lg-4 col-md-6">
+                        <div class="single-place mb-30">
+                            <div class="place-img">
+                                <img src="<c:url value="${lidoRicerca.logo}"/>" alt="<c:url value="/images/sorrentoFooter.jpg"/>">
                             </div>
-                            <div class="place-cap-bottom">
-                                <ul>
-                                    <li><i class="far fa-clock"></i>1 Day</li>
-                                    <li><i class="fas fa-map-marker-alt"></i>${lidoRicerca.indirizzo}</li>
-                                </ul>
+                            <div class="place-cap">
+                                <div class="place-cap-top">
+                                    <h3><a href="#">${lidoRicerca.nome}</a></h3>
+                                    <p class="dolor">$${lidoRicerca.prezzo_singolo} <span>/ Per Person</span></p>
+                                </div>
+                                <div class="place-cap-bottom">
+                                    <ul>
+                                        <li><i class="far fa-clock"></i>1 Day</li>
+                                        <li><i class="fas fa-map-marker-alt"></i>${lidoRicerca.indirizzo}</li>
+                                        <li><button class="genric-btn warning circle">Visita</button></li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                </div>
             </div>
         </div>
+            </c:when>
+            <c:when test="${listaLidiServizi != null}">
+                <div class="favourite-place place-padding">
+                    <div class="container">
+                        <!-- Section Tittle -->
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="section-tittle text-center">
+                                    <span>Il lido perfetto per te</span>
+                                    <h2>I TUOI RISULTATI</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <c:forEach items="${listaLidiServizi}" var="lido">
+                                <div class="col-xl-4 col-lg-4 col-md-6">
+                                    <div class="single-place mb-30">
+                                        <div class="place-img">
+                                            <img src="<c:url value="${lido.logo}"/>" alt="<c:url value="/images/sorrentoFooter.jpg"/>">
+                                        </div>
+                                        <div class="place-cap">
+                                            <div class="place-cap-top">
+                                                <h3><a href="#">${lido.nome}</a></h3>
+                                                <p class="dolor">$${lido.prezzo_singolo} <span>/ Per Person</span></p>
+                                            </div>
+                                            <div class="place-cap-bottom">
+                                                <ul>
+                                                    <li><i class="far fa-clock"></i>1 Day</li>
+                                                    <li><i class="fas fa-map-marker-alt"></i>${lido.indirizzo}</li>
+                                                    <li><button class="genric-btn warning circle">Visita</button></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </c:forEach>
+                        </div>
+                    </div>
+                </div>
             </c:when>
             <c:otherwise>
         <!-- Our Services Start -->
@@ -158,141 +205,43 @@
         </div>
         <!-- Our Services End -->
         <!-- Suggeriti Start -->
-        <div class="favourite-place place-padding">
-            <div class="container">
-                <!-- Section Tittle -->
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="section-tittle text-center">
-                            <span>I lidi preferiti dai nostri utenti</span>
-                            <h2>LE METE POPOLARI</h2>
+                <div class="favourite-place place-padding">
+                    <div class="container">
+                        <!-- Section Tittle -->
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="section-tittle text-center">
+                                    <span>I lidi più frequentati</span>
+                                    <h2>METE POPOLARI</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <c:forEach items="${listaLidiTotali}" var="lido">
+                                <div class="col-xl-4 col-lg-4 col-md-6">
+                                    <div class="single-place mb-30">
+                                        <div class="place-img">
+                                            <img src="<c:url value="${lido.logo}"/>" alt="<c:url value="/images/sorrentoFooter.jpg"/>">
+                                        </div>
+                                        <div class="place-cap">
+                                            <div class="place-cap-top">
+                                                <h3><a href="#">${lido.nome}</a></h3>
+                                                <p class="dolor">$${lido.prezzo_singolo} <span>/ Per Person</span></p>
+                                            </div>
+                                            <div class="place-cap-bottom">
+                                                <ul>
+                                                    <li><i class="far fa-clock"></i>1 Day</li>
+                                                    <li><i class="fas fa-map-marker-alt"></i>${lido.indirizzo}</li>
+                                                    <li><button class="genric-btn warning circle">Visita</button></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </c:forEach>
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-xl-4 col-lg-4 col-md-6">
-                        <div class="single-place mb-30">
-                            <div class="place-img">
-                                <img src="<c:url value="/images/sorrentoFooter.jpg"/>" alt="">
-                            </div>
-                            <div class="place-cap">
-                                <div class="place-cap-top">
-                                    <span><i class="fas fa-star"></i><span>8.0 Superb</span> </span>
-                                    <h3><a href="#">The Dark Forest Adventure</a></h3>
-                                    <p class="dolor">$1870 <span>/ Per Person</span></p>
-                                </div>
-                                <div class="place-cap-bottom">
-                                    <ul>
-                                        <li><i class="far fa-clock"></i>3 Days</li>
-                                        <li><i class="fas fa-map-marker-alt"></i>Los Angeles</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-4 col-md-6">
-                        <div class="single-place mb-30">
-                            <div class="place-img">
-                                <img src="<c:url value="/images/sfondoSorrento.jpg"/>" alt="">
-                            </div>
-                            <div class="place-cap">
-                                <div class="place-cap-top">
-                                    <span><i class="fas fa-star"></i><span>8.0 Superb</span> </span>
-                                    <h3><a href="#">The Dark Forest Adventure</a></h3>
-                                    <p class="dolor">$1870 <span>/ Per Person</span></p>
-                                </div>
-                                <div class="place-cap-bottom">
-                                    <ul>
-                                        <li><i class="far fa-clock"></i>3 Days</li>
-                                        <li><i class="fas fa-map-marker-alt"></i>Los Angeles</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-4 col-md-6">
-                        <div class="single-place mb-30">
-                            <div class="place-img">
-                                <img src="<c:url value="/images/sfondoSorrento.jpg"/>" alt="">
-                            </div>
-                            <div class="place-cap">
-                                <div class="place-cap-top">
-                                    <span><i class="fas fa-star"></i><span>8.0 Superb</span> </span>
-                                    <h3><a href="#">The Dark Forest Adventure</a></h3>
-                                    <p class="dolor">$1870 <span>/ Per Person</span></p>
-                                </div>
-                                <div class="place-cap-bottom">
-                                    <ul>
-                                        <li><i class="far fa-clock"></i>3 Days</li>
-                                        <li><i class="fas fa-map-marker-alt"></i>Los Angeles</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-4 col-md-6">
-                        <div class="single-place mb-30">
-                            <div class="place-img">
-                                <img src="<c:url value="/images/sorrentoFooter.jpg"/>" alt="">
-                            </div>
-                            <div class="place-cap">
-                                <div class="place-cap-top">
-                                    <span><i class="fas fa-star"></i><span>8.0 Superb</span> </span>
-                                    <h3><a href="#">The Dark Forest Adventure</a></h3>
-                                    <p class="dolor">$1870 <span>/ Per Person</span></p>
-                                </div>
-                                <div class="place-cap-bottom">
-                                    <ul>
-                                        <li><i class="far fa-clock"></i>3 Days</li>
-                                        <li><i class="fas fa-map-marker-alt"></i>Los Angeles</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-4 col-md-6">
-                        <div class="single-place mb-30">
-                            <div class="place-img">
-                                <img src="<c:url value="/images/sorrentoFooter.jpg"/>" alt="">
-                            </div>
-                            <div class="place-cap">
-                                <div class="place-cap-top">
-                                    <span><i class="fas fa-star"></i><span>8.0 Superb</span> </span>
-                                    <h3><a href="#">The Dark Forest Adventure</a></h3>
-                                    <p class="dolor">$1870 <span>/ Per Person</span></p>
-                                </div>
-                                <div class="place-cap-bottom">
-                                    <ul>
-                                        <li><i class="far fa-clock"></i>3 Days</li>
-                                        <li><i class="fas fa-map-marker-alt"></i>Los Angeles</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-4 col-md-6">
-                        <div class="single-place mb-30">
-                            <div class="place-img">
-                                <img src="<c:url value="/images/sfondoSorrento.jpg"/>" alt="">
-                            </div>
-                            <div class="place-cap">
-                                <div class="place-cap-top">
-                                    <span><i class="fas fa-star"></i><span>8.0 Superb</span> </span>
-                                    <h3><a href="#">The Dark Forest Adventure</a></h3>
-                                    <p class="dolor">$1870 <span>/ Per Person</span></p>
-                                </div>
-                                <div class="place-cap-bottom">
-                                    <ul>
-                                        <li><i class="far fa-clock"></i>3 Days</li>
-                                        <li><i class="fas fa-map-marker-alt"></i>Los Angeles</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
         <!-- Favourite Places End -->
         <!-- Support Company Start-->
         <div class="support-company-area support-padding fix">

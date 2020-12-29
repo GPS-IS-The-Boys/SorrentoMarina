@@ -37,6 +37,11 @@ public class TablePrenotazioneManager extends TableManager implements Prenotazio
     Prenotazione prenotazione = runner.query("SELECT * FROM PRENOTAZIONE WHERE id=?", PRE_MAPPER, id);
     return prenotazione;
   }
+  @Override
+  public List<Prenotazione> retriveByIdTurista(int id_turista) throws SQLException{
+    List<Prenotazione> lista = runner.query("SELECT * FROM PRENOTAZIONE WHERE id_turista=?",PRE_MAPPER_LIST,id_turista);
+    return lista;
+  }
 
   @Override
   public List<Prenotazione> retriveAll() throws SQLException {

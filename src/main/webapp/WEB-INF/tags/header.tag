@@ -60,6 +60,9 @@
                             <li><a href="profilo">I miei dati</a></li>
                             <li><a href="profilo">Il mio profilo</a></li>
                             <li><a href="logout">logout</a></li>
+                            <li><a href="prenotazioniTurista">Le mie prenotazioni</a></li>
+                            <li><a href="#">I miei dati</a></li>
+
                           </ul>
                         </li>
 

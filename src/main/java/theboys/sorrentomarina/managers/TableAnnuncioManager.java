@@ -91,7 +91,7 @@ public class TableAnnuncioManager extends TableManager implements AnnuncioManage
    */
   @Override
   public void update(Annuncio annuncio) throws SQLException {
-    runner.update("UPDATE ANNUNCIO SET titolo = ?,contenuto = ?,foto = ? WHERE (id = ?)",
+    runner.update("UPDATE ANNUNCIO SET titolo = ?,contenuto = ?,foto = ? WHERE id = ?",
         annuncio.getTitolo(), annuncio.getContenuto(), annuncio.getFoto(), annuncio.getId());
   }
 

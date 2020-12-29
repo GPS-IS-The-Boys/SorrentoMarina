@@ -53,13 +53,10 @@ public class WelcomeAction implements Action {
         response.setStatus(HttpServletResponse.SC_ACCEPTED);
         return view("index");
       }
-
-
       response.setStatus(HttpServletResponse.SC_ACCEPTED);
       return view("index");
     } catch (SQLException throwables) {
       return view("500");
     }
   }
-
 }
