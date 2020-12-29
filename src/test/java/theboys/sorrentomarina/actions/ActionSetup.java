@@ -6,7 +6,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.mockito.Mockito;
 
 /**
- * @author Diequ
+ * @author theBoys
  */
 public class ActionSetup {
 

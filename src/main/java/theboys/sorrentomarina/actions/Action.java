@@ -13,8 +13,7 @@ public interface Action {
 
   /**
    * Exec a request action
-   *
-   * @param request  the request
+   * @param request the request
    * @param response the response
    * @return can return a URL or a view name
    */

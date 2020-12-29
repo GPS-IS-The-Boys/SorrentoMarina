@@ -1,9 +1,8 @@
 package theboys.sorrentomarina.actions;
 
 /**
- * @author Diequ
+ *  @author theboys
  */
 public interface ActionFactory {
-
   Action create(String type);
 }

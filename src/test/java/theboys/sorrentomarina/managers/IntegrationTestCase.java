@@ -11,7 +11,7 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 
 /**
- * @author Diequ
+ * @author theboys
  */
 public class IntegrationTestCase {
 
@@ -24,6 +24,7 @@ public class IntegrationTestCase {
     mockDb.setUrl("jdbc:h2:./sorrentoTest;MODE=MYSQL;DATABASE_TO_UPPER=false;");
     mockDb.setUsername("root");
     mockDb.setPassword("root");
+    mockDb.getConnection().createStatement().execute("drop all objects delete files");
     RunScript.execute(mockDb.getConnection(), new FileReader(
         new File(IntegrationTestCase.class.getResource("/backup.sql")
             .getFile())));

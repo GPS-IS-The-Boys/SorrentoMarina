@@ -5,7 +5,7 @@ import javax.sql.DataSource;
 import org.apache.commons.dbutils.QueryRunner;
 
 /**
- * @author Diequ
+ * @author theboys
  */
 public abstract class TableManager {
 

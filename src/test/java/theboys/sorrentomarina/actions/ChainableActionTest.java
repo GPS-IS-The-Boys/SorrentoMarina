@@ -8,7 +8,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.mockito.Mockito;
 
 /**
- * @author Diequ
+ * @author theBoys
  */
 public class ChainableActionTest extends ActionSetup {
 

@@ -10,7 +10,7 @@ import theboys.sorrentomarina.managers.TableAccountManager;
 import theboys.sorrentomarina.models.Account;
 
 /**
- * @author Diequ
+ * @author theboys
  */
 public class LoginAction implements Action {
 

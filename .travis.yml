@@ -4,6 +4,10 @@ jdk: openjdk15
 cache:
   directories:
     - $HOME/.m2
+# safelist
+branches:
+  only:
+    - main
 dist: focal
 script: |
   mvn test
