@@ -24,6 +24,8 @@ public class PageActionFactory implements ActionFactory {
         return new MostraFormLoginAction();
       case "CheckLogin":
         return new CheckLoginTurista();
+      case "LidoAction":
+        return new LidoAction();
       default:
         return new WelcomeAction();
     }

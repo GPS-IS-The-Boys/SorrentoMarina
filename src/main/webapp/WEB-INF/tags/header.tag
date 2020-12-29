@@ -37,7 +37,7 @@
             <!-- Logo -->
             <div class="col-xl-2 col-lg-2 col-md-1">
               <div>
-                <a href=""><img src="<c:url value="/images/sorrentoMarina.png"/>" width="120px" height="120px"
+                <a href="index"><img src="<c:url value="/images/sorrentoMarina.png"/>" width="120px" height="120px"
                                  alt=""></a>
               </div>
             </div>
@@ -46,7 +46,7 @@
               <div class="main-menu f-right d-none d-lg-block">
                 <nav>
                   <ul id="navigation">
-                    <li><a href=".">Home</a></li>
+                    <li><a href="index">Home</a></li>
                     <li><a href="">Info</a></li>
                     <c:choose>
                       <c:when test="${utente == null}">
