@@ -1,21 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-
   <groupId>theboys</groupId>
   <artifactId>SorrentoMarina</artifactId>
   <version>1.0</version>
   <packaging>war</packaging>
-
   <name>SorrentoMarina</name>
-
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <lang.source>15</lang.source>
-    <lang.target>15</lang.target>
-  </properties>
-
   <dependencies>
     <!-- Servlet API fornite da Tomcat-->
     <dependency>
@@ -68,7 +58,6 @@
       <artifactId>startbootstrap-sb-admin-2</artifactId>
       <version>4.0.6</version>
     </dependency>
-
     <!-- Per fare stub/driver/mock degli oggetti in fase di testing -->
     <dependency>
       <groupId>org.mockito</groupId>
@@ -97,9 +86,83 @@
       <version>1.4.200</version>
       <scope>test</scope>
     </dependency>
-
+    <!-- Project Lombok-->
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>1.18.16</version>
+      <scope>provided</scope>
+    </dependency>
+    <!-- Apache commons-Email-->
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-email</artifactId>
+      <version>1.5</version>
+    </dependency>
+    <!--WEKA (Machine Learning)-->
+    <dependency>
+      <groupId>nz.ac.waikato.cms.weka</groupId>
+      <artifactId>weka-stable</artifactId>
+      <version>3.8.0</version>
+    </dependency>
+    <!--Jquery -->
+    <dependency>
+      <groupId>org.webjars</groupId>
+      <artifactId>jquery</artifactId>
+      <version>3.5.1</version>
+    </dependency>
+    <!-- Servlet API fornite da Tomcat-->
+    <dependency>
+      <groupId>javax</groupId>
+      <artifactId>javaee-web-api</artifactId>
+      <version>8.0.1</version>
+      <scope>provided</scope>
+    </dependency>
+    <!-- JSTL per create migliori interfacce grafiche -->
+    <dependency>
+      <groupId>jstl</groupId>
+      <artifactId>jstl</artifactId>
+      <version>1.2</version>
+    </dependency>
+    <!-- per accesso al database -->
+    <dependency>
+      <groupId>commons-dbutils</groupId>
+      <artifactId>commons-dbutils</artifactId>
+      <version>1.7</version>
+    </dependency>
+    <!-- Per hashing password -->
+    <dependency>
+      <groupId>commons-codec</groupId>
+      <artifactId>commons-codec</artifactId>
+      <version>1.15</version>
+    </dependency>
+    <!-- il driver per connettersi a MYSQL -->
+    <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+      <version>8.0.22</version>
+    </dependency>
+    <!-- Motore per lanciare i test-->
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-engine</artifactId>
+      <version>5.7.0</version>
+      <scope>test</scope>
+    </dependency>
+    <!-- API per scrivere i test -->
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-api</artifactId>
+      <version>5.7.0</version>
+      <scope>test</scope>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.webjars/startbootstrap-sb-admin-2 -->
+    <dependency>
+      <groupId>org.webjars</groupId>
+      <artifactId>startbootstrap-sb-admin-2</artifactId>
+      <version>4.0.6</version>
+    </dependency>
   </dependencies>
-
   <build>
     <plugins>
       <plugin>
@@ -164,5 +227,4 @@
       </plugin>
     </plugins>
   </build>
-
 </project>

@@ -4,7 +4,5 @@
 <sm:layout title="Benvenuto" admin="false">
     <h1>
         Hello Sorrento Marina
-        <br> Gerardo Iuliano
-        Luigi Maiorano
     </h1>
 </sm:layout>
