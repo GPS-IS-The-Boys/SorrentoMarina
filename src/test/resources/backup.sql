@@ -96,20 +96,28 @@ create table if not exists OMBRELLONE (
     num_colonna int not null,
     id_prenotazione int not null,
     primary key (id),
-    foreign key (id_prenotazione) references PRENOTAZIONE(id) on update cascade on delete cascade
+    key (id_prenotazione) references PRENOTAZIONE(id) on update cascade on delete cascade
 );
 
 
 insert into RESPONSABILE_ENTE(nome, cognome, email, username, password_ente) values ('Mario', 'Rossi', 'm.rossi@unisa.it', 'mrossi', 'rossimario');
 insert into RESPONSABILE_ENTE(nome, cognome, email, username, password_ente) values ('Luigi', 'Bianchi', 'l.bianchi@unisa.it', 'lbianchi', 'bianchiluigi');
-
 insert into RESPONSABILE_LIDO(nome, cognome, email, username, password_lido, id_lido) values ('Guido', 'Lavespa', 'guido.l@unisa.it', 'Gvespa', 'LavespaGuido',1);
 insert into RESPONSABILE_LIDO(nome, cognome, email, username, password_lido, id_lido) values ('Antonio', 'Verdi', 'A-Verdi@unisa.it', 'A_Verdi', 'VerdiAntonio',7);
-
-
 INSERT into TURISTA values(1,'Mario','Disco','marioDisco@gmail.com','userMario','passDisco');
 INSERT into SERVIZI values(1,0,0,0,0,0,0,0);
 INSERT into LIDO values(1,'LidoCinzia','Battibatti','330303603','cinzia@gmail.com','',12.5,4,5,1);
 INSERT into PRENOTAZIONE values(1,'2020-06-12','2020-06-14',2,30,1,1);
 insert into SERVIZI(id,bar,ristorante,animazione,wifi,cabina,beach_volley,canoa) values (1, true,false,true,false,true,false,true);
 insert into SERVIZI(id,bar,ristorante,animazione,wifi,cabina,beach_volley,canoa) values (2, false,false,true,true,true,false,true);
+insert into ANNUNCIO(titolo, contenuto, foto, id_lido) values
+( 'Riapertura','Grande riapertura il giorno 9 Giugno','C:\\Users\\User\\Desktop\\Uni\\IS\\foto1.jpg',1),
+( 'Sconti','Sconti la prossima settimana','C:\\Users\\User\\Desktop\\Uni\\IS\\foto2.jpg',1 ),
+( 'Chiusura','Chiusura per il fine settimana','C:\\Users\\User\\Desktop\\Uni\\IS\\foto3.jpg',2),
+( 'Riapertura','Riapertura il giorno 10 Maggio','C:\\Users\\User\\Desktop\\Uni\\IS\\foto4.jpg',3);
+insert into RECENSIONE(giudizio, contenuto, id_lido, id_turista) values
+(3,'Struttura sufficiente',1,1),
+(4,'Struttura molto attrezzata',1,2),
+(2,'Ristorante deludente',2,1),
+(5,'Eccezzionale',3,3),
+(4,'Ottimo paesaggio',4,4);
