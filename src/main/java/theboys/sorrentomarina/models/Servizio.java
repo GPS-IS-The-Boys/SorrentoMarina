@@ -27,6 +27,15 @@ public class Servizio {
     this.beach_volley = beach_volley;
     this.canoa = canoa;
   }
+  public Servizio(boolean b) {
+    this.bar = b;
+    this.ristorante = b;
+    this.animazione = b;
+    this.wifi = b;
+    this.cabina = b;
+    this.beach_volley = b;
+    this.canoa = b;
+  }
 
   public Servizio(boolean bar, boolean ristorante, boolean animazione, boolean wifi, boolean cabina, boolean beach_volley, boolean canoa) {
     this.bar = bar;
@@ -38,7 +47,7 @@ public class Servizio {
     this.canoa = canoa;
   }
 
-  public boolean isEmpty(){
+  public boolean isAllFalse(){
     if(!(this.bar || this.ristorante || this.animazione || this.wifi || this.cabina || this.beach_volley || this.canoa)){
       return true;
     }else
