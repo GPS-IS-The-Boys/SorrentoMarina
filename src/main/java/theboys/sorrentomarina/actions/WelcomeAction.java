@@ -59,6 +59,8 @@ public class WelcomeAction implements Action {
           return view("index");
         }
       }
+      List<Lido> listaTotale = manager.retriveAll();
+      request.setAttribute("listaLidiTotali",listaTotale);
       response.setStatus(HttpServletResponse.SC_ACCEPTED);
       return view("index");
     } catch (SQLException throwables) {
