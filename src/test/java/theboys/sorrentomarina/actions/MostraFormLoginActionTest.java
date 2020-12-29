@@ -15,7 +15,7 @@ public class MostraFormLoginActionTest extends ActionSetup{
   }
 
   /**
-   * Controlla che la view ritornata è quella corretta, ossia la pagina di Login
+   * Controlla che la view ritornata Ã¨ quella corretta, ossia la pagina di Login
    *
    * @author Francesco Pio Covino
    */
