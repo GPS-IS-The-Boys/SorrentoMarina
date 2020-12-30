@@ -30,15 +30,14 @@
             </div>
           </div>
         </div>
-      </div>
+      </div><!--parte superiore-->
       <div class="header-bottom  header-sticky">
         <div class="container">
           <div class="row align-items-center">
             <!-- Logo -->
             <div class="col-xl-2 col-lg-2 col-md-1">
-              <div>
-                <a href="#"><img src="<c:url value="/images/sorrentoMarina.png"/>" width="120px" height="120px"
-                                 alt=""></a>
+              <div class="logo">
+                <a href="#"><img src="<c:url value="/images/sorrentoMarina.png"/>" width="60px" height="60px" alt=""></a>
               </div>
             </div>
             <div class="col-xl-10 col-lg-10 col-md-10">
@@ -50,17 +49,21 @@
                     <li><a href="">Info</a></li>
                     <c:choose>
                       <c:when test="${utente == null}">
-                        <li><a href="login">Log in</a></li>
+                        <li><a href="login">Login</a></li>
                         <li><a href="registrazione">Registrati</a></li>
                       </c:when>
                       <c:otherwise>
                         <li><a href="#">Account</a>
                           <ul class="submenu">
                             <li><p>Ciao ${utente.username}</p></li>
-                            <li><a href="#">Le mie prenotazioni</a></li>
-                            <li><a href="#">I miei dati</a></li>
+                            <li><a href="prenotazioniTurista">Le mie prenotazioni</a></li>
+                            <li><a href="profilo">I miei dati</a></li>
+                            <li><a href="profilo">Il mio profilo</a></li>
+                            <li><a href="logout">logout</a></li>
+
                           </ul>
                         </li>
+
                       </c:otherwise>
                     </c:choose>
 

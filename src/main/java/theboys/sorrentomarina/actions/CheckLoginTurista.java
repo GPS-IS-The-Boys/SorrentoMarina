@@ -1,5 +1,6 @@
 package theboys.sorrentomarina.actions;
 
+import org.apache.commons.codec.digest.DigestUtils;
 import theboys.sorrentomarina.managers.TableTuristaManager;
 import theboys.sorrentomarina.managers.TuristaManager;
 import theboys.sorrentomarina.models.Turista;
@@ -25,7 +26,7 @@ public class CheckLoginTurista extends ChainableAction {
   public String execute(HttpServletRequest request, HttpServletResponse response) {
     try {
       String username = request.getParameter("username");
-      String password = request.getParameter("password");
+      String password = DigestUtils.sha1Hex(request.getParameter("password"));
       TuristaManager tm = new TableTuristaManager(this.getSource(request));
       Optional<Turista> optTurista = tm.findTurista(username, password);
       if (optTurista.isPresent()) {

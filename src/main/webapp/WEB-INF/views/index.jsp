@@ -91,7 +91,6 @@
                             </div>
                             <div class="place-cap">
                                 <div class="place-cap-top">
-                                    <span><i class="fas fa-star"></i><span></span> </span>
                                     <h3><a href="#">${lidoRicerca.nome}</a></h3>
                                     <p class="dolor">$${lidoRicerca.prezzo_singolo} <span>/ Per Person</span></p>
                                 </div>
@@ -99,6 +98,7 @@
                                     <ul>
                                         <li><i class="far fa-clock"></i>1 Day</li>
                                         <li><i class="fas fa-map-marker-alt"></i>${lidoRicerca.indirizzo}</li>
+                                        <li><button class="genric-btn warning circle">Visita</button></li>
                                     </ul>
                                 </div>
                             </div>
@@ -129,7 +129,6 @@
                                         </div>
                                         <div class="place-cap">
                                             <div class="place-cap-top">
-                                                <span><i class="fas fa-star"></i><span></span> </span>
                                                 <h3><a href="#">${lido.nome}</a></h3>
                                                 <p class="dolor">$${lido.prezzo_singolo} <span>/ Per Person</span></p>
                                             </div>
@@ -137,6 +136,7 @@
                                                 <ul>
                                                     <li><i class="far fa-clock"></i>1 Day</li>
                                                     <li><i class="fas fa-map-marker-alt"></i>${lido.indirizzo}</li>
+                                                    <li><button class="genric-btn warning circle">Visita</button></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -205,141 +205,43 @@
         </div>
         <!-- Our Services End -->
         <!-- Suggeriti Start -->
-        <div class="favourite-place place-padding">
-            <div class="container">
-                <!-- Section Tittle -->
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="section-tittle text-center">
-                            <span>I lidi preferiti dai nostri utenti</span>
-                            <h2>LE METE POPOLARI</h2>
+                <div class="favourite-place place-padding">
+                    <div class="container">
+                        <!-- Section Tittle -->
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="section-tittle text-center">
+                                    <span>I lidi più frequentati</span>
+                                    <h2>METE POPOLARI</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <c:forEach items="${listaLidiTotali}" var="lido">
+                                <div class="col-xl-4 col-lg-4 col-md-6">
+                                    <div class="single-place mb-30">
+                                        <div class="place-img">
+                                            <img src="<c:url value="${lido.logo}"/>" alt="<c:url value="/images/sorrentoFooter.jpg"/>">
+                                        </div>
+                                        <div class="place-cap">
+                                            <div class="place-cap-top">
+                                                <h3><a href="#">${lido.nome}</a></h3>
+                                                <p class="dolor">$${lido.prezzo_singolo} <span>/ Per Person</span></p>
+                                            </div>
+                                            <div class="place-cap-bottom">
+                                                <ul>
+                                                    <li><i class="far fa-clock"></i>1 Day</li>
+                                                    <li><i class="fas fa-map-marker-alt"></i>${lido.indirizzo}</li>
+                                                    <li><button class="genric-btn warning circle">Visita</button></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </c:forEach>
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-xl-4 col-lg-4 col-md-6">
-                        <div class="single-place mb-30">
-                            <div class="place-img">
-                                <img src="<c:url value="/images/sorrentoFooter.jpg"/>" alt="">
-                            </div>
-                            <div class="place-cap">
-                                <div class="place-cap-top">
-                                    <span><i class="fas fa-star"></i><span>8.0 Superb</span> </span>
-                                    <h3><a href="#">The Dark Forest Adventure</a></h3>
-                                    <p class="dolor">$1870 <span>/ Per Person</span></p>
-                                </div>
-                                <div class="place-cap-bottom">
-                                    <ul>
-                                        <li><i class="far fa-clock"></i>3 Days</li>
-                                        <li><i class="fas fa-map-marker-alt"></i>Los Angeles</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-4 col-md-6">
-                        <div class="single-place mb-30">
-                            <div class="place-img">
-                                <img src="<c:url value="/images/sfondoSorrento.jpg"/>" alt="">
-                            </div>
-                            <div class="place-cap">
-                                <div class="place-cap-top">
-                                    <span><i class="fas fa-star"></i><span>8.0 Superb</span> </span>
-                                    <h3><a href="#">The Dark Forest Adventure</a></h3>
-                                    <p class="dolor">$1870 <span>/ Per Person</span></p>
-                                </div>
-                                <div class="place-cap-bottom">
-                                    <ul>
-                                        <li><i class="far fa-clock"></i>3 Days</li>
-                                        <li><i class="fas fa-map-marker-alt"></i>Los Angeles</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-4 col-md-6">
-                        <div class="single-place mb-30">
-                            <div class="place-img">
-                                <img src="<c:url value="/images/sfondoSorrento.jpg"/>" alt="">
-                            </div>
-                            <div class="place-cap">
-                                <div class="place-cap-top">
-                                    <span><i class="fas fa-star"></i><span>8.0 Superb</span> </span>
-                                    <h3><a href="#">The Dark Forest Adventure</a></h3>
-                                    <p class="dolor">$1870 <span>/ Per Person</span></p>
-                                </div>
-                                <div class="place-cap-bottom">
-                                    <ul>
-                                        <li><i class="far fa-clock"></i>3 Days</li>
-                                        <li><i class="fas fa-map-marker-alt"></i>Los Angeles</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-4 col-md-6">
-                        <div class="single-place mb-30">
-                            <div class="place-img">
-                                <img src="<c:url value="/images/sorrentoFooter.jpg"/>" alt="">
-                            </div>
-                            <div class="place-cap">
-                                <div class="place-cap-top">
-                                    <span><i class="fas fa-star"></i><span>8.0 Superb</span> </span>
-                                    <h3><a href="#">The Dark Forest Adventure</a></h3>
-                                    <p class="dolor">$1870 <span>/ Per Person</span></p>
-                                </div>
-                                <div class="place-cap-bottom">
-                                    <ul>
-                                        <li><i class="far fa-clock"></i>3 Days</li>
-                                        <li><i class="fas fa-map-marker-alt"></i>Los Angeles</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-4 col-md-6">
-                        <div class="single-place mb-30">
-                            <div class="place-img">
-                                <img src="<c:url value="/images/sorrentoFooter.jpg"/>" alt="">
-                            </div>
-                            <div class="place-cap">
-                                <div class="place-cap-top">
-                                    <span><i class="fas fa-star"></i><span>8.0 Superb</span> </span>
-                                    <h3><a href="#">The Dark Forest Adventure</a></h3>
-                                    <p class="dolor">$1870 <span>/ Per Person</span></p>
-                                </div>
-                                <div class="place-cap-bottom">
-                                    <ul>
-                                        <li><i class="far fa-clock"></i>3 Days</li>
-                                        <li><i class="fas fa-map-marker-alt"></i>Los Angeles</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-4 col-md-6">
-                        <div class="single-place mb-30">
-                            <div class="place-img">
-                                <img src="<c:url value="/images/sfondoSorrento.jpg"/>" alt="">
-                            </div>
-                            <div class="place-cap">
-                                <div class="place-cap-top">
-                                    <span><i class="fas fa-star"></i><span>8.0 Superb</span> </span>
-                                    <h3><a href="#">The Dark Forest Adventure</a></h3>
-                                    <p class="dolor">$1870 <span>/ Per Person</span></p>
-                                </div>
-                                <div class="place-cap-bottom">
-                                    <ul>
-                                        <li><i class="far fa-clock"></i>3 Days</li>
-                                        <li><i class="fas fa-map-marker-alt"></i>Los Angeles</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
         <!-- Favourite Places End -->
         <!-- Support Company Start-->
         <div class="support-company-area support-padding fix">
