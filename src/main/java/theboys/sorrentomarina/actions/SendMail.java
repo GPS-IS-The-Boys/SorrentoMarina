@@ -7,12 +7,12 @@ public class SendMail {
   private String oggetto;
   private String msg;
   private String dest;
-  private static final String mittente ="ConsorzioSorrentoMarina@gmail.com";
+  private static final String mittente = "ConsorzioSorrentoMarina@gmail.com";
 
-  public SendMail(String oggetto, String msg, String dest){
-    this.oggetto=oggetto;
-    this.msg=msg;
-    this.dest=dest;
+  public SendMail(String oggetto, String msg, String dest) {
+    this.oggetto = oggetto;
+    this.msg = msg;
+    this.dest = dest;
   }
 
   public void send() throws EmailException {

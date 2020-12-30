@@ -16,6 +16,7 @@ public interface PrenotazioneManager {
   void update(Prenotazione prenotazione) throws SQLException;
   void delete(int id) throws SQLException;
 
+
   //BUSINESS
   int prenotazioniTotali() throws SQLException;
   float incassoConsorzio() throws SQLException;

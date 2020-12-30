@@ -49,11 +49,12 @@ public class Servizio {
     this.canoa = canoa;
   }
 
-  public boolean isAllFalse(){
-    if(!(this.bar || this.ristorante || this.animazione || this.wifi || this.cabina || this.beach_volley || this.canoa)){
-      return true;
-    }else
-      return false;
-  }
 
+  public boolean isEmpty() {
+    if (!(this.bar || this.ristorante || this.animazione || this.wifi || this.cabina || this.beach_volley || this.canoa)) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 }
