@@ -19,19 +19,13 @@ public class TableRecensioneManagerTest extends IntegrationTestCase{
   TableRecensioneManager manager;
 
   /**
-   * Metodo che inizializza un TableAnnuncioManager
-   *
-   */
-  @BeforeEach
-  public void init() { manager=new TableRecensioneManager(mockDb); }
-
-  /**
    * Metodo che testa il create inserendo una recensione nel database
    * e poi verificando che essa sia presente
    *
    */
   @Test
   public void createTest() throws SQLException{
+    manager = new TableRecensioneManager(mockDb);
     manager.create(3,"ContenutoTest",1,1);
     Recensione recensione = manager.retriveById(6);
     assertNotNull(recensione,"It should find the Recensione");
@@ -44,6 +38,7 @@ public class TableRecensioneManagerTest extends IntegrationTestCase{
    */
   @Test
   public void retriveByIdTest() throws SQLException {
+    manager = new TableRecensioneManager(mockDb);
     Recensione recensione = manager.retriveById(1);
     assertNotNull(recensione, "It should find the Annuncio");
   }
@@ -55,8 +50,9 @@ public class TableRecensioneManagerTest extends IntegrationTestCase{
    */
   @Test
   public void retriveById_LidoTest() throws SQLException{
+    manager = new TableRecensioneManager(mockDb);
     List<Recensione> lista = manager.retriveById_Lido(1);
-    assertEquals(lista.size(),2,"It should return a list of length 2");
+    assertEquals( 2, lista.size(),"It should return a list of length 2");
   }
 
   /**
@@ -66,8 +62,9 @@ public class TableRecensioneManagerTest extends IntegrationTestCase{
    */
   @Test
   public void retriveById_TuristaTest() throws SQLException{
+    manager = new TableRecensioneManager(mockDb);
     List<Recensione> lista = manager.retriveById_Turista(1);
-    assertEquals(lista.size(),2,"It should return a list of length 2");
+    assertEquals(2,lista.size(),"It should return a list of length 2");
   }
 
   /**
@@ -77,8 +74,9 @@ public class TableRecensioneManagerTest extends IntegrationTestCase{
    */
   @Test
   public void retriveAllTest() throws SQLException{
+    manager = new TableRecensioneManager(mockDb);
     List<Recensione> lista = manager.retriveAll();
-    assertEquals(lista.size(),3,"It should return a list of length 4");
+    assertEquals(3,lista.size(),"It should return a list of length 4");
   }
 
   /**
@@ -88,11 +86,12 @@ public class TableRecensioneManagerTest extends IntegrationTestCase{
    */
   @Test
   public void updateTest() throws SQLException{
-    Recensione recensione = manager.retriveById(1);
-    recensione.setContenuto("Contenuto");
+    manager = new TableRecensioneManager(mockDb);
+    Recensione recensione = new Recensione(1,3,"Struttura sufficiente",1,1);
+    recensione.setGiudizio(5);
     manager.update(recensione);
-    Recensione recensione1= manager.retriveById(1);
-    assertEquals(recensione,recensione1,"It should return the same Recensione");
+    recensione= manager.retriveById(1);
+    assertEquals(5,recensione.getGiudizio(),"It should return the same Recensione");
   }
 
   /**
@@ -102,8 +101,10 @@ public class TableRecensioneManagerTest extends IntegrationTestCase{
    */
   @Test
   public void deleteTest() throws SQLException{
-    manager.delete(3);
-    assertNull(manager.retriveById(3),"It should return null");
+    manager = new TableRecensioneManager(mockDb);
+    manager.delete(1);
+    Recensione recensione = manager.retriveById(1);
+    assertNull(recensione,"It should return null");
   }
 
   /**
@@ -113,6 +114,7 @@ public class TableRecensioneManagerTest extends IntegrationTestCase{
    */
   @Test
   public void deleteTestById_Lido() throws SQLException{
+    manager = new TableRecensioneManager(mockDb);
     manager.deleteById_Lido(3);
     assertEquals(manager.retriveById_Lido(3).size(),0,"It should return an empty list");
   }
@@ -124,6 +126,7 @@ public class TableRecensioneManagerTest extends IntegrationTestCase{
    */
   @Test
   public void deleteTestById_Turista() throws SQLException{
+    manager = new TableRecensioneManager(mockDb);
     manager.deleteById_Turista(4);
     assertEquals(manager.retriveById_Lido(4).size(),0,"It should return an empty list");
   }

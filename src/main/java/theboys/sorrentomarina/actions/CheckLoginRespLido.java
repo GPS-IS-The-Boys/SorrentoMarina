@@ -28,7 +28,7 @@ public class CheckLoginRespLido extends ChainableAction {
       ResponsabileLidoManager lm = new TableResponsabileLidoManager(this.getSource(request));
       Optional<ResponsabileLido> opt = lm.findResponsabileLido(username, password);
       if (opt.isPresent()) {
-        request.getSession().setAttribute("utente", opt.get());
+        request.getSession().setAttribute("adminLido", opt.get());
         return view("admin/index");
       } else {
         setNext(new CheckLoginRespEnte());

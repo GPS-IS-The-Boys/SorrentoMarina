@@ -7,6 +7,9 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.mockito.Mockito;
 
+import java.io.FileNotFoundException;
+import java.sql.SQLException;
+
 /**
  * @author theBoys
  */
@@ -14,7 +17,7 @@ public class ChainableActionTest extends ActionSetup {
 
   @Override
   @BeforeEach
-  public void setup() {
+  public void setup(){
     super.setup();
   }
 

@@ -1,21 +1,16 @@
 package theboys.sorrentomarina.actions;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import org.mockito.Mockito;
+
+import javax.servlet.ServletContext;
+
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class RegistrazioneActionTest extends ActionSetup {
+public class RegistrazioneActionTest extends ActionSetupDB {
 
   private RegistrazioneAction rgAction;
-
-  @Override
-  @BeforeEach
-  public void setup() {
-    rgAction = new RegistrazioneAction();
-    super.setup();
-  }
 
   /**
    * Test nel caso il nome sia non corretto
@@ -28,6 +23,11 @@ public class RegistrazioneActionTest extends ActionSetup {
     Mockito.when(mockReq.getParameter("username")).thenReturn("mimmuzzo");
     Mockito.when(mockReq.getParameter("password")).thenReturn("Marioooo1");
     Mockito.when(mockReq.getParameter("passwordConferma")).thenReturn("Marioooo1");
+
+    ServletContext ctx = Mockito.mock(ServletContext.class);
+    Mockito.when(ctx.getAttribute("db")).thenReturn(mockConnection);
+    Mockito.when(mockReq.getServletContext()).thenReturn(ctx);
+    rgAction = new RegistrazioneAction();
     String page = this.rgAction.execute(mockReq, mockRes);
     assertEquals("/WEB-INF/views/registrazione.jsp", page);
   }
@@ -43,6 +43,7 @@ public class RegistrazioneActionTest extends ActionSetup {
     Mockito.when(mockReq.getParameter("username")).thenReturn("mimmuzzo");
     Mockito.when(mockReq.getParameter("password")).thenReturn("Marioooo1");
     Mockito.when(mockReq.getParameter("passwordConferma")).thenReturn("Marioooo1");
+    rgAction = new RegistrazioneAction();
     String page = this.rgAction.execute(mockReq, mockRes);
     assertEquals("/WEB-INF/views/registrazione.jsp", page);
   }
@@ -58,6 +59,12 @@ public class RegistrazioneActionTest extends ActionSetup {
     Mockito.when(mockReq.getParameter("username")).thenReturn("mimmuzzo");
     Mockito.when(mockReq.getParameter("password")).thenReturn("Marioooo1");
     Mockito.when(mockReq.getParameter("passwordConferma")).thenReturn("Marioooo1");
+
+    Mockito.when(mockReq.getSession()).thenReturn(mockSession);
+    ServletContext ctx = Mockito.mock(ServletContext.class);
+    Mockito.when(ctx.getAttribute("db")).thenReturn(mockConnection);
+    Mockito.when(mockReq.getServletContext()).thenReturn(ctx);
+    rgAction = new RegistrazioneAction();
     String page = this.rgAction.execute(mockReq, mockRes);
     assertEquals("/WEB-INF/views/registrazione.jsp", page);
   }
@@ -73,6 +80,12 @@ public class RegistrazioneActionTest extends ActionSetup {
     Mockito.when(mockReq.getParameter("username")).thenReturn("mim");
     Mockito.when(mockReq.getParameter("password")).thenReturn("Marioooo1");
     Mockito.when(mockReq.getParameter("passwordConferma")).thenReturn("Marioooo1");
+
+    Mockito.when(mockReq.getSession()).thenReturn(mockSession);
+    ServletContext ctx = Mockito.mock(ServletContext.class);
+    Mockito.when(ctx.getAttribute("db")).thenReturn(mockConnection);
+    Mockito.when(mockReq.getServletContext()).thenReturn(ctx);
+    rgAction = new RegistrazioneAction();
     String page = this.rgAction.execute(mockReq, mockRes);
     assertEquals("/WEB-INF/views/registrazione.jsp", page);
   }
@@ -88,6 +101,12 @@ public class RegistrazioneActionTest extends ActionSetup {
     Mockito.when(mockReq.getParameter("username")).thenReturn("mimmuzzo");
     Mockito.when(mockReq.getParameter("password")).thenReturn("Mario1");
     Mockito.when(mockReq.getParameter("passwordConferma")).thenReturn("Marioooo1");
+
+    Mockito.when(mockReq.getSession()).thenReturn(mockSession);
+    ServletContext ctx = Mockito.mock(ServletContext.class);
+    Mockito.when(ctx.getAttribute("db")).thenReturn(mockConnection);
+    Mockito.when(mockReq.getServletContext()).thenReturn(ctx);
+    rgAction = new RegistrazioneAction();
     String page = this.rgAction.execute(mockReq, mockRes);
     assertEquals("/WEB-INF/views/registrazione.jsp", page);
   }
@@ -103,6 +122,11 @@ public class RegistrazioneActionTest extends ActionSetup {
     Mockito.when(mockReq.getParameter("username")).thenReturn("mimmuzzo");
     Mockito.when(mockReq.getParameter("password")).thenReturn("Marioooo1");
     Mockito.when(mockReq.getParameter("passwordConferma")).thenReturn("Marioooo1");
+    Mockito.when(mockReq.getSession()).thenReturn(mockSession);
+    ServletContext ctx = Mockito.mock(ServletContext.class);
+    Mockito.when(ctx.getAttribute("db")).thenReturn(mockConnection);
+    Mockito.when(mockReq.getServletContext()).thenReturn(ctx);
+    rgAction = new RegistrazioneAction();
     String page = this.rgAction.execute(mockReq, mockRes);
     assertEquals("/WEB-INF/views/index.jsp", page);
   }

@@ -23,7 +23,9 @@ public class TablePrenotazioneManager extends TableManager implements Prenotazio
   }
 
   @Override
-  public void create(int id, String data_inizio, String data_fine, int num_posti, float costo, int id_lido, int id_turista) throws SQLException {
+  public void create(int id, String data_inizio, String data_fine, int num_posti,
+                     float costo, int id_lido, int id_turista)
+      throws SQLException {
     runner.update("INSERT INTO PRENOTAZIONE VALUES (?,?,?,?,?,?,?)", id, data_inizio, data_fine, num_posti, costo, id_lido, id_turista);
   }
 
@@ -37,9 +39,10 @@ public class TablePrenotazioneManager extends TableManager implements Prenotazio
     Prenotazione prenotazione = runner.query("SELECT * FROM PRENOTAZIONE WHERE id=?", PRE_MAPPER, id);
     return prenotazione;
   }
+
   @Override
-  public List<Prenotazione> retriveByIdTurista(int id_turista) throws SQLException{
-    List<Prenotazione> lista = runner.query("SELECT * FROM PRENOTAZIONE WHERE id_turista=?",PRE_MAPPER_LIST,id_turista);
+  public List<Prenotazione> retriveByIdTurista(int id_turista) throws SQLException {
+    List<Prenotazione> lista = runner.query("SELECT * FROM PRENOTAZIONE WHERE id_turista=?", PRE_MAPPER_LIST, id_turista);
     return lista;
   }
 
@@ -87,11 +90,12 @@ public class TablePrenotazioneManager extends TableManager implements Prenotazio
 
   @Override
   public int ombrelloniDisponibili(String inizio, String fine, Lido lido) throws SQLException {
-    String sql = "SELECT COUNT(o.id) AS num_posti " +
-        "       FROM OMBRELLONE AS o " +
-        "       WHERE o.id_prenotazione IN ( SELECT p.id " +
-        "                                    FROM PRENOTAZIONE AS p, LIDO AS l " +
-        "                                    WHERE p.id_lido =" + lido.getId() + " AND p.data_inizio>='" + inizio + "' AND p.data_fine<='" + fine + "')";
+    String sql = "SELECT COUNT(o.id) AS num_posti "
+        + "       FROM OMBRELLONE AS o "
+        + "       WHERE o.id_prenotazione IN ( SELECT p.id "
+        + "                                    FROM PRENOTAZIONE AS p, LIDO AS l "
+        + "                                    WHERE p.id_lido =" + lido.getId() + " AND p.data_inizio>='"
+        + inizio + "' AND p.data_fine<='" + fine + "')";
     Prenotazione prenotazione = runner.query(sql, PRE_MAPPER);
     int ombrelloniTotali = lido.getNum_colonne() * lido.getNum_righe();
     return ombrelloniTotali - prenotazione.getNum_posti();

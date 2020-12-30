@@ -30,6 +30,8 @@ public class PageActionFactory implements ActionFactory {
         return new MostraProfiloAction();
       case "PrenotazioniTurista":
         return new ShowPrenotazioniTurista();
+      case "ModificaCredenziali":
+        return new ModificaCredenzialiAction();
       default:
         return new WelcomeAction();
     }
