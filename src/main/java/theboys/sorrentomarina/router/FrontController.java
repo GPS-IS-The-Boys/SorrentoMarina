@@ -13,6 +13,11 @@ import javax.servlet.http.HttpServletResponse;
 import javax.sql.DataSource;
 
 import theboys.sorrentomarina.actions.PageActionFactory;
+import theboys.sorrentomarina.managers.LidoManager;
+import theboys.sorrentomarina.managers.ServizioManager;
+import theboys.sorrentomarina.managers.TableLidoManager;
+import theboys.sorrentomarina.managers.TableServizioManager;
+import theboys.sorrentomarina.models.Lido;
 
 /**
  * @author theboys
@@ -30,15 +35,15 @@ public class FrontController extends HttpServlet {
   public void init() throws ServletException {
     getServletContext().setAttribute("db", dataSource);
     ROUTER.get("/", PAF.create("WelcomeAction"));
+    ROUTER.get("/index", PAF.create("WelcomeAction"));
     ROUTER.get("/dashboard", PAF.create("AdminDashboard"));
     ROUTER.get("/registrazione", PAF.create("MostraFormRegistrazioneAction"));
     ROUTER.post("/registrazione_account", PAF.create("RegistrazioneAction"));
     ROUTER.get("/login", PAF.create("MostraFormLoginAction"));
     ROUTER.post("/login_account", PAF.create("CheckLogin"));
-    ROUTER.get("/logout", PAF.create("LogoutAction"));
-    ROUTER.get("/profilo", PAF.create("MostraProfilo"));
     ROUTER.get("/prenotazioniTurista",PAF.create("PrenotazioniTurista"));
-
+    ROUTER.get("/lido", PAF.create("LidoAction"));
+    ROUTER.get("/annunciLido", PAF.create("AnnunciLidoAction"));
   }
 
   @Override

@@ -50,7 +50,7 @@ public class Servizio {
   }
 
 
-  public boolean isEmpty() {
+  public boolean isAllFalse() {
     if (!(this.bar || this.ristorante || this.animazione || this.wifi || this.cabina || this.beach_volley || this.canoa)) {
       return true;
     } else {
