@@ -61,12 +61,6 @@ public class TablePrenotazioneManager extends TableManager implements Prenotazio
   }
 
   @Override
-  public List<Prenotazione> retriveByIdTurista(int id) throws SQLException {
-    List<Prenotazione> lista = runner.query("SELECT * FROM PRENOTAZIONE WHERE id_turista", PRE_MAPPER_LIST, id);
-    return lista;
-  }
-
-  @Override
   public int prenotazioniTotali() throws SQLException {
     Prenotazione prenotazione = runner.query("SELECT count(id) AS costo FROM PRENOTAZIONE", PRE_MAPPER);
     return (int) prenotazione.getCosto();
