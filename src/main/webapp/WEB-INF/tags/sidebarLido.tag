@@ -10,28 +10,28 @@
     <!-- Prenotazione -->
     <li class="nav-item">
         <a class="nav-link" href="">
-            <i class="fas fa-fw fa-table"></i>
+            <i class="fas fa-book-open"></i>
             <span>Prenotazione</span></a>
     </li>
 
     <!-- Annunci -->
     <li class="nav-item">
-        <a class="nav-link" href="">
-            <i class="fas fa-fw fa-table"></i>
+        <a class="nav-link" href="annunciLido">
+            <i class="fas fa-ad"></i>
             <span>Annunci</span></a>
     </li>
 
     <!-- Recensioni -->
     <li class="nav-item">
         <a class="nav-link" href="">
-            <i class="fas fa-fw fa-table"></i>
+            <i class="fa fa-comments"></i>
             <span>Recensioni</span></a>
     </li>
 
     <!-- Previsione Meteo -->
     <li class="nav-item">
         <a class="nav-link" href="">
-            <i class="fas fa-fw fa-chart-area"></i>
+            <i class="fas fa-sun"></i>
             <span>Meteo</span></a>
     </li>
 

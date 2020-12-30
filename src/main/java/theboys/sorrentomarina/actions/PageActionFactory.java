@@ -26,6 +26,8 @@ public class PageActionFactory implements ActionFactory {
         return new CheckLoginTurista();
       case "LidoAction":
         return new LidoAction();
+      case "AnnunciLidoAction":
+        return new AnnunciLidoAction();
       default:
         return new WelcomeAction();
     }

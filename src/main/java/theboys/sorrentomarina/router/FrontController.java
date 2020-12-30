@@ -13,6 +13,11 @@ import javax.servlet.http.HttpServletResponse;
 import javax.sql.DataSource;
 
 import theboys.sorrentomarina.actions.PageActionFactory;
+import theboys.sorrentomarina.managers.LidoManager;
+import theboys.sorrentomarina.managers.ServizioManager;
+import theboys.sorrentomarina.managers.TableLidoManager;
+import theboys.sorrentomarina.managers.TableServizioManager;
+import theboys.sorrentomarina.models.Lido;
 
 /**
  * @author theboys
@@ -38,6 +43,7 @@ public class FrontController extends HttpServlet {
     ROUTER.post("/login_account", PAF.create("CheckLogin"));
     ROUTER.get("/prenotazioniTurista",PAF.create("PrenotazioniTurista"));
     ROUTER.get("/lido", PAF.create("LidoAction"));
+    ROUTER.get("/annunciLido", PAF.create("AnnunciLidoAction"));
   }
 
   @Override

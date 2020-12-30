@@ -3,10 +3,10 @@
 
 <sm:layout title="Lido ${lido.nome}" admin="false">
     <sm:header/>
-<div id="wrapper">
+<div id="wrapper" >
         <sm:sidebarLido/>
     <!-- Content Wrapper -->
-    <div id="content-wrapper" class="d-flex flex-column">
+    <div id="content-wrapper" class="d-flex flex-column ">
 
         <!-- Main Content -->
         <div id="content">
@@ -18,18 +18,69 @@
                             <div class="blog_center_sidebar">
 
                                 <article class="blog_item">
-                                    <div>
-                                        <img src="<c:url value="/images/sorrentoMarina.png"/>" width="150" height="150" alt="">
-                                        <h3 class="text-heading"> Lido Marinella</h3>
+                                    <div class="place-img ">
+                                        <img src="${lido.logo}" alt="" width="40%" height="40%">
+                                        <h3 class="mb-30"> Lido ${lido.nome}</h3>
                                     </div>
                                     <div class="blog_details">
-                                            <h2>Descrizione</h2>
-                                        <p>That dominion stars lights dominion divide years for fourth have don't stars is that
-                                            he earth it first without heaven in place seed it second morning saying.</p>
-                                        <ul class="blog-info-link">
-                                            <li><a href="#"><i class="fa fa-user"></i> Travel, Lifestyle</a></li>
-                                            <li><a href="#"><i class="fa fa-comments"></i> 03 Comments</a></li>
-                                        </ul>
+                                        <h4>Descrizione</h4>
+                                        <p>
+                                            ${lido.nome}, stabilimento balneare situato a Marina Di Sorrento. La sua meravigliosa spiaggia, accompagnata dalle comodità offerte dal
+                                            lido contribuiranno a rende piacevole il tuo meritato relax.
+                                        </p>
+                                        <div>
+                                            <i class="fas fa-map-marker-alt"></i>     Indirizzo: ${lido.indirizzo}
+                                        </div>
+                                        <div>
+                                            <i class="fas fa-phone-alt"></i>    Telefono: ${lido.telefono}
+                                        </div>
+                                        <div>
+                                            <i class="fas fa-envelope"></i>    Email: ${lido.email}
+                                        </div>
+                                        <div class="-align-right">
+                                            <i class="fas fa-money-bill-alt"></i>    Prezzo a persona: ${lido.prezzo_singolo}$
+                                        </div>
+                                    </div>
+                                    <div class="blog_details">
+                                        <h4>Servizi</h4>
+                                        <p>
+                                            Il lido ${lido.nome} offre alla sua clientela questi servizi:
+                                        </p>
+                                        <c:if test="${serviziLido.bar}">
+                                            <div>
+                                                <i class="fas fa-coffee"></i>Bar
+                                            </div>
+                                        </c:if>
+                                        <c:if test="${serviziLido.ristorante}">
+                                            <div>
+                                                <i class="fas fa-pizza-slice"></i>Ristorante
+                                            </div>
+                                        </c:if>
+                                        <c:if test="${serviziLido.animazione}">
+                                            <div>
+                                                <i class="fas fa-gamepad"></i>Animazione
+                                            </div>
+                                        </c:if>
+                                        <c:if test="${serviziLido.wifi}">
+                                            <div>
+                                                <i class="fas fa-wifi"></i>Wi-Fi
+                                            </div>
+                                        </c:if>
+                                        <c:if test="${serviziLido.cabina}">
+                                            <div>
+                                                <i class="fas fa-home"></i>Cabina
+                                            </div>
+                                        </c:if>
+                                        <c:if test="${serviziLido.beach_volley}">
+                                            <div>
+                                                <i class="fas fa-volleyball-ball"></i>Beach-Volley
+                                            </div>
+                                        </c:if>
+                                        <c:if test="${serviziLido.canoa}">
+                                            <div>
+                                                <i class="fas fa-ship"></i>Canoa
+                                            </div>
+                                        </c:if>
                                     </div>
                                 </article>
 
