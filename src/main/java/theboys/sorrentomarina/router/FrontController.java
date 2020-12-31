@@ -30,6 +30,7 @@ public class FrontController extends HttpServlet {
   public void init() throws ServletException {
     getServletContext().setAttribute("db", dataSource);
     ROUTER.get("/", PAF.create("WelcomeAction"));
+    ROUTER.get("/index", PAF.create("WelcomeAction"));
     ROUTER.get("/dashboard", PAF.create("AdminDashboard"));
     ROUTER.get("/registrazione", PAF.create("MostraFormRegistrazioneAction"));
     ROUTER.post("/registrazione_account", PAF.create("RegistrazioneAction"));
@@ -41,6 +42,9 @@ public class FrontController extends HttpServlet {
     ROUTER.post("/modificaCredenziali", PAF.create("ModificaCredenziali"));
     ROUTER.get("/lido", PAF.create("LidoAction"));
     ROUTER.get("/annunciLido", PAF.create("AnnunciLidoAction"));
+    ROUTER.get("/dettagliAnnuncio", PAF.create("DettagliAnnuncioAction"));
+    ROUTER.get("/recensioniLido", PAF.create("RecensioniLidoAction"));
+    ROUTER.get("/formRecensione", PAF.create("MostraFormRecensione"));
   }
 
   @Override

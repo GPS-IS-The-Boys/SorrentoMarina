@@ -21,11 +21,11 @@
                                     <c:forEach items="${listaAnnunci}" var="annuncio">
                                     <article class="blog_item">
                                         <div class="blog_details">
-                                            <a class="d-inline-block" href="#">
+                                            <a class="d-inline-block" href="dettagliAnnuncio?idAnnuncio=${annuncio.id}">
                                                 <h4 class="mb-10">${annuncio.titolo}</h4>
                                             </a>
                                             <ul class="blog-info-link">
-                                                <li><a href="#"><i class="fa fa-book-reader"></i> Dettagli </a></li>
+                                                <li><a href="dettagliAnnuncio?idAnnuncio=${annuncio.id}"><i class="fa fa-book-reader"></i> Dettagli </a></li>
                                             </ul>
                                         </div>
                                     </article>
