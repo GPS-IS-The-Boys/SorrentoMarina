@@ -3,73 +3,244 @@
 
 <sm:layout title="HomePage" admin="false">
   <sm:header/>
-  <div class="container">
+  <c:choose>
+    <c:when test="${adminLido != null}">
+      <div class="container">
 
-    <div class="row py-5 mt-4 align-items-center">
-      <!-- sezione di sinistra -->
-      <div class="col-md-3 pr-lg-3 mb-3 mb-md-0" style="box-shadow: 8px 8px 5px 5px #dedede;">
-        <h1> menu di sinistra</h1>
-        <p>Gestisci il tuo profilo.</p>
-        <ul>
-          <li><a href=""><span><i class="fa fa-user"></i>Modifica Credenziali</span></a></li>
-          <li><a href=""><span><i class="fa fa-chart-bar"></i>Storico Prenotazioni</span></a></li>
-          <li><a href=""><span><i class="fa fa-lock"></i>Dati Personali</span></a></li>
-        </ul>
-      </div>
-
-      <!-- Sezione di destra -->
-      <div class="col-md-9 col-lg-8 ml-auto">
-        <h2>Destra</h2>
-          <div class="row">
-            <p>Benvenuti nella sezione dedicata al tuo profilo</p>
-          </div>
-          <div class="row">
-            <h1> Ciao ${utente.nome} ${utente.cognome} </h1>
-            <br>
-            <h2> ${utente.email}</h2>
-            <!-- Divider Text -->
-            <div class="form-group col-lg-12 mx-auto d-flex align-items-center my-4">
-              <div class="border-bottom w-100 ml-5"></div>
-              <span class="px-2 small text-muted font-weight-bold text-muted">OPPURE</span>
-              <div class="border-bottom w-100 mr-5"></div>
-            </div>
-
-            <div class="container"><h1>Bootstrap  tab panel example (using nav-pills)  </h1></div>
+        <div class="row py-5 mt-4 align-items-center">
+          <!-- sezione di sinistra -->
+          <div class="col-md-3 pr-lg-3 mb-3" style="box-shadow: 8px 8px 5px 5px #dedede;">
+            <h1>Il tuo men&ugrave;</h1>
+            <p>Gestisci il tuo profilo.</p>
             <div id="exTab1" class="container">
-              <ul  class="nav nav-pills">
+              <ul class="nav nav-pills">
                 <li class="active">
-                  <a  href="#1a" data-toggle="tab">Overview</a>
+                  <a href="#1a" style="font-size: 20px" data-toggle="tab"><span><i class="fa fa-lock"></i>Dati Personali</span></a>
                 </li>
-                <li><a href="#2a" data-toggle="tab">Using nav-pills</a>
+                <li><a href="#2a" style="font-size: 20px" data-toggle="tab"><span><i class="fa fa-user"></i>Modifica Credenziali</span></a>
                 </li>
-                <li><a href="#3a" data-toggle="tab">Applying clearfix</a>
-                </li>
-                <li><a href="#4a" data-toggle="tab">Background color</a>
+                <li><a href="dashboard" style="font-size: 20px"><span><i class="fa fa-chart-bar"></i>Dashboard</span></a>
                 </li>
               </ul>
-
+            </div>
+          </div>
+          <!-- Sezione di destra -->
+          <div class="col-md-9 col-lg-8 ml-auto">
+            <h1> Ciao ${adminLido.nome} ${adminLido.cognome}!</h1>
+            <div class="row">
+              <p>Questa &egrave; la sezione dedicata al tuo profilo.
+                <br> Puoi controllare i tuoi dati personali, modificare le tue credenziali.
+                <br> Se vuoi controllare lo stato del tuo lido vai alla dashboard.
+              </p>
+            </div>
+            <div class="row">
               <div class="tab-content clearfix">
                 <div class="tab-pane active" id="1a">
-                  <h3>Content's background color is the same for the tab</h3>
+                  <h3>Email: ${adminLido.email}</h3><br>
+                  <h3>Username: ${adminLido.username}</h3><br>
                 </div>
                 <div class="tab-pane" id="2a">
-                  <h3>We use the class nav-pills instead of nav-tabs which automatically creates a background color for the tab</h3>
-                </div>
-                <div class="tab-pane" id="3a">
-                  <h3>We applied clearfix to the tab-content to rid of the gap between the tab and the content</h3>
-                </div>
-                <div class="tab-pane" id="4a">
-                  <h3>We use css to change the background color of the content to be equal to the tab</h3>
+                  <h2>Modifica Credenziali</h2>
+                  <form action="modificaCredenziali" name="modificaCredenzialiForm" id="modificaCredenzialiForm" method="post">
+                    <div class="row">
+                      <p>Inserisci la vecchia password e la nuova
+                        <br> *ricorda* la password di almeno 6 lettere, contenente almeno una maiuscola e un numero
+                      </p>
+                    </div>
+                    <div class="row">
+                      <!-- vecchia password -->
+                      <div class="input-group col-lg-6 mb-4">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                <i class="fa fa-lock-open text-muted"></i>
+                            </span>
+                        </div>
+                        <input type="password" name="oldPassword" class="form-control bg-white border-left-0 border-md" id="oldPassword" placeholder="Password Attuale" required>
+                      </div>
+
+                      <!-- nuova password -->
+                      <div class="input-group col-lg-6 mb-4">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                <i class="fa fa-lock text-muted"></i>
+                            </span>
+                        </div>
+                        <input type="password" name="newPassword"
+                               class="form-control bg-white border-left-0 border-md" placeholder="Password Nuova" required
+                               id="newPassword">
+                      </div>
+
+                      <!-- Submit Button -->
+                      <div class="form-group col-lg-12 mx-auto mb-0">
+                        <button type="submit" class="btn-primary btn-block py-2" style="border-radius: 5px">Modifica</button>
+                      </div>
+                    </div>
                 </div>
               </div>
             </div>
-
-
           </div>
+        </div>
+
       </div>
+    </c:when>
+    <c:when test="${adminEnte != null}">
+      <div class="container">
 
-    </div>
+        <div class="row py-5 mt-4 align-items-center">
+          <!-- sezione di sinistra -->
+          <div class="col-md-3 pr-lg-3 mb-3" style="box-shadow: 8px 8px 5px 5px #dedede;">
+            <h1>Il tuo men&ugrave;</h1>
+            <p>Gestisci il tuo profilo.</p>
+            <div id="exTab2" class="container">
+              <ul class="nav nav-pills">
+                <li class="active">
+                  <a href="#1b" style="font-size: 20px" data-toggle="tab"><span><i class="fa fa-lock"></i>Dati Personali</span></a>
+                </li>
+                <li><a href="#2b" style="font-size: 20px" data-toggle="tab"><span><i class="fa fa-user"></i>Modifica Credenziali</span></a>
+                </li>
+                <li><a href="dashboard" style="font-size: 20px"><span><i class="fa fa-chart-bar"></i>Dashboard</span></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- Sezione di destra -->
+          <div class="col-md-9 col-lg-8 ml-auto">
+            <h1> Ciao ${adminEnte.nome} ${adminEnte.cognome}!</h1>
+            <div class="row">
+              <p>Questa &egrave; la sezione dedicata al tuo profilo.
+                <br> Puoi controllare i tuoi dati personali, modificare le tue credenziali.
+                <br> Per visualizzare tutte le info sull'ente vai alla dashboard.
+              </p>
+            </div>
+            <div class="row">
+              <div class="tab-content clearfix">
+                <div class="tab-pane active" id="1b">
+                  <h3>Email: ${utente.email}</h3><br>
+                  <h3>Username: ${utente.username}</h3><br>
+                </div>
+                <div class="tab-pane" id="2b">
+                  <h2>Modifica Credenziali</h2>
+                  <form action="modificaCredenziali" name="modificaCredenzialiForm" id="modificaCredenzialiForm" method="post">
+                    <div class="row">
+                      <p>Inserisci la vecchia password e la nuova
+                        <br> *ricorda* la password di almeno 6 lettere, contenente almeno una maiuscola e un numero
+                      </p>
+                    </div>
+                    <div class="row">
+                      <!-- vecchia password -->
+                      <div class="input-group col-lg-6 mb-4">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                <i class="fa fa-lock-open text-muted"></i>
+                            </span>
+                        </div>
+                        <input type="password" name="oldPassword" class="form-control bg-white border-left-0 border-md" id="oldPassword" placeholder="Password Attuale" required>
+                      </div>
 
-  </div>
+                      <!-- nuova password -->
+                      <div class="input-group col-lg-6 mb-4">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                <i class="fa fa-lock text-muted"></i>
+                            </span>
+                        </div>
+                        <input type="password" name="newPassword"
+                               class="form-control bg-white border-left-0 border-md" placeholder="Password Nuova" required
+                               id="newPassword">
+                      </div>
+
+                      <!-- Submit Button -->
+                      <div class="form-group col-lg-12 mx-auto mb-0">
+                        <button type="submit" class="btn-primary btn-block py-2" style="border-radius: 5px">Modifica</button>
+                      </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </c:when>
+    <c:when test="${utente != null}">
+      <div class="container">
+
+        <div class="row py-5 mt-4 align-items-center">
+          <!-- sezione di sinistra -->
+          <div class="col-md-3 pr-lg-3 mb-3" style="box-shadow: 8px 8px 5px 5px #dedede;">
+            <h1>Il tuo men&ugrave;</h1>
+            <p>Gestisci il tuo profilo.</p>
+            <div id="exTab3" class="container">
+              <ul class="nav nav-pills">
+                <li class="active">
+                  <a href="#1c" style="font-size: 20px" data-toggle="tab"><span><i class="fa fa-lock"></i>Dati Personali</span></a>
+                </li>
+                <li><a href="#2c" style="font-size: 20px" data-toggle="tab"><span><i class="fa fa-user"></i>Modifica Credenziali</span></a>
+                </li>
+                <li><a href="prenotazioniTurista" style="font-size: 20px"><span><i class="fa fa-chart-bar"></i>Storico Prenotazioni</span></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- Sezione di destra -->
+          <div class="col-md-9 col-lg-8 ml-auto">
+            <h1> Ciao ${utente.nome} ${utente.cognome}!</h1>
+            <div class="row">
+              <p>Questa &egrave; la sezione dedicata al tuo profilo.
+                <br> Puoi controllare i tuoi dati personali, modificare le tue credenziali e
+                <br> visualizzare le prenotazioni effettuate.
+              </p>
+            </div>
+            <div class="row">
+              <div class="tab-content clearfix">
+                <div class="tab-pane active" id="1c">
+                  <h3>Email: ${utente.email}</h3><br>
+                  <h3>Username: ${utente.username}</h3><br>
+                </div>
+                <div class="tab-pane" id="2c">
+                  <h2>Modifica Credenziali</h2>
+                  <form action="modificaCredenziali" name="modificaCredenzialiForm" id="modificaCredenzialiForm" method="post">
+                    <div class="row">
+                      <p>Inserisci la vecchia password e la nuova
+                        <br> *ricorda* la password di almeno 6 lettere, contenente almeno una maiuscola e un numero
+                      </p>
+                    </div>
+                    <div class="row">
+                      <!-- vecchia password -->
+                      <div class="input-group col-lg-6 mb-4">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                <i class="fa fa-lock-open text-muted"></i>
+                            </span>
+                        </div>
+                        <input type="password" name="oldPassword" class="form-control bg-white border-left-0 border-md" id="oldPassword" placeholder="Password Attuale" required>
+                      </div>
+
+                      <!-- nuova password -->
+                      <div class="input-group col-lg-6 mb-4">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                <i class="fa fa-lock text-muted"></i>
+                            </span>
+                        </div>
+                        <input type="password" name="newPassword"
+                               class="form-control bg-white border-left-0 border-md" placeholder="Password Nuova" required
+                               id="newPassword">
+                      </div>
+
+                      <!-- Submit Button -->
+                      <div class="form-group col-lg-12 mx-auto mb-0">
+                        <button type="submit" class="btn-primary btn-block py-2" style="border-radius: 5px">Modifica</button>
+                      </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </c:when>
+  </c:choose>
   <sm:footer/>
 </sm:layout>

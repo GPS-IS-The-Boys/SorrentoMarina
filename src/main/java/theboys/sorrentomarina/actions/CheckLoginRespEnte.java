@@ -29,7 +29,7 @@ public class CheckLoginRespEnte extends ChainableAction {
       ResponsabileEnteManager em = new TableResponsabileEnteManager(this.getSource(request));
       Optional<ResponsabileEnte> opt = em.findResponsabileEnte(username, password);
       if (opt.isPresent()) {
-        request.getSession().setAttribute("utente", opt.get());
+        request.getSession().setAttribute("adminEnte", opt.get());
         return view("admin/index");
       }
     } catch (SQLException ex) {

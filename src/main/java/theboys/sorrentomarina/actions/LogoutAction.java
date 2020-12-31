@@ -15,6 +15,8 @@ public class LogoutAction implements Action {
   @Override
   public String execute(HttpServletRequest request, HttpServletResponse response) {
     request.getSession().removeAttribute("utente");
+    request.getSession().removeAttribute("adminLido");
+    request.getSession().removeAttribute("adminEnte");
     return view("index");
   }
 }

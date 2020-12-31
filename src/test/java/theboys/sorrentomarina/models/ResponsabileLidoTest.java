@@ -30,7 +30,7 @@ public class ResponsabileLidoTest {
   @Test
   public void getCognomeTest() {
     String cognome = responsabileLido.getCognome();
-    assertEquals("lavespa", cognome, "Should return Lavespa");
+    assertEquals("Lavespa", cognome, "Should return Lavespa");
   }
 
   @Test

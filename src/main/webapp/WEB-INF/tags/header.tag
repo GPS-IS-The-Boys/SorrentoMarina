@@ -53,11 +53,33 @@
                         <li><a href="login">Log in</a></li>
                         <li><a href="registrazione">Registrati</a></li>
                       </c:when>
+                      <c:when test="${adminLido != null}">
+                        <li><a href="#">Account</a>
+                          <ul class="submenu">
+                            <li><p>Ciao ${adminLido.username}</p></li>
+                            <li><a href="dashboard">Sezione Admin</a></li>
+                            <li><a href="profilo">Il mio profilo</a></li>
+                            <li><a href="logout">logout</a></li>
+                          </ul>
+                        </li>
+                      </c:when>
+                      <c:when test="${adminEnte != null}">
+                        <li><a href="#">Account</a>
+                          <ul class="submenu">
+                            <li><p>Ciao ${adminLido.username}</p></li>
+                            <li><a href="dashboard">Sezione Admin</a></li>
+                            <li><a href="profilo">Il mio profilo</a></li>
+                            <li><a href="logout">logout</a></li>
+                          </ul>
+                        </li>
+                      </c:when>
                       <c:otherwise>
                         <li><a href="#">Account</a>
                           <ul class="submenu">
                             <li><p>Ciao ${utente.username}</p></li>
                             <li><a href="prenotazioniTurista">Le mie prenotazioni</a></li>
+                            <li><a href="profilo">Il mio profilo</a></li>
+                            <li><a href="logout">logout</a></li>
                             <li><a href="#">I miei dati</a></li>
                           </ul>
                         </li>
