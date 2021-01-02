@@ -91,7 +91,7 @@
                             </div>
                             <div class="place-cap">
                                 <div class="place-cap-top">
-                                    <h3><a href="#">${lidoRicerca.nome}</a></h3>
+                                    <h3><a href="lido?id=${lidoRicerca.id}">${lidoRicerca.nome}</a></h3>
                                     <p class="dolor">$${lidoRicerca.prezzo_singolo} <span>/ Per Person</span></p>
                                 </div>
                                 <div class="place-cap-bottom">
@@ -225,7 +225,7 @@
                                         </div>
                                         <div class="place-cap">
                                             <div class="place-cap-top">
-                                                <h3><a href="#">${lido.nome}</a></h3>
+                                                <h3><a href="lido?id=${lido.id}">${lido.nome}</a></h3>
                                                 <p class="dolor">$${lido.prezzo_singolo} <span>/ Per Person</span></p>
                                             </div>
                                             <div class="place-cap-bottom">
