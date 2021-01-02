@@ -16,7 +16,7 @@ public class MostraInfoActionTest extends ActionSetup{
   }
 
   /**
-   * Controlla che la view tornata è corretta
+   * Controlla che la view tornata sia corretta
    */
   @Test
   public void testAction(){

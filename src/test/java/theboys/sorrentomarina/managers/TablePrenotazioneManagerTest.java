@@ -74,8 +74,7 @@ public class TablePrenotazioneManagerTest extends IntegrationTestCase{
   }
 
   /**
-   * Controlla Se il numero di prenotazioni totali è uguale a quello ritornato
-   * @throws SQLException
+   * Controlla che il numero di prenotazioni totali sia uguale a quello ritornato
    */
   @Test
   public void prenotazioniTotaliTest() throws SQLException {
@@ -85,9 +84,8 @@ public class TablePrenotazioneManagerTest extends IntegrationTestCase{
   }
 
   /**
-   * Controlla se il totale del consorzio è la somma di tutti gli incassi
-   * derivati dalle prenotazioni
-   * @throws SQLException
+   * Controlla che il totale del consorzio e la somma di tutti gli incassi
+   * derivati dalle prenotazioni siano uguali
    */
   @Test
   public void incassoConsorzio() throws SQLException {
