@@ -33,6 +33,6 @@ public class MostraProfiloAction implements Action {
       return view("profilo");
     }
 
-    return view("index");
+    return redirect("/SorrentoMarina/");
   }
 }

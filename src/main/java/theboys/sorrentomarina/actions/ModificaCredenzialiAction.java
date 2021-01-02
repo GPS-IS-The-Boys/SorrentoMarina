@@ -22,6 +22,7 @@ public class ModificaCredenzialiAction implements Action {
    */
   @Override
   public String execute(HttpServletRequest request, HttpServletResponse response) {
+    //prendo le due password
     String oldPassword = DigestUtils.sha1Hex(request.getParameter("oldPassword"));
     String newPassword = DigestUtils.sha1Hex(request.getParameter("newPassword"));
 
@@ -45,11 +46,11 @@ public class ModificaCredenzialiAction implements Action {
             tm.update(turista);
             request.getSession().removeAttribute("utente");
             request.setAttribute("messaggio", "Accedi con le nuove credenziali");
-            return view("login");
+            return redirect("/SorrentoMarina/login");
           }
         }
         request.setAttribute("messaggio", "La password attuale non coincide, ricontrolla");
-        return view("profilo");
+        return redirect("/SorrentoMarina/profilo");
       } catch (SQLException throwables) {
         throwables.printStackTrace();
       }
@@ -66,11 +67,11 @@ public class ModificaCredenzialiAction implements Action {
             lm.update(respLido);
             request.getSession().removeAttribute("adminLido");
             request.setAttribute("messaggio", "Accedi con le nuove credenziali");
-            return view("login");
+            return redirect("/SorrentoMarina/login");
           }
         }
         request.setAttribute("messaggio", "La password attuale non coincide, ricontrolla");
-        return view("profilo");
+        return redirect("/SorrentoMarina/profilo");
       } catch (SQLException throwables) {
         throwables.printStackTrace();
       }
@@ -87,11 +88,11 @@ public class ModificaCredenzialiAction implements Action {
             em.update(respEnte);
             request.getSession().removeAttribute("adminEnte");
             request.setAttribute("messaggio", "Accedi con le nuove credenziali");
-            return view("login");
+            return redirect("/SorrentoMarina/login");
           }
         }
         request.setAttribute("messaggio", "La password attuale non coincide, ricontrolla");
-        return view("profilo");
+        return redirect("/SorrentoMarina/profilo");
       } catch (SQLException throwables) {
         throwables.printStackTrace();
       }
