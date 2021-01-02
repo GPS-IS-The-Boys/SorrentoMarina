@@ -67,7 +67,7 @@ public class TableAnnuncioManager extends TableManager implements AnnuncioManage
    */
   @Override
   public List<Annuncio> retriveById_Lido(int id_lido) throws SQLException {
-    List<Annuncio> lista = runner.query("SELECT titolo, contenuto, foto FROM ANNUNCIO WHERE id_lido = ?", ANNUNCIO_MAPPER_LIST, id_lido);
+    List<Annuncio> lista = runner.query("SELECT * FROM ANNUNCIO WHERE id_lido = ?", ANNUNCIO_MAPPER_LIST, id_lido);
     return lista;
   }
 

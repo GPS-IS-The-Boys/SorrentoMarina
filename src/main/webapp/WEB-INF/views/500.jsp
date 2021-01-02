@@ -4,7 +4,7 @@
 
     <div id="500" class="text-center error-page">
         <div class="error mx-auto" data-text="500">500</div>
-        <p class="lead text-gray-800 mb-5">Oops, qualcosa è andato storto!</p>
+        <p class="lead text-gray-800 mb-5">Oops, qualcosa ï¿½ andato storto!</p>
         <a href="/SorrentoMarina/">&larr; Back to Home</a>
     </div>
 

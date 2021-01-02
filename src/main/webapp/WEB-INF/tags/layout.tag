@@ -28,6 +28,8 @@
         <link rel="stylesheet" href="<c:url value="/assets/css/slick.css"/>">
         <link rel="stylesheet" href="<c:url value="/assets/css/nice-select.css"/>">
         <link rel="stylesheet" href="<c:url value="/assets/css/style.css"/>">
+
+        <link rel="stylesheet" href="<c:url value="/css/formPrenotazione.css"/>" type="text/css">
         <!-- JS here -->
 
         <!-- All JS Custom Plugins Link Here here -->

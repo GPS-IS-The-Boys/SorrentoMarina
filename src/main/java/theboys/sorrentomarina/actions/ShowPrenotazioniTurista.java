@@ -11,7 +11,7 @@ import javax.servlet.http.HttpSession;
 import java.sql.SQLException;
 import java.util.List;
 
-public class ShowPrenotazioniTurista implements Action{
+public class ShowPrenotazioniTurista implements Action {
 
   @Override
   public String execute(HttpServletRequest request, HttpServletResponse response) {
@@ -19,7 +19,7 @@ public class ShowPrenotazioniTurista implements Action{
     PrenotazioneManager tablePrenotazioneManager = new TablePrenotazioneManager(this.getSource(request));
     HttpSession session = request.getSession();
     Turista turista = (Turista) session.getAttribute("utente");
-    if(turista != null){
+    if (turista != null) {
       try {
         List<Prenotazione> list = tablePrenotazioneManager.retriveByIdTurista(turista.getId());
         request.setAttribute("prenotazioni", list);
@@ -27,8 +27,7 @@ public class ShowPrenotazioniTurista implements Action{
       } catch (SQLException throwables) {
         return view("500");
       }
-    }
-    else
+    } else
       return view("prenotazioniTurista");
 
   }
