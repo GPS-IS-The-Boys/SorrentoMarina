@@ -15,6 +15,7 @@ public interface PrenotazioneManager {
   List<Prenotazione> retriveAll() throws SQLException;
   void update(Prenotazione prenotazione) throws SQLException;
   void delete(int id) throws SQLException;
+  List<Prenotazione> retriveByIdLido(int id_lido) throws SQLException;
 
 
   //BUSINESS

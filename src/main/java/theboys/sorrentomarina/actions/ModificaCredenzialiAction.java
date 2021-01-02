@@ -31,18 +31,16 @@ public class ModificaCredenzialiAction implements Action {
     ResponsabileLido respLido = (ResponsabileLido) request.getSession().getAttribute("adminLido");
     ResponsabileEnte respEnte = (ResponsabileEnte) request.getSession().getAttribute("adminEnte");
 
-    TuristaManager tm = new TableTuristaManager(this.getSource(request));
-    ResponsabileLidoManager lm = new TableResponsabileLidoManager(this.getSource(request));
-    ResponsabileEnteManager em = new TableResponsabileEnteManager(this.getSource(request));
 
     //controllo se è un turista che sta chiedendo la modifica delle credenziali
     if (turista != null) {
       try {
+        TuristaManager tm = new TableTuristaManager(this.getSource(request));
         Optional<Turista> t2 = tm.findTurista(turista.getUsername(), oldPassword);
         if (t2.isPresent()) {
           turista = t2.get();
-          if (oldPassword.equals(turista.getPassword())) {
-            turista.setPassword(newPassword);
+          if (oldPassword.equals(turista.getPassword_turista())) {
+            turista.setPassword_turista(newPassword);
             tm.update(turista);
             request.getSession().removeAttribute("utente");
             request.setAttribute("messaggio", "Accedi con le nuove credenziali");
@@ -59,6 +57,7 @@ public class ModificaCredenzialiAction implements Action {
     //controllo se è il responsabile lido che sta chiedendo di modificare la password
     if (respLido != null) {
       try {
+        ResponsabileLidoManager lm = new TableResponsabileLidoManager(this.getSource(request));
         Optional<ResponsabileLido> r2 = lm.findResponsabileLido(respLido.getUsername(), oldPassword);
         if (r2.isPresent()) {
           respLido = r2.get();
@@ -80,6 +79,7 @@ public class ModificaCredenzialiAction implements Action {
     //controllo se è il responsabile ente che sta chiedendo di modificare la password
     if (respEnte != null) {
       try {
+        ResponsabileEnteManager em = new TableResponsabileEnteManager(this.getSource(request));
         Optional<ResponsabileEnte> e2 = em.findResponsabileEnte(respEnte.getUsername(), oldPassword);
         if (e2.isPresent()) {
           respEnte = e2.get();

@@ -84,7 +84,7 @@ public class TableTuristaManager extends TableManager implements TuristaManager 
   @Override
   public void update(Turista turista) throws SQLException {
     runner.update("UPDATE TURISTA SET nome = ?,cognome = ?,email = ?,username = ?,password_turista = ? WHERE id = ?",
-        turista.getNome(), turista.getCognome(), turista.getEmail(), turista.getUsername(), turista.getPassword(), turista.getId());
+        turista.getNome(), turista.getCognome(), turista.getEmail(), turista.getUsername(), turista.getPassword_turista(), turista.getId());
   }
 
   /**
@@ -108,7 +108,7 @@ public class TableTuristaManager extends TableManager implements TuristaManager 
    */
   @Override
   public Optional<Turista> findTurista(String username, String password) throws SQLException {
-    Turista turista = runner.query("SELECT * FROM TURISTA WHERE username= ? AND password_turista= ?", TUR_MAPPER, username, password);
-    return Optional.ofNullable(turista);
+    Turista turista= runner.query("SELECT * FROM TURISTA WHERE username= ? AND password_turista= ?", TUR_MAPPER, username, password);
+    return  Optional.ofNullable(turista);
   }
 }
