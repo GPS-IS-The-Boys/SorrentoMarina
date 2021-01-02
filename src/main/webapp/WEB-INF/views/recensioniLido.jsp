@@ -26,18 +26,19 @@
                                                 <div class="row">
                                                     <div class="col-md-3 text-center">
                                                         <img src="/images/userImage.png" width="50%" height="50%">
-                                                        <h4 class="list-group-item-heading"> <c:out value="${entry.key}"/> </h4>
+                                                        <h4 class="list-group-item-heading"> <c:out value="${entry.value}"/> </h4>
                                                     </div>
                                                     <div class="col-md-6">
                                                         <h4 class="list-group-item-heading"> Contenuto </h4>
                                                         <p class="list-group-item-text">
-                                                            <c:out value="${entry.value.contenuto}"/>
+                                                            <c:out value="${entry.key.contenuto}"/>
+
                                                         </p>
                                                     </div>
                                                     <div class="col-md-3 text-center">
                                                         <h4 class="list-group-item-heading"> Giudizio </h4>
                                                         <div class="">
-                                                            <c:forEach begin="1" end="${entry.value.giudizio}" step="1" varStatus="loop">
+                                                            <c:forEach begin="1" end="${entry.key.giudizio}" step="1" varStatus="loop">
                                                             <i class="fas fa-star"></i>
                                                             </c:forEach>
                                                         </div>
