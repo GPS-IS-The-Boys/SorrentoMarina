@@ -30,7 +30,7 @@ public class CheckLoginRespEnte extends ChainableAction {
       Optional<ResponsabileEnte> opt = em.findResponsabileEnte(username, password);
       if (opt.isPresent()) {
         request.getSession().setAttribute("adminEnte", opt.get());
-        return view("admin/index");
+        return redirect("/SorrentoMarina/dashboard");
       }
     } catch (SQLException ex) {
       return view("500");

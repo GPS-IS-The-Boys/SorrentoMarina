@@ -61,8 +61,8 @@ public class ModificaCredenzialiAction implements Action {
         Optional<ResponsabileLido> r2 = lm.findResponsabileLido(respLido.getUsername(), oldPassword);
         if (r2.isPresent()) {
           respLido = r2.get();
-          if (oldPassword.equals(respLido.getPassword())) {
-            respLido.setPassword(newPassword);
+          if (oldPassword.equals(respLido.getPassword_responsabile_lido())) {
+            respLido.setPassword_responsabile_lido(newPassword);
             lm.update(respLido);
             request.getSession().removeAttribute("adminLido");
             request.setAttribute("messaggio", "Accedi con le nuove credenziali");
@@ -83,8 +83,8 @@ public class ModificaCredenzialiAction implements Action {
         Optional<ResponsabileEnte> e2 = em.findResponsabileEnte(respEnte.getUsername(), oldPassword);
         if (e2.isPresent()) {
           respEnte = e2.get();
-          if (oldPassword.equals(respEnte.getPassword())) {
-            respEnte.setPassword(newPassword);
+          if (oldPassword.equals(respEnte.getPassword_ente())) {
+            respEnte.setPassword_ente(newPassword);
             em.update(respEnte);
             request.getSession().removeAttribute("adminEnte");
             request.setAttribute("messaggio", "Accedi con le nuove credenziali");

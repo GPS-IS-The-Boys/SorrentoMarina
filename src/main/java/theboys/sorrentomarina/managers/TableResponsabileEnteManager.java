@@ -57,7 +57,7 @@ public class TableResponsabileEnteManager extends TableManager implements Respon
   @Override
   public void update(ResponsabileEnte responsabile) throws SQLException {
     runner.update("UPDATE RESPONSABILE_ENTE SET nome = ?,cognome = ?,email = ?,username = ?,password_ente = ? WHERE id = ?",
-        responsabile.getNome(), responsabile.getCognome(), responsabile.getEmail(), responsabile.getUsername(), responsabile.getPassword(), responsabile.getId());
+        responsabile.getNome(), responsabile.getCognome(), responsabile.getEmail(), responsabile.getUsername(), responsabile.getPassword_ente(), responsabile.getId());
   }
 
   /**
