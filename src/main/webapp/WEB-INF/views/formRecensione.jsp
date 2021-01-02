@@ -17,17 +17,17 @@
                                 <div class="blog_center_sidebar">
                                     <article class="blog_item">
                                         <div class="blog_details">
-                                            <form action="">
+                                            <form action="addRecensione">
                                                 <div class="title">
                                                     <h2 class="mb-30">VALUTA LA TUA ESPERIENZA</h2>
                                                 </div>
                                                 <label for="textarea">Recensione</label>
-                                                <textarea class="form-control" id="textarea" rows="3"></textarea>
+                                                <textarea class="form-control" id="textarea" name="contenutoRecensione" rows="3"></textarea>
                                                 <label class="form-label" for="customRange2">Giudizio<br>
                                                     <span><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>
                                                 </label>
                                                 <div class="col-6">
-                                                    <input type="range" class="form-range" min="1" max="5" id="customRange2" />
+                                                    <input type="range" class="form-range" min="1" max="5" id="customRange2" name="giudizioRecensione" />
                                                 </div>
                                                 <div class="text-right">
                                                     <button type="submit" class="genric-btn primary circle">Aggiungi recensione</button>

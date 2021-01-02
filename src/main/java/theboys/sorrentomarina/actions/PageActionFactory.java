@@ -46,6 +46,8 @@ public class PageActionFactory implements ActionFactory {
         return new MostraPrevisioni();
       case "MostraAffluenza":
         return new MostraAffluenza();
+      case "AggiungiRecensioneChainableAction":
+        return new AggiungiRecensioneChainableAction();
       default:
         return new WelcomeAction();
     }

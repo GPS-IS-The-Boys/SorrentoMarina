@@ -47,6 +47,7 @@ public class FrontController extends HttpServlet {
     ROUTER.get("/formRecensione", PAF.create("MostraFormRecensione"));
     ROUTER.get("/previsioniMeteo", PAF.create("MostraPrevisioni"));
     ROUTER.get("/affluenzaLido", PAF.create("MostraAffluenza"));
+    ROUTER.get("/addRecensione", PAF.create("AggiungiRecensioneChainableAction"));
   }
 
   @Override
