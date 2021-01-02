@@ -30,14 +30,14 @@
 
     <!-- Previsione Meteo -->
     <li class="nav-item">
-        <a class="nav-link" href="">
+        <a class="nav-link" href="previsioniMeteo">
             <i class="fas fa-sun"></i>
             <span>Meteo</span></a>
     </li>
 
     <!-- Previsione Affluenza -->
     <li class="nav-item">
-        <a class="nav-link" href="">
+        <a class="nav-link" href="affluenzaLido">
             <i class="fas fa-fw fa-chart-area"></i>
             <span>Affluenza</span></a>
     </li>

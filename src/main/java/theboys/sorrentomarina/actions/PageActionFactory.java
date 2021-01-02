@@ -42,6 +42,10 @@ public class PageActionFactory implements ActionFactory {
         return new RecensioniLidoAction();
       case "MostraFormRecensione":
         return new MostraFormRecensione();
+      case "MostraPrevisioni":
+        return new MostraPrevisioni();
+      case "MostraAffluenza":
+        return new MostraAffluenza();
       case "AggiungiRecensioneChainableAction":
         return new AggiungiRecensioneChainableAction();
       default:
