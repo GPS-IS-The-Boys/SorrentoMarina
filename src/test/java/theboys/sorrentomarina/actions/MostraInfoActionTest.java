@@ -1,7 +1,8 @@
 package theboys.sorrentomarina.actions;
 
-import org.junit.Test;
+
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -15,7 +16,7 @@ public class MostraInfoActionTest extends ActionSetup{
   }
 
   /**
-   * Controlla che la view tornata è corretta
+   * Controlla che la view tornata sia corretta
    */
   @Test
   public void testAction(){
