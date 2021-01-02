@@ -128,6 +128,6 @@ public class RegistrazioneActionTest extends ActionSetupDB {
     Mockito.when(mockReq.getServletContext()).thenReturn(ctx);
     rgAction = new RegistrazioneAction();
     String page = this.rgAction.execute(mockReq, mockRes);
-    assertEquals("/WEB-INF/views/index.jsp", page);
+    assertEquals("redirect:/SorrentoMarina/", page);
   }
 }

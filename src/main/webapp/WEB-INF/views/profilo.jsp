@@ -83,7 +83,7 @@
                                 <i class="fa fa-lock text-muted"></i>
                             </span>
                   </div>
-                  <input type="password" name="newPassword"
+                  <input type="password" name="newPassword" oninput="validaPassword()"
                          class="form-control bg-white border-left-0 border-md" placeholder="Password Nuova" required
                          id="newPassword">
                 </div>
