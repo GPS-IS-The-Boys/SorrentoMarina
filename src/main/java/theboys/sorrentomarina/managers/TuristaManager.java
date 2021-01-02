@@ -21,4 +21,5 @@ public interface TuristaManager {
   void delete(int id) throws SQLException;
 
   Optional<Turista> findTurista(String username, String password) throws SQLException;
+
 }

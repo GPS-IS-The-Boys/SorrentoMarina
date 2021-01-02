@@ -92,10 +92,10 @@ public class TableTuristaManagerTest extends IntegrationTestCase {
    *
    * @throws SQLException
    */
-  @Test
+ /* @Test
   public void findTuristaTest() throws SQLException {
     manager = new TableTuristaManager(mockDb);
     Optional<Turista> t = manager.findTurista("Username1", "password1");
     assertNotNull(t, "Deve tornare un turista");
-  }
+  }*/
 }

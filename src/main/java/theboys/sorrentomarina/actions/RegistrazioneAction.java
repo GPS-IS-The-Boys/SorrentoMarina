@@ -68,7 +68,7 @@ public class RegistrazioneAction extends ChainableAction {
     try {
       Turista t = new Turista(nome, cognome, email, username, password);
       TuristaManager tm = new TableTuristaManager(this.getSource(request));
-      String hashPassword = DigestUtils.sha1Hex(t.getPassword());
+      String hashPassword = DigestUtils.sha1Hex(t.getPassword_turista());
       tm.create(t.getNome(), t.getCognome(), t.getEmail(), t.getUsername(), hashPassword);
       request.getSession().setAttribute("utente", t);
       return redirect("/SorrentoMarina/");
