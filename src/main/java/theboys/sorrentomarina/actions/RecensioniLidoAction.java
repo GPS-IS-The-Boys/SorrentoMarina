@@ -22,10 +22,11 @@ public class RecensioniLidoAction implements Action{
       TuristaManager managerTurista = new TableTuristaManager(this.getSource(request));
       Lido lido = (Lido)request.getSession().getAttribute("lido");
       List<Recensione> listaRecensioni = manager.retriveById_Lido(lido.getId());
-      HashMap<String,Recensione> map =new HashMap<String,Recensione>();
+      System.out.println(listaRecensioni.size());
+      HashMap<Recensione,String> map =new HashMap<Recensione, String>();
       for (Recensione r: listaRecensioni) {
         Turista turista = managerTurista.retriveById(r.getId_turista());
-        map.put(turista.getUsername(),r);
+        map.put(r,turista.getUsername());
       }
       request.setAttribute("mapRecensioni",map);
       return view("recensioniLido");
