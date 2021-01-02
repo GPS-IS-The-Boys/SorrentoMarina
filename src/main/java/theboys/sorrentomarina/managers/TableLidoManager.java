@@ -5,7 +5,7 @@ import org.apache.commons.dbutils.handlers.BeanHandler;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
 import theboys.sorrentomarina.models.Lido;
 import theboys.sorrentomarina.models.Servizio;
-import theboys.sorrentomarina.models.Turista;
+
 
 import javax.sql.DataSource;
 import java.sql.SQLException;
@@ -26,25 +26,6 @@ public class TableLidoManager extends TableManager implements LidoManager {
   /**
    * Inserimento lido
    *
-   * @param id
-   * @param nome
-   * @param indirizzo
-   * @param telefono
-   * @param email
-   * @param logo
-   * @param prezzo_singolo
-   * @param num_righe
-   * @param num_colonne
-   * @throws SQLException
-   */
-  @Override
-  public void create(int id, String nome, String indirizzo, String telefono, String email, String logo, float prezzo_singolo, int num_righe, int num_colonne) throws SQLException {
-    runner.update("INSERT INTO LIDO VALUES(?,?,?,?,?,?,?,?,?)", id, nome, indirizzo, telefono, email, logo, prezzo_singolo, num_righe, num_colonne);
-  }
-
-  /**
-   * Inserimento lido
-   *
    * @param nome
    * @param indirizzo
    * @param telefono
@@ -55,9 +36,9 @@ public class TableLidoManager extends TableManager implements LidoManager {
    * @throws SQLException
    */
   @Override
-  public void create(String nome, String indirizzo, String telefono, String email, float prezzo_singolo, int num_righe, int num_colonne) throws SQLException {
-    runner.update("INSERT INTO LIDO(nome,indirizzo,telefono,email,prezzo_singolo,num_righe,num_colonne) VALUES(?,?,?,?,?,?,?)",
-        nome, indirizzo, telefono, email, prezzo_singolo, num_righe, num_colonne);
+  public void create(String nome, String indirizzo, String telefono, String email, String logo, float prezzo_singolo, int num_righe, int num_colonne, int id_servizi) throws SQLException {
+    runner.update("INSERT INTO LIDO(nome,indirizzo,telefono,email,logo,prezzo_singolo,num_righe,num_colonne, id_servizi) VALUES(?,?,?,?,?,?,?,?,?)",
+        nome, indirizzo, telefono, email, logo, prezzo_singolo, num_righe, num_colonne, id_servizi);
   }
 
   /**
@@ -160,8 +141,8 @@ public class TableLidoManager extends TableManager implements LidoManager {
    */
   @Override
   public void update(Lido lido) throws SQLException {
-    runner.update("UPDATE TURISTA SET nome=?,indirizzo=?,telefono=?,email=?,logo=?,prezzo_sigolo=?,num_righe=?,num_colonne=?,id_servizi=? WHERE id=?",
-        lido.getNome(), lido.getIndirizzo(), lido.getTelefono(), lido.getEmail(), lido.getLogo(), lido.getPrezzo_singolo(), lido.getNum_righe(), lido.getNum_colonne(), lido.getId());
+    runner.update("UPDATE LIDO SET nome=?,indirizzo=?,telefono=?,email=?,logo=?,prezzo_singolo=?,num_righe=?,num_colonne=?,id_servizi=? WHERE id=?",
+        lido.getNome(), lido.getIndirizzo(), lido.getTelefono(), lido.getEmail(), lido.getLogo(), lido.getPrezzo_singolo(), lido.getNum_righe(), lido.getNum_colonne(), lido.getId_servizi(), lido.getId());
   }
 
   /**

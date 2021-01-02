@@ -8,9 +8,7 @@ import java.util.List;
 
 public interface LidoManager {
   //CRUD
-  void create(int id, String nome, String indirizzo, String telefono, String email, String logo, float prezzo_singolo, int num_righe, int num_colonne) throws SQLException;
-
-  void create(String nome, String indirizzo, String telefono, String email, float prezzo_singolo, int num_righe, int num_colonne) throws SQLException;
+  void create(String nome, String indirizzo, String telefono, String email, String logo, float prezzo_singolo, int num_righe, int num_colonne, int id_servizi) throws SQLException;
 
   Lido retriveById(int id) throws SQLException;
 

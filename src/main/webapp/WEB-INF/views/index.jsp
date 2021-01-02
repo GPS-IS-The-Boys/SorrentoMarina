@@ -87,7 +87,7 @@
                     <div class="col-xl-4 col-lg-4 col-md-6">
                         <div class="single-place mb-30">
                             <div class="place-img">
-                                <img src="<c:url value="${lidoRicerca.logo}"/>" alt="<c:url value="/images/sorrentoFooter.jpg"/>">
+                                <img src="${lidoRicerca.logo}" alt="/images/defaultImageLogoLido.png" />
                             </div>
                             <div class="place-cap">
                                 <div class="place-cap-top">
@@ -98,7 +98,7 @@
                                     <ul>
                                         <li><i class="far fa-clock"></i>1 Day</li>
                                         <li><i class="fas fa-map-marker-alt"></i>${lidoRicerca.indirizzo}</li>
-                                        <li><button class="genric-btn warning circle">Visita</button></li>
+                                        <li><a href="lido?id=${lidoRicerca.id}"><button class="genric-btn warning circle">Visita</button></a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -125,7 +125,7 @@
                                 <div class="col-xl-4 col-lg-4 col-md-6">
                                     <div class="single-place mb-30">
                                         <div class="place-img">
-                                            <img src="<c:url value="${lido.logo}"/>" alt="<c:url value="/images/sorrentoFooter.jpg"/>">
+                                            <img src="${lido.logo}" alt="/images/defaultImageLogoLido" />
                                         </div>
                                         <div class="place-cap">
                                             <div class="place-cap-top">
@@ -136,7 +136,7 @@
                                                 <ul>
                                                     <li><i class="far fa-clock"></i>1 Day</li>
                                                     <li><i class="fas fa-map-marker-alt"></i>${lido.indirizzo}</li>
-                                                    <li><button class="genric-btn warning circle">Visita</button></li>
+                                                    <li><a href="lido?id=${lido.id}"><button class="genric-btn warning circle">Visita</button></a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -211,7 +211,7 @@
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="section-tittle text-center">
-                                    <span>I lidi più frequentati</span>
+                                    <span>I lidi con maggior affluenza</span>
                                     <h2>METE POPOLARI</h2>
                                 </div>
                             </div>
@@ -221,7 +221,7 @@
                                 <div class="col-xl-4 col-lg-4 col-md-6">
                                     <div class="single-place mb-30">
                                         <div class="place-img">
-                                            <img src="<c:url value="${lido.logo}"/>" alt="<c:url value="/images/sorrentoFooter.jpg"/>">
+                                            <img src="${lido.logo}" alt="/images/defaultImageLogoLido" />
                                         </div>
                                         <div class="place-cap">
                                             <div class="place-cap-top">
@@ -232,7 +232,7 @@
                                                 <ul>
                                                     <li><i class="far fa-clock"></i>1 Day</li>
                                                     <li><i class="fas fa-map-marker-alt"></i>${lido.indirizzo}</li>
-                                                    <li><button class="genric-btn warning circle">Visita</button></li>
+                                                    <li><a href="lido?id=${lido.id}"><button class="genric-btn warning circle">Visita</button></a></li>
                                                 </ul>
                                             </div>
                                         </div>
