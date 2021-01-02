@@ -15,6 +15,7 @@ public class LidoAction implements Action {
     response.setStatus(HttpServletResponse.SC_ACCEPTED);
     try {
       int idLido = Integer.parseInt(request.getParameter("id"));
+      request.getSession().setAttribute("idLido",idLido);
       LidoManager manager = new TableLidoManager(this.getSource(request));
       Lido lido = manager.retriveById(idLido);
       request.getSession().setAttribute("lido", lido);

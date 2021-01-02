@@ -50,6 +50,22 @@ public class PageActionFactory implements ActionFactory {
         return new MostraAffluenza();
       case "AggiungiRecensioneChainableAction":
         return new AggiungiRecensioneChainableAction();
+      case "MostraPrenotazione1Action":
+        return new MostraPrenotazione1Action();
+      case "MostraPrenotazione2Action":
+        return new MostraPrenotazione2Action();
+      case "MostraPrenotazione3Action":
+        return new MostraPrenotazione3Action();
+      case "MostraPrenotazione4Action":
+        return new MostraPrenotazione4Action();
+      case "EseguiPrenotazione1Action":
+        return new EseguiPrenotazione1Action();
+      case "EseguiPrenotazione2Action":
+        return new EseguiPrenotazione2Action();
+      case "EseguiPrenotazione3Action":
+        return new EseguiPrenotazione3Action();
+      case "EseguiPrenotazione4Action":
+        return new EseguiPrenotazione4Action();
       default:
         return new WelcomeAction();
     }
