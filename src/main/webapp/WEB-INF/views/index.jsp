@@ -4,35 +4,34 @@
 <sm:layout title="HomePage" admin="false">
 <sm:header/>
     <main>
-
         <!-- Form di ricerca Start-->
         <div class="slider-area ">
             <!-- Mobile Menu -->
             <div class="slider-active">
-                <div class="single-slider hero-overly  slider-height d-flex align-items-center" style="background-image: url('/images/sfondoSorrento.jpg')">
+                <div class="single-slider hero-overly  slider-height d-flex align-items-center"
+                     style="background-image: url('/images/sfondoSorrento.jpg')">
                     <div class="container">
                         <div class="row">
                             <div class="col-xl-9 col-lg-9 col-md-9">
                                 <div class="hero__caption">
-                                    <h1>Trova <span> il lido ideale!</span> </h1>
-                                    <p>Dove ti piacerebbe andare?</p>
+                                    <h1>Trova <span> il lido ideale!</span></h1>
                                 </div>
                             </div>
                         </div>
-                        <!-- Search Box -->
-                        <div class="row">
-                            <div class="col-xl-12">
-                                <!-- form -->
-                                <form action="" class="search-box">
-                                    <div class="input-form mb-30">
-                                        <label for="nomeRicerca"></label>
-                                        <input id="nomeRicerca" name="nomeRicerca" type="text" placeholder="When Would you like to go ?">
+
+                        <form action="" class="search-box">
+                            <div class="container">
+                                <div class="row justify-content-lg-center">
+                                    <div class="col-xl-9 col-lg-9 col-md-9">
+                                        <div class="form-group">
+                                            <label for="nomeRicerca"></label>
+                                            <input id="nomeRicerca" class="form-control-lg form-control" name="nomeRicerca" type="text" placeholder="Dove ti piacerebbe andare ?">
+                                        </div>
                                     </div>
-
-
-
-                                    <div>
-                                        <div class="select-itms">
+                                </div>
+                                <div class="row justify-content-lg-center" style="margin: 6px">
+                                    <div class="col-xl-4 col-lg-4 col-md-4">
+                                        <div class="select-itms justify-content-lg-center">
                                             <input type="checkbox" id="servizio1" name="servizio1" value="true">
                                             <label for="servizio1"><h4 class="mb-20">Bar</h4></label><br>
                                             <input type="checkbox" id="servizio2" name="servizio2" value="true">
@@ -43,32 +42,29 @@
                                             <label for="servizio4"><h4 class="mb-20">Wi-fi</h4></label><br>
                                         </div>
                                     </div>
-
-                                    <div>
-                                        <div class="select-itms">
+                                    <div class="col-xl-4 col-lg-4 col-md-4">
+                                        <div class="select-itms justify-content-lg-center">
                                             <input type="checkbox" id="servizio5" name="servizio5" value="true">
                                             <label for="servizio5"><h4 class="mb-20">Cabina</h4></label><br>
                                             <input type="checkbox" id="servizio6" name="servizio6" value="true">
                                             <label for="servizio6"><h4 class="mb-20">Beach Volley</h4></label><br>
                                             <input type="checkbox" id="servizio7" name="servizio7" value="true">
                                             <label for="servizio7"><h4 class="mb-20">Canoa</h4></label><br>
-
                                         </div>
                                     </div>
-
-                                    <div >
-                                        <Button class="genric-btn warning radius" type="submit"> Cerca</Button>
+                                </div>
+                                <div class="row justify-content-lg-center">
+                                    <div class="col-xl-9 col-lg-9 col-md-9 center">
+                                        <Button class=" btn-block genric-btn warning radius btn-lg" type="submit" style="font-size: 20px; margin: 8px"> Cerca il tuo lido</Button>
                                     </div>
-
-
-
-                                </form>
+                                </div>
                             </div>
-                        </div>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
+            <!-- Mobile Menu -->
         <!-- Form di ricerca End-->
         <c:choose>
             <c:when test="${lidoRicerca != null}">
@@ -283,7 +279,6 @@
                                         <span class="checkmark"></span>
                                     </label>
                                 </div>
-                                <button class="btn-primary btn-lg">About us</button>
                             </div>
                         </div>
                     </div>

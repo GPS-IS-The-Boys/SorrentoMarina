@@ -9,17 +9,17 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
-public class AnnunciLidoAction implements Action{
+public class AnnunciLidoAction implements Action {
   @Override
   public String execute(HttpServletRequest request, HttpServletResponse response) {
     response.setStatus(HttpServletResponse.SC_ACCEPTED);
-    try{
+    try {
       AnnuncioManager manager = new TableAnnuncioManager(getSource(request));
-      Lido lido = (Lido)request.getSession().getAttribute("lido");
+      Lido lido = (Lido) request.getSession().getAttribute("lido");
       List<Annuncio> list = manager.retriveById_Lido(lido.getId());
-      request.setAttribute("listaAnnunci",list);
+      request.setAttribute("listaAnnunci", list);
       return view("annunciLido");
-    }catch (Exception e){
+    } catch (Exception e) {
       e.printStackTrace();
       return view("500");
     }

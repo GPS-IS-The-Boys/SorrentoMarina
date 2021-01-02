@@ -13,15 +13,15 @@ public class LidoAction implements Action {
   @Override
   public String execute(HttpServletRequest request, HttpServletResponse response) {
     response.setStatus(HttpServletResponse.SC_ACCEPTED);
-    try{
+    try {
       int idLido = Integer.parseInt(request.getParameter("id"));
       LidoManager manager = new TableLidoManager(this.getSource(request));
       Lido lido = manager.retriveById(idLido);
-      request.getSession().setAttribute("lido",lido);
+      request.getSession().setAttribute("lido", lido);
       ServizioManager servizioManager = new TableServizioManager(this.getSource(request));
-      request.setAttribute("serviziLido",servizioManager.retriveById(lido.getId_servizi()));
+      request.setAttribute("serviziLido", servizioManager.retriveById(lido.getId_servizi()));
       return view("lido");
-  }catch (Exception e){
+    } catch (Exception e) {
       return view("500");
     }
   }

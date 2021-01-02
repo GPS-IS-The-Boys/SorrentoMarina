@@ -42,6 +42,7 @@ public class FrontController extends HttpServlet {
     ROUTER.post("/modificaCredenziali", PAF.create("ModificaCredenziali"));
     ROUTER.get("/lido", PAF.create("LidoAction"));
     ROUTER.get("/annunciLido", PAF.create("AnnunciLidoAction"));
+    ROUTER.get("/info", PAF.create("InfoAction"));
     ROUTER.get("/dettagliAnnuncio", PAF.create("DettagliAnnuncioAction"));
     ROUTER.get("/recensioniLido", PAF.create("RecensioniLidoAction"));
     ROUTER.get("/formRecensione", PAF.create("MostraFormRecensione"));
@@ -66,6 +67,12 @@ public class FrontController extends HttpServlet {
       throws ServletException, IOException {
     Action action = ROUTER.handleRoute(method, req.getPathInfo());
     String result = action.execute(req, res);
-    req.getRequestDispatcher(result).forward(req, res);
+    if (result.startsWith("redirect:")) {
+      result = result.substring(9);
+      res.sendRedirect(result);
+    } else {
+      req.getRequestDispatcher(result).forward(req, res);
+    }
   }
+
 }
