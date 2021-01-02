@@ -2,7 +2,7 @@
     const CURRENT_TEMP = document.getElementsByClassName('weather-content__temp')[0];
     const FORECAST = document.getElementsByClassName('component__forecast-box')[0];
 
-    const URL = "aaahttps://api.openweathermap.org/data/2.5/onecall?lat=40.624763&lon=14.386349&units=metric&lang=it&exclude=hourly,minutely,current,alerts&appid=19dd6ef0c4c6cdbde1e8d1eda1a7ee51"
+    const URL = "https://api.openweathermap.org/data/2.5/onecall?lat=40.624763&lon=14.386349&units=metric&lang=it&exclude=hourly,minutely,current,alerts&appid=19dd6ef0c4c6cdbde1e8d1eda1a7ee51"
 
 
     function getWeatherData() {
