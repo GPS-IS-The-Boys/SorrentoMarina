@@ -63,7 +63,8 @@ public class WelcomeAction implements Action {
       request.setAttribute("listaLidiTotali", listaTotale);
       response.setStatus(HttpServletResponse.SC_ACCEPTED);
       return view("index");
-    } catch (SQLException throwables) {
+    } catch (SQLException e) {
+      e.printStackTrace();
       return view("500");
     }
   }
