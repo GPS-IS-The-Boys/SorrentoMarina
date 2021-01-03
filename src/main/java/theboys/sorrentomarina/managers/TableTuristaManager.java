@@ -3,6 +3,7 @@ package theboys.sorrentomarina.managers;
 import org.apache.commons.dbutils.ResultSetHandler;
 import org.apache.commons.dbutils.handlers.BeanHandler;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
+import theboys.sorrentomarina.models.Prenotazione;
 import theboys.sorrentomarina.models.Turista;
 
 import javax.sql.DataSource;
@@ -110,5 +111,16 @@ public class TableTuristaManager extends TableManager implements TuristaManager 
   public Optional<Turista> findTurista(String username, String password) throws SQLException {
     Turista turista = runner.query("SELECT * FROM TURISTA WHERE username= ? AND password_turista= ?", TUR_MAPPER, username, password);
     return Optional.ofNullable(turista);
+  }
+
+  /**
+   * Ricerca dell'ultimo turista inserito
+   *
+   * @return
+   * @throws SQLException
+   */
+  public int ultimateId() throws SQLException{
+    Turista turista = runner.query("SELECT max(id) AS id FROM TURISTA",TUR_MAPPER);
+    return turista.getId();
   }
 }

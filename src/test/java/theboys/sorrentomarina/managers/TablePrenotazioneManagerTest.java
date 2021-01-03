@@ -1,6 +1,7 @@
 package theboys.sorrentomarina.managers;
 import org.junit.jupiter.api.Test;
 import theboys.sorrentomarina.models.Lido;
+import theboys.sorrentomarina.models.Ombrellone;
 import theboys.sorrentomarina.models.Prenotazione;
 
 import java.io.FileNotFoundException;
@@ -74,7 +75,7 @@ public class TablePrenotazioneManagerTest extends IntegrationTestCase{
   }
 
   /**
-   * Controlla Se il numero di prenotazioni totali è uguale a quello ritornato
+   * Controlla Se il numero di prenotazioni totali ï¿½ uguale a quello ritornato
    * @throws SQLException
    */
   @Test
@@ -85,7 +86,7 @@ public class TablePrenotazioneManagerTest extends IntegrationTestCase{
   }
 
   /**
-   * Controlla se il totale del consorzio è la somma di tutti gli incassi
+   * Controlla se il totale del consorzio ï¿½ la somma di tutti gli incassi
    * derivati dalle prenotazioni
    * @throws SQLException
    */
@@ -123,10 +124,10 @@ public class TablePrenotazioneManagerTest extends IntegrationTestCase{
    * @throws SQLException
    */
   @Test
-  public void ombrelloniDisponibiliTest() throws SQLException {
+  public void ombrelloniOccupatiTest() throws SQLException {
     manager = new TablePrenotazioneManager(mockDb);
     Lido lido = new Lido(1, "Nome1", "Indirizzo1", "Telefono1", "email1", "logo1", 12.5F, 4, 5, 1);
-    int ombDisp = manager.ombrelloniDisponibili("2020-06-09", "2020-06-09", lido);
-    assertEquals(19, ombDisp, "It should return 18");
+    List<Ombrellone> list = manager.ombrelloniOccupati("2020-06-09", "2020-06-09", lido);
+    assertEquals(1, list.size(), "It should return 1");
   }
 }

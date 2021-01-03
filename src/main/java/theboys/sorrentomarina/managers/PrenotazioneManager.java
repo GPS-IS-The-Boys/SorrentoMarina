@@ -1,6 +1,7 @@
 package theboys.sorrentomarina.managers;
 
 import theboys.sorrentomarina.models.Lido;
+import theboys.sorrentomarina.models.Ombrellone;
 import theboys.sorrentomarina.models.Prenotazione;
 
 import java.sql.SQLException;
@@ -22,5 +23,6 @@ public interface PrenotazioneManager {
   float incassoConsorzio() throws SQLException;
   float incassoLidoTotale(int id_lido) throws SQLException;
   float incassoLidoDa_A(int id_lido, String inizio, String fine) throws SQLException;
-  int ombrelloniDisponibili(String inizio, String fine, Lido lido) throws SQLException;
+  List<Ombrellone> ombrelloniOccupati(String inizio, String fine, Lido lido) throws SQLException;
+  int ultimateId() throws SQLException;
 }
