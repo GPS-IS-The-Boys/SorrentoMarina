@@ -34,7 +34,7 @@ public class TableResponsabileLidoManager extends TableManager implements Respon
    */
   @Override
   public void create(String nome, String cognome, String email, String username, String password, int id_lido) throws SQLException {
-    runner.update("INSERT INTO RESPONSABILE_LIDO(nome,cognome,email,username,password_lido,id_lido) VALUES (?, ?, ?, ?, ?, ?)", nome, cognome, email, username, password, id_lido);
+    runner.update("INSERT INTO RESPONSABILE_LIDO(nome,cognome,email,username,password_responsabile_lido,id_lido) VALUES (?, ?, ?, ?, ?, ?)", nome, cognome, email, username, password, id_lido);
   }
 
   /**
@@ -46,7 +46,7 @@ public class TableResponsabileLidoManager extends TableManager implements Respon
    */
   @Override
   public ResponsabileLido retriveById(int id) throws SQLException {
-    ResponsabileLido responsabileLido = runner.query("SELECT nome, cognome, email, username, password_lido FROM RESPONSABILE_LIDO WHERE id = ?", RES_LIDO_MAPPER, id);
+    ResponsabileLido responsabileLido = runner.query("SELECT nome, cognome, email, username, password_responsabile_lido FROM RESPONSABILE_LIDO WHERE id = ?", RES_LIDO_MAPPER, id);
     return responsabileLido;
   }
 
@@ -71,7 +71,7 @@ public class TableResponsabileLidoManager extends TableManager implements Respon
   @Override
   public void update(ResponsabileLido responsabileLido) throws SQLException {
     runner.update("UPDATE RESPONSABILE_LIDO SET nome = ?,cognome = ?,email = ?,username = ?,password_lido = ? WHERE id = ?",
-        responsabileLido.getNome(), responsabileLido.getCognome(), responsabileLido.getEmail(), responsabileLido.getUsername(), responsabileLido.getPassword(), responsabileLido.getId());
+        responsabileLido.getNome(), responsabileLido.getCognome(), responsabileLido.getEmail(), responsabileLido.getUsername(), responsabileLido.getPassword_responsabile_lido(), responsabileLido.getId());
   }
 
   /**
@@ -95,7 +95,7 @@ public class TableResponsabileLidoManager extends TableManager implements Respon
    */
   @Override
   public Optional<ResponsabileLido> findResponsabileLido(String username, String password) throws SQLException {
-    ResponsabileLido responsabileLido = runner.query("SELECT * FROM RESPONSABILE_LIDO WHERE username= ? AND password_lido= ?", RES_LIDO_MAPPER, username, password);
+    ResponsabileLido responsabileLido = runner.query("SELECT * FROM RESPONSABILE_LIDO WHERE username= ? AND password_responsabile_lido= ?", RES_LIDO_MAPPER, username, password);
     return Optional.ofNullable(responsabileLido);
   }
 }

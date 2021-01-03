@@ -67,7 +67,7 @@ public class ResponsabileEnteTest {
    */
   @Test
   public void getPasswordTest() {
-    String pwd = responsabileEnte.getPassword();
+    String pwd = responsabileEnte.getPassword_ente();
     assertEquals("rossimario", pwd, "Sgould return rossimario");
   }
 
@@ -126,8 +126,8 @@ public class ResponsabileEnteTest {
    */
   @Test
   public void setPasswordTest() {
-    responsabileEnte.setPassword("bianchiluigi");
-    String pwd = responsabileEnte.getPassword();
+    responsabileEnte.setPassword_ente("bianchiluigi");
+    String pwd = responsabileEnte.getPassword_ente();
     assertEquals("bianchiluigi", pwd, "Sgould return bianchiluigi");
   }
 

@@ -73,7 +73,7 @@ public class TableLidoManagerTest extends IntegrationTestCase {
 
   /**
    * Metodo che testa l'update verificando che
-   * il lido è stato modificato correttamente
+   * il lido sia stato modificato correttamente
    */
   @Test
   public void updateTest() throws SQLException {

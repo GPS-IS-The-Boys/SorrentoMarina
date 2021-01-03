@@ -9,7 +9,7 @@ import lombok.ToString;
 @ToString
 public class ResponsabileEnte {
 
-  private String nome, cognome, email, username, password;
+  private String nome, cognome, email, username, password_ente;
   private int id;
 
   public ResponsabileEnte() {
@@ -22,7 +22,7 @@ public class ResponsabileEnte {
     this.cognome = cognome;
     this.email = email;
     this.username = username;
-    this.password = password;
+    this.password_ente = password;
   }
 
   public ResponsabileEnte(String nome, String cognome, String email, String username, String password) {
@@ -30,6 +30,6 @@ public class ResponsabileEnte {
     this.cognome = cognome;
     this.email = email;
     this.username = username;
-    this.password = password;
+    this.password_ente = password;
   }
 }

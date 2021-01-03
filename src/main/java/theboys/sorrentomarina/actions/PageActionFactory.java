@@ -36,12 +36,18 @@ public class PageActionFactory implements ActionFactory {
         return new LidoAction();
       case "AnnunciLidoAction":
         return new AnnunciLidoAction();
+      case "InfoAction":
+        return new MostraInfoAction();
       case "DettagliAnnuncioAction":
         return new DettagliAnnuncioAction();
       case "RecensioniLidoAction":
         return new RecensioniLidoAction();
       case "MostraFormRecensione":
         return new MostraFormRecensione();
+      case "MostraPrevisioni":
+        return new MostraPrevisioni();
+      case "MostraAffluenza":
+        return new MostraAffluenza();
       case "AggiungiRecensioneChainableAction":
         return new AggiungiRecensioneChainableAction();
       case "MostraPrenotazione1Action":

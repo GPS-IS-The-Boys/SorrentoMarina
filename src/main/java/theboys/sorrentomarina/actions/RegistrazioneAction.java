@@ -4,12 +4,15 @@ import org.apache.commons.codec.digest.DigestUtils;
 import theboys.sorrentomarina.managers.TableTuristaManager;
 import theboys.sorrentomarina.managers.TuristaManager;
 import theboys.sorrentomarina.models.Turista;
+import theboys.sorrentomarina.router.FrontController;
 
+import javax.enterprise.inject.New;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 import java.sql.SQLException;
 
-public class RegistrazioneAction implements Action {
+public class RegistrazioneAction extends ChainableAction {
 
   /**
    * Esegue la registrazione dell'utente, previo controllo dei campi
@@ -63,16 +66,14 @@ public class RegistrazioneAction implements Action {
     //dopo aver controllato i campi passiamo alla memorizzazione del turista vero
 
     try {
-
-
       Turista t = new Turista(nome, cognome, email, username, password);
       TuristaManager tm = new TableTuristaManager(this.getSource(request));
-      String hashPassword = DigestUtils.sha1Hex(t.getPassword());
+      String hashPassword = DigestUtils.sha1Hex(t.getPassword_turista());
       tm.create(t.getNome(), t.getCognome(), t.getEmail(), t.getUsername(), hashPassword);
       request.getSession().setAttribute("utente", t);
-      return view("index");
+      return redirect("/SorrentoMarina/");
 
-    } catch (SQLException ex) {
+    } catch (SQLException e) {
       request.setAttribute("messaggio", "Non hai riempito correttamente i campi");
       return view("registrazione");
     }

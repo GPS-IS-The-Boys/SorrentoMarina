@@ -29,7 +29,7 @@ public class CheckLoginRespLido extends ChainableAction {
       Optional<ResponsabileLido> opt = lm.findResponsabileLido(username, password);
       if (opt.isPresent()) {
         request.getSession().setAttribute("adminLido", opt.get());
-        return view("admin/index");
+        return redirect("/SorrentoMarina/");
       } else {
         setNext(new CheckLoginRespEnte());
       }

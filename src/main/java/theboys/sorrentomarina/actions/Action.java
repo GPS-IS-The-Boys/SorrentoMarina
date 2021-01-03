@@ -28,4 +28,8 @@ public interface Action {
     return (DataSource) req.getServletContext().getAttribute("db");
   }
 
+  default String redirect(String url) {
+    return "redirect:".concat(url);
+  }
+
 }
