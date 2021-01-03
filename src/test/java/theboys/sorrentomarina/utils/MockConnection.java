@@ -24,6 +24,8 @@ public class MockConnection extends BasicDataSource {
       mockConnection.setUrl("jdbc:h2:./sorrentoTest;MODE=MYSQL;DATABASE_TO_UPPER=false;");
       mockConnection.setUsername("root");
       mockConnection.setPassword("root");
+      mockConnection.setMaxTotal(512);
+      mockConnection.setMaxIdle(512);
     }
     return mockConnection;
   }

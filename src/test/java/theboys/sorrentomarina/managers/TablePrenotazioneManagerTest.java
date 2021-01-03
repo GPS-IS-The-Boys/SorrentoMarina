@@ -25,6 +25,19 @@ public class TablePrenotazioneManagerTest extends IntegrationTestCase{
   }
 
   /**
+   * controlla se il numero delle prenotazioni trovate coincide
+   * con quelle presenti nel db
+   * @param idLido
+   * @throws SQLException
+   */
+  @Test
+  public void retriveByIdLidoTest(int idLido) throws SQLException {
+    manager = new TablePrenotazioneManager(mockDb);
+    List<Prenotazione> prenotazioni = manager.retriveByIdLido(1);
+    assertNotNull(prenotazioni,"It should retrive all Prenotazioni by lido");
+  }
+
+  /**
    * Controlla se la create rende persistente una prenotazione
    * @throws SQLException
    */
