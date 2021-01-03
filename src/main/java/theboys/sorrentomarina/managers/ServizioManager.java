@@ -3,6 +3,7 @@ package theboys.sorrentomarina.managers;
 import theboys.sorrentomarina.models.Servizio;
 
 import java.sql.SQLException;
+import java.util.List;
 
 public interface ServizioManager {
   void create(int id, boolean bar, boolean ristorante, boolean animazione, boolean wifi, boolean cabina, boolean beach_volley, boolean canoa) throws SQLException;
@@ -14,4 +15,6 @@ public interface ServizioManager {
   void update(Servizio servizio) throws SQLException;
 
   void delete(int id) throws SQLException;
+
+  List<Servizio> retrieveAll() throws SQLException;
 }

@@ -1,5 +1,6 @@
 <%@taglib prefix="sm" tagdir="/WEB-INF/tags" %>
 
+
 <sm:layout title="Sorrento Marina" admin="true">
     <div id="wrapper">
         <sm:sidebar/>

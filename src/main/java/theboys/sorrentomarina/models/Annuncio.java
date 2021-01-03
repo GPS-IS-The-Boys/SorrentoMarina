@@ -20,7 +20,6 @@ public class Annuncio {
 
   /**
    * Costruttore annuncio senza parametri
-   *
    */
   public Annuncio() {
     super();
@@ -29,11 +28,11 @@ public class Annuncio {
   /**
    * Costruttore annuncio con tutti i parametri
    *
-   * @param id - codice univoco di un annuncio
-   * @param titolo - titolo dell'annunicio
+   * @param id        - codice univoco di un annuncio
+   * @param titolo    - titolo dell'annunicio
    * @param contenuto - testo dell'annuncio
-   * @param foto - foto rappresentativa
-   * @param id_lido - codice del lido a cui fa riferimento l'annuncio
+   * @param foto      - foto rappresentativa
+   * @param id_lido   - codice del lido a cui fa riferimento l'annuncio
    */
   public Annuncio(int id, String titolo, String contenuto, String foto, int id_lido) {
     this.id = id;
@@ -46,10 +45,10 @@ public class Annuncio {
   /**
    * Costruttore annuncio con i parametri escluso id
    *
-   * @param titolo - titolo dell'annunicio
+   * @param titolo    - titolo dell'annunicio
    * @param contenuto - testo dell'annuncio
-   * @param foto - foto rappresentativa
-   * @param id_lido - codice del lido a cui fa riferimento l'annuncio
+   * @param foto      - foto rappresentativa
+   * @param id_lido   - codice del lido a cui fa riferimento l'annuncio
    */
   public Annuncio(String titolo, String contenuto, String foto, int id_lido) {
     this.titolo = titolo;
