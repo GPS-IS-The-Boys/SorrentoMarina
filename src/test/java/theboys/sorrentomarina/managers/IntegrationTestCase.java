@@ -20,7 +20,6 @@ public class IntegrationTestCase {
 
   @BeforeAll
   public static void setup() throws SQLException, FileNotFoundException {
-    mockDb.setMaxTotal(128);
     mockDb.initeDb();
   }
 
