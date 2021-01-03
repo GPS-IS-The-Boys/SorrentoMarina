@@ -22,4 +22,5 @@ public interface TuristaManager {
 
   Optional<Turista> findTurista(String username, String password) throws SQLException;
 
+  public int ultimateId() throws SQLException;
 }
