@@ -11,7 +11,7 @@ public class ResponsabileLido {
   private String cognome;
   private String email;
   private String username;
-  private String password;
+  private String password_responsabile_lido;
   private int id_lido;
 
   public ResponsabileLido() {
@@ -24,7 +24,7 @@ public class ResponsabileLido {
     this.cognome = cognome;
     this.email = email;
     this.username = username;
-    this.password = password;
+    this.password_responsabile_lido = password;
     this.id_lido = id_lido;
   }
 
@@ -33,7 +33,7 @@ public class ResponsabileLido {
     this.cognome = cognome;
     this.email = email;
     this.username = username;
-    this.password = password;
+    this.password_responsabile_lido = password;
     this.id_lido = id_lido;
   }
 

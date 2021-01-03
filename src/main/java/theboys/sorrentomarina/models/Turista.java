@@ -11,7 +11,7 @@ public class Turista {
   private String cognome;
   private String email;
   private String username;
-  private String password;
+  private String password_turista;
 
   public Turista() {
     super();
@@ -23,7 +23,7 @@ public class Turista {
     this.cognome = cognome;
     this.email = email;
     this.username = username;
-    this.password = password;
+    this.password_turista = password;
   }
 
   public Turista(String nome, String cognome, String email, String username, String password) {
@@ -31,7 +31,7 @@ public class Turista {
     this.cognome = cognome;
     this.email = email;
     this.username = username;
-    this.password = password;
+    this.password_turista = password;
   }
 
   public Turista(String nome, String cognome, String email) {
@@ -42,6 +42,6 @@ public class Turista {
 
   @Override
   public String toString() {
-    return "Turista[id=" + this.id + ",nome=" + this.nome + ",cognome=" + this.cognome + ",email=" + this.email + ",username=" + this.username + "]";
+    return "Turista[id=" + this.id + ",nome=" + this.nome + ",cognome=" + this.cognome + ",email=" + this.email + ",username=" + this.username + ",password="+this.password_turista+"]";
   }
 }

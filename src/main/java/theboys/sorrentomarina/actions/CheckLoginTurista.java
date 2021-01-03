@@ -31,7 +31,7 @@ public class CheckLoginTurista extends ChainableAction {
       Optional<Turista> optTurista = tm.findTurista(username, password);
       if (optTurista.isPresent()) {
         request.getSession().setAttribute("utente", optTurista.get() );
-        return view("index");
+        return redirect("/SorrentoMarina/");
       } else {
         setNext(new CheckLoginRespLido());
       }

@@ -89,6 +89,12 @@ public class TablePrenotazioneManager extends TableManager implements Prenotazio
    * @throws SQLException
    */
   @Override
+  public List<Prenotazione> retriveByIdLido(int id_lido) throws SQLException {
+    List<Prenotazione> lista = runner.query("SELECT * FROM PRENOTAZIONE WHERE id_lido=?", PRE_MAPPER_LIST, id_lido);
+    return lista;
+  }
+
+  @Override
   public List<Prenotazione> retriveAll() throws SQLException {
     List<Prenotazione> lista = runner.query("SELECT * FROM PRENOTAZIONE", PRE_MAPPER_LIST);
     return lista;

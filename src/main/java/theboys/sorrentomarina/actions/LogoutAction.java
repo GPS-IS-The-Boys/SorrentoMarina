@@ -17,6 +17,6 @@ public class LogoutAction implements Action {
     request.getSession().removeAttribute("utente");
     request.getSession().removeAttribute("adminLido");
     request.getSession().removeAttribute("adminEnte");
-    return view("index");
+    return redirect("/SorrentoMarina/");
   }
 }
