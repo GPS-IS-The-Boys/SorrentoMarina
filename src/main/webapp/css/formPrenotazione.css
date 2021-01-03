@@ -70,3 +70,7 @@
 .progressbar {
     counter-reset: step;
 }
+
+#prenotazione2 #prenotazione3 #prenotazione4{
+    display : none;
+}

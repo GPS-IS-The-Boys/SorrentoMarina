@@ -16,6 +16,18 @@ public class TableServizioManager extends TableManager implements ServizioManage
     super(dataSource);
   }
 
+  /**
+   * Inserimento servizio
+   * @param id
+   * @param bar
+   * @param ristorante
+   * @param animazione
+   * @param wifi
+   * @param cabina
+   * @param beach_volley
+   * @param canoa
+   * @throws SQLException
+   */
   @Override
   public void create(int id, boolean bar, boolean ristorante, boolean animazione, boolean wifi, boolean cabina, boolean beach_volley, boolean canoa) throws SQLException {
     int bar_, ristorante_, animazione_, wifi_, cabina_, beach_volley_, canoa_;
@@ -36,6 +48,17 @@ public class TableServizioManager extends TableManager implements ServizioManage
     runner.update("INSERT INTO SERVIZI VALUES (?,?,?,?,?,?,?,?)", id, bar_, ristorante_, animazione_, wifi_, cabina_, beach_volley_, canoa_);
   }
 
+  /**
+   * Inserimento servizio
+   * @param bar
+   * @param ristorante
+   * @param animazione
+   * @param wifi
+   * @param cabina
+   * @param beach_volley
+   * @param canoa
+   * @throws SQLException
+   */
   @Override
   public void create(boolean bar, boolean ristorante, boolean animazione, boolean wifi, boolean cabina, boolean beach_volley, boolean canoa) throws SQLException {
     int bar_, ristorante_, animazione_, wifi_, cabina_, beach_volley_, canoa_;
@@ -56,12 +79,23 @@ public class TableServizioManager extends TableManager implements ServizioManage
     runner.update("INSERT INTO SERVIZI VALUES (?,?,?,?,?,?,?,?)", bar_, ristorante_, animazione_, wifi_, cabina_, beach_volley_, canoa_);
   }
 
+  /**
+   * Ricerca servizio tramite id
+   * @param id
+   * @return
+   * @throws SQLException
+   */
   @Override
   public Servizio retriveById(int id) throws SQLException {
     Servizio servizio = runner.query("SELECT * FROM SERVIZI WHERE id=?", SER_MAPPER, id);
     return servizio;
   }
 
+  /**
+   * Modifica servizio
+   * @param servizio
+   * @throws SQLException
+   */
   @Override
   public void update(Servizio servizio) throws SQLException {
     int bar_, ristorante_, animazione_, wifi_, cabina_, beach_volley_, canoa_;
@@ -83,6 +117,11 @@ public class TableServizioManager extends TableManager implements ServizioManage
         bar_, ristorante_, animazione_, wifi_, cabina_, beach_volley_, canoa_, servizio.getId());
   }
 
+  /**
+   * Eliminazione servizio
+   * @param id
+   * @throws SQLException
+   */
   @Override
   public void delete(int id) throws SQLException {
     runner.update("DELETE FROM SERVIZI WHERE id=?", id);
