@@ -50,9 +50,6 @@ public class FrontController extends HttpServlet {
     ROUTER.get("/affluenzaLido", PAF.create("MostraAffluenza"));
     ROUTER.get("/addRecensione", PAF.create("AggiungiRecensioneChainableAction"));
     ROUTER.get("/mostraPrenotazione1", PAF.create("MostraPrenotazione1Action"));
-    ROUTER.get("/mostraPrenotazione2", PAF.create("MostraPrenotazione2Action"));
-    ROUTER.get("/mostraPrenotazione3", PAF.create("MostraPrenotazione3Action"));
-    ROUTER.get("/mostraPrenotazione4", PAF.create("MostraPrenotazione4Action"));
     ROUTER.get("/eseguiPrenotazione1", PAF.create("EseguiPrenotazione1Action"));
     ROUTER.get("/eseguiPrenotazione2", PAF.create("EseguiPrenotazione2Action"));
     ROUTER.get("/eseguiPrenotazione3", PAF.create("EseguiPrenotazione3Action"));

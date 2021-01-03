@@ -1,6 +1,7 @@
 package theboys.sorrentomarina.managers;
 import org.junit.jupiter.api.Test;
 import theboys.sorrentomarina.models.Lido;
+import theboys.sorrentomarina.models.Ombrellone;
 import theboys.sorrentomarina.models.Prenotazione;
 
 import java.io.FileNotFoundException;
@@ -21,6 +22,19 @@ public class TablePrenotazioneManagerTest extends IntegrationTestCase{
     manager = new TablePrenotazioneManager(mockDb);
     Prenotazione prenotazione = manager.retriveById(1);
     assertNotNull(prenotazione,"It should find the Prenotazione");
+  }
+
+  /**
+   * controlla se il numero delle prenotazioni trovate coincide
+   * con quelle presenti nel db
+   * @param idLido
+   * @throws SQLException
+   */
+  @Test
+  public void retriveByIdLidoTest(int idLido) throws SQLException {
+    manager = new TablePrenotazioneManager(mockDb);
+    List<Prenotazione> prenotazioni = manager.retriveByIdLido(1);
+    assertNotNull(prenotazioni,"It should retrive all Prenotazioni by lido");
   }
 
   /**
@@ -74,7 +88,8 @@ public class TablePrenotazioneManagerTest extends IntegrationTestCase{
   }
 
   /**
-   * Controlla che il numero di prenotazioni totali sia uguale a quello ritornato
+   * Controlla Se il numero di prenotazioni totali � uguale a quello ritornato
+   * @throws SQLException
    */
   @Test
   public void prenotazioniTotaliTest() throws SQLException {
@@ -84,8 +99,9 @@ public class TablePrenotazioneManagerTest extends IntegrationTestCase{
   }
 
   /**
-   * Controlla che il totale del consorzio e la somma di tutti gli incassi
-   * derivati dalle prenotazioni siano uguali
+   * Controlla se il totale del consorzio � la somma di tutti gli incassi
+   * derivati dalle prenotazioni
+   * @throws SQLException
    */
   @Test
   public void incassoConsorzio() throws SQLException {
@@ -121,10 +137,10 @@ public class TablePrenotazioneManagerTest extends IntegrationTestCase{
    * @throws SQLException
    */
   @Test
-  public void ombrelloniDisponibiliTest() throws SQLException {
+  public void ombrelloniOccupatiTest() throws SQLException {
     manager = new TablePrenotazioneManager(mockDb);
     Lido lido = new Lido(1, "Nome1", "Indirizzo1", "Telefono1", "email1", "logo1", 12.5F, 4, 5, 1);
-    int ombDisp = manager.ombrelloniDisponibili("2020-06-09", "2020-06-09", lido);
-    assertEquals(19, ombDisp, "It should return 18");
+    List<Ombrellone> list = manager.ombrelloniOccupati("2020-06-09", "2020-06-09", lido);
+    assertEquals(1, list.size(), "It should return 1");
   }
 }

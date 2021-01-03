@@ -21,16 +21,37 @@ public class TableOmbrelloneManager extends TableManager implements OmbrelloneMa
     super(datasorce);
   }
 
+  /**
+   * Inserimento di un ombrellone
+   * @param num_riga
+   * @param num_colonna
+   * @param id_prenotazione
+   * @throws SQLException
+   */
   @Override
   public void create(int num_riga, int num_colonna, int id_prenotazione)throws SQLException {
     runner.update("INSERT INTO OMBRELLONE(num_riga,num_colonna,id_prenotazione) VALUES (?, ?, ?)",num_riga, num_colonna, id_prenotazione);
   }
+
+  /**
+   * Ricerca ombrellone tramite prenotazione
+   * @param id_prenotazione
+   * @return
+   * @throws SQLException
+   */
   @Override
   public List<Ombrellone> retriveByIdPrenotazione(int id_prenotazione) throws SQLException{
     List<Ombrellone> lista;
     lista=runner.query("SELECT * FROM OMBRELLONE WHERE id_prenotazione=?",OMBRELLONE_MAPPER_LIST ,id_prenotazione);
     return lista;
   }
+
+  /**
+   * Ricerca ombrellone tramite id
+   * @param id
+   * @return
+   * @throws SQLException
+   */
   @Override
   public Ombrellone retrviveById(int id)throws SQLException{
     Ombrellone ombrellone;
