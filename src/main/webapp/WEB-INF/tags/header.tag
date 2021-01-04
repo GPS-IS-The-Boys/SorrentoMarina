@@ -73,7 +73,7 @@
                         <li><a href="#">Account</a>
                           <ul class="submenu">
                             <li><p>Ciao ${adminLido.username}</p></li>
-                            <li><a href="dashboard">Sezione Admin</a></li>
+                            <li><a href="dashboardEnte">Sezione Admin</a></li>
                             <li><a href="profilo">Il mio profilo</a></li>
                             <li><a href="logout">logout</a></li>
                           </ul>

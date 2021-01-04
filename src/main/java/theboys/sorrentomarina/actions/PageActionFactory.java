@@ -54,6 +54,20 @@ public class PageActionFactory implements ActionFactory {
         return new MostraPrenotazione1Action();
       case "EseguiPrenotazione1Action":
         return new EseguiPrenotazione1Action();
+      case "EseguiPrenotazione2Action":
+        return new EseguiPrenotazione2Action();
+      case "EseguiPrenotazione3Action":
+        return new EseguiPrenotazione3Action();
+      case "EseguiPrenotazione4Action":
+        return new EseguiPrenotazione4Action();
+      case "CreaAnnuncioAction":
+        return new CreaAnnuncioAction();
+      case "ShowDashboardEnte":
+        return new ShowDashboardEnteAction();
+      case "MostraCreaLido":
+        return new MostraCreaLido();
+      case "CreaLido":
+        return new CreaLidoAction();
       default:
         return new WelcomeAction();
     }

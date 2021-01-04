@@ -2,15 +2,21 @@ package theboys.sorrentomarina.managers;
 
 import org.apache.commons.dbutils.ResultSetHandler;
 import org.apache.commons.dbutils.handlers.BeanHandler;
+import org.apache.commons.dbutils.handlers.BeanListHandler;
 import theboys.sorrentomarina.models.Servizio;
+import theboys.sorrentomarina.models.Turista;
 
 import javax.sql.DataSource;
 import java.sql.SQLException;
+import java.util.List;
 
 public class TableServizioManager extends TableManager implements ServizioManager {
 
   private static final ResultSetHandler<Servizio> SER_MAPPER =
       new BeanHandler<>(Servizio.class);
+
+  private static final ResultSetHandler<List<Servizio>> SER_MAPPER_LIST =
+      new BeanListHandler<>(Servizio.class);
 
   public TableServizioManager(DataSource dataSource) {
     super(dataSource);
@@ -125,5 +131,11 @@ public class TableServizioManager extends TableManager implements ServizioManage
   @Override
   public void delete(int id) throws SQLException {
     runner.update("DELETE FROM SERVIZI WHERE id=?", id);
+  }
+
+  @Override
+  public List<Servizio> retrieveAll() throws SQLException {
+    List<Servizio> lista = runner.query("SELECT * FROM SERVIZI", SER_MAPPER_LIST);
+    return lista;
   }
 }
