@@ -22,7 +22,7 @@
                                                     <h2 class="mb-30">VALUTA LA TUA ESPERIENZA</h2>
                                                 </div>
                                                 <label for="textarea">Recensione</label>
-                                                <textarea class="form-control" id="textarea" name="contenutoRecensione" rows="3"></textarea>
+                                                <textarea class="form-control" maxlength="256" id="textarea" name="contenutoRecensione" rows="3"></textarea>
                                                 <label class="form-label" for="customRange2">Giudizio<br>
                                                     <span><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>
                                                 </label>
