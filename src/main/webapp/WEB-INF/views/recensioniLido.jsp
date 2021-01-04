@@ -25,7 +25,7 @@
                                             <div class="blog_details inline_div" >
                                                 <div class="row">
                                                     <div class="col-md-3 text-center">
-                                                        <img src="/images/userImage.png" width="50%" height="50%">
+                                                        <i class="fa fa-user-circle"></i>
                                                         <h4 class="list-group-item-heading"> <c:out value="${entry.value}"/> </h4>
                                                     </div>
                                                     <div class="col-md-6">

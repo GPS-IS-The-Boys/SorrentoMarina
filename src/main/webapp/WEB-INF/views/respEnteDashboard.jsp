@@ -4,7 +4,7 @@
 <sm:layout title="DashBoard" admin="true">
 <script src="/js/formControl.js"></script>
   <div id="wrapper">
-    <sm:sidebar/>
+    <sm:sidebarEnte/>
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
 

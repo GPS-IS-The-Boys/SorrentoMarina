@@ -24,7 +24,7 @@
                                                     ${annuncio.contenuto}
                                             </div>
                                             <div class="blog_details">
-                                               <img class="" src="${annuncio.foto}" alt="">
+                                               <img class="img-fluid" width="240" height="320" src="${annuncio.foto}" alt="">
                                             </div>
                                         </article>
                                 </div>
