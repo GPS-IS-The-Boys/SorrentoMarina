@@ -31,7 +31,7 @@ public class TablePrenotazioneManagerTest extends IntegrationTestCase{
    * @throws SQLException
    */
   @Test
-  public void retriveByIdLidoTest(int idLido) throws SQLException {
+  public void retriveByIdLidoTest() throws SQLException {
     manager = new TablePrenotazioneManager(mockDb);
     List<Prenotazione> prenotazioni = manager.retriveByIdLido(1);
     assertNotNull(prenotazioni,"It should retrive all Prenotazioni by lido");

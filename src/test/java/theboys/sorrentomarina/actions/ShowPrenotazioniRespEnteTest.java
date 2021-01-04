@@ -23,7 +23,7 @@ public class ShowPrenotazioniRespEnteTest extends ActionSetup{
     Mockito.when(ctx.getAttribute("db")).thenReturn(ActionSetupDB.mockConnection);
     Mockito.when(mockReq.getServletContext()).thenReturn(ctx);
     Mockito.when(mockReq.getSession()).thenReturn(mockSession);
-    Mockito.when(mockReq.getSession().getAttribute("adminENte")).thenReturn(new ResponsabileEnte(1, "nome", "cognome", "email", "username", "password"));
+    Mockito.when(mockReq.getSession().getAttribute("adminEnte")).thenReturn(new ResponsabileEnte(1, "nome", "cognome", "email", "username", "password"));
     spre = new ShowPrenotazioniRespEnte();
     String page = this.spre.execute(mockReq,mockRes);
     assertEquals("/WEB-INF/views/prenotazioniRespEnte.jsp",page);

@@ -15,7 +15,7 @@ public class CheckLoginRespLidoTest extends ActionSetupDB{
   @Test
   public void textExecuteFailure() {
     Mockito.when(mockReq.getParameter("username")).thenReturn("Userna1");
-    Mockito.when(mockReq.getParameter("password")).thenReturn(DigestUtils.sha1Hex("passrd1"));
+    Mockito.when(mockReq.getParameter("password")).thenReturn("passrd1");
     Mockito.when(mockReq.getSession()).thenReturn(mockSession);
 
     ServletContext ctx = Mockito.mock(ServletContext.class);
@@ -33,7 +33,7 @@ public class CheckLoginRespLidoTest extends ActionSetupDB{
   @Test
   public void testExecuteSuccess() {
     Mockito.when(mockReq.getParameter("username")).thenReturn("Username1");
-    Mockito.when(mockReq.getParameter("password")).thenReturn(DigestUtils.sha1Hex("password1"));
+    Mockito.when(mockReq.getParameter("password")).thenReturn("password1");
     Mockito.when(mockReq.getSession()).thenReturn(mockSession);
 
     ServletContext ctx = Mockito.mock(ServletContext.class);

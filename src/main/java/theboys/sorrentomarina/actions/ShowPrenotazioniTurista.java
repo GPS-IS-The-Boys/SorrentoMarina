@@ -29,6 +29,5 @@ public class ShowPrenotazioniTurista implements Action {
       }
     } else
       return view("prenotazioniTurista");
-
   }
 }
