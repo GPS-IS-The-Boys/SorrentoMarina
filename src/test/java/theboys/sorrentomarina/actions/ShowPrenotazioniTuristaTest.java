@@ -22,7 +22,7 @@ public class ShowPrenotazioniTuristaTest extends ActionSetup{
     Mockito.when(ctx.getAttribute("db")).thenReturn(ActionSetupDB.mockConnection);
     Mockito.when(mockReq.getServletContext()).thenReturn(ctx);
     Mockito.when(mockReq.getSession()).thenReturn(mockSession);
-    Mockito.when(mockReq.getSession().getAttribute("utente")).thenReturn(new Turista(1, "nome", "cognome", "email", "username", "password"));
+    Mockito.when(mockReq.getSession().getAttribute("utente")).thenReturn(new Turista(1, "nome", "cognome", "email", "Username1", "password1"));
     spt = new ShowPrenotazioniTurista();
     String page = this.spt.execute(mockReq,mockRes);
     assertEquals("/WEB-INF/views/prenotazioniTurista.jsp",page);

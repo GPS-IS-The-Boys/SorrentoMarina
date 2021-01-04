@@ -23,24 +23,25 @@ public class ShowPrenotazioniRespEnte implements Action {
   /**
    * Metodo che mostra la lista di tutte le prenotazioni
    *
-   * @param request - HttpServletRequest
+   * @param request  - HttpServletRequest
    * @param response - HttpServletResponse
    * @return String - path della prossmia pagina
    * @throws SQLException - eccezione lanciata a causa di problemi con la query
    */
   @Override
-  public String execute(HttpServletRequest request , HttpServletResponse response) {
+  public String execute(HttpServletRequest request, HttpServletResponse response) {
     PrenotazioneManager tablePrenotazioneManager = new TablePrenotazioneManager(this.getSource(request));
     HttpSession session = request.getSession();
     ResponsabileEnte responsabileEnte = (ResponsabileEnte) session.getAttribute("adminEnte");
-    if(responsabileEnte!=null)
+    if (responsabileEnte != null)
       try {
         List<Prenotazione> list = tablePrenotazioneManager.retriveAll();
         request.setAttribute("prenotazioni", list);
         return view("prenotazioniRespEnte");
       } catch (SQLException throwables) {
         return view("500");
-      }else
+      }
+    else
       return view("prenotazioniRespEnte");
   }
 }
