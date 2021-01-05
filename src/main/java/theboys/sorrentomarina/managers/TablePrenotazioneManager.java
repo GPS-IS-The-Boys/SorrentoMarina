@@ -9,6 +9,7 @@ import theboys.sorrentomarina.models.Prenotazione;
 
 import javax.sql.DataSource;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class TablePrenotazioneManager extends TableManager implements PrenotazioneManager {
@@ -179,7 +180,7 @@ public class TablePrenotazioneManager extends TableManager implements Prenotazio
    * @throws SQLException
    */
   @Override
-  public List<Ombrellone> ombrelloniOccupati(String inizio, String fine, Lido lido) throws SQLException {
+  public List<String> ombrelloniOccupati(String inizio, String fine, Lido lido) throws SQLException {
     String sql = "SELECT o.num_riga AS num_riga, o.num_colonna AS num_colonna"
         + "       FROM OMBRELLONE AS o "
         + "       WHERE o.id_prenotazione IN ( SELECT p.id "
@@ -187,8 +188,13 @@ public class TablePrenotazioneManager extends TableManager implements Prenotazio
         + "                                    WHERE p.id_lido =" + lido.getId() + " AND p.data_inizio>='"
         + inizio + "' AND p.data_fine<='" + fine + "')";
     List<Ombrellone> list = runner.query(sql, OMBRELLONE_MAPPER_LIST);
-    return list;
+    List<String> listString = new ArrayList<>();
+    for(Ombrellone o : list){
+      listString.add(o.getNum_riga()+"_"+o.getNum_colonna());
+    }
+    return listString;
   }
+
 
   /**
    * Ricerca dell'ultima prenotazione inserita

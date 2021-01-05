@@ -1,7 +1,12 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib prefix="sm" tagdir="/WEB-INF/tags" %>
+<%@taglib prefix="grid" tagdir="/WEB-INF/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <sm:layout title="Lido ${lido.nome}" admin="false">
+
+
+
     <link rel="stylesheet" href="<c:url value="/css/formPrenotazione.css"/>" type="text/css">
     <script src="<c:url value="/js/formPrenotazione.js"/>"></script>
     <sm:header/>
@@ -40,6 +45,9 @@
                                             <div class="text-center blog_details">
                                                 <!-- Form data inzio data fine numero posti -->
                                                 <form action="eseguiPrenotazione1">
+                                                    <input id="1" value="${lido.num_righe}" type="hidden">
+                                                     <input id="2" value="${lido.num_colonne}" type="hidden">
+                                                    <input id="3" value="${lido.prezzo_singolo}" type="hidden">
                                                     <div id="prenotazione1" >
                                                         <h3 class="mb-30">DURATA e POSTI</h3>
                                                         <div class="form-group row">
@@ -57,7 +65,8 @@
                                                         <div class="form-group row">
                                                             <label class="col-sm-3 col-form-label" for="numPosti">Numero posti</label>
                                                             <div class="col-sm-8">
-                                                                <select class="form-control col-sm-4" id="numPosti" name="numPosti">
+                                                                <select class="form-control col-sm-4" id="numPosti" onchange="selectChange()" name="numPosti">
+                                                                    <option value="0">0</option>
                                                                     <option value="1">1</option>
                                                                     <option value="2">2</option>
                                                                     <option value="3">3</option>
@@ -79,16 +88,39 @@
                                                                     </a>
                                                                 </li>
                                                                 <li class="page-item -align-right">
-                                                                    <a onclick="nextPrenotazione2()" type="submit" class="page-link" aria-label="Next">
+                                                                    <a id="next" onclick="nextPrenotazione2()" type="submit" class="page-link" aria-label="Next">
                                                                         <i class="ti-angle-right"></i>
                                                                     </a>
                                                                 </li>
                                                             </ul>
                                                         </nav>
                                                     </div>
-                                                    <div id="prenotazione2" style="display: none">
-                                                        <h3 class="mb-30">SCELTA OMBRELLONE</h3>
 
+
+                                                    <div id="prenotazione2" style="display: none">
+
+
+</sm:layout>
+
+<grid:grid>
+
+
+<div style="padding: 0px; margin: 0px; width:600px ; height:600px ">
+    <div class="jquery-script-clear"></div>
+                                                                <div id="seat-map" style="margin-top: 0px">
+                                                                    <div class="front-indicator">MARE</div>
+                                                                </div>
+                                                                <div class="booking-details">
+                                                                    <h2>Dettagli Prenotazione</h2>
+                                                                    <h3> Ombrelloni Selezionati(<span id="counter">0</span>):</h3>
+                                                                    <ul id="selected-seats">
+                                                                    </ul>
+                                                                    Totale: <b>€<span id="total">0</span></b>
+                                                                </div>
+    </div>
+
+</grid:grid>
+<sm:layout title="Lido ${lido.nome}" admin="false">
                                                         <!-- Tasti prec next -->
                                                         <nav class="blog-pagination justify-content-center d-flex">
                                                             <ul class="pagination" >
@@ -202,4 +234,6 @@
 
     </div>
     <!-- End of Page Wrapper -->
+
+
 </sm:layout>
