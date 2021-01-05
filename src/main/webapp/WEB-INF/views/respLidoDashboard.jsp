@@ -151,7 +151,7 @@
                         <form method="post" action="creaAnnuncio">
                             <div class="form-row m-1">
                               <input type="text" name="titolo"
-                                     class="form-control bg-white " id="titolo" placeholder="Titolo" required>
+                                     class="form-control bg-white " maxlength="32" id="titolo" placeholder="Titolo" required>
                             </div>
                             <div class="form-row m-1">
                               <input type="text" name="foto"
