@@ -27,7 +27,7 @@ public class MostraAnnunciRespLidoAction implements Action {
       ResponsabileLido rlido = (ResponsabileLido) request.getSession().getAttribute("adminLido");
       List<Annuncio> list = manager.retriveById_Lido(rlido.getId_lido());
       request.setAttribute("listaAnnunci", list);
-      return view("annunciRespLido");
+      return view("respLidoAnnunci");
     } catch (Exception e) {
       e.printStackTrace();
       return view("500");

@@ -29,7 +29,7 @@ public class CreaAnnuncioAction implements Action {
     try {
 
       am.create(titolo, contenuto, foto, rl.getId_lido());
-      return view("respLidoDashboard");
+      return redirect("/SorrentoMarina/dashboard");
 
     } catch (SQLException throwables) {
       throwables.printStackTrace();
