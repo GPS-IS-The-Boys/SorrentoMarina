@@ -2,8 +2,9 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <sm:layout title="DashBoard" admin="true">
+<script src="/js/formControl.js"></script>
   <div id="wrapper">
-    <sm:sidebar/>
+    <sm:sidebarEnte/>
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
 
@@ -144,7 +145,7 @@
               <div class="card shadow mb-4">
                 <!-- Card Header - Dropdown -->
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                  <h6 class="m-0 font-weight-bold text-primary">A</h6>
+                  <h6 class="m-0 font-weight-bold text-primary">Nuovo Lido?</h6>
                 </div>
                 <!-- Card Body -->
                 <div class="card-body">
@@ -276,16 +277,28 @@
               <!-- Illustrations -->
               <div class="card shadow mb-4">
                 <div class="card-header py-3">
-                  <h6 class="m-0 font-weight-bold text-primary">Lidi presenti nella piattaforma</h6>
+                  <h6 class="m-0 font-weight-bold text-primary">Rimuovi un lido dalla piattaforma</h6>
                 </div>
                 <div class="card-body">
                   <c:forEach items="${lidiEnte}" var="lido">
                     <div class="row md-1 gray-bg d-inline">
-                      <p>${lido.nome}, ${lido.indirizzo}, ${lido.email}</p><a href="rimuoviLido?id=${lido.id}"
-                                                                              class="btn-primary btn-lg">Rimuovi
-                      lido</a>
+                      <div class="col">
+                        <p>${lido.nome}, ${lido.indirizzo}, ${lido.email}</p>
+                      </div>
+                      <div class="col">
+                        <a name="deleteLido" id="deleteLido" href="rimuoviLido?id=${lido.id}" onclick="return confirm('Sei sicuro di voler rimuovere il lido?')">Rimuovi ${lido.nome}</a>
+                      </div>
                     </div>
                   </c:forEach>
+                  <div id="confirm" class="modal">
+                    <div class="modal-body">
+                      Sei sicuro di voler eliminare questo Lido dalla piattaforma?
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" data-dismiss="modal" class="btn-primary btn-lg" id="delete">Elimina lido</button>
+                      <button type="button" data-dismiss="modal" class="btn-lg">Annulla</button>
+                    </div>
+                  </div>
                 </div>
               </div>
 

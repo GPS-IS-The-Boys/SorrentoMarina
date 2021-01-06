@@ -40,7 +40,7 @@ public class AnnunciLidoActionTest extends ActionSetupDB{
     Mockito.when(ctx.getAttribute("db")).thenReturn(mockConnection);
     Mockito.when(mockReq.getServletContext()).thenReturn(ctx);
     Mockito.when(mockReq.getSession()).thenReturn(mockSession);
-    Mockito.when(mockReq.getSession().getAttribute("lido")).thenReturn(new Lido());
+    Mockito.when(mockReq.getSession().getAttribute("lido")).thenReturn(null);
 
     action = new AnnunciLidoAction();
 

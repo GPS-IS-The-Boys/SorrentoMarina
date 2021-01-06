@@ -113,4 +113,7 @@ function cambiaStatoRegistrami() {
     xhttp.open("GET", "servlet_ricerca_ajax?query=" + encodeURIComponent(valore), true);
     xhttp.send();
 }
+$('.deleteLido').on('click', function () {
+    return confirm('Sei sicuro di voler cancellare questo lido?');
+});
  */

@@ -25,7 +25,7 @@ public class LidoActionTest extends ActionSetupDB {
     action = new LidoAction();
 
     String page = this.action.execute(mockReq, mockRes);
-    assertEquals("/WEB_INF/views/lido.jsp", page);
+    assertEquals("/WEB-INF/views/lido.jsp", page);
   }
 
   /**
@@ -42,7 +42,7 @@ public class LidoActionTest extends ActionSetupDB {
     action = new LidoAction();
 
     String page = this.action.execute(mockReq, mockRes);
-    assertEquals("/WEB-INF/views/.jsp", page);
+    assertEquals("/WEB-INF/views/500.jsp", page);
   }
 
 }
