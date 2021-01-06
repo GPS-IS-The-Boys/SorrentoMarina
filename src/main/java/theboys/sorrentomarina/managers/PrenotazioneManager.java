@@ -24,6 +24,6 @@ public interface PrenotazioneManager {
   float incassoConsorzio() throws SQLException;
   float incassoLidoTotale(int id_lido) throws SQLException;
   float incassoLidoDa_A(int id_lido, String inizio, String fine) throws SQLException;
-  List<Ombrellone> ombrelloniOccupati(String inizio, String fine, Lido lido) throws SQLException;
+  List<String> ombrelloniOccupati(String inizio, String fine, Lido lido) throws SQLException;
   int ultimateId() throws SQLException;
 }
