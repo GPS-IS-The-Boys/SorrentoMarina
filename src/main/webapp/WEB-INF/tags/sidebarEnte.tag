@@ -31,13 +31,13 @@
   </li>
 
   <li class="nav-item">
-    <a class="nav-link" href="">
+    <a class="nav-link" href="tutteRecensioni">
       <i class="fas fa-fw fa-user"></i>
       <span>Recensioni</span></a>
   </li>
 
   <li class="nav-item">
-    <a class="nav-link" href="">
+    <a class="nav-link" href="tuttiAnnunci">
       <i class="fas fa-fw fa-cloud"></i>
       <span>Annunci</span></a>
   </li>

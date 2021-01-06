@@ -74,6 +74,10 @@ public class PageActionFactory implements ActionFactory {
         return new MostraRecensioniRespLidoAction();
       case "CancellaRecensione":
         return new RimuoviRecensioneAction();
+      case "MostraTuttiAnnunci":
+        return new MostraTuttiAnnunci();
+      case "MostraTutteRecensioni":
+        return new MostraTutteRecensioni();
       default:
         return new WelcomeAction();
     }
