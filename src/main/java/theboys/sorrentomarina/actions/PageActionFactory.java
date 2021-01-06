@@ -70,6 +70,10 @@ public class PageActionFactory implements ActionFactory {
         return new EliminaAnnuncioRespLido();
       case "ModificaAnnuncio":
         return new ModificaAnnuncioRespLidoAction();
+      case "RecensioniRespLido":
+        return new MostraRecensioniRespLidoAction();
+      case "CancellaRecensione":
+        return new RimuoviRecensioneAction();
       default:
         return new WelcomeAction();
     }
