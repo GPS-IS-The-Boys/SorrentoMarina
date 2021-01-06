@@ -52,7 +52,7 @@
 
     <li class="nav-item">
         <a class="nav-link" href="annunciRespLido">
-            <i class="fas fa-fw fa-cloud"></i>
+            <i class="fas fa-fw fa-ad"></i>
             <span>Annunci Lido</span></a>
     </li>
 

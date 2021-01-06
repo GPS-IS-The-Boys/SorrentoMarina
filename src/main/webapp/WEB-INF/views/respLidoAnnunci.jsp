@@ -26,7 +26,7 @@
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">${adminLido.username}</span>
-                <img class="img-profile rounded-circle"
+                <img class="img-profile rounded-circle" alt="logo"
                      src="/images/sorrentoMarina.png">
               </a>
               <!-- Dropdown - User Information -->
@@ -39,57 +39,65 @@
 
         <!-- Begin Page Content -->
         <div class="container-fluid">
-            <div class="blog_center_sidebar">
-              <div class="title">
-                <h2 class="mb-30">ANNUNCI</h2>
-              </div>
-              <c:forEach items="${listaAnnunci}" var="annuncio">
-              <div class="row md-1">
-                <div class="col">
-                      <div class="blog_center_sidebar">
-                        <div class="title">
-                          <h2 class="mb-30">${annuncio.titolo}</h2>
-                        </div>
-                        <article class="blog_item">
-                          <div class="blog_details">
-                            <h4 class="mb-10">Contenuto</h4>
-                              ${annuncio.contenuto}
-                          </div>
-                          <div class="blog_details">
-                            <img class="img-fluid" width="240" height="320" src="${annuncio.foto}" alt="">
-                          </div>
-                        </article>
-                      </div>
-                </div>
-                <div class="col">
-                  <a href="cancellaAnnuncio?id=${annuncio.id}" class="btn-primary btn-lg">Cancella annuncio</a>
-                </div>
-              </div>
-                <div class="form-group" id="formModificaAnnuncio">
-                  <form method="post" action="modificaAnnuncio?id=${annuncio.id}">
-                    <div class="form-row m-1">
-                      <input type="text" name="titolo" value="${annuncio.titolo}"
-                             class="form-control bg-white " id="titolo" placeholder="Titolo" required>
-                    </div>
-                    <div class="form-row m-1">
-                      <input type="text" name="foto" value="${annuncio.foto}"
-                             class="form-control bg-white" id="foto" placeholder="path della foto">
-                    </div>
-                    <div class="form-row m-1">
-                      <textarea class="form-control" maxlength="256" name="contenuto" id="contenuto" rows="5" placeholder="Aggiungi il contenuto dell'annuncio">${annuncio.contenuto}</textarea>
-                    </div>
-                    <div class="form-row m-1">
-                      <div class="form-group col-lg-12 mx-auto mb-0">
-                        <button type="submit" class="btn-primary btn-primary py-2" style="border-radius: 5px">Modifica annuncio</button>
-                      </div>
-                    </div>
-                  </form>
-                </div>
-              </c:forEach>
-
+          <div class="blog_center_sidebar">
+            <div class="title">
+              <h2 class="mb-30">ANNUNCI</h2>
             </div>
+            <c:forEach items="${listaAnnunci}" var="annuncio">
+              <div class="row md-1">
+                <h2>
+                  <i class="fa fa-ad"></i>${annuncio.titolo}
+                </h2>
+              </div>
+              <div class="row md-1">
+                <div class="col-sm-1">
+                  <img class="img-fluid" width="240" height="320" src="${annuncio.foto}" alt="">
+                </div>
+                <div class="col-sm-9">
+                  <p>${annuncio.contenuto}</p>
+                </div>
+              </div>
+              <div class="row md-1">
+                <a href="cancellaAnnuncio?id=${annuncio.id}" class="btn-primary btn-lg" style="margin: 5px">Cancella
+                  annuncio</a>
+                <a class="btn-lg btn-primary" data-toggle="collapse" href="#collapseModifica${annuncio.id}"
+                   style="margin: 5px" role="button"
+                   aria-expanded="false" aria-controls="collapseModifica${annuncio.id}">
+                  Modifica annuncio
+                </a>
+              </div>
+              <div class="row md-1">
+                <div class="collapse" id="collapseModifica${annuncio.id}">
+                    <form method="post" action="modificaAnnuncio">
+                      <div class="form-row m-1">
+                        <input type="hidden" name="id" id="id" value="${annuncio.id}">
+                        <input type="text" name="titolo" value="${annuncio.titolo}"
+                               class="form-control bg-white " id="titolo" placeholder="Titolo" required>
+                      </div>
+                      <div class="form-row m-1">
+                        <input type="text" name="foto" value="${annuncio.foto}"
+                               class="form-control bg-white" id="foto" placeholder="path della foto">
+                      </div>
+                      <div class="form-row m-1">
+                          <textarea class="form-control" maxlength="256" name="contenuto" id="contenuto" rows="5"
+                                    placeholder="Aggiungi il contenuto dell'annuncio">${annuncio.contenuto}</textarea>
+                      </div>
+                      <div class="form-row m-1">
+                        <div class="form-group col-lg-12 mx-auto mb-0">
+                          <button type="submit" class="btn-primary btn-primary py-2" style="border-radius: 5px">
+                            Modifica
+                          </button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </c:forEach>
           </div>
         </div>
+      </div>
+    </div>
     <!-- End of Content Wrapper -->
 
   </div>

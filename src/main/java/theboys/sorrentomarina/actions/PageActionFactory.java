@@ -66,6 +66,10 @@ public class PageActionFactory implements ActionFactory {
         return new RimuoviLidoAction();
       case "AnnunciRespLido":
         return new MostraAnnunciRespLidoAction();
+      case "EliminaAnnuncio":
+        return new EliminaAnnuncioRespLido();
+      case "ModificaAnnuncio":
+        return new ModificaAnnuncioRespLidoAction();
       default:
         return new WelcomeAction();
     }

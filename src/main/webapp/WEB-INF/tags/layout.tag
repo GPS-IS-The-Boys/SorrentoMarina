@@ -65,22 +65,16 @@
         <!-- Jquery Plugins, main Jquery -->
         <script src="<c:url value="/assets/js/plugins.js"/>"></script>
         <script src="<c:url value="/assets/js/main.js"/>"></script>
-        <c:choose>
-            <c:when test="${admin}">
                 <link rel="stylesheet" href="<c:url value="/webjars/startbootstrap-sb-admin-2/4.0.6/css/sb-admin-2.min.css"/>">
                 <link rel="stylesheet" href="<c:url value="/webjars/startbootstrap-sb-admin-2/4.0.6/vendor/fontawesome-free/css/all.min.css"/>">
                 <script type="text/javascript" src="<c:url value="/webjars/startbootstrap-sb-admin-2/4.0.6/vendor/jquery/jquery.min.js"/>" defer="true"></script>
                 <script type="text/javascript" src="/webjars/startbootstrap-sb-admin-2/4.0.6/vendor/bootstrap/js/bootstrap.bundle.min.js" defer="true"></script>
                 <script type="text/javascript" src="/webjars/startbootstrap-sb-admin-2/4.0.6/vendor/jquery-easing/jquery.easing.min.js" defer="true"></script>
                 <script type="text/javascript" src="/webjars/startbootstrap-sb-admin-2/4.0.6/js/sb-admin-2.min.js" defer="true"></script>
-            </c:when>
-            <c:otherwise>
                 <link rel="stylesheet" href="/webjars/startbootstrap-sb-admin-2/4.0.6/css/sb-admin-2.min.css">
                 <link rel="stylesheet" href="/webjars/startbootstrap-sb-admin-2/4.0.6/vendor/fontawesome-free/css/all.min.css">
                 <script type="text/javascript" src="/webjars/startbootstrap-sb-admin-2/4.0.6/vendor/jquery/jquery.min.js" defer="true"></script>
                 <script type="text/javascript" src="/webjars/startbootstrap-sb-admin-2/4.0.6/vendor/bootstrap/js/bootstrap.bundle.min.js" defer="true"></script>
-            </c:otherwise>
-        </c:choose>
         <c:if test="${not empty style}">
             <link rel="stylesheet" href="${style}">
         </c:if>
