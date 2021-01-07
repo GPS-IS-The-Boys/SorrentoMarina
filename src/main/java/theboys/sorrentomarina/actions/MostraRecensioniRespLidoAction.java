@@ -1,7 +1,6 @@
 package theboys.sorrentomarina.actions;
 
 import theboys.sorrentomarina.managers.*;
-import theboys.sorrentomarina.models.Lido;
 import theboys.sorrentomarina.models.Recensione;
 import theboys.sorrentomarina.models.ResponsabileLido;
 import theboys.sorrentomarina.models.Turista;

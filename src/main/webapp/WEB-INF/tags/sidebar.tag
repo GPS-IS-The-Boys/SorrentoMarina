@@ -46,7 +46,7 @@
 
     <li class="nav-item">
         <a class="nav-link" href="recensioniRespLido">
-            <i class="fas fa-fw fa-user"></i>
+            <i class="fas fa-fw fa-comments"></i>
             <span>Recensioni Lido</span></a>
     </li>
 

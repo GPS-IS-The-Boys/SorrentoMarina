@@ -25,9 +25,9 @@
                         <div class="footer-tittle">
                             <h4>Quick Links</h4>
                             <ul>
-                                <li><a href="#">About</a></li>
-                                <li><a href="#">Offerte</a></li>
-                                <li><a href="#">Contattaci</a></li>
+                                <li><a href="info">About</a></li>
+                                <li><a href="info">Offerte</a></li>
+                                <li><a href="info">Contattaci</a></li>
                             </ul>
                         </div>
                     </div>
@@ -37,10 +37,9 @@
                         <div class="footer-tittle">
                             <h4>Cosa puoi fare</h4>
                             <ul>
-                                <li><a href="#">Woman Cloth</a></li>
-                                <li><a href="#">Fashion Accessories</a></li>
-                                <li><a href="#"> Man Accessories</a></li>
-                                <li><a href="#"> Rubber made Toys</a></li>
+                                <li><a href="login">Login</a></li>
+                                <li><a href="registrazione">Registrati</a></li>
+                                <li><a href="profilo">Profilo</a></li>
                             </ul>
                         </div>
                     </div>
@@ -48,13 +47,11 @@
                 <div class="col-xl-3 col-lg-3 col-md-5 col-sm-7">
                     <div class="single-footer-caption mb-50">
                         <div class="footer-tittle">
-                            <h4>Support</h4>
+                            <h4>Come contattarci</h4>
                             <ul>
-                                <li><a href="#">Frequently Asked Questions</a></li>
-                                <li><a href="#">Terms & Conditions</a></li>
-                                <li><a href="#">Privacy Policy</a></li>
-                                <li><a href="#">Privacy Policy</a></li>
-                                <li><a href="#">Report a Payment Issue</a></li>
+                                <li><a href="#">sorrentoMarina@gmail.com</a></li>
+                                <li><a href="#">0826 43 289</a></li>
+                                <li><a href="#">Marina di Sorrento, Italy</a></li>
                             </ul>
                         </div>
                     </div>

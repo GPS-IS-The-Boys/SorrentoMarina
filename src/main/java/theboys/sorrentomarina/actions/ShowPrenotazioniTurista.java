@@ -19,11 +19,13 @@ public class ShowPrenotazioniTurista implements Action {
     PrenotazioneManager tablePrenotazioneManager = new TablePrenotazioneManager(this.getSource(request));
     HttpSession session = request.getSession();
     Turista turista = (Turista) session.getAttribute("utente");
+
     if (turista != null) {
       try {
         List<Prenotazione> list = tablePrenotazioneManager.retriveByIdTurista(turista.getId());
         request.setAttribute("prenotazioni", list);
         return view("prenotazioniTurista");
+
       } catch (SQLException throwables) {
         return view("500");
       }

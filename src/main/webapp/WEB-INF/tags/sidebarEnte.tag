@@ -32,13 +32,13 @@
 
   <li class="nav-item">
     <a class="nav-link" href="tutteRecensioni">
-      <i class="fas fa-fw fa-user"></i>
+      <i class="fas fa-fw fa-comments"></i>
       <span>Recensioni</span></a>
   </li>
 
   <li class="nav-item">
     <a class="nav-link" href="tuttiAnnunci">
-      <i class="fas fa-fw fa-cloud"></i>
+      <i class="fas fa-fw fa-ad"></i>
       <span>Annunci</span></a>
   </li>
 

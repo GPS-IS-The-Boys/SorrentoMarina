@@ -4,7 +4,6 @@ import theboys.sorrentomarina.models.Turista;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.util.Optional;
 
 public class MostraFormRecensione implements Action {
   @Override
@@ -12,12 +11,12 @@ public class MostraFormRecensione implements Action {
     response.setStatus(HttpServletResponse.SC_ACCEPTED);
     try {
       Turista turista = (Turista) request.getSession().getAttribute("utente");
-      if(turista != null){
+      if (turista != null) {
         return view("formRecensione");
-      }else{
+      } else {
         return view("login");
       }
-    }catch (Exception e){
+    } catch (Exception e) {
       e.printStackTrace();
       return view("500");
     }

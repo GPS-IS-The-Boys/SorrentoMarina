@@ -17,9 +17,9 @@ public class EliminaAnnuncioRespLido implements Action {
    */
   @Override
   public String execute(HttpServletRequest request, HttpServletResponse response) {
-    int idAnnuncio = Integer.parseInt(request.getParameter("id"));
-    AnnuncioManager am = new TableAnnuncioManager(this.getSource(request));
     try {
+      int idAnnuncio = Integer.parseInt(request.getParameter("id"));
+      AnnuncioManager am = new TableAnnuncioManager(this.getSource(request));
       am.delete(idAnnuncio);
       return redirect("/SorrentoMarina/dashboard");
     } catch (SQLException throwables) {

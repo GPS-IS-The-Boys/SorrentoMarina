@@ -1,7 +1,5 @@
 package theboys.sorrentomarina.actions;
 
-import theboys.sorrentomarina.actions.Action;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 

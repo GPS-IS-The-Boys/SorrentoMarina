@@ -2,11 +2,16 @@ package theboys.sorrentomarina.actions;
 
 import org.junit.jupiter.api.*;
 import org.mockito.Mockito;
+import theboys.sorrentomarina.managers.TableTuristaManager;
+import theboys.sorrentomarina.managers.TuristaManager;
+import theboys.sorrentomarina.models.Turista;
 
 import javax.servlet.ServletContext;
 
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import java.sql.SQLException;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 public class RegistrazioneActionTest extends ActionSetupDB {
 
@@ -128,6 +133,14 @@ public class RegistrazioneActionTest extends ActionSetupDB {
     Mockito.when(mockReq.getServletContext()).thenReturn(ctx);
     rgAction = new RegistrazioneAction();
     String page = this.rgAction.execute(mockReq, mockRes);
+
+    TuristaManager tm = new TableTuristaManager(mockConnection);
+    Turista t = null;
+    try {
+      t = tm.retriveById(5);
+    } catch (SQLException e){}
+
+    assertNotNull(t);
     assertEquals("redirect:/SorrentoMarina/", page);
   }
 }
