@@ -3,19 +3,20 @@ package theboys.sorrentomarina.actions;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import theboys.sorrentomarina.managers.LidoManager;
+import theboys.sorrentomarina.managers.RecensioneManager;
 import theboys.sorrentomarina.managers.TableLidoManager;
+import theboys.sorrentomarina.managers.TableRecensioneManager;
 import theboys.sorrentomarina.models.Lido;
+import theboys.sorrentomarina.models.Recensione;
 
 import javax.servlet.ServletContext;
-
 import java.sql.SQLException;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
 
-public class RimuoviLidoActionTest extends ActionSetupDB{
-
-  private RimuoviLidoAction rla;
+public class RimuoviRecensioneActionTest extends ActionSetupDB {
+  private RimuoviRecensioneAction rra;
 
   @Test
   public void SuccessTest(){
@@ -25,33 +26,33 @@ public class RimuoviLidoActionTest extends ActionSetupDB{
     Mockito.when(ctx.getAttribute("db")).thenReturn(mockConnection);
     Mockito.when(mockReq.getServletContext()).thenReturn(ctx);
 
-    rla = new RimuoviLidoAction();
-    String page = this.rla.execute(mockReq, mockRes);
-    LidoManager lm = new TableLidoManager(mockConnection);
-    Lido l = null;
+    rra = new RimuoviRecensioneAction();
+    String page = this.rra.execute(mockReq, mockRes);
+    RecensioneManager rm = new TableRecensioneManager(mockConnection);
+    Recensione r = null;
     try{
-      l = lm.retriveById(1);
+      r = rm.retriveById(1);
     } catch (SQLException e){ }
-    assertNull(l);
-    assertEquals("redirect:/SorrentoMarina/dashboardEnte", page, "Should return dashboard redirect");
+    assertNull(r);
+    assertEquals("redirect:/SorrentoMarina/dashboard", page, "Should return dashboard redirect");
   }
 
   @Test
   public void FailureTest(){
-    Mockito.when(mockReq.getParameter("id")).thenReturn(String.valueOf(10));
+    Mockito.when(mockReq.getParameter("id")).thenReturn("10");
 
     ServletContext ctx = Mockito.mock(ServletContext.class);
     Mockito.when(ctx.getAttribute("db")).thenReturn(mockConnection);
     Mockito.when(mockReq.getServletContext()).thenReturn(ctx);
 
-    rla = new RimuoviLidoAction();
-    String page = this.rla.execute(mockReq, mockRes);
-    LidoManager lm = new TableLidoManager(mockConnection);
-    Lido l = null;
+    rra = new RimuoviRecensioneAction();
+    String page = this.rra.execute(mockReq, mockRes);
+    RecensioneManager rm = new TableRecensioneManager(mockConnection);
+    Recensione r = null;
     try{
-      l = lm.retriveById(10);
+      r = rm.retriveById(10);
     } catch (SQLException e){ }
-    assertNull(l);
-    assertEquals("/WEB-INF/views/500.jsp", page, "Should return 500 jsp");
+    assertNull(r);
+    assertEquals("redirect:/SorrentoMarina/dashboard", page, "Should return dashboard redirect");
   }
 }

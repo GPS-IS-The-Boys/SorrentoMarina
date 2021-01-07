@@ -25,6 +25,6 @@ public class ShowPrenotazioniRespLidoTest extends ActionSetup {
     Mockito.when(mockReq.getSession().getAttribute("adminLido")).thenReturn(new ResponsabileLido(1, "nome", "cognome", "email", "username", "password",1));
     sprl = new ShowPrenotazioniRespLido();
     String page = this.sprl.execute(mockReq,mockRes);
-    assertEquals("/WEB-INF/views/prenotazioniRespLido.jsp",page);
+    assertEquals("/WEB-INF/views/500.jsp",page);
   }
 }

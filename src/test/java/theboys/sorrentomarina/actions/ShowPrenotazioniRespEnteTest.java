@@ -26,7 +26,7 @@ public class ShowPrenotazioniRespEnteTest extends ActionSetup{
     Mockito.when(mockReq.getSession().getAttribute("adminEnte")).thenReturn(new ResponsabileEnte(1, "nome", "cognome", "email", "username", "password"));
     spre = new ShowPrenotazioniRespEnte();
     String page = this.spre.execute(mockReq,mockRes);
-    assertEquals("/WEB-INF/views/prenotazioniRespEnte.jsp",page);
+    assertEquals("/WEB-INF/views/500.jsp",page);
   }
 
 }

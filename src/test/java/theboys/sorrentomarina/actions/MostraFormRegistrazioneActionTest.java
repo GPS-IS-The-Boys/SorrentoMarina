@@ -3,6 +3,7 @@ package theboys.sorrentomarina.actions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
+import theboys.sorrentomarina.models.Turista;
 
 import java.io.FileNotFoundException;
 import java.sql.SQLException;
@@ -20,13 +21,24 @@ public class MostraFormRegistrazioneActionTest extends ActionSetup{
   /**
    * Controlla che la view ritornata è quella corretta, ossia la pagina di registrazione
    *
-   * @author Francesco Pio Covino
    */
   @Test
-  public void textView() {
-    Action ac = Mockito.mock(WelcomeAction.class, Mockito.CALLS_REAL_METHODS);
-    String result = ac.view("registrazione");
+  public void successTest() {
+    Action ac = Mockito.mock(MostraFormRegistrazioneAction.class, Mockito.CALLS_REAL_METHODS);
+    Mockito.when(mockReq.getSession()).thenReturn(mockSession);
+    Mockito.when(mockReq.getSession().getAttribute("utente")).thenReturn(null);
+    String result = ac.execute(mockReq, mockRes);
     assertEquals("/WEB-INF/views/registrazione.jsp", result,
+        "It should return the view path");
+  }
+
+  @Test
+  public void failureTest() {
+    Action ac = Mockito.mock(MostraFormRegistrazioneAction.class, Mockito.CALLS_REAL_METHODS);
+    Mockito.when(mockReq.getSession()).thenReturn(mockSession);
+    Mockito.when(mockReq.getSession().getAttribute("utente")).thenReturn(new Turista(1, "a", "", "", "", ""));
+    String result = ac.execute(mockReq, mockRes);
+    assertEquals("/WEB-INF/views/index.jsp", result,
         "It should return the view path");
   }
 }
