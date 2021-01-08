@@ -54,6 +54,7 @@ div.seatCharts-seat {
 }
 div.seatCharts-row {
 	height: 35px;
+	width: 500px;
 }
 div.seatCharts-seat.available {
 	background-color: #3400f0;
@@ -74,7 +75,7 @@ div.seatCharts-seat.unavailable {
 }
 div.seatCharts-container {
 	border-right: 1px dotted #adadad;
-	width: 800px;
+	width: 500px;
 	padding: 0px;
 	float: left;
 }

@@ -59,6 +59,7 @@ public class FrontController extends HttpServlet {
     ROUTER.get("/mostraCreaLido", PAF.create("MostraCreaLido"));
     ROUTER.post("/creaLido", PAF.create("CreaLido"));
     ROUTER.post("/postiOccupati", PAF.create("PostiOccupati") );
+    ROUTER.post("/listaSelezionati", PAF.create("ListaSelezionati"));
   }
 
   @Override

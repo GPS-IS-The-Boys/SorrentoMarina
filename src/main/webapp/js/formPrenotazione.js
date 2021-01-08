@@ -17,9 +17,30 @@ function nextPrenotazione2() {
     var lista = "";
 
 
+    var _MS_PER_DAY = 1000 * 60 * 60 * 24;
+
+    // a e b sono oggetti Data
+    function dateDiffInDays(a, b) {
+        // Esclude l'ora ed il fuso orario
+        var utc1 = Date.UTC(a.getFullYear(), a.getMonth(), a.getDate());
+        var utc2 = Date.UTC(b.getFullYear(), b.getMonth(), b.getDate());
+
+        return Math.floor((utc2 - utc1) / _MS_PER_DAY);
+    }
+
+    var giorni_pren = dateDiffInDays(date,fine) + 1;
+    localStorage.setItem('giorni',giorni_pren);
+
+
+
+
     if (numPosti == 0 || isNaN(date)  || isNaN(fine)) {
         alert("Compila tutti i campi");
     }
+    else if(giorni_pren <= 0){
+        alert('date non corrette');
+    }
+
     else {
         $('#prenotazione1').slideToggle(500);
         $('#prenotazione2').slideToggle(500);
@@ -57,10 +78,18 @@ function selectChange(){
 }
 
 function nextPrenotazione3(){
-    $('#prenotazione2').slideToggle(500);
-    $('#prenotazione3').slideToggle(500);
-    var div = document.getElementById("step3");
-    div.classList.add("active")
+
+    var selezionabili = localStorage.getItem('selezionabili');
+    var selezionati = localStorage.getItem('selezionati');
+    if(selezionabili == selezionati) {
+        $('#prenotazione2').slideToggle(500);
+        $('#prenotazione3').slideToggle(500);
+        var div = document.getElementById("step3");
+        div.classList.add("active")
+    }
+    else {
+        alert("Ombrelloni da selezionare: " + selezionabili);
+    }
 }
 
 function nextPrenotazione4(){
@@ -68,6 +97,12 @@ function nextPrenotazione4(){
     $('#prenotazione4').slideToggle(500);
     var div = document.getElementById("step4");
     div.classList.add("active")
+
+    var lista = localStorage.getItem('listaSelezionati');
+
+    $.post("listaSelezionati?lista=" + lista, function (data) {
+
+    });
 }
 
 function prevPrenotazione1(){

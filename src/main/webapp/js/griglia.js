@@ -12,11 +12,10 @@ var firstSeatLabel = 1;
 		var prezzoSingolo = parseFloat(document.getElementById("3").getAttribute("value"));
 		var totalePosti=0;
 		var numPosti=0;
-		var dataInizio;
-		var dataFine;
+		var giorni = localStorage.getItem('giorni');
 	    numPosti= parseInt(sessionStorage.getItem("numPosti"));
 		//sessionStorage.clear();
-
+	var coordinate;
 
 
 		var i,j;
@@ -29,12 +28,16 @@ var firstSeatLabel = 1;
 			seatMap.push(row);
 		}
 
-		$('.front-indicator').css('width',j*30);
+		$('.front-indicator').css('width',j*28);
+
+	var selezionabili= 0;
 
 	function  totalPersone(){
 		totalePosti=0;
-		totalePosti = numPosti*prezzoSingolo;
-		return totalePosti;
+		totalePosti = numPosti *prezzoSingolo;
+		selezionabili = Math.ceil(numPosti / 3);
+		localStorage.setItem('selezionabili',selezionabili);
+		return totalePosti * giorni;
 	}
 
 	var posti = [];
@@ -43,22 +46,25 @@ var firstSeatLabel = 1;
 
 $(document).ajaxComplete(function () {
 	posti = sessionStorage.getItem("postiOccupati");
+
 	if (posti != null && posti != undefined && posti.length >= 1) {
 
 	posti = posti.split(',');
 	for(var i in posti){
 		console.log(posti[i]);
 	}
-	console.log("create grid");
+
 	createGrid();
 
 }
 	else {
-	console.log("clear grid");
+
 	clearGrid();
 	}
 
 });
+
+	var selezionati=0;
 
 
 
@@ -73,6 +79,7 @@ $(document).ready(function() {
 	var $cart = $('#selected-seats'),
 		$counter = $('#counter'),
 		$total = $('#total');
+	$total.text(totalPersone());
 	sc = $('#seat-map').seatCharts({
 		map: seatMap,
 		seats: {
@@ -104,13 +111,28 @@ $(document).ready(function() {
 		},
 		click: function () {
 
+
+
 			if (this.status() == 'available') {
+				if(selezionati >= localStorage.getItem('selezionabili')) {
+					alert("Limite posti raggiunto");
+					console.log('if' + selezionati);
+					return 'available';
+				}
+			selezionati++;
+				localStorage.setItem('selezionati',selezionati);
+				console.log('dopo ++' + selezionati);
+
+
+
+
 				//let's create a new <li> which we'll add to the cart items
+				/*
 				$('<li>' + this.data().category + ' Num: # ' + this.settings.label + '<a href="#" class="cancel-cart-item">[cancel]</a></li>')
 					.attr('id', 'cart-item-' + this.settings.id)
 					.data('seatId', this.settings.id)
 					.appendTo($cart);
-
+*/
 				/*
                  * Lets update the counter and total
                  *
@@ -118,13 +140,16 @@ $(document).ready(function() {
                  * 'selected'. This is why we have to add 1 to the length and the current seat price to the total.
                  */
 				console.log(sc.find('selected'));
-				$counter.text(sc.find('selected').length + 1);
+				$counter.text(selezionati);
 				//$total.text(recalculateTotal(sc)+this.data().price);
 
 				return 'selected';
 			} else if (this.status() == 'selected') {
+				selezionati--;
+				localStorage.setItem('selezionati',selezionati);
+				console.log('dopo --' + selezionati);
 				//update the counter
-				$counter.text(sc.find('selected').length - 1);
+				$counter.text(selezionati);
 				//and total
 				//$total.text(recalculateTotal(sc)-this.data().price);
 
@@ -139,7 +164,11 @@ $(document).ready(function() {
 			} else {
 				return this.style();
 			}
+
+
 		}
+
+
 	});
 	recalculateTotal(sc);
 	//this will handle "[cancel]" link clicks
@@ -151,7 +180,7 @@ $(document).ready(function() {
 	//let's pretend some seats have already been booked
 	//sc.get(['1_2', '4_1', '6_1', '6_2']).status('unavailable');
 
-	$total.text(totalPersone());
+
 
 });
 
@@ -166,13 +195,15 @@ function recalculateTotal(sc) {
 		total += this.data().price;
 
 	});
-	total += totalPersone();
+	//total += totalPersone();
 	return total;
 }
 
 function clearGrid() {
 	if (sc != null) {
 	sc.find('unavailable').status('available');
+	sc.find('selected').status('available');
+	selezionati=0;
 	console.log('clear ok');
 	}
 }
@@ -189,7 +220,16 @@ function createGrid(){
 	}
 }
 
-var selezionabili = Math.ceil(numPosti/3);
+
+$("#next3").click(function (){
+
+
+	if(sc != null) {
+		localStorage.setItem('listaSelezionati',sc.find('selected').seatIds.toString());
+	}
+
+});
+
 
 
 

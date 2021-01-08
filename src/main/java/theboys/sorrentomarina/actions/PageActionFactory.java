@@ -64,6 +64,8 @@ public class PageActionFactory implements ActionFactory {
         return new CreaLidoAction();
       case "PostiOccupati":
         return new PostiOccupati();
+      case "ListaSelezionati":
+        return new ListaSelezionati();
       default:
         return new WelcomeAction();
     }

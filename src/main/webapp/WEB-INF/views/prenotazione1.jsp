@@ -105,17 +105,16 @@
 <grid:grid>
 
 
-<div style="padding: 0px; margin: 0px; width:600px ; height:600px ">
+<div style="padding: 0px; margin: 0px; width:600px ; height:500px;" >
     <div class="jquery-script-clear"></div>
                                                                 <div id="seat-map" style="margin-top: 0px">
                                                                     <div class="front-indicator">MARE</div>
                                                                 </div>
                                                                 <div class="booking-details">
                                                                     <h2>Dettagli Prenotazione</h2>
-                                                                    <h3> Ombrelloni Selezionati(<span id="counter">0</span>):</h3>
                                                                     <ul id="selected-seats">
                                                                     </ul>
-                                                                    Totale: <b>€<span id="total">0</span></b>
+                                                                    <h3>Totale: <b>€<span id="total">0</span></b></h3>
                                                                 </div>
     </div>
 
@@ -130,7 +129,7 @@
                                                                     </a>
                                                                 </li>
                                                                 <li class="page-item -align-right">
-                                                                    <a onclick="nextPrenotazione3()" type="submit" class="page-link" aria-label="Next">
+                                                                    <a id='next3' onclick="nextPrenotazione3()" type="submit" class="page-link" aria-label="Next">
                                                                         <i class="ti-angle-right"></i>
                                                                     </a>
                                                                 </li>
