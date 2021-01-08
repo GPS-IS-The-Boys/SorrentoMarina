@@ -7,7 +7,7 @@
 
 <!doctype html>
 <html lang="it" dir="ltr">
-    <head>
+    <head id="12345">
         <title>${title}</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">

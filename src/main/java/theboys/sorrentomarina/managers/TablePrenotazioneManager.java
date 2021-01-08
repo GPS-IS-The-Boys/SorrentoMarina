@@ -195,6 +195,7 @@ public class TablePrenotazioneManager extends TableManager implements Prenotazio
     return listString;
   }
 
+
   /**
    * Ricerca dell'ultima prenotazione inserita
    *

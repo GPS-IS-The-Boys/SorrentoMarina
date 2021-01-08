@@ -62,6 +62,10 @@ public class PageActionFactory implements ActionFactory {
         return new MostraCreaLido();
       case "CreaLido":
         return new CreaLidoAction();
+      case "PostiOccupati":
+        return new PostiOccupati();
+      case "ListaSelezionati":
+        return new ListaSelezionati();
       case "RimuoviLido":
         return new RimuoviLidoAction();
       case "AnnunciRespLido":
