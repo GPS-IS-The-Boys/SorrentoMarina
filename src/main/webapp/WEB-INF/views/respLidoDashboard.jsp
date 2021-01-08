@@ -151,14 +151,14 @@
                         <form method="post" action="creaAnnuncio">
                             <div class="form-row m-1">
                               <input type="text" name="titolo"
-                                     class="form-control bg-white " id="titolo" placeholder="Titolo" required>
+                                     class="form-control bg-white " maxlength="32" id="titolo" placeholder="Titolo" required>
                             </div>
                             <div class="form-row m-1">
                               <input type="text" name="foto"
                                      class="form-control bg-white" id="foto" placeholder="path della foto">
                             </div>
                             <div class="form-row m-1">
-                              <textarea class="form-control" name="contenuto" id="contenuto" rows="5" placeholder="Aggiungi il contenuto dell'annuncio"></textarea>
+                              <textarea class="form-control" maxlength="256" name="contenuto" id="contenuto" rows="5" placeholder="Aggiungi il contenuto dell'annuncio"></textarea>
                             </div>
                             <div class="form-row m-1">
                               <div class="form-group col-lg-12 mx-auto mb-0">

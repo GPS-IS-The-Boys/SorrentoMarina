@@ -217,7 +217,7 @@
                                 <div class="col-xl-4 col-lg-4 col-md-6">
                                     <div class="single-place mb-30">
                                         <div class="place-img">
-                                            <img src="${lido.logo}" alt="/images/defaultImageLogoLido" />
+                                            <img src="${lido.logo}" alt="${lido.nome}" />
                                         </div>
                                         <div class="place-cap">
                                             <div class="place-cap-top">

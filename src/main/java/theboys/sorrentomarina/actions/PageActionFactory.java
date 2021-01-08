@@ -66,6 +66,22 @@ public class PageActionFactory implements ActionFactory {
         return new PostiOccupati();
       case "ListaSelezionati":
         return new ListaSelezionati();
+      case "RimuoviLido":
+        return new RimuoviLidoAction();
+      case "AnnunciRespLido":
+        return new MostraAnnunciRespLidoAction();
+      case "EliminaAnnuncio":
+        return new EliminaAnnuncioRespLido();
+      case "ModificaAnnuncio":
+        return new ModificaAnnuncioRespLidoAction();
+      case "RecensioniRespLido":
+        return new MostraRecensioniRespLidoAction();
+      case "CancellaRecensione":
+        return new RimuoviRecensioneAction();
+      case "MostraTuttiAnnunci":
+        return new MostraTuttiAnnunci();
+      case "MostraTutteRecensioni":
+        return new MostraTutteRecensioni();
       default:
         return new WelcomeAction();
     }

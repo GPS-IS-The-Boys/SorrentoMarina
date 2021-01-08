@@ -21,7 +21,7 @@ public class MostraInfoActionTest extends ActionSetup{
   @Test
   public void testAction(){
     Action ac = Mockito.mock(MostraInfoAction.class, Mockito.CALLS_REAL_METHODS);
-    String result = ac.view("info");
+    String result = ac.execute(mockReq, mockRes);
     assertEquals("/WEB-INF/views/info.jsp", result, "It should return the info path");
   }
 }

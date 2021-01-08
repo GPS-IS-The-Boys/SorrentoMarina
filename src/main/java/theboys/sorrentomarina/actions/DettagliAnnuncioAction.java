@@ -13,13 +13,12 @@ public class DettagliAnnuncioAction implements Action {
   public String execute(HttpServletRequest request, HttpServletResponse response) {
     response.setStatus(HttpServletResponse.SC_ACCEPTED);
     AnnuncioManager manager = new TableAnnuncioManager(this.getSource(request));
-    try{
-      int idAnnuncio =Integer.parseInt(request.getParameter("idAnnuncio"));
-      System.out.println("idAnnuncio= "+idAnnuncio);
+    try {
+      int idAnnuncio = Integer.parseInt(request.getParameter("idAnnuncio"));
       Annuncio annuncio = manager.retriveById(idAnnuncio);
-      request.getSession().setAttribute("annuncio",annuncio);
+      request.getSession().setAttribute("annuncio", annuncio);
       return view("dettagliAnnuncio");
-    }catch(Exception e){
+    } catch (Exception e) {
       return view("500");
     }
   }

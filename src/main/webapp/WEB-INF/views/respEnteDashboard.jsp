@@ -2,8 +2,9 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <sm:layout title="DashBoard" admin="true">
+<script src="/js/formControl.js"></script>
   <div id="wrapper">
-    <sm:sidebar/>
+    <sm:sidebarEnte/>
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
 
@@ -76,7 +77,7 @@
                       <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                         Guadagni Ente (Annuali)
                       </div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">$2 015,000</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">$${incassoTotale}</div>
                     </div>
                     <div class="col-auto">
                       <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
@@ -124,7 +125,7 @@
                       <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
                         Prenotazioni effettuate attualmente
                       </div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">58</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">${numeroPrenotazioni}</div>
                     </div>
                     <div class="col-auto">
                       <i class="fas fa-comments fa-2x text-gray-300"></i>
@@ -140,11 +141,11 @@
           <div class="row">
 
             <!-- Area Chart -->
-            <div class="col-xl-8 col-lg-7">
+            <div class="col-xl-6 col-lg-6">
               <div class="card shadow mb-4">
                 <!-- Card Header - Dropdown -->
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                  <h6 class="m-0 font-weight-bold text-primary">A</h6>
+                  <h6 class="m-0 font-weight-bold text-primary">Nuovo Lido?</h6>
                 </div>
                 <!-- Card Body -->
                 <div class="card-body">
@@ -155,7 +156,7 @@
             </div>
 
             <!-- Pie Chart -->
-            <div class="col-xl-4 col-lg-5">
+            <div class="col-xl-6 col-lg-6">
               <div class="card shadow mb-4">
                 <!-- Card Header - Dropdown -->
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
@@ -167,10 +168,41 @@
             </div>
 
             <!-- Content Row -->
-            <div class="row">
+
+
+              <div class="col-xl-6 col-lg-6">
+
+                <!-- Illustrations -->
+                <div class="card shadow mb-4">
+                  <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">Rimuovi un lido dalla piattaforma</h6>
+                  </div>
+                  <div class="card-body">
+                    <c:forEach items="${lidiEnte}" var="lido">
+                      <div class="row ">
+                        <div class="col-xl-8 col-lg-8">
+                          <p>${lido.nome}, ${lido.indirizzo}, ${lido.email}</p>
+                        </div>
+                        <div class="col-xl-4 col-lg-4">
+                          <a name="deleteLido" id="deleteLido" href="rimuoviLido?id=${lido.id}" onclick="return confirm('Sei sicuro di voler rimuovere il lido?')">Rimuovi ${lido.nome}</a>
+                        </div>
+                      </div>
+                    </c:forEach>
+                    <div id="confirm" class="modal">
+                      <div class="modal-body">
+                        Sei sicuro di voler eliminare questo Lido dalla piattaforma?
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" data-dismiss="modal" class="btn-primary btn-lg" id="delete">Elimina lido</button>
+                        <button type="button" data-dismiss="modal" class="btn-lg">Annulla</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
               <!-- Content Column -->
-              <div class="col-lg-12 mb-4">
+              <div class="col-xl-6 col-lg-6 ">
 
                 <!-- Project Card Example -->
                 <div class="card shadow mb-4">
@@ -269,28 +301,30 @@
                 </div>
               </div>
 
-            </div>
-
-            <div class="col-lg-6 mb-4">
+            <div class="col-xl-6 col-lg-6">
 
               <!-- Illustrations -->
               <div class="card shadow mb-4">
                 <div class="card-header py-3">
-                  <h6 class="m-0 font-weight-bold text-primary">Lidi presenti nella piattaforma</h6>
+                  <h6 class="m-0 font-weight-bold text-primary">Lista prenotazioni della piattaforma</h6>
                 </div>
                 <div class="card-body">
-                  <c:forEach items="${lidiEnte}" var="lido">
-                    <div class="row md-1 gray-bg d-inline">
-                      <p>${lido.nome}, ${lido.indirizzo}, ${lido.email}</p><a href="rimuoviLido?id=${lido.id}"
-                                                                              class="btn-primary btn-lg">Rimuovi
-                      lido</a>
+                  <c:forEach items="${mapPrenotazioni}" var="entry" varStatus="loop">#${loop.index+1}
+                    <div class="row ">
+                      <div class="col-xl-8 col-lg-8">
+                        <p>Da: ${entry.key.data_inizio}   a: ${entry.key.data_fine}, Costo: ${entry.key.costo}, Posti:${entry.key.num_posti}</p>
+                      </div>
+                      <div class="col-xl-4 col-lg-4">
+                        <p>Lido: ${entry.value}</p>
+                      </div>
                     </div>
                   </c:forEach>
+
                 </div>
               </div>
-
             </div>
-          </div>
+
+          </div><!-- chiusura row -->
 
         </div>
         <!-- /.container-fluid -->

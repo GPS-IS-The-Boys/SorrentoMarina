@@ -51,15 +51,20 @@ public class FrontController extends HttpServlet {
     ROUTER.get("/addRecensione", PAF.create("AggiungiRecensioneChainableAction"));
     ROUTER.get("/mostraPrenotazione1", PAF.create("MostraPrenotazione1Action"));
     ROUTER.get("/eseguiPrenotazione1", PAF.create("EseguiPrenotazione1Action"));
-    ROUTER.get("/eseguiPrenotazione2", PAF.create("EseguiPrenotazione2Action"));
-    ROUTER.get("/eseguiPrenotazione3", PAF.create("EseguiPrenotazione3Action"));
-    ROUTER.get("/eseguiPrenotazione4", PAF.create("EseguiPrenotazione4Action"));
     ROUTER.post("/creaAnnuncio", PAF.create("CreaAnnuncioAction"));
     ROUTER.get("/dashboardEnte", PAF.create("ShowDashboardEnte"));
     ROUTER.get("/mostraCreaLido", PAF.create("MostraCreaLido"));
     ROUTER.post("/creaLido", PAF.create("CreaLido"));
     ROUTER.post("/postiOccupati", PAF.create("PostiOccupati") );
     ROUTER.post("/listaSelezionati", PAF.create("ListaSelezionati"));
+    ROUTER.get("/rimuoviLido", PAF.create("RimuoviLido"));
+    ROUTER.get("/annunciRespLido", PAF.create("AnnunciRespLido"));
+    ROUTER.get("/cancellaAnnuncio", PAF.create("EliminaAnnuncio"));
+    ROUTER.post("/modificaAnnuncio", PAF.create("ModificaAnnuncio"));
+    ROUTER.get("/recensioniRespLido", PAF.create("RecensioniRespLido"));
+    ROUTER.get("/cancellaRecensione", PAF.create("CancellaRecensione"));
+    ROUTER.get("/tutteRecensioni", PAF.create("MostraTutteRecensioni"));
+    ROUTER.get("/tuttiAnnunci", PAF.create("MostraTuttiAnnunci"));
   }
 
   @Override

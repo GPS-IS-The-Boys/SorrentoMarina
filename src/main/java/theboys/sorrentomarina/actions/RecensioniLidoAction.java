@@ -13,24 +13,24 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.HashMap;
 import java.util.List;
 
-public class RecensioniLidoAction implements Action{
+public class RecensioniLidoAction implements Action {
   @Override
   public String execute(HttpServletRequest request, HttpServletResponse response) {
     response.setStatus(HttpServletResponse.SC_ACCEPTED);
-    try{
+    try {
       RecensioneManager manager = new TableRecensioneManager(this.getSource(request));
       TuristaManager managerTurista = new TableTuristaManager(this.getSource(request));
-      Lido lido = (Lido)request.getSession().getAttribute("lido");
+      Lido lido = (Lido) request.getSession().getAttribute("lido");
       List<Recensione> listaRecensioni = manager.retriveById_Lido(lido.getId());
       System.out.println(listaRecensioni.size());
-      HashMap<Recensione,String> map =new HashMap<Recensione, String>();
-      for (Recensione r: listaRecensioni) {
+      HashMap<Recensione, String> map = new HashMap<Recensione, String>();
+      for (Recensione r : listaRecensioni) {
         Turista turista = managerTurista.retriveById(r.getId_turista());
-        map.put(r,turista.getUsername());
+        map.put(r, turista.getUsername());
       }
-      request.setAttribute("mapRecensioni",map);
+      request.setAttribute("mapRecensioni", map);
       return view("recensioniLido");
-    }catch(Exception e){
+    } catch (Exception e) {
       return view("500");
     }
   }

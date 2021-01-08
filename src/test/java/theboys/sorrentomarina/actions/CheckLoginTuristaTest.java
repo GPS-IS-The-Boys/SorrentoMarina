@@ -14,7 +14,7 @@ public class CheckLoginTuristaTest extends ActionSetupDB{
   @Test
   public void textExecuteFailure() {
     Mockito.when(mockReq.getParameter("username")).thenReturn("Userna1");
-    Mockito.when(mockReq.getParameter("password")).thenReturn(DigestUtils.sha1Hex("passwo1"));
+    Mockito.when(mockReq.getParameter("password")).thenReturn("passwo1");
     Mockito.when(mockReq.getSession()).thenReturn(mockSession);
 
     ServletContext ctx = Mockito.mock(ServletContext.class);
@@ -33,7 +33,7 @@ public class CheckLoginTuristaTest extends ActionSetupDB{
   public void testExecuteSuccess() {
     clt = new CheckLoginTurista();
     Mockito.when(mockReq.getParameter("username")).thenReturn("Username1");
-    Mockito.when(mockReq.getParameter("password")).thenReturn(DigestUtils.sha1Hex("password1"));
+    Mockito.when(mockReq.getParameter("password")).thenReturn("password1");
     Mockito.when(mockReq.getSession()).thenReturn(mockSession);
 
     ServletContext ctx = Mockito.mock(ServletContext.class);

@@ -32,27 +32,27 @@
 
     <!-- Nav Item - Charts -->
     <li class="nav-item">
-        <a class="nav-link" href="">
+        <a class="nav-link" href="modificaLido">
             <i class="fas fa-fw fa-chart-area"></i>
             <span>Modifica Lido</span></a>
     </li>
 
     <!-- Nav Item - Tables -->
     <li class="nav-item">
-        <a class="nav-link" href="">
+        <a class="nav-link" href="disponibilita">
             <i class="fas fa-fw fa-table"></i>
             <span>Disponibil&agrave; attuale</span></a>
     </li>
 
     <li class="nav-item">
-        <a class="nav-link" href="">
-            <i class="fas fa-fw fa-user"></i>
+        <a class="nav-link" href="recensioniRespLido">
+            <i class="fas fa-fw fa-comments"></i>
             <span>Recensioni Lido</span></a>
     </li>
 
     <li class="nav-item">
-        <a class="nav-link" href="">
-            <i class="fas fa-fw fa-cloud"></i>
+        <a class="nav-link" href="annunciRespLido">
+            <i class="fas fa-fw fa-ad"></i>
             <span>Annunci Lido</span></a>
     </li>
 

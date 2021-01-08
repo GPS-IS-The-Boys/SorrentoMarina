@@ -20,12 +20,11 @@ public class MostraFormLoginActionTest extends ActionSetup{
   /**
    * Controlla che la view ritornata è quella corretta, ossia la pagina di Login
    *
-   * @author Francesco Pio Covino
    */
   @Test
   public void textView() {
     Action ac = Mockito.mock(MostraFormLoginAction.class, Mockito.CALLS_REAL_METHODS);
-    String result = ac.view("login");
+    String result = ac.execute(mockReq, mockRes);
     assertEquals("/WEB-INF/views/login.jsp", result,
         "It should return the view path");
   }

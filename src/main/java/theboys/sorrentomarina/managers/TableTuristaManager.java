@@ -3,7 +3,6 @@ package theboys.sorrentomarina.managers;
 import org.apache.commons.dbutils.ResultSetHandler;
 import org.apache.commons.dbutils.handlers.BeanHandler;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
-import theboys.sorrentomarina.models.Prenotazione;
 import theboys.sorrentomarina.models.Turista;
 
 import javax.sql.DataSource;
@@ -36,6 +35,22 @@ public class TableTuristaManager extends TableManager implements TuristaManager 
   @Override
   public void create(String nome, String cognome, String email, String username, String password) throws SQLException {
     runner.update("INSERT INTO TURISTA(nome,cognome,email,username,password_turista) VALUES (?, ?, ?, ?, ?)", nome, cognome, email, username, password);
+  }
+
+  /**
+   * Inserimento di un turista
+   *
+   * @param id
+   * @param nome
+   * @param cognome
+   * @param email
+   * @param username
+   * @param password
+   * @throws SQLException
+   */
+  @Override
+  public void create(int id, String nome, String cognome, String email, String username, String password) throws SQLException {
+    runner.update("INSERT INTO TURISTA(id,nome,cognome,email,username,password_turista) VALUES (?, ?, ?, ?, ?, ?)", id, nome, cognome, email, username, password);
   }
 
   /**
@@ -109,8 +124,8 @@ public class TableTuristaManager extends TableManager implements TuristaManager 
    */
   @Override
   public Optional<Turista> findTurista(String username, String password) throws SQLException {
-    Turista turista= runner.query("SELECT * FROM TURISTA WHERE username= ? AND password_turista= ?", TUR_MAPPER, username, password);
-    return  Optional.ofNullable(turista);
+    Turista turista = runner.query("SELECT * FROM TURISTA WHERE username= ? AND password_turista= ?", TUR_MAPPER, username, password);
+    return Optional.ofNullable(turista);
   }
 
   /**
@@ -119,8 +134,8 @@ public class TableTuristaManager extends TableManager implements TuristaManager 
    * @return
    * @throws SQLException
    */
-  public int ultimateId() throws SQLException{
-    Turista turista = runner.query("SELECT max(id) AS id FROM TURISTA",TUR_MAPPER);
+  public int ultimateId() throws SQLException {
+    Turista turista = runner.query("SELECT max(id) AS id FROM TURISTA", TUR_MAPPER);
     return turista.getId();
   }
 }
