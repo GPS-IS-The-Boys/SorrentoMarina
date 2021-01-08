@@ -73,7 +73,7 @@
                             </span>
                   </div>
                   <input type="password" name="oldPassword" class="form-control bg-white border-left-0 border-md"
-                         id="oldPassword" placeholder="Password Attuale" required>
+                         id="oldPassword" placeholder="Password Attuale" required oninput="validaOldPassword()">
                 </div>
 
                 <!-- nuova password -->
@@ -83,7 +83,7 @@
                                 <i class="fa fa-lock text-muted"></i>
                             </span>
                   </div>
-                  <input type="password" name="newPassword" oninput="validaPassword()"
+                  <input type="password" name="newPassword" oninput="validaNewPassword()"
                          class="form-control bg-white border-left-0 border-md" placeholder="Password Nuova" required
                          id="newPassword">
                 </div>
@@ -130,6 +130,6 @@
       </c:when>
     </c:choose>
   </div>
-
+<script src="/js/formControl.js"></script>
   <sm:footer/>
 </sm:layout>

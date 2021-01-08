@@ -13,7 +13,7 @@ function validaUsername() {
     if (input.value.length >= 6 && input.value.match(/^[0-9a-zA-Z]+$/)) {
         input.style.border = borderOk;
         usernameOk = true;
-    }else{
+    } else {
         input.style.border = borderNo;
         usernameOk = false;
     }
@@ -72,7 +72,7 @@ function validaEmail() {
     if (input.value.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w+)+$/)) {
         input.style.border = borderOk;
         emailOk = true;
-    }else{
+    } else {
         input.style.border = borderNo;
         emailOk = false;
     }
@@ -113,7 +113,28 @@ function cambiaStatoRegistrami() {
     xhttp.open("GET", "servlet_ricerca_ajax?query=" + encodeURIComponent(valore), true);
     xhttp.send();
 }
-$('.deleteLido').on('click', function () {
+ $('.deleteLido').on('click', function () {
     return confirm('Sei sicuro di voler cancellare questo lido?');
 });
  */
+function validaNewPassword() {
+    var input = document.forms['modificaCredenzialiForm']['newPassword'];
+    var password = input.value;
+    if (password.length >= 8 && password.toUpperCase() != password
+        && password.toLowerCase() != password && /[0-9]/.test(password)) {
+        input.style.border = borderOk;
+    } else {
+        input.style.border = borderNo;
+    }
+}
+
+function validaOldPassword() {
+    var input = document.forms['modificaCredenzialiForm']['oldPassword'];
+    var password = input.value;
+    if (password.length >= 8 && password.toUpperCase() != password
+        && password.toLowerCase() != password && /[0-9]/.test(password)) {
+        input.style.border = borderOk;
+    } else {
+        input.style.border = borderNo;
+    }
+}
