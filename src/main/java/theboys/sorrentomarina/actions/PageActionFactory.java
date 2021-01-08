@@ -78,6 +78,10 @@ public class PageActionFactory implements ActionFactory {
         return new MostraTuttiAnnunci();
       case "MostraTutteRecensioni":
         return new MostraTutteRecensioni();
+      case "MostraModificaLido":
+        return new MostraModificaLido();
+      case "ModificaLido":
+        return new ModificaLidoAction();
       default:
         return new WelcomeAction();
     }
