@@ -3,7 +3,7 @@ package theboys.sorrentomarina.actions;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class ListaSelezionati implements Action{
+public class ListaSelezionati implements Action {
 
   @Override
   public String execute(HttpServletRequest request, HttpServletResponse response) {
@@ -11,7 +11,7 @@ public class ListaSelezionati implements Action{
     String lista = request.getParameter("lista");
     String [] selezionati = lista.split(",");
 
-    request.getSession().setAttribute("postiSelezionati",selezionati);
+    request.getSession().setAttribute("postiSelezionati", selezionati);
 
     return "ajax";
   }

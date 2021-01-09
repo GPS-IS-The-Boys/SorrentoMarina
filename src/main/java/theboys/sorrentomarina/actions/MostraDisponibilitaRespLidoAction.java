@@ -3,7 +3,7 @@ package theboys.sorrentomarina.actions;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class MostraDisponibilitaRespLidoAction implements Action{
+public class MostraDisponibilitaRespLidoAction implements Action {
   /**
    * Mostra la pagina di disponibilita' del lido
    *

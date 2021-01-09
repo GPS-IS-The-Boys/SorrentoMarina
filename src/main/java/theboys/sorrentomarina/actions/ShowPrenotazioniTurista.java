@@ -16,7 +16,8 @@ public class ShowPrenotazioniTurista implements Action {
   @Override
   public String execute(HttpServletRequest request, HttpServletResponse response) {
 
-    PrenotazioneManager tablePrenotazioneManager = new TablePrenotazioneManager(this.getSource(request));
+    PrenotazioneManager tablePrenotazioneManager =
+        new TablePrenotazioneManager(this.getSource(request));
     HttpSession session = request.getSession();
     Turista turista = (Turista) session.getAttribute("utente");
 

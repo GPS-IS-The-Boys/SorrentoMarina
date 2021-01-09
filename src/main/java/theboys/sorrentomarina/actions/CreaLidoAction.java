@@ -27,7 +27,8 @@ public class CreaLidoAction extends ChainableAction {
 
     LidoManager lidoManager = new TableLidoManager(this.getSource(request));
     ServizioManager servizioManager = new TableServizioManager(this.getSource(request));
-    ResponsabileLidoManager responsabileLidoManager = new TableResponsabileLidoManager(this.getSource(request));
+    ResponsabileLidoManager responsabileLidoManager =
+        new TableResponsabileLidoManager(this.getSource(request));
 
     try {
       // informazioni sul lido
@@ -69,10 +70,11 @@ public class CreaLidoAction extends ChainableAction {
       //mi riprendo l'id
       Lido lidoDappoggio = lidoManager.retriveByName(nomeLido);
       //lo uso per creare il responsabile lido
-      responsabileLidoManager.create(nomeResp, cognomeResp, emailResp, usernameResp, DigestUtils.sha1Hex(passwordResp), lidoDappoggio.getId());
-      System.out.println(servizio);
+      responsabileLidoManager.create(nomeResp, cognomeResp, emailResp, usernameResp,
+          DigestUtils.sha1Hex(passwordResp), lidoDappoggio.getId());
       //e per creare il servizio
-      servizioManager.create(servizio.isBar(), servizio.isRistorante(), servizio.isAnimazione(), servizio.isWifi(), servizio.isCabina(), servizio.isBeach_volley(), servizio.isCanoa());
+      servizioManager.create(servizio.isBar(), servizio.isRistorante(), servizio.isAnimazione(),
+          servizio.isWifi(), servizio.isCabina(), servizio.isBeach_volley(), servizio.isCanoa());
       //riprendo l'id del servizio appena aggiunto
       List<Servizio> listaServizi = servizioManager.retrieveAll();
       servizio = listaServizi.get(listaServizi.size() - 1);

@@ -3,8 +3,6 @@ package theboys.sorrentomarina.actions;
 import theboys.sorrentomarina.managers.*;
 import theboys.sorrentomarina.models.Annuncio;
 import theboys.sorrentomarina.models.Lido;
-import theboys.sorrentomarina.models.Recensione;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.HashMap;
@@ -33,7 +31,8 @@ public class MostraTuttiAnnunci implements Action {
       HashMap<String, List<Annuncio>> map = new HashMap<String, List<Annuncio>>();
 
       for (Lido l: lidi) {
-        annunci = managerAnnuncio.retriveById_Lido(l.getId()); //prendo tutte le recensioni di quel lido
+        annunci = managerAnnuncio.retriveById_Lido(l.getId());
+        //prendo tutte le recensioni di quel lido
         map.put(l.getNome(), annunci);
       }
       request.setAttribute("mapAnnunci", map);

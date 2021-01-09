@@ -86,7 +86,7 @@ public class FrontController extends HttpServlet {
       throws ServletException, IOException {
     Action action = ROUTER.handleRoute(method, req.getPathInfo());
     String result = action.execute(req, res);
-    if(result != "ajax") {
+    if (result != "ajax") {
       if (result.startsWith("redirect:")) {
         result = result.substring(9);
         res.sendRedirect(result);

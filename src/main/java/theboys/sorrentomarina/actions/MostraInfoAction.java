@@ -3,7 +3,7 @@ package theboys.sorrentomarina.actions;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class MostraInfoAction implements Action{
+public class MostraInfoAction implements Action {
 
   /**
    * Exec a request action

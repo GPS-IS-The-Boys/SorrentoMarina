@@ -58,7 +58,8 @@ public class ModificaCredenzialiAction implements Action {
     if (respLido != null) {
       try {
         ResponsabileLidoManager lm = new TableResponsabileLidoManager(this.getSource(request));
-        Optional<ResponsabileLido> r2 = lm.findResponsabileLido(respLido.getUsername(), oldPassword);
+        Optional<ResponsabileLido> r2 =
+            lm.findResponsabileLido(respLido.getUsername(), oldPassword);
         if (r2.isPresent()) {
           respLido = r2.get();
           if (oldPassword.equals(respLido.getPassword_responsabile_lido())) {
@@ -79,8 +80,10 @@ public class ModificaCredenzialiAction implements Action {
     //controllo se è il responsabile ente che sta chiedendo di modificare la password
     if (respEnte != null) {
       try {
-        ResponsabileEnteManager em = new TableResponsabileEnteManager(this.getSource(request));
-        Optional<ResponsabileEnte> e2 = em.findResponsabileEnte(respEnte.getUsername(), oldPassword);
+        ResponsabileEnteManager em =
+            new TableResponsabileEnteManager(this.getSource(request));
+        Optional<ResponsabileEnte> e2 =
+            em.findResponsabileEnte(respEnte.getUsername(), oldPassword);
         if (e2.isPresent()) {
           respEnte = e2.get();
           if (oldPassword.equals(respEnte.getPassword_ente())) {
