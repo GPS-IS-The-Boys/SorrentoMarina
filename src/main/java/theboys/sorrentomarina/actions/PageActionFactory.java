@@ -86,6 +86,8 @@ public class PageActionFactory implements ActionFactory {
         return new MostraModificaLido();
       case "ModificaLido":
         return new ModificaLidoAction();
+      case "MostraDisponibilita":
+        return new MostraDisponibilitaRespLidoAction();
       default:
         return new WelcomeAction();
     }
