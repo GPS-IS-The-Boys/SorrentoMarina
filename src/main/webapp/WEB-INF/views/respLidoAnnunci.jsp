@@ -41,7 +41,7 @@
         <div class="container-fluid">
           <div class="blog_center_sidebar">
             <div class="title">
-              <h2 class="mb-30">ANNUNCI</h2>
+              <h2 class="mb-30">ANNUNCI del lido ${lido.nome}</h2>
             </div>
             <c:forEach items="${listaAnnunci}" var="annuncio">
               <div class="row md-1">
