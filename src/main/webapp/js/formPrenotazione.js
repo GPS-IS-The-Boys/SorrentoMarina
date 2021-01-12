@@ -39,9 +39,7 @@ function nextPrenotazione2() {
     }
     else if(giorni_pren <= 0){
         alert('date non corrette');
-    }
-
-    else {
+    }else {
         $('#prenotazione1').slideToggle(500);
         $('#prenotazione2').slideToggle(500);
         var div = document.getElementById("step2");
@@ -92,17 +90,37 @@ function nextPrenotazione3(){
     }
 }
 
+function validateEmail(email) {
+    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+}
+function validateUser(user){
+    const re = /^[a-zA-Z\-]+$/;
+    return re.test(String(user).toLowerCase());
+}
 function nextPrenotazione4(){
-    $('#prenotazione3').slideToggle(500);
-    $('#prenotazione4').slideToggle(500);
-    var div = document.getElementById("step4");
-    div.classList.add("active")
+    //Validazione campi
+    var nome = $('#nome').val();
+    var cognome = $('#cognome').val();
+    var email = $('#email').val();
+    if(!validateUser(nome)){
+        alert("Nome non valido");
+    } else if(!validateUser(cognome)){
+        alert("Cognome non valido");
+    } else if(!validateEmail(email)) {
+        alert("Email non valida")
+    } else{
+        $('#prenotazione3').slideToggle(500);
+        $('#prenotazione4').slideToggle(500);
+        var div = document.getElementById("step4");
+        div.classList.add("active")
 
-    var lista = localStorage.getItem('listaSelezionati');
+        var lista = localStorage.getItem('listaSelezionati');
+        var giorni = localStorage.getItem('giorni');
 
-    $.post("listaSelezionati?lista=" + lista, function (data) {
-
-    });
+        $.post("listaSelezionati?lista=" + lista + "&giorni=" + giorni, function (data) {
+        });
+    }
 }
 
 function prevPrenotazione1(){

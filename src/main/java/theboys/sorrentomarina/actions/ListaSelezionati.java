@@ -10,9 +10,9 @@ public class ListaSelezionati implements Action {
 
     String lista = request.getParameter("lista");
     String [] selezionati = lista.split(",");
-
+    int giorni = Integer.parseInt(request.getParameter("giorni"));
     request.getSession().setAttribute("postiSelezionati", selezionati);
-
+    request.getSession().setAttribute("giorni", giorni);
     return "ajax";
   }
 }

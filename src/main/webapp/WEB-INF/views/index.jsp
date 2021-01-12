@@ -144,62 +144,7 @@
                 </div>
             </c:when>
             <c:otherwise>
-        <!-- Our Services Start -->
-        <div class="our-services servic-padding">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="section-tittle text-center">
-                            <span>Sei il responsabile di un lido? ecco cosa possiamo offrirti</span>
-                            <h2>I NOSTRI SERVIZI</h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="row d-flex justify-contnet-center">
-                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6">
-                        <div class="single-services text-center mb-30">
-                            <div class="services-ion">
-                                <span class="flaticon-tour"></span>
-                            </div>
-                            <div class="services-cap">
-                                <h5>Gestisci il tuo lido <br>dalla tua dashboard con pochi click</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6">
-                        <div class="single-services text-center mb-30">
-                            <div class="services-ion">
-                                <span class="flaticon-pay"></span>
-                            </div>
-                            <div class="services-cap">
-                                <h5>Dati sempre al sicuro <br> e pronti per essere analizzati</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6">
-                        <div class="single-services text-center mb-30">
-                            <div class="services-ion">
-                                <span class="flaticon-experience"></span>
-                            </div>
-                            <div class="services-cap">
-                                <h5>Servizi affidabili <br></h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6">
-                        <div class="single-services text-center mb-30">
-                            <div class="services-ion">
-                                <span class="flaticon-good"></span>
-                            </div>
-                            <div class="services-cap">
-                                <h5>Il 98% dei turisti<br>sono soddisfatti</h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Our Services End -->
+
         <!-- Suggeriti Start -->
                 <div class="favourite-place place-padding">
                     <div class="container">

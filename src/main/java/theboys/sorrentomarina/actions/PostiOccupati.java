@@ -33,8 +33,6 @@ public class PostiOccupati implements Action {
       obj.put("occupati", array);
       response.setContentType("application/json");
       response.getWriter().write(obj.toJSONString());
-      System.out.println(obj.toJSONString());
-      System.out.println(array);
       return "ajax";
 
     } catch (SQLException | IOException throwables) {
