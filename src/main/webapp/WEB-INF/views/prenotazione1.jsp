@@ -141,19 +141,19 @@
                                                         <div class="form-group row">
                                                             <label for="nome" class="col-sm-3 col-form-label">Nome</label>
                                                             <div class="col-sm-8">
-                                                                <input type="text" class="form-control" name="nome" id="nome" placeholder="">
+                                                                <input type="text" class="form-control" name="nome" id="nome" placeholder="" value="${utente.nome}">
                                                             </div>
                                                         </div>
                                                         <div class="form-group row">
                                                             <label for="cognome" class="col-sm-3 col-form-label">Cognome</label>
                                                             <div class="col-sm-8">
-                                                                <input type="text" class="form-control" name="cognome" id="cognome" placeholder="">
+                                                                <input type="text" class="form-control" name="cognome" id="cognome" placeholder="" value="${utente.cognome}">
                                                             </div>
                                                         </div>
                                                         <div class="form-group row">
                                                             <label for="email" class="col-sm-3 col-form-label">E-mail</label>
                                                             <div class="col-sm-8">
-                                                                <input type="email" class="form-control" name="email" id="email" placeholder="">
+                                                                <input type="email" class="form-control" name="email" id="email" placeholder="" value="${utente.email}">
                                                             </div>
                                                         </div>
                                                         <!-- Tasti prec next -->

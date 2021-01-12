@@ -57,7 +57,7 @@ public class TablePrenotazioneManager extends TableManager implements Prenotazio
    */
   @Override
   public void create(String data_inizio, String data_fine, int num_posti, float costo, int id_lido, int id_turista) throws SQLException {
-    runner.update("INSERT INTO PRENOTAZIONE VALUES (?,?,?,?,?,?)", data_inizio, data_fine, num_posti, costo, id_lido, id_turista);
+    runner.update("INSERT INTO PRENOTAZIONE(data_inizio,data_fine,num_posti,costo,id_lido,id_turista) VALUES (?,?,?,?,?,?)", data_inizio, data_fine, num_posti, costo, id_lido, id_turista);
   }
 
   /**
