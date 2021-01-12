@@ -1,6 +1,5 @@
 package theboys.sorrentomarina.actions;
 
-import theboys.sorrentomarina.actions.Action;
 import theboys.sorrentomarina.managers.AnnuncioManager;
 import theboys.sorrentomarina.managers.TableAnnuncioManager;
 import theboys.sorrentomarina.models.Annuncio;

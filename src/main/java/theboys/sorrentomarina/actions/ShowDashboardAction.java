@@ -7,11 +7,9 @@ import theboys.sorrentomarina.managers.TableServizioManager;
 import theboys.sorrentomarina.models.Lido;
 import theboys.sorrentomarina.models.ResponsabileLido;
 import theboys.sorrentomarina.models.Servizio;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.sql.SQLException;
-import java.util.List;
 
 /**
  * @author theBoys
