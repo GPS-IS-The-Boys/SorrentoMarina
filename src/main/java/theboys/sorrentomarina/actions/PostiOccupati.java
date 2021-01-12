@@ -24,7 +24,6 @@ public class PostiOccupati implements Action{
     Lido lido = (Lido) request.getSession().getAttribute("lido");
     try {
       List<String> postiOccupati = manager.ombrelloniOccupati(dataInizio,dataFine,lido);
-      System.out.println(postiOccupati.toString());
       JSONObject obj = new JSONObject();
       JSONArray array = new JSONArray();
       for(String s: postiOccupati){
@@ -34,8 +33,6 @@ public class PostiOccupati implements Action{
       obj.put("occupati",array);
       response.setContentType("application/json");
       response.getWriter().write(obj.toJSONString());
-      System.out.println(obj.toJSONString());
-      System.out.println(array);
       return "ajax";
 
     } catch (SQLException | IOException throwables) {
