@@ -7,7 +7,6 @@ import theboys.sorrentomarina.models.Turista;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.util.Objects;
 
 public class AggiungiRecensioneChainableAction extends ChainableAction {
   @Override

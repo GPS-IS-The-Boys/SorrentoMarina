@@ -4,12 +4,8 @@ import org.apache.commons.codec.digest.DigestUtils;
 import theboys.sorrentomarina.managers.TableTuristaManager;
 import theboys.sorrentomarina.managers.TuristaManager;
 import theboys.sorrentomarina.models.Turista;
-import theboys.sorrentomarina.router.FrontController;
-
-import javax.enterprise.inject.New;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
 import java.sql.SQLException;
 
 public class RegistrazioneAction extends ChainableAction {

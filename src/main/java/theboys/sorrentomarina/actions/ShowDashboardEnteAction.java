@@ -30,14 +30,14 @@ public class ShowDashboardEnteAction implements Action {
       List<Lido> lidi = lidoManager.retriveAll();
       request.setAttribute("lidiEnte", lidi);
       PrenotazioneManager prenotazioneManager = new TablePrenotazioneManager(getSource(request));
-      request.setAttribute("incassoTotale",prenotazioneManager.incassoConsorzio());
-      request.setAttribute("numeroPrenotazioni",prenotazioneManager.prenotazioniTotali());
+      request.setAttribute("incassoTotale", prenotazioneManager.incassoConsorzio());
+      request.setAttribute("numeroPrenotazioni", prenotazioneManager.prenotazioniTotali());
       List<Prenotazione> prenotazioneList = prenotazioneManager.retriveAll();
-      HashMap<Prenotazione,String> map =new HashMap<Prenotazione, String>();
-      for(Prenotazione p : prenotazioneList){
-        map.put(p,lidoManager.retriveById(p.getId_lido()).getNome());
+      HashMap<Prenotazione, String> map = new HashMap<Prenotazione, String>();
+      for (Prenotazione p : prenotazioneList) {
+        map.put(p, lidoManager.retriveById(p.getId_lido()).getNome());
       }
-      request.setAttribute("mapPrenotazioni",map);
+      request.setAttribute("mapPrenotazioni", map);
       return view("respEnteDashboard");
 
     } catch (SQLException throwables) {

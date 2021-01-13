@@ -3,7 +3,6 @@ package theboys.sorrentomarina.actions;
 import theboys.sorrentomarina.managers.AnnuncioManager;
 import theboys.sorrentomarina.managers.TableAnnuncioManager;
 import theboys.sorrentomarina.models.Annuncio;
-import theboys.sorrentomarina.models.Lido;
 import theboys.sorrentomarina.models.ResponsabileLido;
 
 import javax.servlet.http.HttpServletRequest;

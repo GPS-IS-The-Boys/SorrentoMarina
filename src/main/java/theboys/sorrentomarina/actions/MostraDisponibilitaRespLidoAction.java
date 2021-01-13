@@ -3,18 +3,17 @@ package theboys.sorrentomarina.actions;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class MostraInfoAction implements Action {
-
+public class MostraDisponibilitaRespLidoAction implements Action {
   /**
-   * Exec a request action
+   * Mostra la pagina di disponibilita' del lido
    *
-   * @param request  the request
-   * @param response the response
-   * @return can return a URL or a view name
+   * @param request  la request
+   * @param response la response
+   * @return ritorna la jsp che mostra la disponibilita' di ombrelloni del lido
    */
   @Override
   public String execute(HttpServletRequest request, HttpServletResponse response) {
     response.setStatus(HttpServletResponse.SC_ACCEPTED);
-    return view("info");
+    return view("respLidoDisponibilita");
   }
 }

@@ -1,5 +1,7 @@
 package theboys.sorrentomarina.managers;
 
+import org.junit.Ignore;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import theboys.sorrentomarina.models.ResponsabileLido;
 
@@ -15,6 +17,7 @@ import static theboys.sorrentomarina.managers.IntegrationTestCase.mockDb;
  * @author Francesco Pio Covino
  * @version 0.1
  */
+@Disabled
 public class TableResponsabileLidoManagerTest {
 
   TableResponsabileLidoManager manager;

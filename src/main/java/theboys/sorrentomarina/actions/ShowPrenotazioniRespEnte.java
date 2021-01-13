@@ -30,7 +30,8 @@ public class ShowPrenotazioniRespEnte implements Action {
    */
   @Override
   public String execute(HttpServletRequest request, HttpServletResponse response) {
-    PrenotazioneManager tablePrenotazioneManager = new TablePrenotazioneManager(this.getSource(request));
+    PrenotazioneManager tablePrenotazioneManager =
+        new TablePrenotazioneManager(this.getSource(request));
     HttpSession session = request.getSession();
     ResponsabileEnte responsabileEnte = (ResponsabileEnte) session.getAttribute("adminEnte");
     if (responsabileEnte != null)

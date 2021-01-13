@@ -58,7 +58,7 @@ public class TableTuristaManagerTest extends IntegrationTestCase {
   public void retriveAllTest() throws SQLException {
     manager = new TableTuristaManager(mockDb);
     List<Turista> lista = manager.retriveAll();
-    assertEquals(4, lista.size(), "Deve tornare 4");
+    assertEquals(6, lista.size(), "Deve tornare 6");
   }
 
   /**

@@ -32,14 +32,14 @@
 
     <!-- Nav Item - Charts -->
     <li class="nav-item">
-        <a class="nav-link" href="modificaLido">
+        <a class="nav-link" href="mostraModificaLido">
             <i class="fas fa-fw fa-chart-area"></i>
             <span>Modifica Lido</span></a>
     </li>
 
     <!-- Nav Item - Tables -->
     <li class="nav-item">
-        <a class="nav-link" href="disponibilita">
+        <a class="nav-link" href="mostraDisponibilita">
             <i class="fas fa-fw fa-table"></i>
             <span>Disponibil&agrave; attuale</span></a>
     </li>

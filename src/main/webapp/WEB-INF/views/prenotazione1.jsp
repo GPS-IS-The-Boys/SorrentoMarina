@@ -27,11 +27,11 @@
                                     <div class="text-center">
                                         <div class="progressbar-wrapper">
                                             <ul class="progressbar text-center">
-                                                <li id="step1" class="active"></li>
-                                                <li id="step2"> </li>
-                                                <li id="step3"> </li>
-                                                <li id="step4"> </li>
-                                                <li id="step5"> </li>
+                                                <li id="step1" class="active"><i class="fa fa-calendar"></i></li>
+                                                <li id="step2"><i class="fa fa-box-open"></i> </li>
+                                                <li id="step3"><i class="fa fa-user"></i> </li>
+                                                <li id="step4"><i class="fa fa-cc-paypal"></i> </li>
+                                                <li id="step5"><i class="fa fa-check-double"></i> </li>
                                             </ul>
                                         </div>
                                     </div>
@@ -141,19 +141,19 @@
                                                         <div class="form-group row">
                                                             <label for="nome" class="col-sm-3 col-form-label">Nome</label>
                                                             <div class="col-sm-8">
-                                                                <input type="text" class="form-control" name="nome" id="nome" placeholder="">
+                                                                <input type="text" class="form-control" name="nome" id="nome" placeholder="" value="${utente.nome}">
                                                             </div>
                                                         </div>
                                                         <div class="form-group row">
                                                             <label for="cognome" class="col-sm-3 col-form-label">Cognome</label>
                                                             <div class="col-sm-8">
-                                                                <input type="text" class="form-control" name="cognome" id="cognome" placeholder="">
+                                                                <input type="text" class="form-control" name="cognome" id="cognome" placeholder="" value="${utente.cognome}">
                                                             </div>
                                                         </div>
                                                         <div class="form-group row">
                                                             <label for="email" class="col-sm-3 col-form-label">E-mail</label>
                                                             <div class="col-sm-8">
-                                                                <input type="email" class="form-control" name="email" id="email" placeholder="">
+                                                                <input type="email" class="form-control" name="email" id="email" placeholder="" value="${utente.email}">
                                                             </div>
                                                         </div>
                                                         <!-- Tasti prec next -->
@@ -189,13 +189,13 @@
                                                         <div class="form-group row">
                                                             <label for="dataScadenza" class="col-sm-3 col-form-label">Data di scadenza</label>
                                                             <div class="col-sm-8">
-                                                                <input type="email" class="form-control" name="dataScadenza" id="dataScadenza" placeholder="">
+                                                                <input type="text" class="form-control" name="dataScadenza" id="dataScadenza" placeholder="">
                                                             </div>
                                                         </div>
                                                         <div class="form-group row">
                                                             <label for="cvv" class="col-sm-3 col-form-label">CVV</label>
                                                             <div class="col-sm-8">
-                                                                <input type="email" class="form-control" name="cvv" id="cvv" placeholder="">
+                                                                <input type="text" class="form-control" name="cvv" id="cvv" placeholder="">
                                                             </div>
                                                         </div>
                                                         <!-- Tasti prec next -->
