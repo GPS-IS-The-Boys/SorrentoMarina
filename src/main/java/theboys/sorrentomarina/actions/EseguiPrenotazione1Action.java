@@ -6,7 +6,6 @@ import theboys.sorrentomarina.models.Turista;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
 /**
  * @author theboys
  */
@@ -15,7 +14,7 @@ public class EseguiPrenotazione1Action implements Action {
   /**
    * Acquisisce tutte le informazioni per una determinata prenotazione che verrà effettuata
    *
-   * @param request  the request
+   * @param request the request
    * @param response the response
    * @return ritorna una view di conferma della prenotazione
    */

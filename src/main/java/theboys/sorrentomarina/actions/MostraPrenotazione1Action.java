@@ -11,7 +11,7 @@ public class MostraPrenotazione1Action implements Action {
   /**
    * Esegue la request action
    *
-   * @param request  the request
+   * @param request the request
    * @param response the response
    * @return ritorna la view prenotazione1
    */
