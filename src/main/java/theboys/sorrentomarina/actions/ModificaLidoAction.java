@@ -8,7 +8,9 @@ import theboys.sorrentomarina.models.Servizio;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.sql.SQLException;
-
+/**
+ * @author theboys
+ */
 public class ModificaLidoAction implements Action {
   /**
    * Modifica gli attributi di un lido della piattaforma
@@ -39,6 +41,7 @@ public class ModificaLidoAction implements Action {
       //modifico il lido
       Lido lido = lidoManager.retriveById(respLido.getId_lido());
       lido.setNome(nomeLido);
+
       lido.setIndirizzo(indirizzoLido);
       lido.setEmail(emailLido);
       lido.setTelefono(telefonoLido);
@@ -71,9 +74,9 @@ public class ModificaLidoAction implements Action {
       servizioManager.update(servizio);
 
       return redirect("/SorrentoMarina/dashboard");
-    } catch (SQLException e) {
+    } catch (Exception e) {
       e.printStackTrace();
-      return view("500");
+      return view("respLidoModifica");
     }
 
   }

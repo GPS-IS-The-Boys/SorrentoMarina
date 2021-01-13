@@ -8,14 +8,16 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.HashMap;
 import java.util.List;
 
-
+/**
+ * @author theboys
+ */
 public class MostraTutteRecensioni implements Action {
   /**
-   * Exec a request action
+   * Esegue la request action
    *
    * @param request  the request
    * @param response the response
-   * @return can return a URL or a view name
+   * @return ritorna la view respEnteRecensioni
    */
   @Override
   public String execute(HttpServletRequest request, HttpServletResponse response) {

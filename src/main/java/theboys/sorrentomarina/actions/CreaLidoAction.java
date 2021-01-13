@@ -9,7 +9,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.sql.SQLException;
 import java.util.List;
-
+/**
+ * @author theboys
+ */
 public class CreaLidoAction extends ChainableAction {
 
   /**
@@ -19,7 +21,7 @@ public class CreaLidoAction extends ChainableAction {
    * @param request  la request
    * @param response la response
    * @return aggiunge un lido nella piattaforma
-   * @author Francesco Pio Covino
+   *
    */
   @Override
   public String execute(HttpServletRequest request, HttpServletResponse response) {
@@ -73,18 +75,18 @@ public class CreaLidoAction extends ChainableAction {
       responsabileLidoManager.create(nomeResp, cognomeResp, emailResp, usernameResp,
           DigestUtils.sha1Hex(passwordResp), lidoDappoggio.getId());
       //e per creare il servizio
-      servizioManager.create(servizio.isBar(), servizio.isRistorante(), servizio.isAnimazione(),
+      servizioManager.create1(servizio.isBar(), servizio.isRistorante(), servizio.isAnimazione(),
           servizio.isWifi(), servizio.isCabina(), servizio.isBeach_volley(), servizio.isCanoa());
       //riprendo l'id del servizio appena aggiunto
-      List<Servizio> listaServizi = servizioManager.retrieveAll();
+      List<Servizio> listaServizi = servizioManager.retriveAll();
       servizio = listaServizi.get(listaServizi.size() - 1);
       lidoDappoggio.setId_servizi(servizio.getId());
       lidoManager.update(lidoDappoggio);
 
       return redirect("/SorrentoMarina/dashboardEnte");
-    } catch (SQLException e) {
+    } catch (SQLException | NullPointerException e) {
       e.printStackTrace();
-      return view("500");
+      return view("creaLido");
     }
 
   }

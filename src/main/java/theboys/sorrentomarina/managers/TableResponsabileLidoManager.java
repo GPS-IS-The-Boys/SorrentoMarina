@@ -9,7 +9,9 @@ import javax.sql.DataSource;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Optional;
-
+/**
+ * @author theboys
+ */
 public class TableResponsabileLidoManager extends TableManager implements ResponsabileLidoManager {
 
   private static final ResultSetHandler<ResponsabileLido> RES_LIDO_MAPPER =
@@ -70,7 +72,7 @@ public class TableResponsabileLidoManager extends TableManager implements Respon
    */
   @Override
   public void update(ResponsabileLido responsabileLido) throws SQLException {
-    runner.update("UPDATE RESPONSABILE_LIDO SET nome = ?,cognome = ?,email = ?,username = ?,password_lido = ? WHERE id = ?",
+    runner.update("UPDATE RESPONSABILE_LIDO SET nome = ?,cognome = ?,email = ?,username = ?,password_responsabile_lido = ? WHERE id = ?",
         responsabileLido.getNome(), responsabileLido.getCognome(), responsabileLido.getEmail(), responsabileLido.getUsername(), responsabileLido.getPassword_responsabile_lido(), responsabileLido.getId());
   }
 

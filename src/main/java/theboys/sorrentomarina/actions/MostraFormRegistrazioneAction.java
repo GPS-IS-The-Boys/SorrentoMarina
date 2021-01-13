@@ -2,7 +2,9 @@ package theboys.sorrentomarina.actions;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+/**
+ * @author theboys
+ */
 public class MostraFormRegistrazioneAction implements Action {
   /**
    * Apre il form di registrazione del turista

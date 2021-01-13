@@ -9,7 +9,9 @@ import javax.sql.DataSource;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Optional;
-
+/**
+ * @author theboys
+ */
 public class TableTuristaManager extends TableManager implements TuristaManager {
 
   private static final ResultSetHandler<Turista> TUR_MAPPER =
@@ -70,7 +72,7 @@ public class TableTuristaManager extends TableManager implements TuristaManager 
    * Ricerca di un turista tramite id
    *
    * @param id
-   * @return
+   * @return un turista
    * @throws SQLException
    */
   @Override
@@ -82,7 +84,7 @@ public class TableTuristaManager extends TableManager implements TuristaManager 
   /**
    * Ricerca di tutti i turisti
    *
-   * @return
+   * @return una lista di turisti
    * @throws SQLException
    */
   @Override
@@ -131,7 +133,7 @@ public class TableTuristaManager extends TableManager implements TuristaManager 
   /**
    * Ricerca dell'ultimo turista inserito
    *
-   * @return
+   * @return l'id di un turista specifico
    * @throws SQLException
    */
   public int ultimateId() throws SQLException {

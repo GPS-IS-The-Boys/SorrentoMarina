@@ -15,6 +15,13 @@ public abstract class ChainableAction implements Action {
     this.next = next;
   }
 
+  /**
+   *
+   *
+   * @param request the request
+   * @param response the response
+   * @return
+   */
   @Override
   public String execute(HttpServletRequest request, HttpServletResponse response) {
     return Objects.nonNull(next) ? next.execute(request, response) : view("500");
