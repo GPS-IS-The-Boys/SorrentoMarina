@@ -6,16 +6,16 @@ import theboys.sorrentomarina.models.Turista;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import java.util.List;
+
 /**
  * @author theboys
  */
-public class EseguiPrenotazione1Action  implements Action{
+public class EseguiPrenotazione1Action implements Action {
 
   /**
    * Acquisisce tutte le informazioni per una determinata prenotazione che verrà effettuata
    *
-   * @param request the request
+   * @param request  the request
    * @param response the response
    * @return ritorna una view di conferma della prenotazione
    */
@@ -33,7 +33,7 @@ public class EseguiPrenotazione1Action  implements Action{
       int numPosti = Integer.parseInt(request.getParameter("numPosti"));
 
       // COSTO
-      int giorni = (int) request.getSession().getAttribute("giorni");
+      int giorni = Integer.parseInt((String) request.getSession().getAttribute("giorni"));
       float costo = numPosti * lido.getPrezzo_singolo() * giorni;
 
       // DATI PERSONALI

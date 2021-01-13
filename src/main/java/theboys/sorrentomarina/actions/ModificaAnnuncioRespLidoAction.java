@@ -34,7 +34,6 @@ public class ModificaAnnuncioRespLidoAction implements Action {
       am.update(newAnnuncio);
       return redirect("/SorrentoMarina/dashboard");
     } catch (SQLException e) {
-      e.printStackTrace();
       return view("500");
     }
   }
