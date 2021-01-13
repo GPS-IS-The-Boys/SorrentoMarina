@@ -62,9 +62,10 @@ public class TableLidoManager extends TableManager implements LidoManager {
    * @throws SQLException
    */
   @Override
-  public Lido retriveByName(String nome) throws SQLException {
-    Lido lido = runner.query("SELECT * FROM LIDO WHERE nome = ?", LIDO_MAPPER, nome);
-    return lido;
+  public List<Lido> retriveByName(String nome) throws SQLException {
+    String q = "%" + nome + "%";
+    List<Lido> lidi = runner.query("SELECT * FROM LIDO WHERE nome LIKE ?", LIDO_MAPPER_LIST, q);
+    return lidi;
   }
 
   /**

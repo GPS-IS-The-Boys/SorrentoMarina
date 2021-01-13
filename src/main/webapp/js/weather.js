@@ -34,7 +34,7 @@
 
     var b= 'http://openweathermap.org/img/wn/' + currentWeather.icon + '@2x.png';
     var a= "<img src='" + b + "'>";
-    CURRENT_TEMP.innerHTML =`${a} ${forecast[0].temp.day}\u00B0<i class="wi wi-degrees"></i>`;
+    CURRENT_TEMP.innerHTML =`${a} ${parseFloat(forecast[0].temp.day).toFixed(1)}\u00B0<i class="wi wi-degrees"></i>`;
 
     CURRENT_LOCATION.innerHTML = widgetHeader;
 
@@ -51,7 +51,7 @@
     `<div class="forecast-item__heading">${name}</div>
   <div class="forecast-item__info">
   ${d}
-  <span class="degrees">${day.temp.day}\u00B0
+  <span class="degrees">${parseFloat(day.temp.day).toFixed(1)}\u00B0
   <i class="wi wi-degrees"></i></span></div>`;
     FORECAST.appendChild(dayBlock);
 });

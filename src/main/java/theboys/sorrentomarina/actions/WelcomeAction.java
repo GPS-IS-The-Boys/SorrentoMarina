@@ -42,7 +42,7 @@ public class WelcomeAction implements Action {
 
       // se è stato inserito solo il nome effettuo una ricerca tramite nome
       if (nomeLido != null) {
-        Lido lido = manager.retriveByName(nomeLido);
+        List<Lido> lido = manager.retriveByName(nomeLido);
         nomeLido = null;
         if (lido != null) {
           System.out.println(lido);
