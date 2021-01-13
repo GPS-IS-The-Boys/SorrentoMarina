@@ -5,6 +5,7 @@ import theboys.sorrentomarina.models.Ombrellone;
 import theboys.sorrentomarina.models.Prenotazione;
 
 import java.sql.SQLException;
+import java.util.HashMap;
 import java.util.List;
 
 public interface PrenotazioneManager {
@@ -26,4 +27,5 @@ public interface PrenotazioneManager {
   float incassoLidoDa_A(int id_lido, String inizio, String fine) throws SQLException;
   List<String> ombrelloniOccupati(String inizio, String fine, Lido lido) throws SQLException;
   int ultimateId() throws SQLException;
+  HashMap<String,Integer> getAffluenza() throws SQLException;
 }

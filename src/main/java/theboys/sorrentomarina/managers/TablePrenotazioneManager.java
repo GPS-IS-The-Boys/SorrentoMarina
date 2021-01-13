@@ -10,6 +10,7 @@ import theboys.sorrentomarina.models.Prenotazione;
 import javax.sql.DataSource;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class TablePrenotazioneManager extends TableManager implements PrenotazioneManager {
@@ -205,5 +206,32 @@ public class TablePrenotazioneManager extends TableManager implements Prenotazio
   public int ultimateId() throws SQLException{
     Prenotazione prenotazione = runner.query("SELECT max(id) AS id FROM PRENOTAZIONE",PRE_MAPPER);
     return prenotazione.getId();
+  }
+
+  /**
+   * Ricerca il numero di prenotazioni effettuate per ogni giorno della settimana.
+   *
+   * @return
+   * @throws SQLException
+   */
+  public HashMap<String,Integer> getAffluenza() throws SQLException {
+    HashMap<String,Integer> map = new HashMap<>();
+    List<Prenotazione> prenotazione = runner.query("select count(id) as num_posti,DAYNAME(data_inizio) as data_inizio from PRENOTAZIONE group by DAYNAME(data_inizio)", PRE_MAPPER_LIST);
+    for(Prenotazione p : prenotazione) {
+      if (map.containsKey(p.getData_inizio())) {
+        map.put(p.getData_inizio(), map.get(p.getData_inizio()) + p.getNum_posti());
+      } else {
+        map.put(p.getData_inizio(), p.getNum_posti());
+      }
+    }
+    prenotazione = runner.query("select count(id) as num_posti,DAYNAME(data_inizio) as data_inizio from PRENOTAZIONE group by DAYNAME(data_fine)", PRE_MAPPER_LIST);
+    for(Prenotazione p : prenotazione) {
+      if (map.containsKey(p.getData_inizio())) {
+        map.put(p.getData_inizio(), map.get(p.getData_inizio()) + p.getNum_posti());
+      } else {
+        map.put(p.getData_inizio(), p.getNum_posti());
+      }
+    }
+    return map;
   }
 }
