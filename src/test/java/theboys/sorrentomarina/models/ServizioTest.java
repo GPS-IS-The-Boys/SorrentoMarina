@@ -153,4 +153,31 @@ public class ServizioTest {
     assertEquals(true, servizio.isCanoa(),"Should return true");
   }
 
+  /**
+   * test method isAllFalse
+   */
+  @Test
+  public void isAllFalseTest1(){
+    Servizio servizio=new Servizio(false,false,false,false,false,false,true);
+    assertEquals(false, servizio.isAllFalse(),"Should return false");
+  }
+
+  /**
+   * test method isAllFalse
+   */
+  @Test
+  public void isAllFalseTest2(){
+    Servizio servizio=new Servizio(false,false,false,false,false,false,false);
+    assertEquals(true, servizio.isAllFalse(),"Should return true");
+  }
+
+  /**
+   * test method isAllFalse
+   */
+  @Test
+  public void isAllFalseTest3(){
+    Servizio servizio=new Servizio(true,true,true,true,true,true,true);
+    assertEquals(false, servizio.isAllFalse(),"Should return false");
+  }
+
 }

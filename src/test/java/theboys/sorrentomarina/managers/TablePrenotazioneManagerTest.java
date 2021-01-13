@@ -6,6 +6,7 @@ import theboys.sorrentomarina.models.Prenotazione;
 
 import java.io.FileNotFoundException;
 import java.sql.SQLException;
+import java.util.HashMap;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -41,10 +42,22 @@ public class TablePrenotazioneManagerTest extends IntegrationTestCase{
    * @throws SQLException
    */
   @Test
-  public void createTest() throws SQLException {
+  public void createTest1() throws SQLException {
     manager = new TablePrenotazioneManager(mockDb);
     manager.create(5,"2020-06-12","2020-06-14",2,30,1,1);
     Prenotazione prenotazione = manager.retriveById(5);
+    assertNotNull(prenotazione,"It should create the Prenotazione");
+  }
+
+  /**
+   * Controlla se la create rende persistente una prenotazione
+   * @throws SQLException
+   */
+  @Test
+  public void createTest2() throws SQLException {
+    manager = new TablePrenotazioneManager(mockDb);
+    manager.create("2020-06-12","2020-06-14",2,30,1,1);
+    Prenotazione prenotazione = manager.retriveById(6);
     assertNotNull(prenotazione,"It should create the Prenotazione");
   }
 
@@ -57,7 +70,7 @@ public class TablePrenotazioneManagerTest extends IntegrationTestCase{
   public void retriveAllTest() throws SQLException {
     manager = new TablePrenotazioneManager(mockDb);
     List<Prenotazione> list = manager.retriveAll();
-    assertEquals(4,list.size(),"It should retrive all Prenotazioni");
+    assertEquals(6,list.size(),"It should retrive all Prenotazioni");
   }
 
   /**
@@ -87,18 +100,18 @@ public class TablePrenotazioneManagerTest extends IntegrationTestCase{
   }
 
   /**
-   * Controlla Se il numero di prenotazioni totali � uguale a quello ritornato
+   * Controlla Se il numero di prenotazioni totali è uguale a quello ritornato
    * @throws SQLException
    */
   @Test
   public void prenotazioniTotaliTest() throws SQLException {
     manager = new TablePrenotazioneManager(mockDb);
     int prenotazioniTotali = manager.prenotazioniTotali();
-    assertEquals(4,prenotazioniTotali,"It should return 1");
+    assertEquals(6,prenotazioniTotali,"It should return 6");
   }
 
   /**
-   * Controlla se il totale del consorzio � la somma di tutti gli incassi
+   * Controlla se il totale del consorzio è la somma di tutti gli incassi
    * derivati dalle prenotazioni
    * @throws SQLException
    */
@@ -106,7 +119,7 @@ public class TablePrenotazioneManagerTest extends IntegrationTestCase{
   public void incassoConsorzio() throws SQLException {
     manager = new TablePrenotazioneManager(mockDb);
     float incassoConsorzio = manager.incassoConsorzio();
-    assertEquals(120,incassoConsorzio,"It should return 240");
+    assertEquals(150,incassoConsorzio,"It should return 150");
   }
 
   /**
@@ -117,7 +130,7 @@ public class TablePrenotazioneManagerTest extends IntegrationTestCase{
   public void incassoLidoTotaleTest() throws SQLException {
     manager = new TablePrenotazioneManager(mockDb);
     float incassoTotale = manager.incassoLidoTotale(1);
-    assertEquals(30, incassoTotale, "It should return 60");
+    assertEquals(90, incassoTotale, "It should return 90");
   }
 
   /**
@@ -128,7 +141,7 @@ public class TablePrenotazioneManagerTest extends IntegrationTestCase{
   public void incassoLidoDaATest() throws SQLException {
     manager = new TablePrenotazioneManager(mockDb);
     float incassoTotale = manager.incassoLidoDa_A(1, "2020-06-09", "2020-06-09");
-    assertEquals(30, incassoTotale, "It should return 60");
+    assertEquals(30, incassoTotale, "It should return 30");
   }
 
   /**
@@ -142,4 +155,40 @@ public class TablePrenotazioneManagerTest extends IntegrationTestCase{
     List<String> list = manager.ombrelloniOccupati("2020-06-09", "2020-06-09", lido);
     assertEquals(1, list.size(), "It should return 1");
   }
+
+  /**
+   * Controlla se gli ombrelloni occupati per un certo periodo in un
+   * certo lido corrispondono
+   * @throws SQLException
+   */
+  @Test
+  public void ombrelloniListOccupatiTest() throws SQLException {
+    manager = new TablePrenotazioneManager(mockDb);
+    List<Ombrellone> list=manager.ombrelloniListOccupati("2020-06-09","2020-06-09",1);
+    assertEquals(1, list.size(), "It should return 1");
+  }
+
+  /**
+   * Controlla l'ultima prenotazione effettuata
+   * @throws SQLException
+   */
+  @Test
+  public void ultimateIdTest() throws SQLException {
+    manager = new TablePrenotazioneManager(mockDb);
+    int idPre=manager.ultimateId();
+    Prenotazione prenotazione= manager.retriveById(idPre);
+    assertNotNull(prenotazione,"It should retrive the last Prenotazione");
+  }
+
+  /**
+   * Controlla l'affluenza nei giorni della settimana
+   * @throws SQLException
+   */
+  /*
+  @Test
+  public void getAffluenza() throws SQLException{
+    manager = new TablePrenotazioneManager(mockDb);
+    HashMap<String,Integer> map=manager.getAffluenza();
+    assertNull(map,"It should retrive the map");
+  }*/
 }
