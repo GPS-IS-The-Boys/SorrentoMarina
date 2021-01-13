@@ -56,7 +56,7 @@ public class TablePrenotazioneManagerTest extends IntegrationTestCase{
   @Test
   public void createTest2() throws SQLException {
     manager = new TablePrenotazioneManager(mockDb);
-    manager.create("2020-06-12","2020-06-14",2,30,1,1);
+    manager.create("2020-06-12","2020-06-14",2,30,"AB1234",1,1);
     Prenotazione prenotazione = manager.retriveById(6);
     assertNotNull(prenotazione,"It should create the Prenotazione");
   }

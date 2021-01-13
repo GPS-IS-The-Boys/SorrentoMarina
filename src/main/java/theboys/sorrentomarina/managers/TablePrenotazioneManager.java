@@ -38,16 +38,14 @@ public class TablePrenotazioneManager extends TableManager implements Prenotazio
    * @param data_fine
    * @param num_posti
    * @param costo
-   * @param codice
    * @param id_lido
    * @param id_turista
    * @throws SQLException
    */
   @Override
-  public void create(int id, String data_inizio, String data_fine, int num_posti,
-                     float costo, String codice, int id_lido, int id_turista)
+  public void create(int id, String data_inizio, String data_fine, int num_posti, float costo,String codice, int id_lido, int id_turista)
       throws SQLException {
-    runner.update("INSERT INTO PRENOTAZIONE VALUES (?,?,?,?,?,?,?,?)", id, data_inizio, data_fine, num_posti, costo,codice, id_lido, id_turista);
+    runner.update("INSERT INTO PRENOTAZIONE(id,data_inizio,data_fine,num_posti,costo,codice,id_lido,id_turista) VALUES (?,?,?,?,?,?,?,?)", id, data_inizio, data_fine, num_posti, costo,codice, id_lido, id_turista);
   }
 
   /**
@@ -62,8 +60,8 @@ public class TablePrenotazioneManager extends TableManager implements Prenotazio
    * @throws SQLException
    */
   @Override
-  public void create(String data_inizio, String data_fine, int num_posti, float costo, String codice, int id_lido, int id_turista) throws SQLException {
-    runner.update("INSERT INTO PRENOTAZIONE(data_inizio,data_fine,num_posti,costo,codice,id_lido,id_turista) VALUES (?,?,?,?,?,?,?)", data_inizio, data_fine, num_posti, costo, codice, id_lido, id_turista);
+  public void create(String data_inizio, String data_fine, int num_posti, float costo,String codice, int id_lido, int id_turista) throws SQLException {
+    runner.update("INSERT INTO PRENOTAZIONE(data_inizio,data_fine,num_posti,costo,codice,id_lido,id_turista) VALUES (?,?,?,?,?,?,?)", data_inizio, data_fine, num_posti, costo,codice , id_lido, id_turista);
   }
 
   /**
@@ -226,7 +224,6 @@ public class TablePrenotazioneManager extends TableManager implements Prenotazio
    * @return una lista di ombrelloni occupati tra due date
    * @throws SQLException
    */
-
   public List<Ombrellone> ombrelloniListOccupati(String inizio, String fine, int idLido) throws SQLException {
     String sql = "SELECT o.num_riga AS num_riga, o.num_colonna AS num_colonna"
         + "       FROM OMBRELLONE AS o "
@@ -244,7 +241,6 @@ public class TablePrenotazioneManager extends TableManager implements Prenotazio
    * @return l'ultima prenotazione effettuata
    * @throws SQLException
    */
-  @Override
   public int ultimateId() throws SQLException {
     Prenotazione prenotazione = runner.query("SELECT max(id) AS id FROM PRENOTAZIONE", PRE_MAPPER);
     return prenotazione.getId();
@@ -256,10 +252,9 @@ public class TablePrenotazioneManager extends TableManager implements Prenotazio
    * @return una map contentente numero prenotazioni per giorno
    * @throws SQLException
    */
-  @Override
   public HashMap<String,Integer> getAffluenza() throws SQLException {
     HashMap<String,Integer> map = new HashMap<>();
-    List<Prenotazione> prenotazione = runner.query("SELECT count(id) as num_posti,DAYNAME(data_inizio) as data_inizio from PRENOTAZIONE group by DAYNAME(data_inizio)", PRE_MAPPER_LIST);
+    List<Prenotazione> prenotazione = runner.query("select count(id) as num_posti,DAYNAME(data_inizio) as data_inizio from PRENOTAZIONE group by DAYNAME(data_inizio)", PRE_MAPPER_LIST);
     for(Prenotazione p : prenotazione) {
       if (map.containsKey(p.getData_inizio())) {
         map.put(p.getData_inizio(), map.get(p.getData_inizio()) + p.getNum_posti());
@@ -267,7 +262,7 @@ public class TablePrenotazioneManager extends TableManager implements Prenotazio
         map.put(p.getData_inizio(), p.getNum_posti());
       }
     }
-    prenotazione = runner.query("SELECT count(id) as num_posti,DAYNAME(data_inizio) as data_inizio from PRENOTAZIONE group by DAYNAME(data_fine)", PRE_MAPPER_LIST);
+    prenotazione = runner.query("select count(id) as num_posti,DAYNAME(data_inizio) as data_inizio from PRENOTAZIONE group by DAYNAME(data_fine)", PRE_MAPPER_LIST);
     for(Prenotazione p : prenotazione) {
       if (map.containsKey(p.getData_inizio())) {
         map.put(p.getData_inizio(), map.get(p.getData_inizio()) + p.getNum_posti());
@@ -277,13 +272,13 @@ public class TablePrenotazioneManager extends TableManager implements Prenotazio
     }
     return map;
   }
+
   @Override
-  public boolean codiceIsPresent(String codice) throws SQLException{
-    Prenotazione prenotazione = runner.query("SELECT count(id) AS id FROM PRENOTAZIONE WHERE codice=?", PRE_MAPPER,codice);
-    if(prenotazione.getId()==0){
-      return false;
-    }else{
+  public boolean codiceIsPresent(String codice) throws SQLException {
+    Prenotazione prenotazione = runner.query("SELECT * FROM PRENOTAZIONE WHERE codice=?", PRE_MAPPER, codice);
+    if(prenotazione!=null){
       return true;
     }
+    else return false;
   }
 }
