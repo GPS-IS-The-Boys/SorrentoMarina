@@ -10,7 +10,9 @@ import theboys.sorrentomarina.models.Servizio;
 import javax.sql.DataSource;
 import java.sql.SQLException;
 import java.util.List;
-
+/**
+ * @author theboys
+ */
 public class TableLidoManager extends TableManager implements LidoManager {
 
   private static final ResultSetHandler<Lido> LIDO_MAPPER =

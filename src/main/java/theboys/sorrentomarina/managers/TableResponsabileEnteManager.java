@@ -10,7 +10,9 @@ import java.sql.SQLException;
 import java.util.List;
 import java.util.Optional;
 
-
+/**
+ * @author theboys
+ */
 public class TableResponsabileEnteManager extends TableManager implements ResponsabileEnteManager {
 
   private static final ResultSetHandler<ResponsabileEnte> ENTE_MAPPER =

@@ -9,7 +9,7 @@ import org.apache.commons.dbutils.handlers.BeanHandler;
 import theboys.sorrentomarina.models.Account;
 
 /**
- * @author Diequ
+ * @author theboys
  */
 public class TableAccountManager extends TableManager implements AccountManager {
 
@@ -20,6 +20,13 @@ public class TableAccountManager extends TableManager implements AccountManager 
     super(dataSource);
   }
 
+  /**
+   * Ricerca un account nel Database
+   *
+   * @param email
+   * @param password
+   * @return Account
+   */
   @Override
   public Optional<Account> findAccount(String email, String password)
       throws SQLException {
