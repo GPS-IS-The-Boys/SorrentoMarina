@@ -9,7 +9,8 @@
   <div class="container">
     <div class="row md-1">
       <p>
-      Aggiunta di un nuovo lido<br>Compila tutti i campi per aggiungere un nuovo lido alla piattaforma con relativo responsabile
+      Aggiunta di un nuovo lido<i class="fa fa-umbrella-beach"></i><br>
+        Compila tutti i campi per aggiungere un nuovo lido alla piattaforma con relativo responsabile
       </p>
     </div>
     <form action="creaLido" method="post">

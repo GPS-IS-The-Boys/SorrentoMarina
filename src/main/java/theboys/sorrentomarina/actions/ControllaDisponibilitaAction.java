@@ -41,7 +41,7 @@ public class ControllaDisponibilitaAction implements Action {
       return view("500");
     }
 
-    return view("respLidoDisponibilita");
+    return redirect("/SorrentoMarina/mostraDisponibilita");
   }
 }
 
