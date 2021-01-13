@@ -2,9 +2,18 @@ package theboys.sorrentomarina.actions;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+/**
+ * @author theboys
+ */
 public class ListaSelezionati implements Action {
 
+  /**
+   * Setta nella sessione i posti selezionati e i giorni
+   *
+   * @param request the request
+   * @param response the response
+   * @return
+   */
   @Override
   public String execute(HttpServletRequest request, HttpServletResponse response) {
 

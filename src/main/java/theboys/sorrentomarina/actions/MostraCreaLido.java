@@ -2,7 +2,9 @@ package theboys.sorrentomarina.actions;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+/**
+ * @author theboys
+ */
 public class MostraCreaLido implements Action {
   /**
    * Mostra il form per l'aggiunta di un nuovo lido

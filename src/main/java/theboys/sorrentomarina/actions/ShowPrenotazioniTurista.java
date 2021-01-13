@@ -10,9 +10,17 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.sql.SQLException;
 import java.util.List;
-
+/**
+ * @author theBoys
+ */
 public class ShowPrenotazioniTurista implements Action {
-
+  /**
+   * Metodo che mostra la lista di tutte le prenotazioni del turista
+   *
+   * @param request the request
+   * @param response the response
+   * @return ritorna la view prenotazioniTurista
+   */
   @Override
   public String execute(HttpServletRequest request, HttpServletResponse response) {
 

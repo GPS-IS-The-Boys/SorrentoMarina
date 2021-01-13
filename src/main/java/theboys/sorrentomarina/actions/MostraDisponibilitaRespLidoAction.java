@@ -2,7 +2,9 @@ package theboys.sorrentomarina.actions;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+/**
+ * @author theboys
+ */
 public class MostraDisponibilitaRespLidoAction implements Action {
   /**
    * Mostra la pagina di disponibilita' del lido

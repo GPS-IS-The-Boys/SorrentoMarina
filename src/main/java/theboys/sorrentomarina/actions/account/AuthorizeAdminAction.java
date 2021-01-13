@@ -9,10 +9,17 @@ import javax.servlet.http.HttpSession;
 import theboys.sorrentomarina.actions.ChainableAction;
 
 /**
- * @author Diequ
+ * @author theboys
  */
 public class AuthorizeAdminAction extends ChainableAction {
 
+  /**
+   *   Autorizzazione admin
+   *
+   * @param request
+   * @param response
+   * @return
+   */
   @Override
   public String execute(HttpServletRequest request, HttpServletResponse response) {
     HttpSession session = request.getSession(false);

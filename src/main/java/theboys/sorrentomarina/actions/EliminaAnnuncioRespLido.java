@@ -6,7 +6,9 @@ import theboys.sorrentomarina.managers.TableAnnuncioManager;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.sql.SQLException;
-
+/**
+ * @author theboys
+ */
 public class EliminaAnnuncioRespLido implements Action {
   /**
    * Esegue l'eliminazione di un annuncio

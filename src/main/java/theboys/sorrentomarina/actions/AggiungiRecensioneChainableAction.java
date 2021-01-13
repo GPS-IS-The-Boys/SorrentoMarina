@@ -7,8 +7,19 @@ import theboys.sorrentomarina.models.Turista;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+/**
+ * @author theboys
+ */
 
 public class AggiungiRecensioneChainableAction extends ChainableAction {
+
+  /**
+   * Memorizzazione recensione di un turista su un lido
+   *
+   * @param request
+   * @param response
+   * @return in caso di errore la view 500
+   */
   @Override
   public String execute(HttpServletRequest request, HttpServletResponse response) {
     try {

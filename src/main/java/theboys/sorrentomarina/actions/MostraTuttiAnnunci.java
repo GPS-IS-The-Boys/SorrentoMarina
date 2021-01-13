@@ -10,11 +10,11 @@ import java.util.List;
 
 public class MostraTuttiAnnunci implements Action {
   /**
-   * Mostra al responsabile
+   * Mostra al responsabile ente tutti gli annunci
    *
    * @param request  the request
    * @param response the response
-   * @return can return a URL or a view name
+   * @return ritorna la view respEnteAnnunci
    */
   @Override
   public String execute(HttpServletRequest request, HttpServletResponse response) {

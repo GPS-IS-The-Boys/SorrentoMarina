@@ -12,12 +12,18 @@ import javax.servlet.http.HttpSession;
 
 import org.apache.commons.codec.digest.DigestUtils;
 import theboys.sorrentomarina.actions.Action;
-
 /**
- * @author Diequ
+ * @author theboys
  */
 public class LoginAccount implements Action {
 
+  /**
+   * Login di tutti gli account
+   *
+   * @param request the request
+   * @param response the response
+   * @return alla dashboard o in caso di errore alla pagina di login
+   */
   @Override
   public String execute(HttpServletRequest request, HttpServletResponse response) {
     try {
