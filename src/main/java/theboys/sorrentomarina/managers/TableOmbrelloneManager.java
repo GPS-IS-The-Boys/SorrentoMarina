@@ -5,7 +5,9 @@ import org.apache.commons.dbutils.handlers.BeanHandler;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
 import theboys.sorrentomarina.models.Ombrellone;
 import theboys.sorrentomarina.models.Prenotazione;
-
+/**
+ * @author theboys
+ */
 import javax.sql.DataSource;
 import java.sql.SQLException;
 import java.util.List;
@@ -36,7 +38,7 @@ public class TableOmbrelloneManager extends TableManager implements OmbrelloneMa
   /**
    * Ricerca ombrellone tramite prenotazione
    * @param id_prenotazione
-   * @return
+   * @return lista di ombrelloni
    * @throws SQLException
    */
   @Override
@@ -49,7 +51,7 @@ public class TableOmbrelloneManager extends TableManager implements OmbrelloneMa
   /**
    * Ricerca ombrellone tramite id
    * @param id
-   * @return
+   * @return un ombrellone
    * @throws SQLException
    */
   @Override

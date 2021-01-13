@@ -9,7 +9,9 @@ import theboys.sorrentomarina.models.Turista;
 import javax.sql.DataSource;
 import java.sql.SQLException;
 import java.util.List;
-
+/**
+ * @author theboys
+ */
 public class TableServizioManager extends TableManager implements ServizioManager {
 
   private static final ResultSetHandler<Servizio> SER_MAPPER =
@@ -74,7 +76,7 @@ public class TableServizioManager extends TableManager implements ServizioManage
   /**
    * Ricerca servizio tramite id
    * @param id
-   * @return
+   * @return un servizio
    * @throws SQLException
    */
   @Override
@@ -119,6 +121,12 @@ public class TableServizioManager extends TableManager implements ServizioManage
     runner.update("DELETE FROM SERVIZI WHERE id=?", id);
   }
 
+  /**
+   * Ritorna tutti i servizi
+   *
+   * @return una lista di servizi
+   * @throws SQLException
+   */
   @Override
   public List<Servizio> retriveAll() throws SQLException {
     List<Servizio> lista = runner.query("SELECT * FROM SERVIZI", SER_MAPPER_LIST);

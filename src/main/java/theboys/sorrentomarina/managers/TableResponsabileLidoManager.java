@@ -9,7 +9,9 @@ import javax.sql.DataSource;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Optional;
-
+/**
+ * @author theboys
+ */
 public class TableResponsabileLidoManager extends TableManager implements ResponsabileLidoManager {
 
   private static final ResultSetHandler<ResponsabileLido> RES_LIDO_MAPPER =
