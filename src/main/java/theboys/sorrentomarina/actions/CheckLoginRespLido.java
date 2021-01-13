@@ -9,7 +9,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.sql.SQLException;
 import java.util.Optional;
-
+/**
+ * @author theboys
+ */
 public class CheckLoginRespLido extends ChainableAction {
   /**
    * Controlla le credenziali passate e
@@ -18,7 +20,7 @@ public class CheckLoginRespLido extends ChainableAction {
    * @param request la request
    * @param response la response
    * @return la dashboard con l'admin loggato
-   * @author Francesco Pio Covino
+   *
    */
   @Override
   public String execute(HttpServletRequest request, HttpServletResponse response) {

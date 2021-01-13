@@ -12,8 +12,17 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.HashMap;
 import java.util.List;
-
+/**
+ * @author theboys
+ */
 public class RecensioniLidoAction implements Action {
+  /**
+   * Acquisisce tutte le recensioni di un lido
+   *
+   * @param request the request
+   * @param response the response
+   * @return ritorna alla view recensioniLido
+   */
   @Override
   public String execute(HttpServletRequest request, HttpServletResponse response) {
     response.setStatus(HttpServletResponse.SC_ACCEPTED);

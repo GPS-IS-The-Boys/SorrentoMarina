@@ -53,11 +53,19 @@ public class TableLidoManagerTest extends IntegrationTestCase {
   }
 
   @Test
-  public void retriveByServiziTest() throws SQLException {
+  public void retriveByServiziTest1() throws SQLException {
     manager = new TableLidoManager(mockDb);
-    Servizio servizio = new Servizio(true, false, true, false, true, false, true);
+    Servizio servizio = new Servizio(true, true, true, true, true, true, true);
     List<Lido> lidi = manager.retriveByServizi(servizio);
-    assertEquals(1, lidi.size(), "Il numero di lidi che offre i seguenti servizi");
+    assertEquals(0, lidi.size(), "Il numero di lidi che offrono i seguenti servizi");
+  }
+
+  @Test
+  public void retriveByServiziTest2() throws SQLException {
+    manager = new TableLidoManager(mockDb);
+    Servizio servizio = new Servizio(false, false, false, false, false, false, false);
+    List<Lido> lidi = manager.retriveByServizi(servizio);
+    assertEquals(4, lidi.size(), "Il numero di lidi che offrono i seguenti servizi");
   }
 
   /**

@@ -1,5 +1,7 @@
 package theboys.sorrentomarina.models;
-
+/**
+ * @author theboys
+ */
 import lombok.Getter;
 import lombok.Setter;
 
@@ -17,10 +19,27 @@ public class Lido {
   private int num_colonne;
   private int id_servizi;
 
+  /**
+   * Costruttore crea un lido vuoto
+   */
   public Lido() {
     super();
   }
 
+  /**
+   * Costruttore crea un lido con parametri
+   *
+   * @param id
+   * @param nome
+   * @param indirizzo
+   * @param telefono
+   * @param email
+   * @param logo
+   * @param prezzo_singolo
+   * @param num_righe
+   * @param num_colonne
+   * @param id_servizi
+   */
   public Lido(int id, String nome, String indirizzo, String telefono, String email, String logo, float prezzo_singolo, int num_righe, int num_colonne, int id_servizi) {
     this.id = id;
     this.nome = nome;
@@ -34,6 +53,11 @@ public class Lido {
     this.id_servizi = id_servizi;
   }
 
+  /**
+   * Metodo to string
+   *
+   * @return String - stringa che riassume lo stato del lido
+   */
   @Override
   public String toString() {
     return "Lido[id=" + this.id + ", nome=" + this.nome + ", indirizzo=" + this.indirizzo + ", telefono=" + this.telefono + ", email=" + this.email + ", prezzo_singolo=" + this.prezzo_singolo + "]";

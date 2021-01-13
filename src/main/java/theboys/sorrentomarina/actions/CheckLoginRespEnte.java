@@ -9,7 +9,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.sql.SQLException;
 import java.util.Optional;
-
+/**
+ * @author theboys
+ */
 public class CheckLoginRespEnte extends ChainableAction {
 
   /**
@@ -19,7 +21,7 @@ public class CheckLoginRespEnte extends ChainableAction {
    * @param request la request
    * @param response la response
    * @return ritorna la dashboard con l'admin loggato o la pagina di login
-   * @author Francesco Pio Covino
+   *
    */
   @Override
   public String execute(HttpServletRequest request, HttpServletResponse response) {

@@ -1,7 +1,9 @@
 package theboys.sorrentomarina.actions;
 
 import org.apache.commons.mail.*;
-
+/**
+ * @author theboys
+ */
 public class SendMail {
 
   private String oggetto;
@@ -9,12 +11,18 @@ public class SendMail {
   private String dest;
   private static final String MITTENTE = "ConsorzioSorrentoMarina@gmail.com";
 
+
   public SendMail(String oggetto, String msg, String dest) {
     this.oggetto = oggetto;
     this.msg = msg;
     this.dest = dest;
   }
 
+  /**
+   * Invia una E-mail
+   *
+   * @throws EmailException
+   */
   public void send() throws EmailException {
 
     Email email = new SimpleEmail();

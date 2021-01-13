@@ -26,6 +26,11 @@ public class FrontController extends HttpServlet {
   @Resource(name = "jdbc/SorrentoDB")
   private DataSource dataSource;
 
+  /**
+   * Inizializzazione
+   *
+   * @throws ServletException
+   */
   @Override
   public void init() throws ServletException {
     getServletContext().setAttribute("db", dataSource);
@@ -70,18 +75,43 @@ public class FrontController extends HttpServlet {
     ROUTER.get("/mostraDisponibilita", PAF.create("MostraDisponibilita"));
   }
 
+  /**
+   * metodo doGet
+   *
+   * @param request
+   * @param response
+   * @throws ServletException
+   * @throws IOException
+   */
   @Override
   protected void doGet(HttpServletRequest request, HttpServletResponse response)
       throws ServletException, IOException {
     processRequest(HttpMethod.GET, request, response);
   }
 
+  /**
+   * metodo doPost
+   *
+   * @param request
+   * @param response
+   * @throws ServletException
+   * @throws IOException
+   */
   @Override
   protected void doPost(HttpServletRequest request, HttpServletResponse response)
       throws ServletException, IOException {
     processRequest(HttpMethod.POST, request, response);
   }
 
+  /**
+   * Processo di richiesta
+   *
+   * @param method
+   * @param req
+   * @param res
+   * @throws ServletException
+   * @throws IOException
+   */
   private void processRequest(HttpMethod method, HttpServletRequest req, HttpServletResponse res)
       throws ServletException, IOException {
     Action action = ROUTER.handleRoute(method, req.getPathInfo());

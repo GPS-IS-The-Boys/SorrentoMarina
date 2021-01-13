@@ -10,7 +10,9 @@ import theboys.sorrentomarina.models.Servizio;
 import javax.sql.DataSource;
 import java.sql.SQLException;
 import java.util.List;
-
+/**
+ * @author theboys
+ */
 public class TableLidoManager extends TableManager implements LidoManager {
 
   private static final ResultSetHandler<Lido> LIDO_MAPPER =
@@ -157,17 +159,6 @@ public class TableLidoManager extends TableManager implements LidoManager {
     runner.update("DELETE FROM LIDO WHERE id=?", id);
   }
 
-  /**
-   * Ricerca del numero di posti disponibili all'interno del lido
-   *
-   * @param id
-   * @return numero di posti disponibili
-   * @throws SQLException
-   */
-  @Override
-  public int getPostiDisponibili(int id) throws SQLException {
-    return 0;
-  }
 
   /**
    * Ricerca del numero di righe nella disposizione del lido

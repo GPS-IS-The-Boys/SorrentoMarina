@@ -10,8 +10,11 @@ import theboys.sorrentomarina.models.Prenotazione;
 import javax.sql.DataSource;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
-
+/**
+ * @author theboys
+ */
 public class TablePrenotazioneManager extends TableManager implements PrenotazioneManager {
 
   private static final ResultSetHandler<Prenotazione> PRE_MAPPER =
@@ -66,7 +69,7 @@ public class TablePrenotazioneManager extends TableManager implements Prenotazio
    * Ricerca tramite id
    *
    * @param id
-   * @return
+   * @return una prenotazione
    * @throws SQLException
    */
   @Override
@@ -79,7 +82,7 @@ public class TablePrenotazioneManager extends TableManager implements Prenotazio
    * Ricerca tramite turista
    *
    * @param id_turista
-   * @return
+   * @return una lista di prenotazioni
    * @throws SQLException
    */
   @Override
@@ -89,9 +92,9 @@ public class TablePrenotazioneManager extends TableManager implements Prenotazio
   }
 
   /**
-   * Ricerca di tutte le prenotazioni
+   * Ricerca di tutte le prenotazioni di un lido
    *
-   * @return
+   * @return una lista di prenotazioni
    * @throws SQLException
    */
   @Override
@@ -100,6 +103,12 @@ public class TablePrenotazioneManager extends TableManager implements Prenotazio
     return lista;
   }
 
+  /**
+   * Ricerca tutte le prenotazioni effettuarte su sorrento marina
+   *
+   * @return una lista di tutte le prenotazioni
+   * @throws SQLException
+   */
   @Override
   public List<Prenotazione> retriveAll() throws SQLException {
     List<Prenotazione> lista = runner.query("SELECT * FROM PRENOTAZIONE", PRE_MAPPER_LIST);
@@ -132,7 +141,7 @@ public class TablePrenotazioneManager extends TableManager implements Prenotazio
   /**
    * Prenotazioni totali
    *
-   * @return
+   * @return costo di una prenotazione
    * @throws SQLException
    */
   @Override
@@ -144,7 +153,7 @@ public class TablePrenotazioneManager extends TableManager implements Prenotazio
   /**
    * Incasso del consorzio
    *
-   * @return
+   * @return il totale incasso
    * @throws SQLException
    */
   @Override
@@ -157,7 +166,7 @@ public class TablePrenotazioneManager extends TableManager implements Prenotazio
    * Incasso di un determinato lido
    *
    * @param id_lido
-   * @return
+   * @return l'incasso totale del lido
    * @throws SQLException
    */
   @Override
@@ -172,7 +181,7 @@ public class TablePrenotazioneManager extends TableManager implements Prenotazio
    * @param id_lido
    * @param inizio
    * @param fine
-   * @return
+   * @return l'incasso di un lido in un periodo specifico
    * @throws SQLException
    */
   @Override
@@ -188,7 +197,7 @@ public class TablePrenotazioneManager extends TableManager implements Prenotazio
    * @param inizio
    * @param fine
    * @param lido
-   * @return
+   * @return una lista di ombrelloni occupati tra due date
    * @throws SQLException
    */
   @Override
@@ -212,8 +221,8 @@ public class TablePrenotazioneManager extends TableManager implements Prenotazio
    *
    * @param inizio
    * @param fine
-   * @param lido
-   * @return
+   * @param idLido
+   * @return una lista di ombrelloni occupati tra due date
    * @throws SQLException
    */
   public List<Ombrellone> ombrelloniListOccupati(String inizio, String fine, int idLido) throws SQLException {
@@ -230,11 +239,38 @@ public class TablePrenotazioneManager extends TableManager implements Prenotazio
   /**
    * Ricerca dell'ultima prenotazione inserita
    *
-   * @return
+   * @return l'ultima prenotazione effettuata
    * @throws SQLException
    */
   public int ultimateId() throws SQLException {
     Prenotazione prenotazione = runner.query("SELECT max(id) AS id FROM PRENOTAZIONE", PRE_MAPPER);
     return prenotazione.getId();
+  }
+
+  /**
+   * Ricerca il numero di prenotazioni effettuate per ogni giorno della settimana.
+   *
+   * @return una map contentente numero prenotazioni per giorno
+   * @throws SQLException
+   */
+  public HashMap<String,Integer> getAffluenza() throws SQLException {
+    HashMap<String,Integer> map = new HashMap<>();
+    List<Prenotazione> prenotazione = runner.query("select count(id) as num_posti,DAYNAME(data_inizio) as data_inizio from PRENOTAZIONE group by DAYNAME(data_inizio)", PRE_MAPPER_LIST);
+    for(Prenotazione p : prenotazione) {
+      if (map.containsKey(p.getData_inizio())) {
+        map.put(p.getData_inizio(), map.get(p.getData_inizio()) + p.getNum_posti());
+      } else {
+        map.put(p.getData_inizio(), p.getNum_posti());
+      }
+    }
+    prenotazione = runner.query("select count(id) as num_posti,DAYNAME(data_inizio) as data_inizio from PRENOTAZIONE group by DAYNAME(data_fine)", PRE_MAPPER_LIST);
+    for(Prenotazione p : prenotazione) {
+      if (map.containsKey(p.getData_inizio())) {
+        map.put(p.getData_inizio(), map.get(p.getData_inizio()) + p.getNum_posti());
+      } else {
+        map.put(p.getData_inizio(), p.getNum_posti());
+      }
+    }
+    return map;
   }
 }
