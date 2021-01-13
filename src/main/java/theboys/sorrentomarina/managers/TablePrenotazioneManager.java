@@ -10,6 +10,7 @@ import theboys.sorrentomarina.models.Prenotazione;
 import javax.sql.DataSource;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class TablePrenotazioneManager extends TableManager implements PrenotazioneManager {
@@ -29,6 +30,7 @@ public class TablePrenotazioneManager extends TableManager implements Prenotazio
 
   /**
    * Inserimento prenotazione
+   *
    * @param id
    * @param data_inizio
    * @param data_fine
@@ -47,6 +49,7 @@ public class TablePrenotazioneManager extends TableManager implements Prenotazio
 
   /**
    * Inserimento prenotazione
+   *
    * @param data_inizio
    * @param data_fine
    * @param num_posti
@@ -62,6 +65,7 @@ public class TablePrenotazioneManager extends TableManager implements Prenotazio
 
   /**
    * Ricerca tramite id
+   *
    * @param id
    * @return
    * @throws SQLException
@@ -74,6 +78,7 @@ public class TablePrenotazioneManager extends TableManager implements Prenotazio
 
   /**
    * Ricerca tramite turista
+   *
    * @param id_turista
    * @return
    * @throws SQLException
@@ -86,6 +91,7 @@ public class TablePrenotazioneManager extends TableManager implements Prenotazio
 
   /**
    * Ricerca di tutte le prenotazioni
+   *
    * @return
    * @throws SQLException
    */
@@ -103,6 +109,7 @@ public class TablePrenotazioneManager extends TableManager implements Prenotazio
 
   /**
    * Modifica prenotazione
+   *
    * @param p
    * @throws SQLException
    */
@@ -114,6 +121,7 @@ public class TablePrenotazioneManager extends TableManager implements Prenotazio
 
   /**
    * Eliminazione prenotazione
+   *
    * @param id
    * @throws SQLException
    */
@@ -124,6 +132,7 @@ public class TablePrenotazioneManager extends TableManager implements Prenotazio
 
   /**
    * Prenotazioni totali
+   *
    * @return
    * @throws SQLException
    */
@@ -135,6 +144,7 @@ public class TablePrenotazioneManager extends TableManager implements Prenotazio
 
   /**
    * Incasso del consorzio
+   *
    * @return
    * @throws SQLException
    */
@@ -146,6 +156,7 @@ public class TablePrenotazioneManager extends TableManager implements Prenotazio
 
   /**
    * Incasso di un determinato lido
+   *
    * @param id_lido
    * @return
    * @throws SQLException
@@ -158,6 +169,7 @@ public class TablePrenotazioneManager extends TableManager implements Prenotazio
 
   /**
    * Incasso lido in un periodo specifico
+   *
    * @param id_lido
    * @param inizio
    * @param fine
@@ -173,6 +185,7 @@ public class TablePrenotazioneManager extends TableManager implements Prenotazio
 
   /**
    * Ricerca ombrelloni occupati
+   *
    * @param inizio
    * @param fine
    * @param lido
@@ -189,12 +202,31 @@ public class TablePrenotazioneManager extends TableManager implements Prenotazio
         + inizio + "' AND p.data_fine<='" + fine + "')";
     List<Ombrellone> list = runner.query(sql, OMBRELLONE_MAPPER_LIST);
     List<String> listString = new ArrayList<>();
-    for(Ombrellone o : list){
-      listString.add(o.getNum_riga()+"_"+o.getNum_colonna());
+    for (Ombrellone o : list) {
+      listString.add(o.getNum_riga() + "_" + o.getNum_colonna());
     }
     return listString;
   }
 
+  /**
+   * Ricerca ombrelloni occupati
+   *
+   * @param inizio
+   * @param fine
+   * @param lido
+   * @return
+   * @throws SQLException
+   */
+  public List<Ombrellone> ombrelloniListOccupati(String inizio, String fine, int idLido) throws SQLException {
+    String sql = "SELECT o.num_riga AS num_riga, o.num_colonna AS num_colonna"
+        + "       FROM OMBRELLONE AS o "
+        + "       WHERE o.id_prenotazione IN ( SELECT p.id "
+        + "                                    FROM PRENOTAZIONE AS p, LIDO AS l "
+        + "                                    WHERE p.id_lido =" + idLido + " AND p.data_inizio>='"
+        + inizio + "' AND p.data_fine<='" + fine + "')";
+    List<Ombrellone> lista = runner.query(sql, OMBRELLONE_MAPPER_LIST);
+    return lista;
+  }
 
   /**
    * Ricerca dell'ultima prenotazione inserita
@@ -202,8 +234,35 @@ public class TablePrenotazioneManager extends TableManager implements Prenotazio
    * @return
    * @throws SQLException
    */
-  public int ultimateId() throws SQLException{
-    Prenotazione prenotazione = runner.query("SELECT max(id) AS id FROM PRENOTAZIONE",PRE_MAPPER);
+  public int ultimateId() throws SQLException {
+    Prenotazione prenotazione = runner.query("SELECT max(id) AS id FROM PRENOTAZIONE", PRE_MAPPER);
     return prenotazione.getId();
+  }
+
+  /**
+   * Ricerca il numero di prenotazioni effettuate per ogni giorno della settimana.
+   *
+   * @return
+   * @throws SQLException
+   */
+  public HashMap<String,Integer> getAffluenza() throws SQLException {
+    HashMap<String,Integer> map = new HashMap<>();
+    List<Prenotazione> prenotazione = runner.query("select count(id) as num_posti,DAYNAME(data_inizio) as data_inizio from PRENOTAZIONE group by DAYNAME(data_inizio)", PRE_MAPPER_LIST);
+    for(Prenotazione p : prenotazione) {
+      if (map.containsKey(p.getData_inizio())) {
+        map.put(p.getData_inizio(), map.get(p.getData_inizio()) + p.getNum_posti());
+      } else {
+        map.put(p.getData_inizio(), p.getNum_posti());
+      }
+    }
+    prenotazione = runner.query("select count(id) as num_posti,DAYNAME(data_inizio) as data_inizio from PRENOTAZIONE group by DAYNAME(data_fine)", PRE_MAPPER_LIST);
+    for(Prenotazione p : prenotazione) {
+      if (map.containsKey(p.getData_inizio())) {
+        map.put(p.getData_inizio(), map.get(p.getData_inizio()) + p.getNum_posti());
+      } else {
+        map.put(p.getData_inizio(), p.getNum_posti());
+      }
+    }
+    return map;
   }
 }

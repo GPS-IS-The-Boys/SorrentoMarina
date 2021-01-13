@@ -7,6 +7,7 @@ import theboys.sorrentomarina.models.ResponsabileLido;
 
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static theboys.sorrentomarina.managers.IntegrationTestCase.mockDb;
@@ -87,7 +88,8 @@ public class TableResponsabileLidoManagerTest {
   @Test
   public void findResponsabileLidoTest() throws SQLException {
     manager = new TableResponsabileLidoManager(mockDb);
-    assertNotNull(manager.findResponsabileLido("Username1", "password1"), "Deve tornare un responsabile lido");
+    Optional<ResponsabileLido> responsabileLido= manager.findResponsabileLido("Username1", "password1");
+    assertNotNull(responsabileLido, "Deve tornare un responsabile lido");
   }
 
 }

@@ -24,7 +24,6 @@ public class TableServizioManager extends TableManager implements ServizioManage
 
   /**
    * Inserimento servizio
-   * @param id
    * @param bar
    * @param ristorante
    * @param animazione
@@ -35,7 +34,7 @@ public class TableServizioManager extends TableManager implements ServizioManage
    * @throws SQLException
    */
   @Override
-  public void create(int id, boolean bar, boolean ristorante, boolean animazione, boolean wifi, boolean cabina, boolean beach_volley, boolean canoa) throws SQLException {
+  public void create1(boolean bar, boolean ristorante, boolean animazione, boolean wifi, boolean cabina, boolean beach_volley, boolean canoa) throws SQLException {
     int bar_, ristorante_, animazione_, wifi_, cabina_, beach_volley_, canoa_;
     if (bar) bar_ = 1;
     else bar_ = 0;
@@ -51,7 +50,7 @@ public class TableServizioManager extends TableManager implements ServizioManage
     else beach_volley_ = 0;
     if (canoa) canoa_ = 1;
     else canoa_ = 0;
-    runner.update("INSERT INTO SERVIZI VALUES (?,?,?,?,?,?,?,?)", id, bar_, ristorante_, animazione_, wifi_, cabina_, beach_volley_, canoa_);
+    runner.update("INSERT INTO SERVIZI(bar,ristorante,animazione,wifi,cabina,beach_volley,canoa) VALUES (?,?,?,?,?,?,?)", bar_, ristorante_, animazione_, wifi_, cabina_, beach_volley_, canoa_);
   }
 
   /**
@@ -66,9 +65,11 @@ public class TableServizioManager extends TableManager implements ServizioManage
    * @throws SQLException
    */
   @Override
-  public void create(boolean bar, boolean ristorante, boolean animazione, boolean wifi, boolean cabina, boolean beach_volley, boolean canoa) throws SQLException {
+  public void create2(boolean bar, boolean ristorante, boolean animazione, boolean wifi, boolean cabina, boolean beach_volley, boolean canoa) throws SQLException {
     runner.update("INSERT INTO SERVIZI(bar,ristorante,animazione,wifi,cabina,beach_volley,canoa) VALUES (?,?,?,?,?,?,?)", bar, ristorante, animazione, wifi, cabina, beach_volley, canoa);
   }
+
+
 
   /**
    * Ricerca servizio tramite id
@@ -119,7 +120,7 @@ public class TableServizioManager extends TableManager implements ServizioManage
   }
 
   @Override
-  public List<Servizio> retrieveAll() throws SQLException {
+  public List<Servizio> retriveAll() throws SQLException {
     List<Servizio> lista = runner.query("SELECT * FROM SERVIZI", SER_MAPPER_LIST);
     return lista;
   }

@@ -75,10 +75,10 @@ public class CreaLidoAction extends ChainableAction {
       responsabileLidoManager.create(nomeResp, cognomeResp, emailResp, usernameResp,
           DigestUtils.sha1Hex(passwordResp), lidoDappoggio.getId());
       //e per creare il servizio
-      servizioManager.create(servizio.isBar(), servizio.isRistorante(), servizio.isAnimazione(),
+      servizioManager.create1(servizio.isBar(), servizio.isRistorante(), servizio.isAnimazione(),
           servizio.isWifi(), servizio.isCabina(), servizio.isBeach_volley(), servizio.isCanoa());
       //riprendo l'id del servizio appena aggiunto
-      List<Servizio> listaServizi = servizioManager.retrieveAll();
+      List<Servizio> listaServizi = servizioManager.retriveAll();
       servizio = listaServizi.get(listaServizi.size() - 1);
       lidoDappoggio.setId_servizi(servizio.getId());
       lidoManager.update(lidoDappoggio);

@@ -41,7 +41,7 @@
         <div class="container-fluid">
           <div class="blog_center_sidebar">
             <div class="title">
-              <h2 class="mb-30">RECENSIONI</h2>
+              <h2 class="mb-30">RECENSIONI del lido ${lido.nome}</h2>
             </div>
             <c:forEach items="${mapRecensioni}" var="entry">
               <article class="blog_item">

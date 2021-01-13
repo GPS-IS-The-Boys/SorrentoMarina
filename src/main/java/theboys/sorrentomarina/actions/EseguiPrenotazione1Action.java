@@ -2,11 +2,10 @@ package theboys.sorrentomarina.actions;
 
 import theboys.sorrentomarina.managers.*;
 import theboys.sorrentomarina.models.Lido;
-import theboys.sorrentomarina.models.Ombrellone;
 import theboys.sorrentomarina.models.Turista;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 import java.util.List;
 /**
  * @author theboys
@@ -20,9 +19,10 @@ public class EseguiPrenotazione1Action  implements Action{
    * @param response the response
    * @return ritorna una view di conferma della prenotazione
    */
+
   @Override
   public String execute(HttpServletRequest request, HttpServletResponse response) {
-    try{
+    try {
       Lido lido = (Lido) request.getSession().getAttribute("lido");
       int idLido = lido.getId();
       PrenotazioneManager prenotazioneManager = new TablePrenotazioneManager(getSource(request));
@@ -40,18 +40,18 @@ public class EseguiPrenotazione1Action  implements Action{
       TuristaManager turistaManager = new TableTuristaManager(getSource(request));
       Turista turista = (Turista) request.getSession().getAttribute("utente");
       int idTurista;
-      if(turista == null) {
+      if (turista == null) {
         String nome = request.getParameter("nome");
         String cognome = request.getParameter("cognome");
         String email = request.getParameter("email");
         turistaManager.create(nome, cognome, email);
-        idTurista=turistaManager.ultimateId();
-      }else{
-        idTurista=turista.getId();
+        idTurista = turistaManager.ultimateId();
+      } else {
+        idTurista = turista.getId();
       }
       // CREAZIONE PRENOTAZIONE
-      prenotazioneManager.create(dataInizio,dataFine,numPosti,costo,idLido,idTurista);
-      int idPrenotazione=prenotazioneManager.ultimateId();
+      prenotazioneManager.create(dataInizio, dataFine, numPosti, costo, idLido, idTurista);
+      int idPrenotazione = prenotazioneManager.ultimateId();
 
       // OMBRELLONE
       OmbrelloneManager ombrelloneManager = new TableOmbrelloneManager(getSource(request));
@@ -59,13 +59,13 @@ public class EseguiPrenotazione1Action  implements Action{
       int numRiga;
       int numColonna;
       String[] coordinate;
-      for(int i=0;i< ombrelloniSelezionati.length;i++){
+      for (int i = 0; i < ombrelloniSelezionati.length; i++) {
         //SPLIT PER RICAVARE RIGA E COLONNA
-        coordinate=ombrelloniSelezionati[i].split("_");
-        numRiga= Integer.parseInt(coordinate[0]);
-        numColonna= Integer.parseInt(coordinate[1]);
+        coordinate = ombrelloniSelezionati[i].split("_");
+        numRiga = Integer.parseInt(coordinate[0]);
+        numColonna = Integer.parseInt(coordinate[1]);
         //CREAZIONE OMBRELLONE
-        ombrelloneManager.create(numRiga,numColonna,idPrenotazione);
+        ombrelloneManager.create(numRiga, numColonna, idPrenotazione);
       }
 
       // PAGAMENTO
@@ -76,7 +76,7 @@ public class EseguiPrenotazione1Action  implements Action{
       int cvv = Integer.parseInt(request.getParameter("cvv"));
       */
       return view("prenotazioneConfermata");
-    }catch(Exception e){
+    } catch (Exception e) {
       e.printStackTrace();
       return view("500");
     }

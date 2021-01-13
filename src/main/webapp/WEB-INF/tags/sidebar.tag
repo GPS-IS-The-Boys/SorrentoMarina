@@ -40,8 +40,8 @@
     <!-- Nav Item - Tables -->
     <li class="nav-item">
         <a class="nav-link" href="mostraDisponibilita">
-            <i class="fas fa-fw fa-table"></i>
-            <span>Disponibil&agrave; attuale</span></a>
+            <i class="fas fa-fw fa-umbrella-beach"></i>
+            <span>Disponibilit&agrave; attuale</span></a>
     </li>
 
     <li class="nav-item">
