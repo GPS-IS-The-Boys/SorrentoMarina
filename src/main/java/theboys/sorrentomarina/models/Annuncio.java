@@ -5,8 +5,7 @@ import lombok.Setter;
 
 
 /**
- * @author Luigi Maiorano
- * @version 0.1
+ * @author theboys
  */
 
 @Getter

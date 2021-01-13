@@ -4,8 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 /**
- * @author Luigi Maiorano
- * @version 0.1
+ * @author theboys
  */
 
 @Getter
@@ -18,7 +17,7 @@ public class Recensione {
   private int id_turista;
 
   /**
-   * Costruttore recensione senza parametri
+   * Costruttore crea una recensione vuota
    *
    */
   public Recensione() {
@@ -26,7 +25,7 @@ public class Recensione {
   }
 
   /**
-   * Costruttore recensione con tutti i parametri
+   * Costruttore crea una recensione con i parametri
    *
    * @param id - codice univoco di una recensione
    * @param giudizio - voto da 1 a 5
@@ -43,7 +42,7 @@ public class Recensione {
   }
 
   /**
-   * Costruttore annuncio con i parametri escluso id
+   * Costruttore crea una recensione con i parametri escluso id
    *
    * @param giudizio - voto da 1 a 5
    * @param contenuto - testo della recensione
