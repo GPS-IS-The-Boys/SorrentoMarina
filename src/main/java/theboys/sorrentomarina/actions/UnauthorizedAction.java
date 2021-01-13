@@ -10,6 +10,12 @@ import javax.servlet.http.HttpSession;
  */
 public class UnauthorizedAction extends ChainableAction {
 
+  /**
+   *
+   * @param request the request
+   * @param response the response
+   * @return
+   */
   @Override
   public String execute(HttpServletRequest request, HttpServletResponse response) {
     HttpSession session = request.getSession(false);

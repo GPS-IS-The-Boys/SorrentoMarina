@@ -7,7 +7,9 @@ import theboys.sorrentomarina.models.ResponsabileLido;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.sql.SQLException;
-
+/**
+ * @author theboys
+ */
 public class CreaAnnuncioAction implements Action {
   /**
    * Permette al responsabile lido di aggiungere un annuncio al suo lido
@@ -15,7 +17,7 @@ public class CreaAnnuncioAction implements Action {
    * @param request  la request
    * @param response la response
    * @return ritorna nella pagina del lido o nella dashboard
-   * @author Francesco Pio Covino
+   *
    */
   @Override
   public String execute(HttpServletRequest request, HttpServletResponse response) {

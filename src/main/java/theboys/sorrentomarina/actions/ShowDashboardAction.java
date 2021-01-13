@@ -15,7 +15,13 @@ import java.sql.SQLException;
  * @author theBoys
  */
 public class ShowDashboardAction implements Action {
-
+  /**
+   * mostra la dashboard del responsabile lido
+   *
+   * @param request the request
+   * @param response the response
+   * @return ritorna la view respLidoDashboard
+   */
   @Override
   public String execute(HttpServletRequest request, HttpServletResponse response) {
 

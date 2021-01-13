@@ -8,8 +8,17 @@ import theboys.sorrentomarina.models.Lido;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.List;
-
+/**
+ * @author theboys
+ */
 public class AnnunciLidoAction implements Action {
+  /**
+   * Effetua una ricerca degli annunci di un lido
+   *
+   * @param request the request
+   * @param response the response
+   * @return la view annunciLido o in caso di errore la view 500
+   */
   @Override
   public String execute(HttpServletRequest request, HttpServletResponse response) {
     response.setStatus(HttpServletResponse.SC_ACCEPTED);

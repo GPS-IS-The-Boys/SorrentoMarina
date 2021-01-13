@@ -9,7 +9,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.sql.SQLException;
 import java.util.List;
-
+/**
+ * @author theboys
+ */
 public class CreaLidoAction extends ChainableAction {
 
   /**
@@ -19,7 +21,7 @@ public class CreaLidoAction extends ChainableAction {
    * @param request  la request
    * @param response la response
    * @return aggiunge un lido nella piattaforma
-   * @author Francesco Pio Covino
+   *
    */
   @Override
   public String execute(HttpServletRequest request, HttpServletResponse response) {

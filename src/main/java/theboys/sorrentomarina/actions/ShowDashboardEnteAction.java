@@ -8,15 +8,17 @@ import javax.servlet.http.HttpServletResponse;
 import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.List;
-
+/**
+ * @author theBoys
+ */
 public class ShowDashboardEnteAction implements Action {
 
   /**
-   * Exec a request action
+   * Esegue la request action
    *
    * @param request  the request
    * @param response the response
-   * @return can return a URL or a view name
+   * @return ritrona la view respEnteDashboard
    */
   @Override
   public String execute(HttpServletRequest request, HttpServletResponse response) {

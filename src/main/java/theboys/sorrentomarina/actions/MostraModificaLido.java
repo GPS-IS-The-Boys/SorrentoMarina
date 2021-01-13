@@ -11,7 +11,9 @@ import theboys.sorrentomarina.models.Servizio;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.sql.SQLException;
-
+/**
+ * @author theboys
+ */
 public class MostraModificaLido implements Action {
   /**
    * Mostra la pagina dedicata alla modifica del lido

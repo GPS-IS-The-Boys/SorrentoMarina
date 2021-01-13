@@ -7,7 +7,9 @@ import theboys.sorrentomarina.models.Lido;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.sql.SQLException;
-
+/**
+ * @author theboys
+ */
 public class RimuoviLidoAction implements Action {
   /**
    * Azione che permette al responsabile ente di cancellare un lido dalla piattaforma

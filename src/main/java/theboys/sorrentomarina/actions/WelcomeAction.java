@@ -14,7 +14,13 @@ import java.util.List;
  * @author theBoys
  */
 public class WelcomeAction implements Action {
-
+  /**
+   * Questo metodo effettua una ricerca di uno o più lidi
+   *
+   * @param request the request
+   * @param response the response
+   * @return ritorna alla index
+   */
   @Override
   public String execute(HttpServletRequest request, HttpServletResponse response) {
     response.setStatus(HttpServletResponse.SC_ACCEPTED);

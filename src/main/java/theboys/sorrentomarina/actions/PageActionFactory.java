@@ -11,6 +11,12 @@ public class PageActionFactory implements ActionFactory {
   private static final UnauthorizedAction UN_ACTION = new UnauthorizedAction();
   private static final AuthorizeAdminAction AA_ACTION = new AuthorizeAdminAction();
 
+  /**
+   * Esegue la action e associa una stringa ad una chiamata di funzione
+   *
+   * @param type
+   * @return un action
+   */
   @Override
   public Action create(String type) {
     switch (type) {

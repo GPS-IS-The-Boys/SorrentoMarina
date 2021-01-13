@@ -8,8 +8,17 @@ import theboys.sorrentomarina.models.Lido;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+/**
+ * @author theboys
+ */
 public class LidoAction implements Action {
+  /**
+   * Acquisisce i servizi relativi al lido
+   *
+   * @param request the request
+   * @param response the response
+   * @return ritorna la view del lido
+   */
   @Override
   public String execute(HttpServletRequest request, HttpServletResponse response) {
     response.setStatus(HttpServletResponse.SC_ACCEPTED);

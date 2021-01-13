@@ -8,7 +8,9 @@ import theboys.sorrentomarina.models.ResponsabileLido;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.sql.SQLException;
-
+/**
+ * @author theboys
+ */
 public class ModificaAnnuncioRespLidoAction implements Action {
 
   /**

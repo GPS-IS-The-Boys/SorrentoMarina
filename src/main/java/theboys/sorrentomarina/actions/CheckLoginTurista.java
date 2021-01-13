@@ -10,7 +10,9 @@ import javax.servlet.http.HttpServletResponse;
 import java.sql.SQLException;
 import java.util.Optional;
 
-
+/**
+ * @author theboys
+ */
 public class CheckLoginTurista extends ChainableAction {
 
   /**
@@ -20,7 +22,7 @@ public class CheckLoginTurista extends ChainableAction {
    * @param request la request
    * @param response la response
    * @return ritorna l'index, con l'utente loggato nella sessione
-   * @author Francesco Pio Covino
+   *
    */
   @Override
   public String execute(HttpServletRequest request, HttpServletResponse response) {

@@ -13,7 +13,13 @@ import java.sql.SQLException;
 import java.util.List;
 
 public class PostiOccupati implements Action {
-
+  /**
+   * Formatta una lista di posti occupati di un lido tra due date
+   *
+   * @param request the request
+   * @param response the response
+   * @return ritorna i posti occupati
+   */
   @Override
   public String execute(HttpServletRequest request, HttpServletResponse response) {
 
