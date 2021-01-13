@@ -27,10 +27,10 @@ public class EseguiPrenotazione1ActionTest extends ActionSetupDB {
     Mockito.when(mockReq.getParameter("numPosti")).thenReturn("1");
     Mockito.when(mockReq.getSession().getAttribute("giorni")).thenReturn("1");
 
-    Mockito.when(mockReq.getSession().getAttribute("utente")).thenReturn(new Turista(1, "", "", "", "", ""));
+    Mockito.when(mockReq.getSession().getAttribute("utente")).thenReturn(new Turista(1, "", "", "abc@gmail.com", "", ""));
     Mockito.when(mockReq.getParameter("nome")).thenReturn("abc");
     Mockito.when(mockReq.getParameter("cognome")).thenReturn("abc");
-    Mockito.when(mockReq.getParameter("email")).thenReturn("abc");
+    Mockito.when(mockReq.getParameter("email")).thenReturn("abc@tiscali.it");
 
     String[] array = {"1_1", "1_2", "1_3"};
     Mockito.when(mockReq.getSession().getAttribute("postiSelezionati")).thenReturn(array);
@@ -57,7 +57,7 @@ public class EseguiPrenotazione1ActionTest extends ActionSetupDB {
     Mockito.when(mockReq.getSession().getAttribute("utente")).thenReturn(null);
     Mockito.when(mockReq.getParameter("nome")).thenReturn("abc");
     Mockito.when(mockReq.getParameter("cognome")).thenReturn("abc");
-    Mockito.when(mockReq.getParameter("email")).thenReturn("abc");
+    Mockito.when(mockReq.getParameter("email")).thenReturn("abc@tiscali.it");
 
     String[] array = {"1_1", "1_2", "1_3"};
     Mockito.when(mockReq.getSession().getAttribute("postiSelezionati")).thenReturn(array);

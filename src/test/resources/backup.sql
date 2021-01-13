@@ -63,6 +63,7 @@ create table if not exists PRENOTAZIONE (
     data_fine date not null,
     num_posti int not null,
     costo float not null,
+    codice varchar(32) not null,
     id_lido int not null,
     id_turista int not null,
     foreign key (id_lido) references LIDO(id) on update cascade on delete cascade,
@@ -119,10 +120,10 @@ INSERT into TURISTA(nome, cognome, email, username, password_turista) values ('N
 INSERT into TURISTA(nome, cognome, email, username, password_turista) values ('Nome2', 'Cognome2', 'Email2', 'Username2', '2aa60a8ff7fcd473d321e0146afd9e26df395147');
 INSERT into TURISTA(nome, cognome, email, username, password_turista) values ('Nome3', 'Cognome3', 'Email3', 'Username3', '1119cfd37ee247357e034a08d844eea25f6fd20f');
 INSERT into TURISTA(nome, cognome, email, username, password_turista) values ('Nome3', 'Cognome4', 'Email4', 'Username4', 'a1d7584daaca4738d499ad7082886b01117275d8');
-INSERT into PRENOTAZIONE(data_inizio, data_fine, num_posti, costo, id_lido, id_turista) values('2020-06-09','2020-06-09',2,30,1,1);
-INSERT into PRENOTAZIONE(data_inizio, data_fine, num_posti, costo, id_lido, id_turista) values('2020-07-09','2020-07-09',2,30,2,2);
-INSERT into PRENOTAZIONE(data_inizio, data_fine, num_posti, costo, id_lido, id_turista) values('2020-08-09','2020-08-09',2,30,3,3);
-INSERT into PRENOTAZIONE(data_inizio, data_fine, num_posti, costo, id_lido, id_turista) values('2020-09-09','2020-09-09',2,30,4,4);
+INSERT into PRENOTAZIONE(data_inizio, data_fine, num_posti, costo, codice, id_lido, id_turista) values('2020-06-09','2020-06-09',2,30,'123B',1,1);
+INSERT into PRENOTAZIONE(data_inizio, data_fine, num_posti, costo, codice, id_lido, id_turista) values('2020-07-09','2020-07-09',2,30,'345A',2,2);
+INSERT into PRENOTAZIONE(data_inizio, data_fine, num_posti, costo, codice, id_lido, id_turista) values('2020-08-09','2020-08-09',2,30,'123D',3,3);
+INSERT into PRENOTAZIONE(data_inizio, data_fine, num_posti, costo, codice, id_lido, id_turista) values('2020-09-09','2020-09-09',2,30,'123G',4,4);
 insert into ANNUNCIO(titolo, contenuto, foto, id_lido) values
 ( 'Riapertura','Grande riapertura ','C:\\Users\\User\\Desktop\\Uni\\IS\\foto1.jpg',1),
 ( 'Sconti','Sconti la prossima settimana','C:\\Users\\User\\Desktop\\Uni\\IS\\foto2.jpg',1 ),
