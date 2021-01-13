@@ -74,15 +74,14 @@
       <version>5.7.0</version>
       <scope>test</scope>
     </dependency>
-
       <dependency>
-          <groupId>org.junit.platform</groupId>
-          <artifactId>junit-platform-runner</artifactId>
-          <version>1.2.0</version>
-          <scope>test</scope>
+          <groupId>junit</groupId>
+          <artifactId>junit</artifactId>
+          <version>4.13</version>
       </dependency>
 
-    <!-- https://mvnrepository.com/artifact/org.webjars/startbootstrap-sb-admin-2 -->
+
+      <!-- https://mvnrepository.com/artifact/org.webjars/startbootstrap-sb-admin-2 -->
     <dependency>
       <groupId>org.webjars</groupId>
       <artifactId>startbootstrap-sb-admin-2</artifactId>
@@ -143,12 +142,7 @@
       <artifactId>jquery</artifactId>
       <version>3.5.1</version>
     </dependency>
-      <dependency>
-          <groupId>com.h2database</groupId>
-          <artifactId>h2</artifactId>
-          <version>1.4.200</version>
-          <scope>compile</scope>
-      </dependency>
+
 
 
   </dependencies>
