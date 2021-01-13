@@ -59,7 +59,7 @@ public class TableAnnuncioManagerTest extends IntegrationTestCase {
   public void retriveAllTest() throws SQLException {
     manager = new TableAnnuncioManager(mockDb);
     List<Annuncio> lista = manager.retriveAll();
-    assertEquals(4, lista.size(), "It should return a list of length 3");
+    assertEquals(3, lista.size(), "It should return a list of length 3");
   }
 
   /**
