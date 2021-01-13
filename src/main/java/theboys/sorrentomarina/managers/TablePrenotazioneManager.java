@@ -38,6 +38,7 @@ public class TablePrenotazioneManager extends TableManager implements Prenotazio
    * @param data_fine
    * @param num_posti
    * @param costo
+   * @param codice
    * @param id_lido
    * @param id_turista
    * @throws SQLException
