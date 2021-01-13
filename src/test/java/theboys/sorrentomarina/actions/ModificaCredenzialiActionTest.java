@@ -19,7 +19,7 @@ public class ModificaCredenzialiActionTest extends ActionSetupDB {
    * Testa la classe in caso di credenziali errate
    */
   @Test
-  public void testModificaCredenzialiFailure(){
+  public void testTuristaModificaCredenzialiFailure(){
     Mockito.when(mockReq.getParameter("oldPassword")).thenReturn("pass1");
     Mockito.when(mockReq.getParameter("newPassword")).thenReturn("pass2");
     ServletContext ctx = Mockito.mock(ServletContext.class);
@@ -39,7 +39,7 @@ public class ModificaCredenzialiActionTest extends ActionSetupDB {
    * Testa la classe in caso di credenziali corrette
    */
   @Test
-  public void testModificaCredenzialiSuccess(){
+  public void testTuristaModificaCredenzialiSuccess(){
     Mockito.when(mockReq.getParameter("oldPassword")).thenReturn("password1");
     Mockito.when(mockReq.getParameter("newPassword")).thenReturn("password21");
 
@@ -54,5 +54,91 @@ public class ModificaCredenzialiActionTest extends ActionSetupDB {
     mca = new ModificaCredenzialiAction();
     String page = this.mca.execute(mockReq, mockRes);
     assertEquals("redirect:/SorrentoMarina/login", page);
+  }
+
+  /**
+   * Testa la classe in caso di credenziali giuste per il responsabile lido
+   */
+  @Test
+  public void testRespLidoModificaCredenzialiSuccess(){
+    Mockito.when(mockReq.getParameter("oldPassword")).thenReturn("password1");
+    Mockito.when(mockReq.getParameter("newPassword")).thenReturn("password22");
+
+    ServletContext ctx = Mockito.mock(ServletContext.class);
+    Mockito.when(ctx.getAttribute("db")).thenReturn(mockConnection);
+    Mockito.when(mockReq.getServletContext()).thenReturn(ctx);
+    Mockito.when(mockReq.getSession()).thenReturn(mockSession);
+
+    mca = new ModificaCredenzialiAction();
+
+    Mockito.when(mockReq.getSession().getAttribute("utente")).thenReturn(null);
+    Mockito.when(mockReq.getSession().getAttribute("adminLido")).thenReturn(new ResponsabileLido(1, "Nome1", "Cognome1", "Email1","Username1","password1",1));
+    Mockito.when(mockReq.getSession().getAttribute("adminEnte")).thenReturn(new ResponsabileEnte());
+
+    String page = this.mca.execute(mockReq, mockRes);
+    assertEquals("redirect:/SorrentoMarina/login", page);
+  }
+
+  /**
+   * Testa la classe in caso di credenziali errate per il responsabile lido
+   */
+  @Test
+  public void testRespLidoModificaCredenzialiFailure(){
+    Mockito.when(mockReq.getParameter("oldPassword")).thenReturn("pass1");
+    Mockito.when(mockReq.getParameter("newPassword")).thenReturn("pass2");
+    ServletContext ctx = Mockito.mock(ServletContext.class);
+    Mockito.when(ctx.getAttribute("db")).thenReturn(mockConnection);
+    Mockito.when(mockReq.getServletContext()).thenReturn(ctx);
+    Mockito.when(mockReq.getSession()).thenReturn(mockSession);
+    mca = new ModificaCredenzialiAction();
+    Mockito.when(mockReq.getSession().getAttribute("utente")).thenReturn(new Turista());
+    Mockito.when(mockReq.getSession().getAttribute("adminLido")).thenReturn(new ResponsabileLido(1, "Nome1", "Cognome1", "Email1","Username1","password1",1));
+    Mockito.when(mockReq.getSession().getAttribute("adminEnte")).thenReturn(new ResponsabileEnte());
+
+    String page = this.mca.execute(mockReq, mockRes);
+    assertEquals("redirect:/SorrentoMarina/profilo", page);
+  }
+
+  /**
+   * Testa la classe in caso di credenziali giuste per il responsabile ente
+   */
+  @Test
+  public void testRespEnteModificaCredenzialiSuccess(){
+    Mockito.when(mockReq.getParameter("oldPassword")).thenReturn("password1");
+    Mockito.when(mockReq.getParameter("newPassword")).thenReturn("password22");
+
+    ServletContext ctx = Mockito.mock(ServletContext.class);
+    Mockito.when(ctx.getAttribute("db")).thenReturn(mockConnection);
+    Mockito.when(mockReq.getServletContext()).thenReturn(ctx);
+    Mockito.when(mockReq.getSession()).thenReturn(mockSession);
+
+    mca = new ModificaCredenzialiAction();
+
+    Mockito.when(mockReq.getSession().getAttribute("utente")).thenReturn(null);
+    Mockito.when(mockReq.getSession().getAttribute("adminLido")).thenReturn(null);
+    Mockito.when(mockReq.getSession().getAttribute("adminEnte")).thenReturn(new ResponsabileEnte(1, "Nome1", "Cognome1", "Email1","Username1","password1"));
+
+    String page = this.mca.execute(mockReq, mockRes);
+    assertEquals("redirect:/SorrentoMarina/login", page);
+  }
+
+  /**
+   * Testa la classe in caso di credenziali errate per il responsabile ente
+   */
+  @Test
+  public void testRespEnteModificaCredenzialiFailure(){
+    Mockito.when(mockReq.getParameter("oldPassword")).thenReturn("pass1");
+    Mockito.when(mockReq.getParameter("newPassword")).thenReturn("pass2");
+    ServletContext ctx = Mockito.mock(ServletContext.class);
+    Mockito.when(ctx.getAttribute("db")).thenReturn(mockConnection);
+    Mockito.when(mockReq.getServletContext()).thenReturn(ctx);
+    Mockito.when(mockReq.getSession()).thenReturn(mockSession);
+    mca = new ModificaCredenzialiAction();
+    Mockito.when(mockReq.getSession().getAttribute("utente")).thenReturn(new Turista());
+    Mockito.when(mockReq.getSession().getAttribute("adminLido")).thenReturn(new ResponsabileLido());
+    Mockito.when(mockReq.getSession().getAttribute("adminEnte")).thenReturn(new ResponsabileEnte(1, "Nome1", "Cognome1", "Email1","Username1","password1"));
+
+    String page = this.mca.execute(mockReq, mockRes);
+    assertEquals("redirect:/SorrentoMarina/profilo", page);
   }
 }

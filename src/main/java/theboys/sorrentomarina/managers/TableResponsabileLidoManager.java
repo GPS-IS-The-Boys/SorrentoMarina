@@ -72,7 +72,7 @@ public class TableResponsabileLidoManager extends TableManager implements Respon
    */
   @Override
   public void update(ResponsabileLido responsabileLido) throws SQLException {
-    runner.update("UPDATE RESPONSABILE_LIDO SET nome = ?,cognome = ?,email = ?,username = ?,password_lido = ? WHERE id = ?",
+    runner.update("UPDATE RESPONSABILE_LIDO SET nome = ?,cognome = ?,email = ?,username = ?,password_responsabile_lido = ? WHERE id = ?",
         responsabileLido.getNome(), responsabileLido.getCognome(), responsabileLido.getEmail(), responsabileLido.getUsername(), responsabileLido.getPassword_responsabile_lido(), responsabileLido.getId());
   }
 
