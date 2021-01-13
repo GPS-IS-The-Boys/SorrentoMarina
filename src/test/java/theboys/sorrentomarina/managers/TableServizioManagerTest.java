@@ -22,6 +22,8 @@ public class TableServizioManagerTest extends IntegrationTestCase{
     assertNotNull(servizio,"Should return true if create Servizio");
   }
 
+
+
   /**
    * Testa se ritorna un servizio
    * @throws SQLException
