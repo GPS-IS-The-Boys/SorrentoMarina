@@ -6,9 +6,9 @@ import java.sql.SQLException;
 import java.util.List;
 
 public interface ServizioManager {
-  void create(int id, boolean bar, boolean ristorante, boolean animazione, boolean wifi, boolean cabina, boolean beach_volley, boolean canoa) throws SQLException;
+  public void create1(boolean bar, boolean ristorante, boolean animazione, boolean wifi, boolean cabina, boolean beach_volley, boolean canoa) throws SQLException;
 
-  void create(boolean bar, boolean ristorante, boolean animazione, boolean wifi, boolean cabina, boolean beach_volley, boolean canoa) throws SQLException;
+  void create2(boolean bar, boolean ristorante, boolean animazione, boolean wifi, boolean cabina, boolean beach_volley, boolean canoa) throws SQLException;
 
   Servizio retriveById(int id) throws SQLException;
 
@@ -16,5 +16,5 @@ public interface ServizioManager {
 
   void delete(int id) throws SQLException;
 
-  List<Servizio> retrieveAll() throws SQLException;
+  List<Servizio> retriveAll() throws SQLException;
 }

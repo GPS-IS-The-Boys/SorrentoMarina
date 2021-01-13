@@ -27,7 +27,6 @@ public class TablePrenotazioneManagerTest extends IntegrationTestCase{
   /**
    * controlla se il numero delle prenotazioni trovate coincide
    * con quelle presenti nel db
-   * @param idLido
    * @throws SQLException
    */
   @Test

@@ -23,7 +23,6 @@ public interface LidoManager {
   void delete(int id) throws SQLException;
 
   //BUSINESS
-  int getPostiDisponibili(int id) throws SQLException;
 
   int getNumRighe(int id) throws SQLException;
 
