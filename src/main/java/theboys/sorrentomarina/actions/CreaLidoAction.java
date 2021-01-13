@@ -82,9 +82,9 @@ public class CreaLidoAction extends ChainableAction {
       lidoManager.update(lidoDappoggio);
 
       return redirect("/SorrentoMarina/dashboardEnte");
-    } catch (SQLException e) {
+    } catch (SQLException | NullPointerException e) {
       e.printStackTrace();
-      return view("500");
+      return view("creaLido");
     }
 
   }

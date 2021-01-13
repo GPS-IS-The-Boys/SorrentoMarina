@@ -39,6 +39,7 @@ public class ModificaLidoAction implements Action {
       //modifico il lido
       Lido lido = lidoManager.retriveById(respLido.getId_lido());
       lido.setNome(nomeLido);
+
       lido.setIndirizzo(indirizzoLido);
       lido.setEmail(emailLido);
       lido.setTelefono(telefonoLido);
@@ -71,9 +72,9 @@ public class ModificaLidoAction implements Action {
       servizioManager.update(servizio);
 
       return redirect("/SorrentoMarina/dashboard");
-    } catch (SQLException e) {
+    } catch (Exception e) {
       e.printStackTrace();
-      return view("500");
+      return view("respLidoModifica");
     }
 
   }
