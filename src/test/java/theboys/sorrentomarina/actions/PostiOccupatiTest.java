@@ -3,14 +3,12 @@ package theboys.sorrentomarina.actions;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import theboys.sorrentomarina.models.Lido;
-import theboys.sorrentomarina.models.ResponsabileLido;
 
 import javax.servlet.ServletContext;
 
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.StringWriter;
-import java.io.Writer;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

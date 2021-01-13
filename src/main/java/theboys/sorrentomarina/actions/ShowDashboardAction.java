@@ -44,9 +44,8 @@ public class ShowDashboardAction implements Action {
       return view("respLidoDashboard");
 
     } catch (SQLException throwables) {
-      throwables.printStackTrace();
+      return view("500");
     }
-    return redirect("/SorrentoMarina/");
   }
 
 }

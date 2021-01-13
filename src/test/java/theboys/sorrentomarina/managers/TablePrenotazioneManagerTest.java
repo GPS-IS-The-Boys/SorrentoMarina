@@ -43,7 +43,7 @@ public class TablePrenotazioneManagerTest extends IntegrationTestCase{
   @Test
   public void createTest() throws SQLException {
     manager = new TablePrenotazioneManager(mockDb);
-    manager.create(5,"2020-06-12","2020-06-14",2,30,1,1);
+    manager.create(5,"2020-06-12","2020-06-14",2,30,"AB1234",1,1);
     Prenotazione prenotazione = manager.retriveById(5);
     assertNotNull(prenotazione,"It should create the Prenotazione");
   }
@@ -67,7 +67,7 @@ public class TablePrenotazioneManagerTest extends IntegrationTestCase{
   @Test
   public void updateTest() throws SQLException {
     manager = new TablePrenotazioneManager(mockDb);
-    Prenotazione prenotazione = new Prenotazione(1,"2020-06-09","2020-06-09",2,30,1,1);
+    Prenotazione prenotazione = new Prenotazione(1,"2020-06-09","2020-06-09",2,30,"AB1234",1,1);
     prenotazione.setNum_posti(10);
     manager.update(prenotazione);
     prenotazione = manager.retriveById(1);

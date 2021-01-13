@@ -10,8 +10,8 @@ import java.util.List;
 
 public interface PrenotazioneManager {
   //CRUD
-  void create(int id, String data_inizio, String data_fine, int num_posti, float costo, int id_lido, int id_turista) throws SQLException;
-  void create(String data_inizio, String data_fine, int num_posti, float costo, int id_lido, int id_turista) throws SQLException;
+  void create(int id, String data_inizio, String data_fine, int num_posti, float costo,String codice, int id_lido, int id_turista) throws SQLException;
+  void create(String data_inizio, String data_fine, int num_posti, float costo, String codice, int id_lido, int id_turista) throws SQLException;
   Prenotazione retriveById(int id) throws SQLException;
   List<Prenotazione> retriveByIdTurista(int id_turista) throws SQLException;
   List<Prenotazione> retriveAll() throws SQLException;
@@ -28,4 +28,5 @@ public interface PrenotazioneManager {
   List<String> ombrelloniOccupati(String inizio, String fine, Lido lido) throws SQLException;
   int ultimateId() throws SQLException;
   HashMap<String,Integer> getAffluenza() throws SQLException;
+  boolean codiceIsPresent(String codice) throws SQLException;
 }
