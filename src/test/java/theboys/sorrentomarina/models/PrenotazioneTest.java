@@ -10,7 +10,7 @@ public class PrenotazioneTest {
 
   @BeforeEach
   public void init() {
-    prenotazione = new Prenotazione(1,"2020-06-10","2020-06-14",2,30,1,1);
+    prenotazione = new Prenotazione(1,"2020-06-10","2020-06-14",2,30,"AB1234",1,1);
   }
   @Test
   public void getIdTest(){
@@ -52,6 +52,12 @@ public class PrenotazioneTest {
   public void getIdTuristaTest(){
     int idTurista=prenotazione.getId_turista();
     assertEquals(1,idTurista,"Should return 1");
+  }
+
+  @Test
+  public void getCodiceTest(){
+    String codice=prenotazione.getCodice();
+    assertEquals("AB1234",codice,"Should return AB1234");
   }
 
   @Test
@@ -101,5 +107,12 @@ public class PrenotazioneTest {
     prenotazione.setId_turista(2);
     int idTurista=prenotazione.getId_turista();
     assertEquals(2,idTurista,"Should return 2");
+  }
+
+  @Test
+  public void setCodiceTest(){
+    prenotazione.setCodice("ZZ1234");
+    String codice=prenotazione.getCodice();
+    assertEquals("ZZ1234",codice,"Should return ZZ1234");
   }
 }

@@ -28,6 +28,7 @@ public class SendMail {
     email.setMsg(msg);
     email.addTo(dest);
     email.setStartTLSEnabled(true);
+    email.getMailSession().getProperties().put("mail.smtp.ssl.trust", "smtp.gmail.com");
     email.send();
 
   }

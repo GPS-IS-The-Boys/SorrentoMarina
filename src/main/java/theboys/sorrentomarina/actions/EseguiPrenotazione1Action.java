@@ -5,6 +5,7 @@ import theboys.sorrentomarina.models.Lido;
 import theboys.sorrentomarina.models.Turista;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.Random;
 
 public class EseguiPrenotazione1Action implements Action {
   @Override
@@ -33,11 +34,25 @@ public class EseguiPrenotazione1Action implements Action {
         String email = request.getParameter("email");
         turistaManager.create(nome, cognome, email);
         idTurista = turistaManager.ultimateId();
+        turista = turistaManager.retriveById(idTurista);
       } else {
         idTurista = turista.getId();
       }
-      // CREAZIONE PRENOTAZIONE
-      prenotazioneManager.create(dataInizio, dataFine, numPosti, costo, idLido, idTurista);
+      // CREAZIONE CODICE PRENOTAZIONE
+      Random rand = new Random();
+      String codice;
+      do {
+        int i1 = rand.nextInt(10);
+        int i2 = rand.nextInt(10);
+        int i3 = rand.nextInt(10);
+        int i4 = rand.nextInt(10);
+        char i5 = (char) (rand.nextInt(26) + 65);
+        char i6 = (char) (rand.nextInt(26) + 65);
+        codice = String.valueOf(i5) + String.valueOf(i6) + String.valueOf(i1) + String.valueOf(i2) + String.valueOf(i3) + String.valueOf(i4);
+      }while(prenotazioneManager.codiceIsPresent(codice));
+
+      //CREAZIONE PRENOTAZIONE
+      prenotazioneManager.create(dataInizio, dataFine, numPosti, costo,codice, idLido, idTurista);
       int idPrenotazione = prenotazioneManager.ultimateId();
 
       // OMBRELLONE
@@ -55,13 +70,18 @@ public class EseguiPrenotazione1Action implements Action {
         ombrelloneManager.create(numRiga, numColonna, idPrenotazione);
       }
 
-      // PAGAMENTO
+      // PAGAMENTO NON GESTITO
       /*
       String intestatario = request.getParameter("intestatario");
       int numCarta = Integer.parseInt(request.getParameter("numCarta"));
       String dataScadenza = request.getParameter("dataScadenza");
       int cvv = Integer.parseInt(request.getParameter("cvv"));
       */
+
+      //INVIO EMAIL
+      SendMail sender = new SendMail("Codice prenotazione","Il tuo codice: "+codice,turista.getEmail());
+      sender.send();
+
       return view("prenotazioneConfermata");
     } catch (Exception e) {
       e.printStackTrace();
