@@ -84,5 +84,6 @@
     </head>
     <body id="page-top">
         <jsp:doBody/>
+        <script src="/js/index.js"></script>
     </body>
 </html>

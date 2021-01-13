@@ -67,7 +67,7 @@ public class CreaLidoAction extends ChainableAction {
       lidoManager.create(nomeLido, indirizzoLido, telefonoLido, emailLido, logoLido, prezzoLido,
           rigLido, colLido, 2);
       //mi riprendo l'id
-      Lido lidoDappoggio = lidoManager.retriveByName(nomeLido);
+      Lido lidoDappoggio = lidoManager.retriveByName(nomeLido).get(0);
       //lo uso per creare il responsabile lido
       responsabileLidoManager.create(nomeResp, cognomeResp, emailResp, usernameResp, DigestUtils.sha1Hex(passwordResp), lidoDappoggio.getId());
       System.out.println(servizio);

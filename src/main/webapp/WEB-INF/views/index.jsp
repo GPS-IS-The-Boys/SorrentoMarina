@@ -71,7 +71,7 @@
         <div class="favourite-place place-padding">
             <div class="container">
                 <!-- Section Tittle -->
-                <div class="row">
+                <div id="resultList" class="row">
                     <div class="col-lg-12">
                         <div class="section-tittle text-center">
                             <span>Il lido perfetto per te</span>
@@ -79,27 +79,31 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-xl-4 col-lg-4 col-md-6">
-                        <div class="single-place mb-30">
-                            <div class="place-img">
-                                <img src="${lidoRicerca.logo}" alt="/images/defaultImageLogoLido.png" />
-                            </div>
-                            <div class="place-cap">
-                                <div class="place-cap-top">
-                                    <h3><a href="lido?id=${lidoRicerca.id}">${lidoRicerca.nome}</a></h3>
-                                    <p class="dolor">$${lidoRicerca.prezzo_singolo} <span>/ Per Person</span></p>
+                <div  class="row">
+
+                    <c:forEach items="${lidoRicerca}" var="lido">
+                        <div class="col-xl-4 col-lg-4 col-md-6">
+                            <div class="single-place mb-30">
+                                <div class="place-img">
+                                    <img src="${lido.logo}" alt="/images/defaultImageLogoLido" />
                                 </div>
-                                <div class="place-cap-bottom">
-                                    <ul>
-                                        <li><i class="far fa-clock"></i>1 Day</li>
-                                        <li><i class="fas fa-map-marker-alt"></i>${lidoRicerca.indirizzo}</li>
-                                        <li><a href="lido?id=${lidoRicerca.id}"><button class="genric-btn warning circle">Visita</button></a></li>
-                                    </ul>
+                                <div class="place-cap">
+                                    <div class="place-cap-top">
+                                        <h3><a href="#">${lido.nome}</a></h3>
+                                        <p class="dolor">$${lido.prezzo_singolo} <span>/ Per Person</span></p>
+                                    </div>
+                                    <div class="place-cap-bottom">
+                                        <ul>
+                                            <li><i class="far fa-clock"></i>1 Day</li>
+                                            <li><i class="fas fa-map-marker-alt"></i>${lido.indirizzo}</li>
+                                            <li><a href="lido?id=${lido.id}"><button class="genric-btn warning circle">Visita</button></a></li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </c:forEach>
+
                 </div>
             </div>
         </div>

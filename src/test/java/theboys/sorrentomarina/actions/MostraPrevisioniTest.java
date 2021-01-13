@@ -14,7 +14,7 @@ public class MostraPrevisioniTest extends ActionSetup {
   }
 
   /**
-   * Controlla che la view ritornata è quella corretta, ossia la pagina delle previsioni meteo
+   * Controlla che la view ritornata Ã¨ quella corretta, ossia la pagina delle previsioni meteo
    *
    */
   @Test

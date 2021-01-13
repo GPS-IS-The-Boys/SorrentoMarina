@@ -12,7 +12,7 @@ public interface LidoManager {
 
   Lido retriveById(int id) throws SQLException;
 
-  Lido retriveByName(String nome) throws SQLException;
+  List<Lido> retriveByName(String nome) throws SQLException;
 
   List<Lido> retriveByServizi(Servizio servizio) throws SQLException;
 

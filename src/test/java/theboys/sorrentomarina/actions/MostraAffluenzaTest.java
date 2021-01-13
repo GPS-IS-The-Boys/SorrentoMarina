@@ -14,7 +14,7 @@ public class MostraAffluenzaTest extends ActionSetup {
   }
 
   /**
-   * Controlla che la view ritornata è quella corretta, ossia la pagina di affluenza
+   * Controlla che la view ritornata Ã¨ quella corretta, ossia la pagina di affluenza
    *
    */
   @Test

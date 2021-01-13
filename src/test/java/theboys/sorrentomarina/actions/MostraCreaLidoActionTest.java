@@ -14,7 +14,7 @@ public class MostraCreaLidoActionTest extends ActionSetup {
   }
 
   /**
-   * Controlla che la view ritornata è quella corretta, ossia la
+   * Controlla che la view ritornata Ã¨ quella corretta, ossia la
    * pagina con il form per l'aggiunta di un lido
    */
   @Test
