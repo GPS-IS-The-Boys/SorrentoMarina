@@ -190,5 +190,28 @@ public class TablePrenotazioneManagerTest extends IntegrationTestCase{
     manager = new TablePrenotazioneManager(mockDb);
     HashMap<String,Integer> map=manager.getAffluenza();
     assertNull(map,"It should retrive the map");
-  }*/
+  }
+
+  /**
+   * Controlla se il codice prenotazione è presente
+   * @throws SQLException
+   */
+  @Test
+  public void codiceIsPresentTest1() throws SQLException {
+    manager = new TablePrenotazioneManager(mockDb);
+    boolean present=manager.codiceIsPresent("AA1234");
+    assertEquals(true,present,"It should find the Prenotazione");
+  }
+
+  /**
+   * Controlla se il codice prenotazione è presente
+   * @throws SQLException
+   */
+  @Test
+  public void codiceIsPresentTest2() throws SQLException {
+    manager = new TablePrenotazioneManager(mockDb);
+    boolean present=manager.codiceIsPresent("AA789");
+    assertEquals(false,present,"It should not find the Prenotazione");
+  }
+
 }

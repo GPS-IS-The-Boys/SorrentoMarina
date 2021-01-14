@@ -80,7 +80,7 @@ public class TableLidoManager extends TableManager implements LidoManager {
   @Override
   public List<Lido> retriveByServizi(Servizio servizio) throws SQLException {
     String where = "1=1";
-    for (int i = 0; i < 7; i++) {
+    for (int i = 0; i < 8; i++) {
       switch (i) {
         case 0:
           if (servizio.isBar()) {

@@ -63,9 +63,51 @@ public class TableLidoManagerTest extends IntegrationTestCase {
   @Test
   public void retriveByServiziTest2() throws SQLException {
     manager = new TableLidoManager(mockDb);
-    Servizio servizio = new Servizio(false, false, false, false, false, false, false);
+    Servizio servizio = new Servizio(false, false, false, false, false, false, true);
     List<Lido> lidi = manager.retriveByServizi(servizio);
     assertEquals(4, lidi.size(), "Il numero di lidi che offrono i seguenti servizi");
+  }
+  @Test
+  public void retriveByServiziTest3() throws SQLException {
+    manager = new TableLidoManager(mockDb);
+    Servizio servizio = new Servizio(false, false, false, false, false, true, false);
+    List<Lido> lidi = manager.retriveByServizi(servizio);
+    assertEquals(0, lidi.size(), "Il numero di lidi che offrono i seguenti servizi");
+  }
+  @Test
+  public void retriveByServiziTest4() throws SQLException {
+    manager = new TableLidoManager(mockDb);
+    Servizio servizio = new Servizio(false, false, false, false, true, false, false);
+    List<Lido> lidi = manager.retriveByServizi(servizio);
+    assertEquals(3, lidi.size(), "Il numero di lidi che offrono i seguenti servizi");
+  }
+  @Test
+  public void retriveByServiziTest5() throws SQLException {
+    manager = new TableLidoManager(mockDb);
+    Servizio servizio = new Servizio(false, false, false, true, false, false, false);
+    List<Lido> lidi = manager.retriveByServizi(servizio);
+    assertEquals(3, lidi.size(), "Il numero di lidi che offrono i seguenti servizi");
+  }
+  @Test
+  public void retriveByServiziTest6() throws SQLException {
+    manager = new TableLidoManager(mockDb);
+    Servizio servizio = new Servizio(false, false, true, false, false, false, false);
+    List<Lido> lidi = manager.retriveByServizi(servizio);
+    assertEquals(3, lidi.size(), "Il numero di lidi che offrono i seguenti servizi");
+  }
+  @Test
+  public void retriveByServiziTest7() throws SQLException {
+    manager = new TableLidoManager(mockDb);
+    Servizio servizio = new Servizio(false, true, false, false, false, false, false);
+    List<Lido> lidi = manager.retriveByServizi(servizio);
+    assertEquals(1, lidi.size(), "Il numero di lidi che offrono i seguenti servizi");
+  }
+  @Test
+  public void retriveByServiziTest8() throws SQLException {
+    manager = new TableLidoManager(mockDb);
+    Servizio servizio = new Servizio(true, false, false, false, false, false, false);
+    List<Lido> lidi = manager.retriveByServizi(servizio);
+    assertEquals(2, lidi.size(), "Il numero di lidi che offrono i seguenti servizi");
   }
 
   /**
