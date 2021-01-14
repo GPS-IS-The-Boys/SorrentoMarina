@@ -106,4 +106,10 @@ public class ResponsabileLidoTest {
      int id_lido = responsabileLido.getId_lido();
       assertEquals(7, id_lido, "Sgould return 7");
     }
+
+    @Test
+    public void toStringTest(){
+      String result = responsabileLido.toString();
+      assertEquals(result, "ResponsabileLido[id=1,nome=Guido,cognome=Lavespa,email=guido.l@unisa.it,username=Gvespa]");
+    }
 }

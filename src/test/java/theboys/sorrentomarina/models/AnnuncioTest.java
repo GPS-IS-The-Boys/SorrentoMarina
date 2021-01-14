@@ -127,4 +127,15 @@ public class AnnuncioTest {
     assertEquals(3, id_lido, "Should return 3");
   }
 
+  @Test
+  public void createTest(){
+    Annuncio a = new Annuncio("asc", "adc", "acs", 1);
+    assertNotNull(a);
+  }
+
+  @Test
+  public void toStringTest(){
+    String result = annuncio.toString();
+    assertEquals(result, "Annuncio[id=1,titolo=Riapertura,contenuto=Grande riapertura il giorno 9 Giugno,foto=C:\\Users\\User\\Desktop\\Uni\\IS\\foto1.jpg,id_Lido=1]");
+  }
 }

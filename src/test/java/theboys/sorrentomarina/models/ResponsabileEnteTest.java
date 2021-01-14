@@ -131,4 +131,21 @@ public class ResponsabileEnteTest {
     assertEquals("bianchiluigi", pwd, "Sgould return bianchiluigi");
   }
 
+  @Test
+  public void createTest(){
+    ResponsabileEnte re = new ResponsabileEnte(1, "", "", "", "","");
+    assertNotNull(re);
+  }
+
+  @Test
+  public void createTest2(){
+    ResponsabileEnte re = new ResponsabileEnte("", "", "", "","");
+    assertNotNull(re);
+  }
+
+  @Test
+  public void toStringTest(){
+    String result = responsabileEnte.toString();
+    assertEquals(result, "ResponsabileEnte(nome=Mario, cognome=Rossi, email=m.rossi@unisa.it, username=mrossi, password_ente=rossimario, id=1)");
+  }
 }
