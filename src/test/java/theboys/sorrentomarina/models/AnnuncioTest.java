@@ -5,8 +5,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * @author Luigi Maiorano
- * @version 0.1
+ * @author theboys
  */
 
 public class AnnuncioTest {
@@ -127,12 +126,18 @@ public class AnnuncioTest {
     assertEquals(3, id_lido, "Should return 3");
   }
 
+  /**
+   * Test per il metodo create
+   */
   @Test
   public void createTest(){
     Annuncio a = new Annuncio("asc", "adc", "acs", 1);
     assertNotNull(a);
   }
 
+  /**
+   * Test per il metodo toString
+   */
   @Test
   public void toStringTest(){
     String result = annuncio.toString();

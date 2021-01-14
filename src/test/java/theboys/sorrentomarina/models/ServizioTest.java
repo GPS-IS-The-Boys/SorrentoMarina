@@ -3,13 +3,15 @@ package theboys.sorrentomarina.models;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
-
+/**
+ * @author theboys
+ */
 public class ServizioTest {
 
   Servizio servizio;
 
   /**
-   * init servizio
+   * Metodo che inizializza un servizio
    */
   @BeforeEach
   public void init() {
@@ -17,7 +19,7 @@ public class ServizioTest {
   }
 
   /**
-   * test method getId
+   * test per il metodo getId
    */
   @Test
   public void getIdTest(){
@@ -26,7 +28,7 @@ public class ServizioTest {
   }
 
   /**
-   * test method isBar
+   * test per il metodo isBar
    */
   @Test
   public void isBarTest(){
@@ -34,7 +36,7 @@ public class ServizioTest {
   }
 
   /**
-   * test method isRistorante
+   * test per il metodo isRistorante
    */
   @Test
   public void isRistoranteTest(){
@@ -42,7 +44,7 @@ public class ServizioTest {
   }
 
   /**
-   * test method isAnimazione
+   * test per il metodo isAnimazione
    */
   @Test
   public void isAnimazioneTest(){
@@ -50,7 +52,7 @@ public class ServizioTest {
   }
 
   /**
-   * test method isWifi
+   * test per il metodo isWifi
    */
   @Test
   public void isWifiTest(){
@@ -58,7 +60,7 @@ public class ServizioTest {
   }
 
   /**
-   * test method isCabina
+   * test per il metodo isCabina
    */
   @Test
   public void isCabinaTest(){
@@ -66,7 +68,7 @@ public class ServizioTest {
   }
 
   /**
-   *  test method isBeachVolley
+   *  test per il metodo isBeachVolley
    */
   @Test
   public void isBeachVolleyTest(){
@@ -74,7 +76,7 @@ public class ServizioTest {
   }
 
   /**
-   * test method isCanoa
+   * test per il metodo isCanoa
    */
   @Test
   public void isCanoaTest(){
@@ -82,7 +84,7 @@ public class ServizioTest {
   }
 
   /**
-   * test method setId
+   * test per il metodo setId
    */
   @Test
   public void setIdTest(){
@@ -91,7 +93,7 @@ public class ServizioTest {
   }
 
   /**
-   * test method setBar
+   * test per il metodo setBar
    */
   @Test
   public void setBarTest(){
@@ -100,7 +102,7 @@ public class ServizioTest {
   }
 
   /**
-   * test method setRistorante
+   * test per il metodo setRistorante
    */
   @Test
   public void setRistoranteTest(){
@@ -109,7 +111,7 @@ public class ServizioTest {
   }
 
   /**
-   * test method setAnimazione
+   * test per il metodo setAnimazione
    */
   @Test
   public void setAnimazioneTest(){
@@ -118,7 +120,7 @@ public class ServizioTest {
   }
 
   /**
-   * test method setWifi
+   * test per il metodo setWifi
    */
   @Test
   public void setWifiTest(){
@@ -127,7 +129,7 @@ public class ServizioTest {
   }
 
   /**
-   * test method setCabina
+   * test per il metodo setCabina
    */
   @Test
   public void setCabinaTest(){
@@ -136,7 +138,7 @@ public class ServizioTest {
   }
 
   /**
-   * test method setBeach_volley
+   * test per il metodo setBeach_volley
    */
   @Test
   public void setBeachVolleyTest(){
@@ -145,7 +147,7 @@ public class ServizioTest {
   }
 
   /**
-   * test method setCanoa
+   * test per il metodo setCanoa
    */
   @Test
   public void setCanoaTest(){
@@ -154,7 +156,7 @@ public class ServizioTest {
   }
 
   /**
-   * test method isAllFalse
+   * test per il metodo isAllFalse
    */
   @Test
   public void isAllFalseTest1(){
@@ -163,7 +165,7 @@ public class ServizioTest {
   }
 
   /**
-   * test method isAllFalse
+   * test per il metodo isAllFalse
    */
   @Test
   public void isAllFalseTest2(){
@@ -172,7 +174,7 @@ public class ServizioTest {
   }
 
   /**
-   * test method isAllFalse
+   * test per il metodo isAllFalse
    */
   @Test
   public void isAllFalseTest3(){
@@ -181,7 +183,7 @@ public class ServizioTest {
   }
 
   /**
-   * test method isAllFalse
+   * test per il metodo isAllFalse
    */
   @Test
   public void isAllFalseTest4(){
@@ -190,7 +192,7 @@ public class ServizioTest {
   }
 
   /**
-   * test method isAllFalse
+   * test per il metodo isAllFalse
    */
   @Test
   public void isAllFalseTest5(){
@@ -199,7 +201,7 @@ public class ServizioTest {
   }
 
   /**
-   * test method isAllFalse
+   * test per il metodo isAllFalse
    */
   @Test
   public void isAllFalseTest6(){
@@ -208,7 +210,7 @@ public class ServizioTest {
   }
 
   /**
-   * test method isAllFalse
+   * test per il metodo isAllFalse
    */
   @Test
   public void isAllFalseTest7(){
@@ -217,7 +219,7 @@ public class ServizioTest {
   }
 
   /**
-   * test method isAllFalse
+   * test per il metodo isAllFalse
    */
   @Test
   public void isAllFalseTest8(){
@@ -226,7 +228,7 @@ public class ServizioTest {
   }
 
   /**
-   * test method isAllFalse
+   * test per il metodo isAllFalse
    */
   @Test
   public void isAllFalseTest9(){

@@ -4,13 +4,15 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
-
+/**
+ * @author theboys
+ */
 public class ResponsabileEnteTest {
 
   private ResponsabileEnte responsabileEnte;
 
   /**
-   * init Responsabile ente
+   * Metodo che inizializza un Responsabile ente
    */
   @BeforeEach
   public void init() {
@@ -18,7 +20,7 @@ public class ResponsabileEnteTest {
   }
 
   /**
-   * Test method getId
+   * test per il metodo getId
    */
   @Test
   public void getIdTest() {
@@ -27,7 +29,7 @@ public class ResponsabileEnteTest {
   }
 
   /**
-   * test method getNome
+   * test per il metodo getNome
    */
   @Test
   public void getNomeTest() {
@@ -36,7 +38,7 @@ public class ResponsabileEnteTest {
   }
 
   /**
-   * test method getCognome
+   * test per il metodo getCognome
    */
   @Test
   public void getCognomeTest() {
@@ -45,7 +47,7 @@ public class ResponsabileEnteTest {
   }
 
   /**
-   * test method getEmail
+   * test per il metodo getEmail
    */
   @Test
   public void getEmailTest() {
@@ -54,7 +56,7 @@ public class ResponsabileEnteTest {
   }
 
   /**
-   * test method getUsername
+   * test per il metodo getUsername
    */
   @Test
   public void getUsernameTest() {
@@ -63,7 +65,7 @@ public class ResponsabileEnteTest {
   }
 
   /**
-   * test method getPassword
+   * test per il metodo getPassword
    */
   @Test
   public void getPasswordTest() {
@@ -72,7 +74,7 @@ public class ResponsabileEnteTest {
   }
 
   /**
-   * test method setId
+   * test per il metodo setId
    */
   @Test
   public void setIdTest() {
@@ -82,7 +84,7 @@ public class ResponsabileEnteTest {
   }
 
   /**
-   * test method setNome
+   * test per il metodo setNome
    */
   @Test
   public void setNomeTest() {
@@ -92,7 +94,7 @@ public class ResponsabileEnteTest {
   }
 
   /**
-   * test method setCognome
+   * test per il metodo setCognome
    */
   @Test
   public void setCognomeTest() {
@@ -102,7 +104,7 @@ public class ResponsabileEnteTest {
   }
 
   /**
-   * test method setEmail
+   * test per il metodo setEmail
    */
   @Test
   public void setEmailTest() {
@@ -112,7 +114,7 @@ public class ResponsabileEnteTest {
   }
 
   /**
-   * test method setUsername
+   * test per il metodo setUsername
    */
   @Test
   public void setUsernameTest() {
@@ -122,7 +124,7 @@ public class ResponsabileEnteTest {
   }
 
   /**
-   * test method setPassword
+   * test per il metodo setPassword
    */
   @Test
   public void setPasswordTest() {
@@ -131,18 +133,27 @@ public class ResponsabileEnteTest {
     assertEquals("bianchiluigi", pwd, "Sgould return bianchiluigi");
   }
 
+  /**
+   * test per il metodo cerate
+   */
   @Test
   public void createTest(){
     ResponsabileEnte re = new ResponsabileEnte(1, "", "", "", "","");
     assertNotNull(re);
   }
 
+  /**
+   * test per il metodo create
+   */
   @Test
   public void createTest2(){
     ResponsabileEnte re = new ResponsabileEnte("", "", "", "","");
     assertNotNull(re);
   }
 
+  /**
+   * test per il metodo toString
+   */
   @Test
   public void toStringTest(){
     String result = responsabileEnte.toString();
