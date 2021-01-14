@@ -10,11 +10,16 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static theboys.sorrentomarina.managers.IntegrationTestCase.mockDb;
-
+/**
+ * @author theboys
+ */
 public class TableOmbrelloneManagerTest extends IntegrationTestCase{
   TableOmbrelloneManager manager;
 
-
+  /**
+   * testa che venga creato un ombrellone
+   * @throws SQLException
+   */
   @Test
   public void createTest() throws SQLException {
     manager = new TableOmbrelloneManager(mockDb);
@@ -23,6 +28,10 @@ public class TableOmbrelloneManagerTest extends IntegrationTestCase{
     assertEquals(2,lista.size(),"It should create the Ombrellone");
   }
 
+  /**
+   * Testa che retruveByIdPrenotazione ritorni tutti gli ombrelloni associati ad una prenotazione
+   * @throws SQLException
+   */
   @Test
   public void retriveByIdPrenotazioneTest() throws SQLException{
     manager = new TableOmbrelloneManager(mockDb);
@@ -30,6 +39,10 @@ public class TableOmbrelloneManagerTest extends IntegrationTestCase{
     assertEquals(1,lista.size(),"It should retrieve all Ombrelloni of a Prenotazione");
   }
 
+  /**
+   * Testa che un ombrellone sia presente nel database
+   * @throws SQLException
+   */
   @Test
   public void retriveByIdTest() throws SQLException {
     manager = new TableOmbrelloneManager(mockDb);

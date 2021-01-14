@@ -10,8 +10,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 /**
- * @author Luigi Maiorano
- * @version 0.1
+ * @author theboys
  */
 
 public class TableRecensioneManagerTest extends IntegrationTestCase{

@@ -7,7 +7,9 @@ import theboys.sorrentomarina.models.Servizio;
 import static org.junit.jupiter.api.Assertions.*;
 import java.sql.SQLException;
 import java.util.List;
-
+/**
+ * @author theboys
+ */
 public class TableServizioManagerTest extends IntegrationTestCase{
 
   TableServizioManager manager;

@@ -9,12 +9,14 @@ import static org.junit.jupiter.api.Assertions.*;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Optional;
-
+/**
+ * @author theboys
+ */
 public class TableResponsabileEnteManagerTest extends IntegrationTestCase {
 
   TableResponsabileEnteManager manager;
   /**
-   * Test method retriveById
+   * Testa che il metodo retriveById torni un responsabile ente presente
    *
    * @throws SQLException
    */
@@ -26,7 +28,7 @@ public class TableResponsabileEnteManagerTest extends IntegrationTestCase {
   }
 
   /**
-   * Test method retriveAll
+   * Testa che il metodo retriveAll torni una lista di responsabli ente
    *
    * @throws SQLException
    */
@@ -38,7 +40,7 @@ public class TableResponsabileEnteManagerTest extends IntegrationTestCase {
   }
 
   /**
-   * Test method update
+   * Testa che il metodo update effetui una modifica ad un responsabile ente
    *
    * @throws SQLException
    */
@@ -52,7 +54,7 @@ public class TableResponsabileEnteManagerTest extends IntegrationTestCase {
   }
 
   /**
-   * Test method findResponsabileEnte
+   * Testa che il metodo findResponsabileEnte effettui una ricerca avendo username e password
    *
    * @throws SQLException
    */
