@@ -18,11 +18,22 @@ public class IntegrationTestCase {
 
   protected static MockConnection mockDb = MockConnection.getInstance();
 
+  /**
+   * inizializza il database
+   *
+   * @throws SQLException
+   * @throws FileNotFoundException
+   */
   @BeforeAll
   public static void setup() throws SQLException, FileNotFoundException {
     mockDb.initeDb();
   }
 
+  /**
+   * cancella il database
+   *
+   * @throws SQLException
+   */
   @AfterAll
   public static void tearDown() throws SQLException {
     mockDb.clearDb();

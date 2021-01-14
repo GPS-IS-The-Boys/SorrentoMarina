@@ -10,10 +10,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 /**
- * Classe di test per il TableLidoManager
- *
- * @author Francesco Pio Covino
- * @version 0.1
+ * @author theboys
  */
 public class TableLidoManagerTest extends IntegrationTestCase {
 

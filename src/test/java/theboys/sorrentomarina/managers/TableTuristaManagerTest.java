@@ -11,9 +11,7 @@ import java.util.Optional;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * Classe che testa il TableTuristaManager
- *
- * @author Francesco Pio
+ * @author theboys
  */
 public class TableTuristaManagerTest extends IntegrationTestCase {
 

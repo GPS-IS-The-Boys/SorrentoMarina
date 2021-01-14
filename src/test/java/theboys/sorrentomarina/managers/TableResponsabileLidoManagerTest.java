@@ -13,10 +13,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import static theboys.sorrentomarina.managers.IntegrationTestCase.mockDb;
 
 /**
- * Classe che testa il TableResponsabileLidoManager
- *
- * @author Francesco Pio Covino
- * @version 0.1
+ * @author theboys
  */
 @Disabled
 public class TableResponsabileLidoManagerTest {
