@@ -4,6 +4,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 public class TuristaTest {
 
@@ -93,4 +94,15 @@ public class TuristaTest {
     assertEquals("VerdiAntonio", pwd, "Sgould return VerdiAntonio");
   }
 
+  @Test
+  public void createTest(){
+    Turista t = new Turista("cas", "acs", "abc");
+    assertNotNull(t);
+  }
+
+  @Test
+  public void toStringTest(){
+    String result = turista.toString();
+    assertEquals(result, "Turista[id=1,nome=Guido,cognome=Lavespa,email=guido.l@unisa.it,username=Gvespa,password=LavespaGuido]");
+  }
 }

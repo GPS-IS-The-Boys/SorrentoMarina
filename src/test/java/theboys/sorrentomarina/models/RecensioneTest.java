@@ -127,4 +127,15 @@ public class RecensioneTest {
     assertEquals(2, id_turista, "Should return 2");
   }
 
+  @Test
+  public void createTest(){
+    Recensione r = new Recensione(1, "abc", 1, 1);
+    assertNotNull(r);
+  }
+
+  @Test
+  public void toStringTest(){
+    String result = recensione.toString();
+    assertEquals(result, "Recensione[id=1,giudizio=3,contenuto=Struttura sufficiente,id_lido=1,id_turista=1]");
+  }
 }
