@@ -180,4 +180,58 @@ public class ServizioTest {
     assertEquals(false, servizio.isAllFalse(),"Should return false");
   }
 
+  /**
+   * test method isAllFalse
+   */
+  @Test
+  public void isAllFalseTest4(){
+    Servizio servizio=new Servizio(false,false,false,false,false,true,false);
+    assertEquals(false, servizio.isAllFalse(),"Should return false");
+  }
+
+  /**
+   * test method isAllFalse
+   */
+  @Test
+  public void isAllFalseTest5(){
+    Servizio servizio=new Servizio(false,false,false,false,true,false,false);
+    assertEquals(false, servizio.isAllFalse(),"Should return false");
+  }
+
+  /**
+   * test method isAllFalse
+   */
+  @Test
+  public void isAllFalseTest6(){
+    Servizio servizio=new Servizio(false,false,false,true,false,false,false);
+    assertEquals(false, servizio.isAllFalse(),"Should return false");
+  }
+
+  /**
+   * test method isAllFalse
+   */
+  @Test
+  public void isAllFalseTest7(){
+    Servizio servizio=new Servizio(false,false,true,false,false,false,false);
+    assertEquals(false, servizio.isAllFalse(),"Should return false");
+  }
+
+  /**
+   * test method isAllFalse
+   */
+  @Test
+  public void isAllFalseTest8(){
+    Servizio servizio=new Servizio(false,true,false,false,false,false,false);
+    assertEquals(false, servizio.isAllFalse(),"Should return false");
+  }
+
+  /**
+   * test method isAllFalse
+   */
+  @Test
+  public void isAllFalseTest9(){
+    Servizio servizio=new Servizio(true,false,false,false,false,false,false);
+    assertEquals(false, servizio.isAllFalse(),"Should return false");
+  }
+
 }

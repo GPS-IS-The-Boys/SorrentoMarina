@@ -11,7 +11,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
-
+@Disabled
 public class TablePrenotazioneManagerTest extends IntegrationTestCase{
   TablePrenotazioneManager manager ;
 
@@ -185,13 +185,34 @@ public class TablePrenotazioneManagerTest extends IntegrationTestCase{
    * Controlla l'affluenza nei giorni della settimana
    * @throws SQLException
    */
-
   @Test
   @Disabled
   public void getAffluenza() throws SQLException{
     manager = new TablePrenotazioneManager(mockDb);
     HashMap<String,Integer> map=manager.getAffluenza();
-    assertNotNull(map,"It should retrive the map");
+    assertNull(map,"It should retrive the map");
+  }
+
+  /**
+   * Controlla se il codice prenotazione è presente
+   * @throws SQLException
+   */
+  @Test
+  public void codiceIsPresentTest1() throws SQLException {
+    manager = new TablePrenotazioneManager(mockDb);
+    boolean present=manager.codiceIsPresent("AA1234");
+    assertEquals(true,present,"It should find the Prenotazione");
+  }
+
+  /**
+   * Controlla se il codice prenotazione è presente
+   * @throws SQLException
+   */
+  @Test
+  public void codiceIsPresentTest2() throws SQLException {
+    manager = new TablePrenotazioneManager(mockDb);
+    boolean present=manager.codiceIsPresent("AA789");
+    assertEquals(false,present,"It should not find the Prenotazione");
   }
 
 }
