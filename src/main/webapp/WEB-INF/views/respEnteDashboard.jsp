@@ -215,82 +215,82 @@
                         <div class="progress-table">
                           <div class="table-head">
                             <div class="country" style="margin: 10px">Giorni</div>
-                            <div class="visit">Prenotazioni</div>
+                            <div class="visit">% Prenotazioni</div>
                             <div class="percentage">Grafico</div>
                           </div>
                           <div class="table-row">
                             <div class="country" style="margin: 10px">Luned&igrave;</div>
-                            <div class="visit">642</div>
+                            <div class="visit">${lun}</div>
                             <div class="percentage">
                               <div class="progress">
-                                <div class="progress-bar color-1" role="progressbar" style="width: 80%"
-                                     aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                                <div class="progress-bar color-1" role="progressbar" style="width: ${lun}%"
+                                     aria-valuenow="${lun}" aria-valuemin="0" aria-valuemax="100"></div>
                               </div>
                             </div>
                           </div>
 
                           <div class="table-row">
                             <div class="country" style="margin: 10px">Marted&igrave;</div>
-                            <div class="visit">5032</div>
+                            <div class="visit">${mar}</div>
                             <div class="percentage">
                               <div class="progress">
-                                <div class="progress-bar color-2" role="progressbar" style="width: 30%"
-                                     aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+                                <div class="progress-bar color-2" role="progressbar" style="width: ${mar}%"
+                                     aria-valuenow="${mar}" aria-valuemin="0" aria-valuemax="100"></div>
                               </div>
                             </div>
                           </div>
                           <div class="table-row">
 
                             <div class="country" style="margin: 10px">Mercoled&igrave;</div>
-                            <div class="visit">32</div>
+                            <div class="visit">${mer}</div>
                             <div class="percentage">
                               <div class="progress">
-                                <div class="progress-bar color-3" role="progressbar" style="width: 55%"
-                                     aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
+                                <div class="progress-bar color-3" role="progressbar" style="width: ${mer}%"
+                                     aria-valuenow="${mer}" aria-valuemin="0" aria-valuemax="100"></div>
                               </div>
                             </div>
                           </div>
                           <div class="table-row">
 
                             <div class="country" style="margin: 10px">Gioved&igrave;</div>
-                            <div class="visit">503</div>
+                            <div class="visit">${gio}</div>
                             <div class="percentage">
                               <div class="progress">
-                                <div class="progress-bar color-4" role="progressbar" style="width: 60%"
-                                     aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                                <div class="progress-bar color-4" role="progressbar" style="width: ${gio}%"
+                                     aria-valuenow="${gio}" aria-valuemin="0" aria-valuemax="100"></div>
                               </div>
                             </div>
                           </div>
                           <div class="table-row">
 
                             <div class="country" style="margin: 10px">Venerd&igrave;</div>
-                            <div class="visit">632</div>
+                            <div class="visit">${ven}</div>
                             <div class="percentage">
                               <div class="progress">
-                                <div class="progress-bar color-5" role="progressbar" style="width: 40%"
-                                     aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+                                <div class="progress-bar color-5" role="progressbar" style="width: ${ven}%"
+                                     aria-valuenow="${ven}" aria-valuemin="0" aria-valuemax="100"></div>
                               </div>
                             </div>
                           </div>
                           <div class="table-row">
 
                             <div class="country" style="margin: 10px">Sabato</div>
-                            <div class="visit">555</div>
+                            <div class="visit">${sab}</div>
                             <div class="percentage">
                               <div class="progress">
-                                <div class="progress-bar color-6" role="progressbar" style="width: 70%"
-                                     aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                                <div class="progress-bar color-6" role="progressbar" style="width: ${sab}%"
+                                     aria-valuenow="${sab}" aria-valuemin="0" aria-valuemax="100"></div>
                               </div>
                             </div>
                           </div>
                           <div class="table-row">
 
                             <div class="country" style="margin: 10px">Domenica</div>
-                            <div class="visit">4502</div>
+                            <div class="visit">${dom}</div>
                             <div class="percentage">
                               <div class="progress">
-                                <div class="progress-bar color-7" role="progressbar" style="width: 30%"
-                                     aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+                                <div class="progress-bar color-7" role="progressbar" style="width: ${dom}%"
+                                     aria-valuenow="${dom}" aria-valuemin="0" aria-valuemax="100"></div>
                               </div>
                             </div>
                           </div>
