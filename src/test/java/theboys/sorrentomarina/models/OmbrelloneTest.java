@@ -65,6 +65,10 @@ public class OmbrelloneTest {
     assertEquals(30,id,"Should return 30");
   }
 
-
+@Test
+  public void toStringTest(){
+    String result = ombrellone.toString();
+    assertEquals(result,"Ombrellone(id=1, num_riga=5, num_colonna=12, id_prenotazione=27)");
+}
 
 }

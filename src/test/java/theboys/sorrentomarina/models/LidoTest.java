@@ -124,4 +124,10 @@ public class LidoTest {
     int val = lido.getId_servizi();
     assertEquals(6, val, "Should return 6");
   }
+
+  @Test
+  public void toStringTest(){
+    String result = lido.toString();
+    assertEquals(result, "Lido[id=1, nome=Marinella, indirizzo=Via Colombo, telefono=082743123, email=marinella@tiscali.it, prezzo_singolo=10.5]");
+  }
 }

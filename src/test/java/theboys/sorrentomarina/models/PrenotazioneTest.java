@@ -115,4 +115,22 @@ public class PrenotazioneTest {
     String codice=prenotazione.getCodice();
     assertEquals("ZZ1234",codice,"Should return ZZ1234");
   }
+
+  @Test
+  public void createTest(){
+    Prenotazione p = new Prenotazione(1, "", "", 1, 10F, "ASDV1", 1,2);
+    assertNotNull(p, "La prenotazione deve contenere i campi inseriti");
+  }
+
+  @Test
+  public void createTest2(){
+    Prenotazione p = new Prenotazione("", "", 1, 10F, "ASDV1", 1,2);
+    assertNotNull(p, "La prenotazione deve contenere i campi inseriti");
+  }
+
+  @Test
+  public void toStringTest(){
+    String result = prenotazione.toString();
+    assertEquals(result, "Prenotazione(id=1, data_inizio=2020-06-10, data_fine=2020-06-14, num_posti=2, costo=30.0, codice=AB1234, id_lido=1, id_turista=1)");
+  }
 }
