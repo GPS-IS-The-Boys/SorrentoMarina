@@ -2,9 +2,10 @@ package theboys.sorrentomarina.actions;
 
 import org.junit.jupiter.api.*;
 import org.mockito.Mockito;
-import theboys.sorrentomarina.managers.TableTuristaManager;
-import theboys.sorrentomarina.managers.TuristaManager;
-import theboys.sorrentomarina.models.Turista;
+import theboys.sorrentomarina.actions.actionsUtente.RegistrazioneAction;
+import theboys.sorrentomarina.managers.managersUtente.TableTuristaManager;
+import theboys.sorrentomarina.managers.managersUtente.TuristaManager;
+import theboys.sorrentomarina.models.modelsUtente.Turista;
 
 import javax.servlet.ServletContext;
 

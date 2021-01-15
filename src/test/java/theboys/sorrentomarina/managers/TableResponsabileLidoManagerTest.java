@@ -1,22 +1,20 @@
 package theboys.sorrentomarina.managers;
 
-import org.junit.Ignore;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
-import theboys.sorrentomarina.models.ResponsabileLido;
+import theboys.sorrentomarina.managers.managersUtente.TableResponsabileLidoManager;
+import theboys.sorrentomarina.models.modelsUtente.ResponsabileLido;
 
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static theboys.sorrentomarina.managers.IntegrationTestCase.mockDb;
 
 /**
  * @author theboys
  */
-@Disabled
-public class TableResponsabileLidoManagerTest {
+
+public class TableResponsabileLidoManagerTest extends IntegrationTestCase{
 
   TableResponsabileLidoManager manager;
 

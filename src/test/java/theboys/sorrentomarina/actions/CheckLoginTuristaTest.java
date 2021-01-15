@@ -1,8 +1,9 @@
 package theboys.sorrentomarina.actions;
 
-import org.apache.commons.codec.digest.DigestUtils;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
+import theboys.sorrentomarina.actions.actionsUtente.CheckLoginRespLido;
+import theboys.sorrentomarina.actions.actionsUtente.CheckLoginTurista;
 
 import javax.servlet.ServletContext;
 import static org.junit.jupiter.api.Assertions.assertEquals;

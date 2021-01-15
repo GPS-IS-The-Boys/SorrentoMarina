@@ -2,13 +2,10 @@ package theboys.sorrentomarina.actions;
 
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
-import theboys.sorrentomarina.managers.AnnuncioManager;
-import theboys.sorrentomarina.managers.TableAnnuncioManager;
-import theboys.sorrentomarina.models.Annuncio;
-import theboys.sorrentomarina.models.ResponsabileLido;
+import theboys.sorrentomarina.actions.actionsAnnuncio.ModificaAnnuncioRespLidoAction;
+import theboys.sorrentomarina.models.modelsUtente.ResponsabileLido;
 
 import javax.servlet.ServletContext;
-import java.sql.SQLException;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;

@@ -1,9 +1,9 @@
 package theboys.sorrentomarina.actions;
 
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
-import theboys.sorrentomarina.models.Turista;
+import theboys.sorrentomarina.actions.actionsPrenotazione.ShowPrenotazioniTurista;
+import theboys.sorrentomarina.models.modelsUtente.Turista;
 import javax.servlet.ServletContext;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

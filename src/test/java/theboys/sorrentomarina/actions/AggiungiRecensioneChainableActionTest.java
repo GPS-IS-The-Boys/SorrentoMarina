@@ -1,16 +1,16 @@
 package theboys.sorrentomarina.actions;
 
 import org.junit.jupiter.api.Test;
-import org.mockito.Mock;
 import org.mockito.Mockito;
-import theboys.sorrentomarina.managers.AnnuncioManager;
-import theboys.sorrentomarina.managers.RecensioneManager;
-import theboys.sorrentomarina.managers.TableAnnuncioManager;
-import theboys.sorrentomarina.managers.TableRecensioneManager;
-import theboys.sorrentomarina.models.Annuncio;
-import theboys.sorrentomarina.models.Lido;
-import theboys.sorrentomarina.models.Recensione;
-import theboys.sorrentomarina.models.Turista;
+import theboys.sorrentomarina.actions.actionsRecensione.AggiungiRecensioneChainableAction;
+import theboys.sorrentomarina.managers.managersAnnuncio.AnnuncioManager;
+import theboys.sorrentomarina.managers.managersRecensione.RecensioneManager;
+import theboys.sorrentomarina.managers.managersAnnuncio.TableAnnuncioManager;
+import theboys.sorrentomarina.managers.managersRecensione.TableRecensioneManager;
+import theboys.sorrentomarina.models.modelsAnnuncio.Annuncio;
+import theboys.sorrentomarina.models.modelsLido.Lido;
+import theboys.sorrentomarina.models.modelsRecensione.Recensione;
+import theboys.sorrentomarina.models.modelsUtente.Turista;
 
 import javax.servlet.ServletContext;
 

@@ -2,9 +2,10 @@ package theboys.sorrentomarina.actions;
 
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
-import theboys.sorrentomarina.managers.AnnuncioManager;
-import theboys.sorrentomarina.managers.TableAnnuncioManager;
-import theboys.sorrentomarina.models.Annuncio;
+import theboys.sorrentomarina.actions.actionsAnnuncio.EliminaAnnuncioRespLido;
+import theboys.sorrentomarina.managers.managersAnnuncio.AnnuncioManager;
+import theboys.sorrentomarina.managers.managersAnnuncio.TableAnnuncioManager;
+import theboys.sorrentomarina.models.modelsAnnuncio.Annuncio;
 
 import javax.servlet.ServletContext;
 

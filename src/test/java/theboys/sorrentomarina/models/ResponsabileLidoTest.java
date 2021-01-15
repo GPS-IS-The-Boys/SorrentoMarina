@@ -2,6 +2,7 @@ package theboys.sorrentomarina.models;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import theboys.sorrentomarina.models.modelsUtente.ResponsabileLido;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 /**
@@ -9,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  */
 public class ResponsabileLidoTest {
 
-  private  ResponsabileLido responsabileLido;
+  private ResponsabileLido responsabileLido;
 
   /**
    * Metodo che inizializza un Responsabile lido

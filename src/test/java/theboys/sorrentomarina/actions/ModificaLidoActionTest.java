@@ -2,10 +2,14 @@ package theboys.sorrentomarina.actions;
 
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
-import theboys.sorrentomarina.managers.*;
-import theboys.sorrentomarina.models.Lido;
-import theboys.sorrentomarina.models.ResponsabileLido;
-import theboys.sorrentomarina.models.Servizio;
+import theboys.sorrentomarina.actions.actionsLido.ModificaLidoAction;
+import theboys.sorrentomarina.managers.managersLido.LidoManager;
+import theboys.sorrentomarina.managers.managersLido.ServizioManager;
+import theboys.sorrentomarina.managers.managersLido.TableLidoManager;
+import theboys.sorrentomarina.managers.managersLido.TableServizioManager;
+import theboys.sorrentomarina.models.modelsLido.Lido;
+import theboys.sorrentomarina.models.modelsUtente.ResponsabileLido;
+import theboys.sorrentomarina.models.modelsLido.Servizio;
 
 import javax.servlet.ServletContext;
 import java.sql.SQLException;

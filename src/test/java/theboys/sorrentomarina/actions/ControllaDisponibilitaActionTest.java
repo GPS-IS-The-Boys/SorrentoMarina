@@ -2,8 +2,8 @@ package theboys.sorrentomarina.actions;
 
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
-import theboys.sorrentomarina.models.Lido;
-import theboys.sorrentomarina.models.ResponsabileLido;
+import theboys.sorrentomarina.actions.actionsLido.ControllaDisponibilitaAction;
+import theboys.sorrentomarina.models.modelsUtente.ResponsabileLido;
 
 import javax.servlet.ServletContext;
 

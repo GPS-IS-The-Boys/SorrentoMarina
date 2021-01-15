@@ -2,12 +2,10 @@ package theboys.sorrentomarina.actions;
 
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
-import theboys.sorrentomarina.managers.LidoManager;
-import theboys.sorrentomarina.managers.RecensioneManager;
-import theboys.sorrentomarina.managers.TableLidoManager;
-import theboys.sorrentomarina.managers.TableRecensioneManager;
-import theboys.sorrentomarina.models.Lido;
-import theboys.sorrentomarina.models.Recensione;
+import theboys.sorrentomarina.actions.actionsRecensione.RimuoviRecensioneAction;
+import theboys.sorrentomarina.managers.managersRecensione.RecensioneManager;
+import theboys.sorrentomarina.managers.managersRecensione.TableRecensioneManager;
+import theboys.sorrentomarina.models.modelsRecensione.Recensione;
 
 import javax.servlet.ServletContext;
 import java.sql.SQLException;
