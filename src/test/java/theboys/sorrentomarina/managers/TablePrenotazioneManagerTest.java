@@ -14,7 +14,7 @@ import static org.junit.jupiter.api.Assertions.*;
 /**
  * @author theboys
  */
-@Disabled
+
 public class TablePrenotazioneManagerTest extends IntegrationTestCase{
   TablePrenotazioneManager manager ;
 
