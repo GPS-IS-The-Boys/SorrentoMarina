@@ -188,12 +188,12 @@ public class TablePrenotazioneManagerTest extends IntegrationTestCase{
    * Controlla l'affluenza nei giorni della settimana
    * @throws SQLException
    */
+
   @Test
-  @Disabled
   public void getAffluenza() throws SQLException{
     manager = new TablePrenotazioneManager(mockDb);
     HashMap<String,Integer> map=manager.getAffluenza();
-    assertNull(map,"It should retrive the map");
+    assertNotNull(map,"It should retrive the map");
   }
 
   /**

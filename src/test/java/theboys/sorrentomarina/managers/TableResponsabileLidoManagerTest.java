@@ -10,13 +10,12 @@ import java.util.List;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static theboys.sorrentomarina.managers.IntegrationTestCase.mockDb;
 
 /**
  * @author theboys
  */
-@Disabled
-public class TableResponsabileLidoManagerTest {
+
+public class TableResponsabileLidoManagerTest extends IntegrationTestCase{
 
   TableResponsabileLidoManager manager;
 
