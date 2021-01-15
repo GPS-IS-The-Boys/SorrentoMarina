@@ -42,6 +42,7 @@
           <div class="blog_center_sidebar">
             <div class="title">
               <h2 class="mb-30">ANNUNCI del lido ${lido.nome}</h2>
+              <p>${messaggio}</p>
             </div>
             <c:forEach items="${listaAnnunci}" var="annuncio">
               <div class="row md-1">
@@ -76,7 +77,7 @@
                       </div>
                       <div class="form-row m-1">
                         <input type="text" name="foto" value="${annuncio.foto}"
-                               class="form-control bg-white" id="foto" placeholder="path della foto">
+                               class="form-control bg-white" id="foto" placeholder="/images/logo.jpg">
                       </div>
                       <div class="form-row m-1">
                           <textarea class="form-control" maxlength="256" name="contenuto" id="contenuto" rows="5"

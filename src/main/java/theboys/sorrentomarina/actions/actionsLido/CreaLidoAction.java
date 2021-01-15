@@ -41,13 +41,56 @@ public class CreaLidoAction extends ChainableAction {
     try {
       // informazioni sul lido
       String nomeLido = request.getParameter("nomeLido");
+      if (!(nomeLido != null && nomeLido.trim().length() > 0)) {
+        request.setAttribute("messaggio", "Nome del Lido non valido");
+        return view("creaLido");
+      }
+
       String indirizzoLido = request.getParameter("indirizzoLido");
+      if (!(indirizzoLido != null && indirizzoLido.trim().length() > 0)) {
+        request.setAttribute("messaggio", "Indirizzo del Lido non valido");
+        return view("creaLido");
+      }
+
       String emailLido = request.getParameter("emailLido");
+      if (!(emailLido != null && emailLido.matches("^\\w+([\\.-]?\\w+)*@\\w+([\\.-]?\\w+)*(\\.\\w+)+$"))) {
+        request.setAttribute("messaggio", "Email del lido non valida");
+        return view("creaLido");
+      }
+
       String telefonoLido = request.getParameter("telefonoLido");
+      if (!(telefonoLido != null && telefonoLido.trim().length() > 8)) {
+        request.setAttribute("messaggio", "Telefono del Lido non valido");
+        return view("creaLido");
+      }
+
       String logoLido = request.getParameter("logoLido");
-      float prezzoLido = Float.parseFloat(request.getParameter("prezzoLido"));
-      int rigLido = Integer.parseInt(request.getParameter("righeLido"));
-      int colLido = Integer.parseInt(request.getParameter("colonneLido"));
+      if (!(logoLido != null && logoLido.trim().length() > 13)) {
+        request.setAttribute("messaggio", "Path logo del Lido non valido");
+        return view("creaLido");
+      }
+
+      String strPrezzoLido = request.getParameter("prezzoLido");
+      if (strPrezzoLido == null) {
+        request.setAttribute("messaggio", "Prezzo singolo non valido");
+        return view("creaLido");
+      }
+      float prezzoLido = Float.parseFloat(strPrezzoLido);
+
+      String strRighe = request.getParameter("righeLido");
+      if (strRighe == null) {
+        request.setAttribute("messaggio", "Numero di righe del Lido non valido");
+        return view("creaLido");
+      }
+      int rigLido = Integer.parseInt(strRighe);
+
+      String strColonne = request.getParameter("colonneLido");
+      if (strColonne == null) {
+        request.setAttribute("messaggio", "Numero di colonne del Lido non valido");
+        return view("creaLido");
+      }
+      int colLido = Integer.parseInt(strColonne);
+
       //informazioni sui servizi offerti
       Servizio servizio = new Servizio();
       String servizio1 = request.getParameter("servizio1");
@@ -68,10 +111,35 @@ public class CreaLidoAction extends ChainableAction {
 
       //informazioni sul responsabile Lido
       String nomeResp = request.getParameter("nomeResp");
+      if (!(nomeResp != null && nomeResp.trim().length() > 0 && nomeResp.matches("^[ a-zA-Z\u00C0-\u00ff]+$"))) {
+        request.setAttribute("messaggio", "Nome del responsabile non valido");
+        return view("creaLido");
+      }
+
       String cognomeResp = request.getParameter("cognomeResp");
+      if (!(cognomeResp != null && cognomeResp.trim().length() > 0 && cognomeResp.matches("^[ a-zA-Z\u00C0-\u00ff]+$"))) {
+        request.setAttribute("messaggio", "Cognome del responsabile non valido");
+        return view("creaLido");
+      }
+
       String emailResp = request.getParameter("emailResp");
+      if (!(emailResp != null && emailResp.matches("^\\w+([\\.-]?\\w+)*@\\w+([\\.-]?\\w+)*(\\.\\w+)+$"))) {
+        request.setAttribute("messaggio", "Email del responsabile non valido");
+        return view("creaLido");
+      }
+
       String usernameResp = request.getParameter("usernameResp");
+      if (!(usernameResp != null && usernameResp.length() >= 6 && usernameResp.matches("^[0-9a-zA-Z]+$"))) {
+        request.setAttribute("messaggio", "Username del responsabile non valido");
+        return view("creaLido");
+      }
+
       String passwordResp = request.getParameter("passwordResp");
+      if (!(passwordResp != null && passwordResp.length() >= 8 && passwordResp.matches(".*[0-9].*"))) {
+        request.setAttribute("messaggio", "Password del responsabile non valido");
+        return view("creaLido");
+      }
+
       //creo il lido
       lidoManager.create(nomeLido, indirizzoLido, telefonoLido, emailLido, logoLido, prezzoLido,
           rigLido, colLido, 2);

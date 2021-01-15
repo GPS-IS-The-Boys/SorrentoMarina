@@ -7,11 +7,13 @@
   <link href="<c:url value="/css/formRegister.css"/>" type="text/css">
   <sm:header/>
   <div class="container">
+
     <div class="row md-1">
       <p>
       Aggiunta di un nuovo lido<i class="fa fa-umbrella-beach"></i><br>
         Compila tutti i campi per aggiungere un nuovo lido alla piattaforma con relativo responsabile
       </p>
+      <p>${messaggio}</p>
     </div>
     <form action="creaLido" method="post">
       <div class="row md-1">
@@ -72,7 +74,7 @@
                             </span>
               </div>
               <input type="text" name="logoLido"
-                     class="form-control bg-white border-left-0 border-md" placeholder="Path del logo"
+                     class="form-control bg-white border-left-0 border-md" placeholder="/images/logo.jpg"
                      id="logoLido">
             </div>
 

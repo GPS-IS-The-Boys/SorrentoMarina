@@ -23,8 +23,21 @@ public class CreaAnnuncioAction implements Action {
   @Override
   public String execute(HttpServletRequest request, HttpServletResponse response) {
     String titolo = request.getParameter("titolo");
+    if (!(titolo != null && titolo.length() <= 32)) {
+      request.setAttribute("messaggio", "Titolo annuncio troppo lungo");
+      return view("respLidoDashboard");
+    }
     String contenuto = request.getParameter("contenuto");
+    if (!(contenuto != null && contenuto.length() <= 256)) {
+      request.setAttribute("messaggio", "Contenuto annuncio troppo lungo");
+      return view("respLidoDashboard");
+    }
     String foto = request.getParameter("foto");
+    if (!(foto != null && foto.length() >= 13)) {
+      request.setAttribute("messaggio", "Path immagine non valido");
+      return view("respLidoDashboard");
+    }
+
     ResponsabileLido rl = (ResponsabileLido) request.getSession().getAttribute("adminLido");
 
     AnnuncioManager am = new TableAnnuncioManager(this.getSource(request));

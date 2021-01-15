@@ -26,8 +26,19 @@ public class ModificaCredenzialiAction implements Action {
   @Override
   public String execute(HttpServletRequest request, HttpServletResponse response) {
     //prendo le due password
-    String oldPassword = DigestUtils.sha1Hex(request.getParameter("oldPassword"));
-    String newPassword = DigestUtils.sha1Hex(request.getParameter("newPassword"));
+    String noOldPassword = request.getParameter("oldPassword");
+    if (!(noOldPassword != null && noOldPassword.length() >= 8 && noOldPassword.matches(".*[0-9].*"))) {
+      request.setAttribute("messaggio", "Password Attuale non valida");
+      return view("profilo");
+    }
+    String oldPassword = DigestUtils.sha1Hex(noOldPassword);
+
+    String noNewPassword = request.getParameter("newPassword");
+    if (!(noNewPassword != null && noNewPassword.length() >= 8 && noNewPassword.matches(".*[0-9].*"))) {
+      request.setAttribute("messaggio", "Nuova password non valida");
+      return view("profilo");
+    }
+    String newPassword = DigestUtils.sha1Hex(noNewPassword);
 
     //prendo i 3 possibili utenti dalla sessione
     Turista turista = (Turista) request.getSession().getAttribute("utente");
