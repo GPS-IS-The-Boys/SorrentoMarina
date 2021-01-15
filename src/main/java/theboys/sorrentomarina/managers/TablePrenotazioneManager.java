@@ -262,7 +262,7 @@ public class TablePrenotazioneManager extends TableManager implements Prenotazio
         map.put(p.getData_inizio(), p.getNum_posti());
       }
     }
-    prenotazione = runner.query("select count(id) as num_posti,DAYNAME(data_inizio) as data_inizio from PRENOTAZIONE group by DAYNAME(data_fine)", PRE_MAPPER_LIST);
+    prenotazione = runner.query("select count(id) as num_posti,DAYNAME(data_fine) as data_fine from PRENOTAZIONE group by DAYNAME(data_fine)", PRE_MAPPER_LIST);
     for(Prenotazione p : prenotazione) {
       if (map.containsKey(p.getData_inizio())) {
         map.put(p.getData_inizio(), map.get(p.getData_inizio()) + p.getNum_posti());
