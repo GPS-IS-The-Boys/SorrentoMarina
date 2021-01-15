@@ -79,4 +79,38 @@ public class AggiungiRecensioneChainableActionTest extends ActionSetupDB {
     assertEquals("/WEB-INF/views/500.jsp", page);
   }
 
+  @Test
+  public void AggiungiRecensionetestExecuteContenutoNull() {
+    Mockito.when(mockReq.getParameter("contenutoRecensione")).thenReturn(null);
+    Mockito.when(mockReq.getParameter("giudizioRecensione")).thenReturn("3");
+    Mockito.when(mockReq.getSession()).thenReturn(mockSession);
+    Mockito.when(mockReq.getSession().getAttribute("utente")).thenReturn(new Turista(1, "a", "", "", "", ""));
+    Mockito.when(mockReq.getSession().getAttribute("lido")).thenReturn(new Lido(1, "", "", "", "", "", 1F, 1,1,1));
+
+    ServletContext ctx = Mockito.mock(ServletContext.class);
+    Mockito.when(ctx.getAttribute("db")).thenReturn(mockConnection);
+    Mockito.when(mockReq.getServletContext()).thenReturn(ctx);
+
+    action = new AggiungiRecensioneChainableAction();
+    String page = this.action.execute(mockReq, mockRes);
+    assertEquals("/WEB-INF/views/formRecensione.jsp", page);
+  }
+
+  @Test
+  public void AggiungiRecensionetestExecuteGiudizioNull() {
+    Mockito.when(mockReq.getParameter("contenutoRecensione")).thenReturn("Contenuto recensione");
+    Mockito.when(mockReq.getParameter("giudizioRecensione")).thenReturn(null);
+    Mockito.when(mockReq.getSession()).thenReturn(mockSession);
+    Mockito.when(mockReq.getSession().getAttribute("utente")).thenReturn(new Turista(1, "a", "", "", "", ""));
+    Mockito.when(mockReq.getSession().getAttribute("lido")).thenReturn(new Lido());
+
+    ServletContext ctx = Mockito.mock(ServletContext.class);
+    Mockito.when(ctx.getAttribute("db")).thenReturn(mockConnection);
+    Mockito.when(mockReq.getServletContext()).thenReturn(ctx);
+
+    action = new AggiungiRecensioneChainableAction();
+    String page = this.action.execute(mockReq, mockRes);
+    assertEquals("/WEB-INF/views/formRecensione.jsp", page);
+  }
+
 }

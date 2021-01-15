@@ -43,6 +43,7 @@
             <div class="title">
               <h2 class="mb-30">MODIFICA IL TUO LIDO</h2>
               <p class="mb-20">Cambia le caratteristiche del tuo lido con questo semplice form</p>
+              <p>${messaggio}</p>
             </div>
             <form action="modificaLido" method="post">
               <div class="row md-1">
