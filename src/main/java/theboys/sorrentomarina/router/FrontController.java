@@ -1,6 +1,6 @@
 package theboys.sorrentomarina.router;
 
-import theboys.sorrentomarina.actions.Action;
+import theboys.sorrentomarina.actions.actionsUtils.Action;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.sql.DataSource;
 
-import theboys.sorrentomarina.actions.PageActionFactory;
+import theboys.sorrentomarina.actions.actionsUtils.PageActionFactory;
 
 /**
  * @author theboys
@@ -54,8 +54,8 @@ public class FrontController extends HttpServlet {
     ROUTER.get("/previsioniMeteo", PAF.create("MostraPrevisioni"));
     ROUTER.get("/affluenzaLido", PAF.create("MostraAffluenza"));
     ROUTER.get("/addRecensione", PAF.create("AggiungiRecensioneChainableAction"));
-    ROUTER.get("/mostraPrenotazione1", PAF.create("MostraPrenotazione1Action"));
-    ROUTER.get("/eseguiPrenotazione1", PAF.create("EseguiPrenotazione1Action"));
+    ROUTER.get("/mostraPrenotazione1", PAF.create("MostraPrenotazioneAction"));
+    ROUTER.get("/eseguiPrenotazione1", PAF.create("EseguiPrenotazioneAction"));
     ROUTER.post("/creaAnnuncio", PAF.create("CreaAnnuncioAction"));
     ROUTER.get("/dashboardEnte", PAF.create("ShowDashboardEnte"));
     ROUTER.get("/mostraCreaLido", PAF.create("MostraCreaLido"));

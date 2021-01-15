@@ -2,6 +2,7 @@ package theboys.sorrentomarina.models;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import theboys.sorrentomarina.models.modelsLido.Lido;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 /**

@@ -1,7 +1,8 @@
 package theboys.sorrentomarina.managers;
 
 import org.junit.jupiter.api.Test;
-import theboys.sorrentomarina.models.Annuncio;
+import theboys.sorrentomarina.managers.managersAnnuncio.TableAnnuncioManager;
+import theboys.sorrentomarina.models.modelsAnnuncio.Annuncio;
 
 import static org.junit.jupiter.api.Assertions.*;
 

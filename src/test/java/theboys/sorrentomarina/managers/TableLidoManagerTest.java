@@ -1,8 +1,9 @@
 package theboys.sorrentomarina.managers;
 
 import org.junit.jupiter.api.Test;
-import theboys.sorrentomarina.models.Lido;
-import theboys.sorrentomarina.models.Servizio;
+import theboys.sorrentomarina.managers.managersLido.TableLidoManager;
+import theboys.sorrentomarina.models.modelsLido.Lido;
+import theboys.sorrentomarina.models.modelsLido.Servizio;
 
 import static org.junit.jupiter.api.Assertions.*;
 

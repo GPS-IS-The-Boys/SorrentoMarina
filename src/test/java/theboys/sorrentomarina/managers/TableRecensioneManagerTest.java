@@ -1,9 +1,8 @@
 package theboys.sorrentomarina.managers;
 
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import theboys.sorrentomarina.models.Annuncio;
-import theboys.sorrentomarina.models.Recensione;
+import theboys.sorrentomarina.managers.managersRecensione.TableRecensioneManager;
+import theboys.sorrentomarina.models.modelsRecensione.Recensione;
 
 import static org.junit.jupiter.api.Assertions.*;
 import java.sql.SQLException;

@@ -2,9 +2,10 @@ package theboys.sorrentomarina.actions;
 
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
-import theboys.sorrentomarina.managers.LidoManager;
-import theboys.sorrentomarina.managers.TableLidoManager;
-import theboys.sorrentomarina.models.Lido;
+import theboys.sorrentomarina.actions.actionsLido.RimuoviLidoAction;
+import theboys.sorrentomarina.managers.managersLido.LidoManager;
+import theboys.sorrentomarina.managers.managersLido.TableLidoManager;
+import theboys.sorrentomarina.models.modelsLido.Lido;
 
 import javax.servlet.ServletContext;
 
