@@ -39,7 +39,7 @@ public class EseguiPrenotazioneAction implements Action {
       int numPosti = Integer.parseInt(request.getParameter("numPosti"));
 
       // COSTO
-      int giorni = (int) request.getSession().getAttribute("giorni");
+      int giorni = Integer.parseInt(String.valueOf(request.getSession().getAttribute("giorni")));
       float costo = numPosti * lido.getPrezzo_singolo() * giorni;
 
       // DATI PERSONALI
