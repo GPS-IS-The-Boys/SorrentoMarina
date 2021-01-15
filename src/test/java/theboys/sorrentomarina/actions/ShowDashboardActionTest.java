@@ -1,14 +1,12 @@
 package theboys.sorrentomarina.actions;
 
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
-import theboys.sorrentomarina.models.ResponsabileLido;
-import theboys.sorrentomarina.models.Turista;
+import theboys.sorrentomarina.actions.actionsPrenotazione.ShowDashboardAction;
+import theboys.sorrentomarina.actions.actionsUtils.Action;
+import theboys.sorrentomarina.models.modelsUtente.ResponsabileLido;
 
 import javax.servlet.ServletContext;
-import java.io.FileNotFoundException;
-import java.sql.SQLException;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

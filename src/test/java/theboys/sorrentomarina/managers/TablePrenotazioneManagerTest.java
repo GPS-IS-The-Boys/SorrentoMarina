@@ -1,11 +1,11 @@
 package theboys.sorrentomarina.managers;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
-import theboys.sorrentomarina.models.Lido;
-import theboys.sorrentomarina.models.Ombrellone;
-import theboys.sorrentomarina.models.Prenotazione;
+import theboys.sorrentomarina.managers.managersPrenotazione.TablePrenotazioneManager;
+import theboys.sorrentomarina.models.modelsLido.Lido;
+import theboys.sorrentomarina.models.modelsPrenotazione.Ombrellone;
+import theboys.sorrentomarina.models.modelsPrenotazione.Prenotazione;
 
-import java.io.FileNotFoundException;
 import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.List;

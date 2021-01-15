@@ -1,15 +1,14 @@
 package theboys.sorrentomarina.managers;
 
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import theboys.sorrentomarina.models.Ombrellone;
-import theboys.sorrentomarina.models.Prenotazione;
+import theboys.sorrentomarina.managers.managersPrenotazione.TableOmbrelloneManager;
+import theboys.sorrentomarina.models.modelsPrenotazione.Ombrellone;
 
 import java.sql.SQLException;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static theboys.sorrentomarina.managers.IntegrationTestCase.mockDb;
+
 /**
  * @author theboys
  */

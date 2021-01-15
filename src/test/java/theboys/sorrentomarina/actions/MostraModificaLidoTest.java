@@ -1,11 +1,9 @@
 package theboys.sorrentomarina.actions;
 
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
-import theboys.sorrentomarina.models.ResponsabileEnte;
-import theboys.sorrentomarina.models.ResponsabileLido;
-import theboys.sorrentomarina.models.Turista;
+import theboys.sorrentomarina.actions.actionsLido.MostraModificaLido;
+import theboys.sorrentomarina.models.modelsUtente.ResponsabileLido;
 
 import javax.servlet.ServletContext;
 

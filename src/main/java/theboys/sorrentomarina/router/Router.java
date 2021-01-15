@@ -1,7 +1,7 @@
 package theboys.sorrentomarina.router;
 
-import theboys.sorrentomarina.actions.Action;
-import theboys.sorrentomarina.actions.NotFoundAction;
+import theboys.sorrentomarina.actions.actionsUtils.Action;
+import theboys.sorrentomarina.actions.actionsUtils.NotFoundAction;
 
 import java.util.HashMap;
 import java.util.Map;

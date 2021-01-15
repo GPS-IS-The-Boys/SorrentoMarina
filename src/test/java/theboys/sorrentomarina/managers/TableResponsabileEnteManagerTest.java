@@ -1,8 +1,8 @@
 package theboys.sorrentomarina.managers;
 
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import theboys.sorrentomarina.models.ResponsabileEnte;
+import theboys.sorrentomarina.managers.managersUtente.TableResponsabileEnteManager;
+import theboys.sorrentomarina.models.modelsUtente.ResponsabileEnte;
 
 import static org.junit.jupiter.api.Assertions.*;
 
