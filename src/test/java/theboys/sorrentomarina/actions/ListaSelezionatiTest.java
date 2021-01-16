@@ -6,9 +6,13 @@ import org.mockito.Mockito;
 import javax.servlet.ServletContext;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
+/**
+ * @author theBoys
+ */
 public class ListaSelezionatiTest extends ActionSetupDB{
-
+  /**
+   * ()
+   */
   @Test
   public void testListaSelezionati(){
     Action ac = Mockito.mock(ListaSelezionati.class, Mockito.CALLS_REAL_METHODS);

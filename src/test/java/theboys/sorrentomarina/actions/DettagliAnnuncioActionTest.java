@@ -7,7 +7,9 @@ import theboys.sorrentomarina.models.ResponsabileLido;
 import javax.servlet.ServletContext;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
+/**
+ * @author theBoys
+ */
 public class DettagliAnnuncioActionTest extends ActionSetupDB {
 
   private DettagliAnnuncioAction action;

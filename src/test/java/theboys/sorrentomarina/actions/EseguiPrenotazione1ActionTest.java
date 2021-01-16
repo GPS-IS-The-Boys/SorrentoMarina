@@ -8,11 +8,16 @@ import theboys.sorrentomarina.models.Turista;
 import javax.servlet.ServletContext;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
+/**
+ * @author theBoys
+ */
 public class EseguiPrenotazione1ActionTest extends ActionSetupDB {
 
   private EseguiPrenotazione1Action action;
 
+  /**
+   * test esegue la prenotazione di un turista  registrato
+   */
   @Test
   public void executeSuccessTuristaRegistrato(){
     Mockito.when(mockReq.getSession()).thenReturn(mockSession);
@@ -40,6 +45,9 @@ public class EseguiPrenotazione1ActionTest extends ActionSetupDB {
     assertEquals(result, "/WEB-INF/views/prenotazioneConfermata.jsp");
   }
 
+  /**
+   * test esegue la prenotazione di un turista non registrato
+   */
   @Test
   public void executeSuccessTuristaNonRegistrato(){
     Mockito.when(mockReq.getSession()).thenReturn(mockSession);

@@ -24,7 +24,9 @@ public class ActionTest extends ActionSetup {
     super.setup();
   }
 
-
+  /**
+   *Test - ritorna la view TestView
+   */
   @Test
   public void testView() {
     Action ac = Mockito.mock(Action.class, Mockito.CALLS_REAL_METHODS);
@@ -33,6 +35,9 @@ public class ActionTest extends ActionSetup {
         "It should return the view path");
   }
 
+  /**
+   *
+   */
   @Test
   public void testGetSource() {
     Action ac = Mockito.mock(Action.class, Mockito.CALLS_REAL_METHODS);

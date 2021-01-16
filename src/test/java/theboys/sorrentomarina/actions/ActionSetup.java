@@ -15,6 +15,9 @@ public class ActionSetup {
   protected HttpServletResponse mockRes;
   protected HttpSession mockSession;
 
+  /**
+   * setta un action
+   */
   @BeforeEach
   public void setup(){
     mockReq = Mockito.mock(HttpServletRequest.class);

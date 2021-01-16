@@ -7,11 +7,18 @@ import theboys.sorrentomarina.models.ResponsabileLido;
 import javax.servlet.ServletContext;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
+/**
+ * @author theBoys
+ */
 public class MostraDisponibilitaRespLidoActionTest extends ActionSetupDB {
 
   private MostraDisponibilitaRespLidoAction action;
 
+  /**
+   * test mostra con successo la disponiibilità al responsabile lido
+   *
+   * ()
+   */
   @Test
   public void successTest(){
     ServletContext ctx = Mockito.mock(ServletContext.class);
@@ -29,6 +36,10 @@ public class MostraDisponibilitaRespLidoActionTest extends ActionSetupDB {
     assertEquals(result, "/WEB-INF/views/respLidoDisponibilita.jsp");
   }
 
+  /**
+   *test mostra senza successo la disponiibilità al responsabile lido
+   * ()
+   */
   @Test
   public void failureTest(){
     ServletContext ctx = Mockito.mock(ServletContext.class);

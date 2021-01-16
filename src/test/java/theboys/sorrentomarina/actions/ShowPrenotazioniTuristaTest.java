@@ -7,13 +7,17 @@ import theboys.sorrentomarina.models.Turista;
 import javax.servlet.ServletContext;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
+/**
+ * @author theBoys
+ */
 public class ShowPrenotazioniTuristaTest extends ActionSetupDB {
 
   private ShowPrenotazioniTurista spt;
 
 
-
+  /**
+   * Test Mostra le prenotazioni del turista
+   */
   @Test
   public void ShowPrenotazioniTuristaTest() {
     ServletContext ctx = Mockito.mock(ServletContext.class);
@@ -26,6 +30,10 @@ public class ShowPrenotazioniTuristaTest extends ActionSetupDB {
     String page = this.spt.execute(mockReq, mockRes);
     assertEquals("/WEB-INF/views/prenotazioniTurista.jsp", page);
   }
+
+  /**
+   * Test Mostra la view 500 in caso di errore
+   */
 
   @Test
   public void ShowPrenotazioniTuristaFaiulureTest(){
@@ -40,6 +48,9 @@ public class ShowPrenotazioniTuristaTest extends ActionSetupDB {
     assertEquals("/WEB-INF/views/500.jsp", page);
   }
 
+  /**
+   *
+   */
   @Test
   public void ShowPrenotazioniTuristaNullTest(){
     ServletContext ctx = Mockito.mock(ServletContext.class);

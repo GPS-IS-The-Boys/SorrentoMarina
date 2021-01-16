@@ -6,9 +6,13 @@ import org.mockito.Mockito;
 import javax.servlet.ServletContext;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
+/**
+ * @author theBoys
+ */
 public class MostraTutteRecensioniTest extends ActionSetupDB {
-
+  /**
+   *Test  mostra tutte le recensioni al responsabile ente
+   */
   @Test
   public void textView() {
     Action ac = Mockito.mock(MostraTutteRecensioni.class, Mockito.CALLS_REAL_METHODS);
@@ -21,6 +25,9 @@ public class MostraTutteRecensioniTest extends ActionSetupDB {
         "It should return the view path");
   }
 
+  /**
+   * Test mmostra la view 500
+   */
   @Test
   public void textView500() {
     Action ac = Mockito.mock(MostraTutteRecensioni.class, Mockito.CALLS_REAL_METHODS);

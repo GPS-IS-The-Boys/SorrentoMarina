@@ -8,11 +8,16 @@ import theboys.sorrentomarina.models.ResponsabileLido;
 import javax.servlet.ServletContext;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
+/**
+ * @author theBoys
+ */
 public class ControllaDisponibilitaActionTest extends ActionSetupDB {
 
   private ControllaDisponibilitaAction action;
 
+  /**
+   * test della disponibilià degli ombrelloni da una data ad un'altra
+   */
   @Test
   public void successTest(){
     ServletContext ctx = Mockito.mock(ServletContext.class);

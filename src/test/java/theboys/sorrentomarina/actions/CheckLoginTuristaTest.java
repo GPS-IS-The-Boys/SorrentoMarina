@@ -6,11 +6,17 @@ import org.mockito.Mockito;
 
 import javax.servlet.ServletContext;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
+/**
+ * @author theBoys
+ */
 public class CheckLoginTuristaTest extends ActionSetupDB{
 
   private CheckLoginTurista clt;
 
+  /**
+   * Test nel caso fallisce la ricerca nel db del turista
+   *
+   */
   @Test
   public void textExecuteFailure() {
     Mockito.when(mockReq.getParameter("username")).thenReturn("Userna1");
@@ -29,6 +35,9 @@ public class CheckLoginTuristaTest extends ActionSetupDB{
     assertEquals("/WEB-INF/views/login.jsp", result, "It should return the login page");
   }
 
+  /**
+   * Test nel caso va a buon fine la ricerca nel db del turista
+   */
   @Test
   public void testExecuteSuccess() {
     clt = new CheckLoginTurista();

@@ -10,7 +10,9 @@ import theboys.sorrentomarina.models.Turista;
 import javax.servlet.ServletContext;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
+/**
+ * @author theBoys
+ */
 public class ModificaCredenzialiActionTest extends ActionSetupDB {
 
   private ModificaCredenzialiAction mca;

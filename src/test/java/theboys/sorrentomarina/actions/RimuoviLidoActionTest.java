@@ -12,11 +12,16 @@ import java.sql.SQLException;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
-
+/**
+ * @author theBoys
+ */
 public class RimuoviLidoActionTest extends ActionSetupDB{
 
   private RimuoviLidoAction rla;
 
+  /**
+   * Test- rimuove il lido
+   */
   @Test
   public void SuccessTest(){
     Mockito.when(mockReq.getParameter("id")).thenReturn("1");

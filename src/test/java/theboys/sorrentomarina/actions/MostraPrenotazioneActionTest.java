@@ -3,9 +3,13 @@ package theboys.sorrentomarina.actions;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
+/**
+ * @author theBoys
+ */
 public class MostraPrenotazioneActionTest extends ActionSetup {
-
+  /**
+   *
+   */
   @Test
   public void executeSuccess(){
     MostraPrenotazione1Action action = new MostraPrenotazione1Action();

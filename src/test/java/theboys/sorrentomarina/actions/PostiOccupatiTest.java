@@ -11,9 +11,15 @@ import java.io.PrintWriter;
 import java.io.StringWriter;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
+/**
+ * @author theBoys
+ *
+ */
 public class PostiOccupatiTest extends ActionSetupDB{
-
+  /**
+   * Test- esegue la formattazione di una lista di posti occupati di un lido tra due date
+   * @throws IOException
+   */
   @Test
   public void textView() throws IOException {
     Action ac = Mockito.mock(PostiOccupati.class, Mockito.CALLS_REAL_METHODS);

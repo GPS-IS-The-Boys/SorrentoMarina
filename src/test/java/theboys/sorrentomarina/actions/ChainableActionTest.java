@@ -21,6 +21,9 @@ public class ChainableActionTest extends ActionSetup {
     super.setup();
   }
 
+  /**
+   * Esegue Test senza un successivo ()
+   */
   @Test
   public void textExecuteWithoutNext() {
     ChainableAction ca = Mockito.mock(ChainableAction.class,
@@ -30,6 +33,9 @@ public class ChainableActionTest extends ActionSetup {
         "It should return internal error view  without next");
   }
 
+  /**
+   *Esegue Test con un successivo  ()
+   */
   @Test
   public void testExecuteWithNext() {
     ChainableAction ca = Mockito.mock(ChainableAction.class,

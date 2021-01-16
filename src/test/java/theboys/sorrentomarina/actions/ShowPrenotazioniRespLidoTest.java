@@ -6,10 +6,16 @@ import theboys.sorrentomarina.models.ResponsabileLido;
 import javax.servlet.ServletContext;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+/**
+ *
+ */
 public class ShowPrenotazioniRespLidoTest extends ActionSetupDB {
 
   private ShowPrenotazioniRespLido sprl;
 
+  /**
+   * Test- mostra le prenotazioni all responsabile lido
+   */
   @Test
   public void ShowPrenotazioniRespLidoTest(){
     ServletContext ctx = Mockito.mock(ServletContext.class);

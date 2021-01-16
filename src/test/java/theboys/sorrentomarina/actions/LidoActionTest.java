@@ -6,7 +6,9 @@ import org.mockito.Mockito;
 import javax.servlet.ServletContext;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
+/**
+ * @author theBoys
+ */
 public class LidoActionTest extends ActionSetupDB {
 
   private LidoAction action;

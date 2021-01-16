@@ -12,11 +12,16 @@ import java.sql.SQLException;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
-
+/**
+ * @author theBoys
+ */
 public class ModificaAnnuncioRespLidoActionTest extends ActionSetupDB {
 
   private ModificaAnnuncioRespLidoAction action;
 
+  /**
+   * test il responsabile lido modifica annuncio
+   */
   @Test
   public void executeSuccess(){
     Mockito.when(mockReq.getParameter("titolo")).thenReturn("Prova titolo");

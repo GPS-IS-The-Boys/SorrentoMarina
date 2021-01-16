@@ -7,8 +7,13 @@ import theboys.sorrentomarina.models.ResponsabileLido;
 import javax.servlet.ServletContext;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
+/**
+ * @author theBoys
+ */
 public class MostraRecensioniRespLidoTest extends ActionSetupDB{
+  /**
+   * Test mostra le recensioni al responsabile lido
+   */
   @Test
   public void textView() {
     Action ac = Mockito.mock(MostraRecensioniRespLidoAction.class, Mockito.CALLS_REAL_METHODS);
@@ -21,6 +26,10 @@ public class MostraRecensioniRespLidoTest extends ActionSetupDB{
     assertEquals("/WEB-INF/views/respLidoRecensioni.jsp", result,
         "It should return the view path");
   }
+
+  /**
+   * mostra la view 500
+   */
 
   @Test
   public void textView500() {
