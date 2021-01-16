@@ -36,8 +36,8 @@ public class TableResponsabileLidoManager extends TableManager implements Respon
    * @throws SQLException
    */
   @Override
-  public void create(String nome, String cognome, String email, String username, String password, int id_lido) throws SQLException {
-    runner.update("INSERT INTO RESPONSABILE_LIDO(nome,cognome,email,username,password_responsabile_lido,id_lido) VALUES (?, ?, ?, ?, ?, ?)", nome, cognome, email, username, password, id_lido);
+  public void create(String nome, String cognome, String email, String username, String password, int id_lido, int id_resp_ente) throws SQLException {
+    runner.update("INSERT INTO RESPONSABILE_LIDO(nome,cognome,email,username,password_responsabile_lido,id_lido,id_resp_ente) VALUES (?, ?, ?, ?, ?, ?, ?)", nome, cognome, email, username, password, id_lido, id_resp_ente);
   }
 
   /**

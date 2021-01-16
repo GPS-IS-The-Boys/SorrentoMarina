@@ -16,7 +16,7 @@ public class ShowPrenotazioniRespLidoTest extends ActionSetupDB {
     Mockito.when(ctx.getAttribute("db")).thenReturn(ActionSetupDB.mockConnection);
     Mockito.when(mockReq.getServletContext()).thenReturn(ctx);
     Mockito.when(mockReq.getSession()).thenReturn(mockSession);
-    Mockito.when(mockReq.getSession().getAttribute("adminLido")).thenReturn(new ResponsabileLido(1, "nome", "cognome", "email", "username", "password",1));
+    Mockito.when(mockReq.getSession().getAttribute("adminLido")).thenReturn(new ResponsabileLido(1, "nome", "cognome", "email", "username", "password",1,1));
     sprl = new ShowPrenotazioniRespLido();
     String page = this.sprl.execute(mockReq,mockRes);
     assertEquals("/WEB-INF/views/prenotazioniRespLido.jsp",page);
@@ -28,7 +28,7 @@ public class ShowPrenotazioniRespLidoTest extends ActionSetupDB {
     Mockito.when(ctx.getAttribute("db")).thenReturn(null);
     Mockito.when(mockReq.getServletContext()).thenReturn(ctx);
     Mockito.when(mockReq.getSession()).thenReturn(mockSession);
-    Mockito.when(mockReq.getSession().getAttribute("adminLido")).thenReturn(new ResponsabileLido(1, "nome", "cognome", "email", "username", "password",1));
+    Mockito.when(mockReq.getSession().getAttribute("adminLido")).thenReturn(new ResponsabileLido(1, "nome", "cognome", "email", "username", "password",1,1));
     sprl = new ShowPrenotazioniRespLido();
     String page = this.sprl.execute(mockReq,mockRes);
     assertEquals("/WEB-INF/views/500.jsp",page);

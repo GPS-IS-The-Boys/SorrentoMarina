@@ -17,7 +17,7 @@ public class ResponsabileLidoTest {
    */
   @BeforeEach
   public void init() {
-    responsabileLido = new ResponsabileLido(1, "Guido", "Lavespa", "guido.l@unisa.it", "Gvespa", "LavespaGuido",1);
+    responsabileLido = new ResponsabileLido(1, "Guido", "Lavespa", "guido.l@unisa.it", "Gvespa", "LavespaGuido",1, 1);
   }
 
   /**
@@ -152,6 +152,25 @@ public class ResponsabileLidoTest {
      int id_lido = responsabileLido.getId_lido();
       assertEquals(7, id_lido, "Sgould return 7");
     }
+
+  /**
+   * test per il metodo getId_resp_ente
+   */
+  @Test
+  public void getId_resp_ente_Test() {
+    int id = responsabileLido.getId_resp_ente();
+    assertEquals(1, id, "Should return 1");
+  }
+
+  /**
+   * test per il metodo setId_resp_ente
+   */
+  @Test
+  public void setId_resp_ente_Test() {
+    responsabileLido.setId_resp_ente(7);
+    int id = responsabileLido.getId_resp_ente();
+    assertEquals(7, id, "Sgould return 7");
+  }
 
   /**
    * test per il metodo toString

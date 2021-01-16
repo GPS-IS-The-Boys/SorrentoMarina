@@ -22,7 +22,7 @@ public class EseguiPrenotazioneActionTest extends ActionSetupDB {
     Mockito.when(ctx.getAttribute("db")).thenReturn(mockConnection);
     Mockito.when(mockReq.getServletContext()).thenReturn(ctx);
 
-    Mockito.when(mockReq.getSession().getAttribute("lido")).thenReturn(new Lido(1,"","","","","",1F,1,1,1));
+    Mockito.when(mockReq.getSession().getAttribute("lido")).thenReturn(new Lido(1,"","","","","",1F,1,1,1,1));
     Mockito.when(mockReq.getParameter("dataInizio")).thenReturn("2021-01-01");
     Mockito.when(mockReq.getParameter("dataFine")).thenReturn("2021-01-01");
     Mockito.when(mockReq.getParameter("numPosti")).thenReturn("1");
@@ -49,7 +49,7 @@ public class EseguiPrenotazioneActionTest extends ActionSetupDB {
     Mockito.when(ctx.getAttribute("db")).thenReturn(mockConnection);
     Mockito.when(mockReq.getServletContext()).thenReturn(ctx);
 
-    Mockito.when(mockReq.getSession().getAttribute("lido")).thenReturn(new Lido(1,"","","","","",1F,1,1,1));
+    Mockito.when(mockReq.getSession().getAttribute("lido")).thenReturn(new Lido(1,"","","","","",1F,1,1,1,1));
     Mockito.when(mockReq.getParameter("dataInizio")).thenReturn("2021-01-01");
     Mockito.when(mockReq.getParameter("dataFine")).thenReturn("2021-01-01");
     Mockito.when(mockReq.getParameter("numPosti")).thenReturn("1");

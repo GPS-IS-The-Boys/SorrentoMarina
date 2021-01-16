@@ -25,7 +25,7 @@ public class PostiOccupatiTest extends ActionSetupDB{
     Mockito.when(mockReq.getServletContext()).thenReturn(ctx);
     Mockito.when(mockReq.getParameter("dataInizio")).thenReturn("2020-06-08");
     Mockito.when(mockReq.getParameter("dataFine")).thenReturn("2020-06-10");
-    Lido lido=new Lido(1,"Nome1","Indirizzo1","Telefono1","email1","logo1", 12.5F,4,5,1);
+    Lido lido=new Lido(1,"Nome1","Indirizzo1","Telefono1","email1","logo1", 12.5F,4,5,1,1);
     Mockito.when(mockReq.getSession().getAttribute("lido")).thenReturn(lido);
     StringWriter sw = new StringWriter();
     PrintWriter pw  =new PrintWriter(sw);
@@ -44,7 +44,7 @@ public class PostiOccupatiTest extends ActionSetupDB{
     Mockito.when(mockReq.getServletContext()).thenReturn(ctx);
     Mockito.when(mockReq.getParameter("dataInizio")).thenReturn("2020-06-08");
     Mockito.when(mockReq.getParameter("dataFine")).thenReturn("2020-06-10");
-    Lido lido=new Lido(1,"Nome1","Indirizzo1","Telefono1","email1","logo1", 12.5F,4,5,1);
+    Lido lido=new Lido(1,"Nome1","Indirizzo1","Telefono1","email1","logo1", 12.5F,4,5,1,1);
     Mockito.when(mockReq.getSession().getAttribute("lido")).thenReturn(lido);
     StringWriter sw = new StringWriter();
     PrintWriter pw  =new PrintWriter(sw);

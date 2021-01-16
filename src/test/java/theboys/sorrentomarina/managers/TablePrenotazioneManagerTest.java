@@ -155,7 +155,7 @@ public class TablePrenotazioneManagerTest extends IntegrationTestCase{
   @Test
   public void ombrelloniOccupatiTest() throws SQLException {
     manager = new TablePrenotazioneManager(mockDb);
-    Lido lido = new Lido(1, "Nome1", "Indirizzo1", "Telefono1", "email1", "logo1", 12.5F, 4, 5, 1);
+    Lido lido = new Lido(1, "Nome1", "Indirizzo1", "Telefono1", "email1", "logo1", 12.5F, 4, 5, 1, 1);
     List<String> list = manager.ombrelloniOccupati("2020-06-09", "2020-06-09", lido);
     assertEquals(1, list.size(), "It should return 1");
   }

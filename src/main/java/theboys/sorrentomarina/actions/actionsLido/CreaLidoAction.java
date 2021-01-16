@@ -142,12 +142,12 @@ public class CreaLidoAction extends ChainableAction {
 
       //creo il lido
       lidoManager.create(nomeLido, indirizzoLido, telefonoLido, emailLido, logoLido, prezzoLido,
-          rigLido, colLido, 2);
+          rigLido, colLido, 2, 2);
       //mi riprendo l'id
       Lido lidoDappoggio = lidoManager.retriveByName(nomeLido).get(0);
       //lo uso per creare il responsabile lido
       responsabileLidoManager.create(nomeResp, cognomeResp, emailResp, usernameResp,
-          DigestUtils.sha1Hex(passwordResp), lidoDappoggio.getId());
+          DigestUtils.sha1Hex(passwordResp), lidoDappoggio.getId(), 2);
       //e per creare il servizio
       servizioManager.create1(servizio.isBar(), servizio.isRistorante(), servizio.isAnimazione(),
           servizio.isWifi(), servizio.isCabina(), servizio.isBeach_volley(), servizio.isCanoa());

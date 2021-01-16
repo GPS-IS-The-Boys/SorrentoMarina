@@ -32,7 +32,7 @@ public class AggiungiRecensioneChainableActionTest extends ActionSetupDB {
     Mockito.when(mockReq.getParameter("giudizioRecensione")).thenReturn("3");
     Mockito.when(mockReq.getSession()).thenReturn(mockSession);
     Mockito.when(mockReq.getSession().getAttribute("utente")).thenReturn(new Turista(1, "a", "", "", "", ""));
-    Mockito.when(mockReq.getSession().getAttribute("lido")).thenReturn(new Lido(1, "a", "", "", "", "", 1.0F, 1, 1, 1));
+    Mockito.when(mockReq.getSession().getAttribute("lido")).thenReturn(new Lido(1, "a", "", "", "", "", 1.0F, 1, 1, 1, 1));
 
     ServletContext ctx = Mockito.mock(ServletContext.class);
     Mockito.when(ctx.getAttribute("db")).thenReturn(mockConnection);
@@ -85,7 +85,7 @@ public class AggiungiRecensioneChainableActionTest extends ActionSetupDB {
     Mockito.when(mockReq.getParameter("giudizioRecensione")).thenReturn("3");
     Mockito.when(mockReq.getSession()).thenReturn(mockSession);
     Mockito.when(mockReq.getSession().getAttribute("utente")).thenReturn(new Turista(1, "a", "", "", "", ""));
-    Mockito.when(mockReq.getSession().getAttribute("lido")).thenReturn(new Lido(1, "", "", "", "", "", 1F, 1,1,1));
+    Mockito.when(mockReq.getSession().getAttribute("lido")).thenReturn(new Lido(1, "", "", "", "", "", 1F, 1,1,1, 1));
 
     ServletContext ctx = Mockito.mock(ServletContext.class);
     Mockito.when(ctx.getAttribute("db")).thenReturn(mockConnection);
