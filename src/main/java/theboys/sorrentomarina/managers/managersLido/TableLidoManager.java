@@ -36,12 +36,14 @@ public class TableLidoManager extends TableManager implements LidoManager {
    * @param prezzo_singolo
    * @param num_righe
    * @param num_colonne
+   * @param id_servizi
+   * @param id_resp_ente
    * @throws SQLException
    */
   @Override
-  public void create(String nome, String indirizzo, String telefono, String email, String logo, float prezzo_singolo, int num_righe, int num_colonne, int id_servizi) throws SQLException {
-    runner.update("INSERT INTO LIDO(nome,indirizzo,telefono,email,logo,prezzo_singolo,num_righe,num_colonne, id_servizi) VALUES(?,?,?,?,?,?,?,?,?)",
-        nome, indirizzo, telefono, email, logo, prezzo_singolo, num_righe, num_colonne, id_servizi);
+  public void create(String nome, String indirizzo, String telefono, String email, String logo, float prezzo_singolo, int num_righe, int num_colonne, int id_servizi, int id_resp_ente) throws SQLException {
+    runner.update("INSERT INTO LIDO(nome,indirizzo,telefono,email,logo,prezzo_singolo,num_righe,num_colonne, id_servizi, id_resp_ente) VALUES(?,?,?,?,?,?,?,?,?,?)",
+        nome, indirizzo, telefono, email, logo, prezzo_singolo, num_righe, num_colonne, id_servizi, id_resp_ente);
   }
 
   /**

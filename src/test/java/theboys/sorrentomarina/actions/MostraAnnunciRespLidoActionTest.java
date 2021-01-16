@@ -16,7 +16,7 @@ public class MostraAnnunciRespLidoActionTest extends ActionSetupDB {
   @Test
   public void testSuccess(){
     Mockito.when(mockReq.getSession()).thenReturn(mockSession);
-    Mockito.when(mockReq.getSession().getAttribute("adminLido")).thenReturn(new ResponsabileLido(1, "", "", "", "","", 1));
+    Mockito.when(mockReq.getSession().getAttribute("adminLido")).thenReturn(new ResponsabileLido(1, "", "", "", "","", 1,1));
     ServletContext ctx = Mockito.mock(ServletContext.class);
     Mockito.when(ctx.getAttribute("db")).thenReturn(mockConnection);
     Mockito.when(mockReq.getServletContext()).thenReturn(ctx);

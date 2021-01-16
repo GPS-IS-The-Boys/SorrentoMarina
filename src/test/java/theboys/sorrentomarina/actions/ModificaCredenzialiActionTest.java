@@ -72,7 +72,7 @@ public class ModificaCredenzialiActionTest extends ActionSetupDB {
     mca = new ModificaCredenzialiAction();
 
     Mockito.when(mockReq.getSession().getAttribute("utente")).thenReturn(null);
-    Mockito.when(mockReq.getSession().getAttribute("adminLido")).thenReturn(new ResponsabileLido(1, "Nome1", "Cognome1", "Email1","Username1","password1",1));
+    Mockito.when(mockReq.getSession().getAttribute("adminLido")).thenReturn(new ResponsabileLido(1, "Nome1", "Cognome1", "Email1","Username1","password1",1,1));
     Mockito.when(mockReq.getSession().getAttribute("adminEnte")).thenReturn(new ResponsabileEnte());
 
     String page = this.mca.execute(mockReq, mockRes);
@@ -92,7 +92,7 @@ public class ModificaCredenzialiActionTest extends ActionSetupDB {
     Mockito.when(mockReq.getSession()).thenReturn(mockSession);
     mca = new ModificaCredenzialiAction();
     Mockito.when(mockReq.getSession().getAttribute("utente")).thenReturn(new Turista());
-    Mockito.when(mockReq.getSession().getAttribute("adminLido")).thenReturn(new ResponsabileLido(1, "Nome1", "Cognome1", "Email1","Username1","password1",1));
+    Mockito.when(mockReq.getSession().getAttribute("adminLido")).thenReturn(new ResponsabileLido(1, "Nome1", "Cognome1", "Email1","Username1","password1",1,1));
     Mockito.when(mockReq.getSession().getAttribute("adminEnte")).thenReturn(new ResponsabileEnte());
 
     String page = this.mca.execute(mockReq, mockRes);
@@ -272,7 +272,7 @@ public class ModificaCredenzialiActionTest extends ActionSetupDB {
     Mockito.when(mockReq.getServletContext()).thenReturn(ctx);
     Mockito.when(mockReq.getSession()).thenReturn(mockSession);
     Mockito.when(mockReq.getSession().getAttribute("utente")).thenReturn(new Turista());
-    Mockito.when(mockReq.getSession().getAttribute("adminLido")).thenReturn(new ResponsabileLido(1, "", "", "", "", "",1));
+    Mockito.when(mockReq.getSession().getAttribute("adminLido")).thenReturn(new ResponsabileLido(1, "", "", "", "", "",1,1));
     Mockito.when(mockReq.getSession().getAttribute("adminEnte")).thenReturn(new ResponsabileEnte());
 
     mca = new ModificaCredenzialiAction();

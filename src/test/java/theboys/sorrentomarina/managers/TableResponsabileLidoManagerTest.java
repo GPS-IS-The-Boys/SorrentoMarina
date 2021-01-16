@@ -24,7 +24,7 @@ public class TableResponsabileLidoManagerTest extends IntegrationTestCase{
   @Test
   public void createTest() throws SQLException {
     manager = new TableResponsabileLidoManager(mockDb);
-    manager.create("Nome5", "Cognome5", "email5", "Username5", "Password5", 1);
+    manager.create("Nome5", "Cognome5", "email5", "Username5", "Password5", 1, 1);
     assertNotNull(manager.retriveById(5), "Deve ritornare not null");
   }
 
@@ -60,7 +60,7 @@ public class TableResponsabileLidoManagerTest extends IntegrationTestCase{
   @Test
   public void updateTest() throws SQLException {
     manager = new TableResponsabileLidoManager(mockDb);
-    ResponsabileLido rl = new ResponsabileLido(1, "Carlo", "Cognome1", "Email1", "Username1", "password1", 1);
+    ResponsabileLido rl = new ResponsabileLido(1, "Carlo", "Cognome1", "Email1", "Username1", "password1",1, 1);
     manager.update(rl);
     assertEquals("Carlo", manager.retriveById(1).getNome(), "Deve tornare Carlo");
   }

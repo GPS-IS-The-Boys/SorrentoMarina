@@ -22,7 +22,7 @@ public class ModificaAnnuncioRespLidoActionTest extends ActionSetupDB {
     Mockito.when(mockReq.getParameter("id")).thenReturn("1");
 
     Mockito.when(mockReq.getSession()).thenReturn(mockSession);
-    Mockito.when(mockReq.getSession().getAttribute("adminLido")).thenReturn(new ResponsabileLido(1,"", "a", "", "", "",1));
+    Mockito.when(mockReq.getSession().getAttribute("adminLido")).thenReturn(new ResponsabileLido(1,"", "a", "", "", "",1,1));
 
     ServletContext ctx = Mockito.mock(ServletContext.class);
     Mockito.when(ctx.getAttribute("db")).thenReturn(mockConnection);
@@ -42,7 +42,7 @@ public class ModificaAnnuncioRespLidoActionTest extends ActionSetupDB {
     Mockito.when(mockReq.getParameter("id")).thenReturn("1");
 
     Mockito.when(mockReq.getSession()).thenReturn(mockSession);
-    Mockito.when(mockReq.getSession().getAttribute("adminLido")).thenReturn(new ResponsabileLido(1,"", "a", "", "", "",1));
+    Mockito.when(mockReq.getSession().getAttribute("adminLido")).thenReturn(new ResponsabileLido(1,"", "a", "", "", "",1,1));
 
     ServletContext ctx = Mockito.mock(ServletContext.class);
     Mockito.when(ctx.getAttribute("db")).thenReturn(mockConnection);
@@ -62,7 +62,7 @@ public class ModificaAnnuncioRespLidoActionTest extends ActionSetupDB {
     Mockito.when(mockReq.getParameter("id")).thenReturn("1");
 
     Mockito.when(mockReq.getSession()).thenReturn(mockSession);
-    Mockito.when(mockReq.getSession().getAttribute("adminLido")).thenReturn(new ResponsabileLido(1,"", "a", "", "", "",1));
+    Mockito.when(mockReq.getSession().getAttribute("adminLido")).thenReturn(new ResponsabileLido(1,"", "a", "", "", "",1,1));
 
     ServletContext ctx = Mockito.mock(ServletContext.class);
     Mockito.when(ctx.getAttribute("db")).thenReturn(mockConnection);
@@ -82,7 +82,7 @@ public class ModificaAnnuncioRespLidoActionTest extends ActionSetupDB {
     Mockito.when(mockReq.getParameter("id")).thenReturn("1");
 
     Mockito.when(mockReq.getSession()).thenReturn(mockSession);
-    Mockito.when(mockReq.getSession().getAttribute("adminLido")).thenReturn(new ResponsabileLido(1,"", "a", "", "", "",1));
+    Mockito.when(mockReq.getSession().getAttribute("adminLido")).thenReturn(new ResponsabileLido(1,"", "a", "", "", "",1,1));
 
     ServletContext ctx = Mockito.mock(ServletContext.class);
     Mockito.when(ctx.getAttribute("db")).thenReturn(mockConnection);

@@ -23,7 +23,7 @@ public class ShowDashboardActionTest extends ActionSetupDB{
     ServletContext ctx = Mockito.mock(ServletContext.class);
     Mockito.when(ctx.getAttribute("db")).thenReturn(mockConnection);
     Mockito.when(mockReq.getServletContext()).thenReturn(ctx);
-    Mockito.when(mockReq.getSession().getAttribute("adminLido")).thenReturn(new ResponsabileLido(1, "", "", "", "","",1));
+    Mockito.when(mockReq.getSession().getAttribute("adminLido")).thenReturn(new ResponsabileLido(1, "", "", "", "","",1,1));
     String result = ac.execute(mockReq, mockRes);
     assertEquals("/WEB-INF/views/respLidoDashboard.jsp", result,
         "It should return the view path");
@@ -36,7 +36,7 @@ public class ShowDashboardActionTest extends ActionSetupDB{
     ServletContext ctx = Mockito.mock(ServletContext.class);
     Mockito.when(ctx.getAttribute("db")).thenReturn(null);
     Mockito.when(mockReq.getServletContext()).thenReturn(ctx);
-    Mockito.when(mockReq.getSession().getAttribute("adminLido")).thenReturn(new ResponsabileLido(1, "", "", "", "","",1));
+    Mockito.when(mockReq.getSession().getAttribute("adminLido")).thenReturn(new ResponsabileLido(1, "", "", "", "","",1,1));
     String result = ac.execute(mockReq, mockRes);
     assertEquals("/WEB-INF/views/500.jsp", result,
         "It should return the view path");

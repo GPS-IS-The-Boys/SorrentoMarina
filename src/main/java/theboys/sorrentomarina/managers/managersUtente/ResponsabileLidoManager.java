@@ -8,7 +8,7 @@ import java.util.Optional;
 
 public interface ResponsabileLidoManager {
   //CRUD
-  void create(String nome, String cognome, String email, String username, String password, int id_lido) throws SQLException;
+  void create(String nome, String cognome, String email, String username, String password, int id_lido, int id_resp_ente) throws SQLException;
 
   ResponsabileLido retriveById(int id) throws SQLException;
 

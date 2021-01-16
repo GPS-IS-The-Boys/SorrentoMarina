@@ -18,7 +18,7 @@ public class LidoTest {
    */
   @BeforeEach
   public void init() {
-    lido = new Lido(1, "Marinella", "Via Colombo", "082743123", "marinella@tiscali.it", "logo/logo", 10.5F, 2, 2, 1);
+    lido = new Lido(1, "Marinella", "Via Colombo", "082743123", "marinella@tiscali.it", "logo/logo", 10.5F, 2, 2, 1,1);
   }
 
   /**
@@ -209,6 +209,25 @@ public class LidoTest {
     lido.setId_servizi(6);
     int val = lido.getId_servizi();
     assertEquals(6, val, "Should return 6");
+  }
+
+  /**
+   * test per il metodo setId_servizi
+   */
+  @Test
+  public void setId_resp_ente_Test(){
+    lido.setId_resp_ente(2);
+    int val = lido.getId_resp_ente();
+    assertEquals(2, val, "Should return 6");
+  }
+
+  /**
+   * test per il metodo setId_servizi
+   */
+  @Test
+  public void getId_resp_ente_Test(){
+    int val = lido.getId_resp_ente();
+    assertEquals(1, val, "Should return 6");
   }
 
   /**

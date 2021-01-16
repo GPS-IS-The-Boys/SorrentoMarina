@@ -18,6 +18,7 @@ public class Lido {
   private int num_righe;
   private int num_colonne;
   private int id_servizi;
+  private int id_resp_ente;
 
   /**
    * Costruttore crea un lido vuoto
@@ -39,8 +40,9 @@ public class Lido {
    * @param num_righe
    * @param num_colonne
    * @param id_servizi
+   * @param id_resp_ente
    */
-  public Lido(int id, String nome, String indirizzo, String telefono, String email, String logo, float prezzo_singolo, int num_righe, int num_colonne, int id_servizi) {
+  public Lido(int id, String nome, String indirizzo, String telefono, String email, String logo, float prezzo_singolo, int num_righe, int num_colonne, int id_servizi, int id_resp_ente) {
     this.id = id;
     this.nome = nome;
     this.indirizzo = indirizzo;
@@ -51,6 +53,7 @@ public class Lido {
     this.num_righe = num_righe;
     this.num_colonne = num_colonne;
     this.id_servizi = id_servizi;
+    this.id_resp_ente = id_resp_ente;
   }
 
   /**
