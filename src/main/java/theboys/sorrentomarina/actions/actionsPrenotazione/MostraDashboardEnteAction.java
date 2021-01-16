@@ -17,7 +17,7 @@ import java.util.List;
 /**
  * @author theBoys
  */
-public class ShowDashboardEnteAction implements Action {
+public class MostraDashboardEnteAction implements Action {
 
   /**
    * Esegue la request action

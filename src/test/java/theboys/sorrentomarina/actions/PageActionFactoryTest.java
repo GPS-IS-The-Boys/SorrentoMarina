@@ -18,7 +18,7 @@ public class PageActionFactoryTest {
   @Test
   public void AdminDashboardTest(){
     Action test = paf.create("AdminDashboard");
-    assertEquals(test.getClass(),ShowDashboardAction.class);
+    assertEquals(test.getClass(), MostraDashboardAction.class);
   }
 
   @Test
@@ -60,7 +60,7 @@ public class PageActionFactoryTest {
   @Test
   public void ShowPrenotazioniTuristaTest(){
     Action test = paf.create("PrenotazioniTurista");
-    assertEquals(test.getClass(), ShowPrenotazioniTurista.class);
+    assertEquals(test.getClass(), MostraPrenotazioniTurista.class);
   }
 
   @Test
@@ -138,7 +138,7 @@ public class PageActionFactoryTest {
   @Test
   public void ShowDashboardEnteActionTest(){
     Action test = paf.create("ShowDashboardEnte");
-    assertEquals(test.getClass(),ShowDashboardEnteAction.class);
+    assertEquals(test.getClass(), MostraDashboardEnteAction.class);
   }
 
   @Test

@@ -2,16 +2,16 @@ package theboys.sorrentomarina.actions;
 
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
-import theboys.sorrentomarina.actions.actionsPrenotazione.ShowDashboardEnteAction;
+import theboys.sorrentomarina.actions.actionsPrenotazione.MostraDashboardEnteAction;
 import theboys.sorrentomarina.models.modelsUtente.ResponsabileEnte;
 
 import javax.servlet.ServletContext;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class ShowDashboardEnteActionTest extends ActionSetupDB{
+public class MostraDashboardEnteActionTest extends ActionSetupDB{
 
-  private ShowDashboardEnteAction action;
+  private MostraDashboardEnteAction action;
 
   @Test
   public void successExecute(){
@@ -22,7 +22,7 @@ public class ShowDashboardEnteActionTest extends ActionSetupDB{
     Mockito.when(ctx.getAttribute("db")).thenReturn(mockConnection);
     Mockito.when(mockReq.getServletContext()).thenReturn(ctx);
 
-    action = new ShowDashboardEnteAction();
+    action = new MostraDashboardEnteAction();
     String result = action.execute(mockReq, mockRes);
     assertEquals(result, "/WEB-INF/views/respEnteDashboard.jsp");
   }
@@ -35,7 +35,7 @@ public class ShowDashboardEnteActionTest extends ActionSetupDB{
     Mockito.when(ctx.getAttribute("db")).thenReturn(mockConnection);
     Mockito.when(mockReq.getServletContext()).thenReturn(ctx);
 
-    action = new ShowDashboardEnteAction();
+    action = new MostraDashboardEnteAction();
     String result = action.execute(mockReq, mockRes);
     assertEquals(result, "/WEB-INF/views/403.jsp");
   }

@@ -15,7 +15,7 @@ import java.sql.SQLException;
 /**
  * @author theBoys
  */
-public class ShowDashboardAction implements Action {
+public class MostraDashboardAction implements Action {
   /**
    * mostra la dashboard del responsabile lido
    *

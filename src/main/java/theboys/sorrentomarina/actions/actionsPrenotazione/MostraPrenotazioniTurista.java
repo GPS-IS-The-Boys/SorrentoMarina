@@ -18,7 +18,7 @@ import java.util.List;
 /**
  * @author theBoys
  */
-public class ShowPrenotazioniTurista implements Action {
+public class MostraPrenotazioniTurista implements Action {
   /**
    * Metodo che mostra la lista di tutte le prenotazioni del turista
    *

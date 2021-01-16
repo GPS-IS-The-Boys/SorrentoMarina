@@ -23,7 +23,7 @@ public class PageActionFactory implements ActionFactory {
   public Action create(String type) {
     switch (type) {
       case "AdminDashboard":
-        return new ShowDashboardAction();
+        return new MostraDashboardAction();
       case "MostraFormRegistrazioneAction":
         return new MostraFormRegistrazioneAction();
       case "RegistrazioneAction":
@@ -37,7 +37,7 @@ public class PageActionFactory implements ActionFactory {
       case "MostraProfilo":
         return new MostraProfiloAction();
       case "PrenotazioniTurista":
-        return new ShowPrenotazioniTurista();
+        return new MostraPrenotazioniTurista();
       case "ModificaCredenziali":
         return new ModificaCredenzialiAction();
       case "LidoAction":
@@ -65,7 +65,7 @@ public class PageActionFactory implements ActionFactory {
       case "CreaAnnuncioAction":
         return new CreaAnnuncioAction();
       case "ShowDashboardEnte":
-        return new ShowDashboardEnteAction();
+        return new MostraDashboardEnteAction();
       case "MostraCreaLido":
         return new MostraCreaLido();
       case "CreaLido":
