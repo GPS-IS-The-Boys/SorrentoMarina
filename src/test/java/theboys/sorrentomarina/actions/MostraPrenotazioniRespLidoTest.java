@@ -1,14 +1,14 @@
 package theboys.sorrentomarina.actions;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
-import theboys.sorrentomarina.actions.actionsPrenotazione.ShowPrenotazioniRespLido;
+import theboys.sorrentomarina.actions.actionsPrenotazione.MostraPrenotazioniRespLido;
 import theboys.sorrentomarina.models.modelsUtente.ResponsabileLido;
 import javax.servlet.ServletContext;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class ShowPrenotazioniRespLidoTest extends ActionSetupDB {
+public class MostraPrenotazioniRespLidoTest extends ActionSetupDB {
 
-  private ShowPrenotazioniRespLido sprl;
+  private MostraPrenotazioniRespLido sprl;
 
   @Test
   public void ShowPrenotazioniRespLidoTest(){
@@ -17,7 +17,7 @@ public class ShowPrenotazioniRespLidoTest extends ActionSetupDB {
     Mockito.when(mockReq.getServletContext()).thenReturn(ctx);
     Mockito.when(mockReq.getSession()).thenReturn(mockSession);
     Mockito.when(mockReq.getSession().getAttribute("adminLido")).thenReturn(new ResponsabileLido(1, "nome", "cognome", "email", "username", "password",1,1));
-    sprl = new ShowPrenotazioniRespLido();
+    sprl = new MostraPrenotazioniRespLido();
     String page = this.sprl.execute(mockReq,mockRes);
     assertEquals("/WEB-INF/views/prenotazioniRespLido.jsp",page);
   }
@@ -29,7 +29,7 @@ public class ShowPrenotazioniRespLidoTest extends ActionSetupDB {
     Mockito.when(mockReq.getServletContext()).thenReturn(ctx);
     Mockito.when(mockReq.getSession()).thenReturn(mockSession);
     Mockito.when(mockReq.getSession().getAttribute("adminLido")).thenReturn(new ResponsabileLido(1, "nome", "cognome", "email", "username", "password",1,1));
-    sprl = new ShowPrenotazioniRespLido();
+    sprl = new MostraPrenotazioniRespLido();
     String page = this.sprl.execute(mockReq,mockRes);
     assertEquals("/WEB-INF/views/500.jsp",page);
   }
@@ -41,7 +41,7 @@ public class ShowPrenotazioniRespLidoTest extends ActionSetupDB {
     Mockito.when(mockReq.getServletContext()).thenReturn(ctx);
     Mockito.when(mockReq.getSession()).thenReturn(mockSession);
     Mockito.when(mockReq.getSession().getAttribute("adminLido")).thenReturn(null);
-    sprl = new ShowPrenotazioniRespLido();
+    sprl = new MostraPrenotazioniRespLido();
     String page = this.sprl.execute(mockReq,mockRes);
     assertEquals("/WEB-INF/views/prenotazioniRespLido.jsp",page);
   }

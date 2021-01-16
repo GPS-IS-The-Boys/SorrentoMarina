@@ -2,7 +2,7 @@ package theboys.sorrentomarina.actions;
 
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
-import theboys.sorrentomarina.actions.actionsPrenotazione.ShowDashboardAction;
+import theboys.sorrentomarina.actions.actionsPrenotazione.MostraDashboardAction;
 import theboys.sorrentomarina.actions.actionsUtils.Action;
 import theboys.sorrentomarina.models.modelsUtente.ResponsabileLido;
 
@@ -10,7 +10,7 @@ import javax.servlet.ServletContext;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class ShowDashboardActionTest extends ActionSetupDB{
+public class MostraDashboardActionTest extends ActionSetupDB{
 
   /**
    * Controlla che la view ritornata è quella corretta, ossia la dashboard
@@ -18,7 +18,7 @@ public class ShowDashboardActionTest extends ActionSetupDB{
    */
   @Test
   public void executeTest() {
-    Action ac = Mockito.mock(ShowDashboardAction.class, Mockito.CALLS_REAL_METHODS);
+    Action ac = Mockito.mock(MostraDashboardAction.class, Mockito.CALLS_REAL_METHODS);
     Mockito.when(mockReq.getSession()).thenReturn(mockSession);
     ServletContext ctx = Mockito.mock(ServletContext.class);
     Mockito.when(ctx.getAttribute("db")).thenReturn(mockConnection);
@@ -31,7 +31,7 @@ public class ShowDashboardActionTest extends ActionSetupDB{
 
   @Test
   public void executeTest500() {
-    Action ac = Mockito.mock(ShowDashboardAction.class, Mockito.CALLS_REAL_METHODS);
+    Action ac = Mockito.mock(MostraDashboardAction.class, Mockito.CALLS_REAL_METHODS);
     Mockito.when(mockReq.getSession()).thenReturn(mockSession);
     ServletContext ctx = Mockito.mock(ServletContext.class);
     Mockito.when(ctx.getAttribute("db")).thenReturn(null);
@@ -44,7 +44,7 @@ public class ShowDashboardActionTest extends ActionSetupDB{
 
   @Test
   public void executeTest403() {
-    Action ac = Mockito.mock(ShowDashboardAction.class, Mockito.CALLS_REAL_METHODS);
+    Action ac = Mockito.mock(MostraDashboardAction.class, Mockito.CALLS_REAL_METHODS);
     Mockito.when(mockReq.getSession()).thenReturn(mockSession);
     ServletContext ctx = Mockito.mock(ServletContext.class);
     Mockito.when(ctx.getAttribute("db")).thenReturn(mockConnection);

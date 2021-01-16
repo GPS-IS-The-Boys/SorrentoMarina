@@ -2,15 +2,15 @@ package theboys.sorrentomarina.actions;
 
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
-import theboys.sorrentomarina.actions.actionsPrenotazione.ShowPrenotazioniTurista;
+import theboys.sorrentomarina.actions.actionsPrenotazione.MostraPrenotazioniTurista;
 import theboys.sorrentomarina.models.modelsUtente.Turista;
 import javax.servlet.ServletContext;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class ShowPrenotazioniTuristaTest extends ActionSetupDB {
+public class MostraPrenotazioniTuristaTest extends ActionSetupDB {
 
-  private ShowPrenotazioniTurista spt;
+  private MostraPrenotazioniTurista spt;
 
 
 
@@ -21,7 +21,7 @@ public class ShowPrenotazioniTuristaTest extends ActionSetupDB {
     Mockito.when(mockReq.getServletContext()).thenReturn(ctx);
     Mockito.when(mockReq.getSession()).thenReturn(mockSession);
     Mockito.when(mockReq.getSession().getAttribute("utente")).thenReturn(new Turista(1, "nome", "cognome", "email", "Username1", "password1"));
-    spt = Mockito.mock(ShowPrenotazioniTurista.class,Mockito.CALLS_REAL_METHODS);
+    spt = Mockito.mock(MostraPrenotazioniTurista.class,Mockito.CALLS_REAL_METHODS);
 
     String page = this.spt.execute(mockReq, mockRes);
     assertEquals("/WEB-INF/views/prenotazioniTurista.jsp", page);
@@ -34,7 +34,7 @@ public class ShowPrenotazioniTuristaTest extends ActionSetupDB {
     Mockito.when(mockReq.getServletContext()).thenReturn(ctx);
     Mockito.when(mockReq.getSession()).thenReturn(mockSession);
     Mockito.when(mockReq.getSession().getAttribute("utente")).thenReturn(new Turista(1, "nome", "cognome", "email", "Username1", "password1"));
-    spt = Mockito.mock(ShowPrenotazioniTurista.class,Mockito.CALLS_REAL_METHODS);
+    spt = Mockito.mock(MostraPrenotazioniTurista.class,Mockito.CALLS_REAL_METHODS);
 
     String page = this.spt.execute(mockReq, mockRes);
     assertEquals("/WEB-INF/views/500.jsp", page);
@@ -47,7 +47,7 @@ public class ShowPrenotazioniTuristaTest extends ActionSetupDB {
     Mockito.when(mockReq.getServletContext()).thenReturn(ctx);
     Mockito.when(mockReq.getSession()).thenReturn(mockSession);
     Mockito.when(mockReq.getSession().getAttribute("utente")).thenReturn(null);
-    spt = Mockito.mock(ShowPrenotazioniTurista.class,Mockito.CALLS_REAL_METHODS);
+    spt = Mockito.mock(MostraPrenotazioniTurista.class,Mockito.CALLS_REAL_METHODS);
 
     String page = this.spt.execute(mockReq, mockRes);
     assertEquals("/WEB-INF/views/prenotazioniTurista.jsp", page);

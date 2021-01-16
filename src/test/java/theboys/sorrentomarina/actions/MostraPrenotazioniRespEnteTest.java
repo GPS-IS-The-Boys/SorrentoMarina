@@ -1,15 +1,15 @@
 package theboys.sorrentomarina.actions;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
-import theboys.sorrentomarina.actions.actionsPrenotazione.ShowPrenotazioniRespEnte;
+import theboys.sorrentomarina.actions.actionsPrenotazione.MostraPrenotazioniRespEnte;
 import theboys.sorrentomarina.models.modelsUtente.ResponsabileEnte;
 
 import javax.servlet.ServletContext;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class ShowPrenotazioniRespEnteTest extends ActionSetupDB{
+public class MostraPrenotazioniRespEnteTest extends ActionSetupDB{
 
-  private ShowPrenotazioniRespEnte spre;
+  private MostraPrenotazioniRespEnte spre;
 
   @Test
   public void ShowPrenotazioniRespEnteTest(){
@@ -18,7 +18,7 @@ public class ShowPrenotazioniRespEnteTest extends ActionSetupDB{
     Mockito.when(mockReq.getServletContext()).thenReturn(ctx);
     Mockito.when(mockReq.getSession()).thenReturn(mockSession);
     Mockito.when(mockReq.getSession().getAttribute("adminEnte")).thenReturn(new ResponsabileEnte(1, "nome", "cognome", "email", "username", "password"));
-    spre = new ShowPrenotazioniRespEnte();
+    spre = new MostraPrenotazioniRespEnte();
     String page = this.spre.execute(mockReq,mockRes);
     assertEquals("/WEB-INF/views/prenotazioniRespEnte.jsp",page);
   }
@@ -30,7 +30,7 @@ public class ShowPrenotazioniRespEnteTest extends ActionSetupDB{
     Mockito.when(mockReq.getServletContext()).thenReturn(ctx);
     Mockito.when(mockReq.getSession()).thenReturn(mockSession);
     Mockito.when(mockReq.getSession().getAttribute("adminEnte")).thenReturn(new ResponsabileEnte(1, "nome", "cognome", "email", "username", "password"));
-    spre = new ShowPrenotazioniRespEnte();
+    spre = new MostraPrenotazioniRespEnte();
     String page = this.spre.execute(mockReq,mockRes);
     assertEquals("/WEB-INF/views/500.jsp",page);
   }
@@ -42,7 +42,7 @@ public class ShowPrenotazioniRespEnteTest extends ActionSetupDB{
     Mockito.when(mockReq.getServletContext()).thenReturn(ctx);
     Mockito.when(mockReq.getSession()).thenReturn(mockSession);
     Mockito.when(mockReq.getSession().getAttribute("adminEnte")).thenReturn(null);
-    spre = new ShowPrenotazioniRespEnte();
+    spre = new MostraPrenotazioniRespEnte();
     String page = this.spre.execute(mockReq,mockRes);
     assertEquals("/WEB-INF/views/prenotazioniRespEnte.jsp",page);
   }

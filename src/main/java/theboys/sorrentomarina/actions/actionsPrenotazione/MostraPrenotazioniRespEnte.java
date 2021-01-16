@@ -17,7 +17,7 @@ import java.util.List;
  * @author theBoys
  */
 
-public class ShowPrenotazioniRespEnte implements Action {
+public class MostraPrenotazioniRespEnte implements Action {
 
 
   /**
