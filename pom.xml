@@ -81,6 +81,8 @@
       </dependency>
 
 
+
+
       <!-- https://mvnrepository.com/artifact/org.webjars/startbootstrap-sb-admin-2 -->
     <dependency>
       <groupId>org.webjars</groupId>
@@ -102,6 +104,12 @@
       <version>3.141.59</version>
       <scope>test</scope>
     </dependency>
+
+      <dependency>
+          <groupId>io.github.bonigarcia</groupId>
+          <artifactId>webdrivermanager</artifactId>
+          <version>4.2.2</version>
+      </dependency>
     <!-- Simulare pool di connessioni al database -->
     <dependency>
       <groupId>org.apache.commons</groupId>
