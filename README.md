@@ -7,7 +7,7 @@
 </div>
 <div align = "center">
   <h3>
-    <a href="https://github.com/GPS-IS-The-Boys/SorrentoMarina/doc">
+    <a href="https://gps-is-the-boys.github.io/SorrentoMarina/">
       Documentazione
     </a>
   </h3>
