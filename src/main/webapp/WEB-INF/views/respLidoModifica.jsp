@@ -45,7 +45,7 @@
               <p class="mb-20">Cambia le caratteristiche del tuo lido con questo semplice form</p>
               <p>${messaggio}</p>
             </div>
-            <form action="modificaLido" method="post">
+            <form name="modificaLido" action="modificaLido" method="post">
               <div class="row md-1">
                 <div class="col">
                   <div class="row">
