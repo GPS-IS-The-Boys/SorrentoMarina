@@ -21,7 +21,7 @@ public class MostraFormRecensioneTest extends ActionSetup{
   }
 
   /**
-   *test controlla che la view ritornata è quella corretta, ossia la pagina di formRecensione
+   *test controlla che la view ritornata Ã¨ quella corretta, ossia la pagina di formRecensione
    */
   @Test
   public void SuccessTextView() {
@@ -34,7 +34,7 @@ public class MostraFormRecensioneTest extends ActionSetup{
   }
 
   /**
-   * Controlla che la view ritornata non è quella corretta, ritorna la pagina di login
+   * Controlla che la view ritornata non Ã¨ quella corretta, ritorna la pagina di login
    */
   @Test
   public void FailureTextView() {
