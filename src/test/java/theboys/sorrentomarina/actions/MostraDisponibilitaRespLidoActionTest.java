@@ -16,7 +16,7 @@ public class MostraDisponibilitaRespLidoActionTest extends ActionSetupDB {
   private MostraDisponibilitaRespLidoAction action;
 
   /**
-   * test mostra con successo la disponiibilit‡ al responsabile lido
+   * test mostra con successo la disponiibilit√† al responsabile lido
    *
    * ()
    */
@@ -38,7 +38,7 @@ public class MostraDisponibilitaRespLidoActionTest extends ActionSetupDB {
   }
 
   /**
-   *test mostra senza successo la disponiibilit‡ al responsabile lido
+   *test mostra senza successo la disponiibilit√† al responsabile lido
    * ()
    */
   @Test

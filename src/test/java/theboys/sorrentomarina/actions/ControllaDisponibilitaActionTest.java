@@ -16,7 +16,7 @@ public class ControllaDisponibilitaActionTest extends ActionSetupDB {
   private ControllaDisponibilitaAction action;
 
   /**
-   * test della disponibili‡ degli ombrelloni da una data ad un'altra
+   * test della disponibilit√† degli ombrelloni da una data ad un'altra
    */
   @Test
   public void successTest(){
