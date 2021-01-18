@@ -8,9 +8,14 @@ import theboys.sorrentomarina.actions.actionsUtils.Action;
 import javax.servlet.ServletContext;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
+/**
+ * @author theBoys
+ */
 public class MostraTuttiAnnunciTest extends ActionSetupDB{
 
+  /**
+   * Test- mostra tutti gli annunci al responsabile ente
+   */
   @Test
   public void textView() {
     Action ac = Mockito.mock(MostraTuttiAnnunci.class, Mockito.CALLS_REAL_METHODS);
@@ -22,6 +27,10 @@ public class MostraTuttiAnnunciTest extends ActionSetupDB{
     assertEquals("/WEB-INF/views/respEnteAnnunci.jsp", result,
         "It should return the view path");
   }
+
+  /**
+   * Test- mostra la view 500
+   */
   @Test
   public void textView500() {
     Action ac = Mockito.mock(MostraTuttiAnnunci.class, Mockito.CALLS_REAL_METHODS);

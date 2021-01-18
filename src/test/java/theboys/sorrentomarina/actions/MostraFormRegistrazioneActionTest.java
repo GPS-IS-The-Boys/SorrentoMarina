@@ -8,7 +8,9 @@ import theboys.sorrentomarina.actions.actionsUtils.Action;
 import theboys.sorrentomarina.models.modelsUtente.Turista;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
+/**
+ * @author theBoys
+ */
 public class MostraFormRegistrazioneActionTest extends ActionSetup{
 
   @Override
@@ -31,6 +33,10 @@ public class MostraFormRegistrazioneActionTest extends ActionSetup{
         "It should return the view path");
   }
 
+  /**
+   * Controlla che la view ritornata è quella  non corretta, ossia ritorna la pagina di index
+   *
+   */
   @Test
   public void failureTest() {
     Action ac = Mockito.mock(MostraFormRegistrazioneAction.class, Mockito.CALLS_REAL_METHODS);

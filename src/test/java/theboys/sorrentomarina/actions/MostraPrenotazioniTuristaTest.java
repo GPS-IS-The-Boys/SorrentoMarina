@@ -13,7 +13,9 @@ public class MostraPrenotazioniTuristaTest extends ActionSetupDB {
   private MostraPrenotazioniTurista spt;
 
 
-
+  /**
+   * Test Mostra le prenotazioni del turista
+   */
   @Test
   public void ShowPrenotazioniTuristaTest() {
     ServletContext ctx = Mockito.mock(ServletContext.class);
@@ -26,6 +28,10 @@ public class MostraPrenotazioniTuristaTest extends ActionSetupDB {
     String page = this.spt.execute(mockReq, mockRes);
     assertEquals("/WEB-INF/views/prenotazioniTurista.jsp", page);
   }
+
+  /**
+   * Test Mostra la view 500 in caso di errore
+   */
 
   @Test
   public void ShowPrenotazioniTuristaFaiulureTest(){
@@ -40,6 +46,9 @@ public class MostraPrenotazioniTuristaTest extends ActionSetupDB {
     assertEquals("/WEB-INF/views/500.jsp", page);
   }
 
+  /**
+   *
+   */
   @Test
   public void ShowPrenotazioniTuristaNullTest(){
     ServletContext ctx = Mockito.mock(ServletContext.class);

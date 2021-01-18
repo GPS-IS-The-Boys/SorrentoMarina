@@ -7,7 +7,9 @@ import theboys.sorrentomarina.models.modelsUtente.ResponsabileEnte;
 import theboys.sorrentomarina.models.modelsUtente.ResponsabileLido;
 import theboys.sorrentomarina.models.modelsUtente.Turista;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
+/**
+ * @author theBoys
+ */
 public class MostraProfiloActionTest extends ActionSetup {
 
   private MostraProfiloAction action;

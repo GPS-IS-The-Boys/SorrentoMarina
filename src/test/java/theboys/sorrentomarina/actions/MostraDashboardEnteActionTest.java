@@ -13,6 +13,9 @@ public class MostraDashboardEnteActionTest extends ActionSetupDB{
 
   private MostraDashboardEnteAction action;
 
+  /**
+   * Test- mostra la dashboard del responsabile ente
+   */
   @Test
   public void successExecute(){
     Mockito.when(mockReq.getSession()).thenReturn(mockSession);

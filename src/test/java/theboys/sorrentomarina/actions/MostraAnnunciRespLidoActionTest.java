@@ -8,11 +8,16 @@ import theboys.sorrentomarina.models.modelsUtente.ResponsabileLido;
 import javax.servlet.ServletContext;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
+/**
+ * @author theBoys
+ */
 public class MostraAnnunciRespLidoActionTest extends ActionSetupDB {
 
   private MostraAnnunciRespLidoAction action;
 
+  /**
+   * test cerca annunci nel db con successo
+   */
   @Test
   public void testSuccess(){
     Mockito.when(mockReq.getSession()).thenReturn(mockSession);
@@ -27,6 +32,9 @@ public class MostraAnnunciRespLidoActionTest extends ActionSetupDB {
     assertEquals("/WEB-INF/views/respLidoAnnunci.jsp", page);
   }
 
+  /**
+   * test cerca annunci nel db senza successo
+   */
   @Test
   public void testFailure(){
     Mockito.when(mockReq.getSession()).thenReturn(mockSession);

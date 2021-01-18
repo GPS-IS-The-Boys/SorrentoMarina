@@ -9,7 +9,9 @@ import theboys.sorrentomarina.actions.actionsUtils.Action;
 import javax.servlet.ServletContext;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
+/**
+ * @author theBoys
+ */
 public class LogoutActionTest extends ActionSetup {
   @Override
   @BeforeEach

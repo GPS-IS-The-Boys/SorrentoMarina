@@ -7,7 +7,9 @@ import theboys.sorrentomarina.actions.actionsLido.MostraAffluenza;
 import theboys.sorrentomarina.actions.actionsUtils.Action;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
+/**
+ * @author theBoys
+ */
 public class MostraAffluenzaTest extends ActionSetup {
   @Override
   @BeforeEach

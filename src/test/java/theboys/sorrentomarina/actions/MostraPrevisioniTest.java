@@ -7,8 +7,11 @@ import theboys.sorrentomarina.actions.actionsLido.MostraPrevisioni;
 import theboys.sorrentomarina.actions.actionsUtils.Action;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
+/**
+ * @author theBoys
+ */
 public class MostraPrevisioniTest extends ActionSetup {
+
   @Override
   @BeforeEach
   public void setup(){

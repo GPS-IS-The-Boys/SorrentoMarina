@@ -8,7 +8,9 @@ import theboys.sorrentomarina.models.modelsUtente.ResponsabileLido;
 import javax.servlet.ServletContext;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
+/**
+ * @author theBoys
+ */
 public class MostraModificaLidoTest extends ActionSetupDB {
 
   private MostraModificaLido action;

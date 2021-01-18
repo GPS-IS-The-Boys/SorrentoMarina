@@ -8,13 +8,14 @@ import theboys.sorrentomarina.actions.actionsUtils.Action;
 import javax.servlet.ServletContext;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
+/**
+ * @author theBoys ()
+ */
 public class WelcomeActionTest extends ActionSetupDB{
 
   /**
    * Controlla che la view ritornata è quella corretta, ossia la index
    *
-   * @author Francesco Pio Covino
    */
   @Test
   public void textView() {
@@ -35,7 +36,9 @@ public class WelcomeActionTest extends ActionSetupDB{
     assertEquals("/WEB-INF/views/index.jsp", result,
         "It should return the view path");
   }
-
+  /**
+   * Test - Ricerca senza  servizio1
+   */
   @Test
   public void textServizio1Null() {
     Action ac = Mockito.mock(WelcomeAction.class, Mockito.CALLS_REAL_METHODS);
@@ -55,6 +58,9 @@ public class WelcomeActionTest extends ActionSetupDB{
     assertEquals("/WEB-INF/views/index.jsp", result,
         "It should return the view path");
   }
+  /**
+   * Test - Ricerca senza  servizio2
+   */
   @Test
   public void textServizio2Null() {
     Action ac = Mockito.mock(WelcomeAction.class, Mockito.CALLS_REAL_METHODS);
@@ -74,6 +80,9 @@ public class WelcomeActionTest extends ActionSetupDB{
     assertEquals("/WEB-INF/views/index.jsp", result,
         "It should return the view path");
   }
+  /**
+   * Test - Ricerca senza  servizio3
+   */
   @Test
   public void textServizio3Null() {
     Action ac = Mockito.mock(WelcomeAction.class, Mockito.CALLS_REAL_METHODS);
@@ -93,6 +102,9 @@ public class WelcomeActionTest extends ActionSetupDB{
     assertEquals("/WEB-INF/views/index.jsp", result,
         "It should return the view path");
   }
+  /**
+   * Test - Ricerca senza  servizio4
+   */
   @Test
   public void textServizio4Null() {
     Action ac = Mockito.mock(WelcomeAction.class, Mockito.CALLS_REAL_METHODS);
@@ -112,6 +124,9 @@ public class WelcomeActionTest extends ActionSetupDB{
     assertEquals("/WEB-INF/views/index.jsp", result,
         "It should return the view path");
   }
+  /**
+   * Test - Ricerca senza  servizio5
+   */
   @Test
   public void textServizio5Null() {
     Action ac = Mockito.mock(WelcomeAction.class, Mockito.CALLS_REAL_METHODS);
@@ -131,6 +146,10 @@ public class WelcomeActionTest extends ActionSetupDB{
     assertEquals("/WEB-INF/views/index.jsp", result,
         "It should return the view path");
   }
+
+  /**
+   * Test - Ricerca senza  servizio6
+   */
   @Test
   public void textServizio6Null() {
     Action ac = Mockito.mock(WelcomeAction.class, Mockito.CALLS_REAL_METHODS);
@@ -150,6 +169,9 @@ public class WelcomeActionTest extends ActionSetupDB{
     assertEquals("/WEB-INF/views/index.jsp", result,
         "It should return the view path");
   }
+  /**
+   * Test - Ricerca senza  servizio7
+   */
   @Test
   public void textServizio7Null() {
     Action ac = Mockito.mock(WelcomeAction.class, Mockito.CALLS_REAL_METHODS);
@@ -169,6 +191,9 @@ public class WelcomeActionTest extends ActionSetupDB{
     assertEquals("/WEB-INF/views/index.jsp", result,
         "It should return the view path");
   }
+  /**
+   * Test - Ricerca senza un campo selezionato, il campo nomeRicerca
+   */
   @Test
   public void textNomeLidoNull() {
     Action ac = Mockito.mock(WelcomeAction.class, Mockito.CALLS_REAL_METHODS);
@@ -189,6 +214,9 @@ public class WelcomeActionTest extends ActionSetupDB{
         "It should return the view path");
   }
 
+  /**
+   * Test - Ricerca senza nessun campo selezionato
+   */
   @Test
   public void textRicercaSenzaNessunCampo() {
     Action ac = Mockito.mock(WelcomeAction.class, Mockito.CALLS_REAL_METHODS);

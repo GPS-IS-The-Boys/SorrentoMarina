@@ -12,10 +12,15 @@ import java.sql.SQLException;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
-
+/**
+ * @author theBoys
+ */
 public class RimuoviRecensioneActionTest extends ActionSetupDB {
   private RimuoviRecensioneAction rra;
 
+  /**
+   * Test - rimuove una recensione
+   */
   @Test
   public void SuccessTest(){
     Mockito.when(mockReq.getParameter("id")).thenReturn("1");

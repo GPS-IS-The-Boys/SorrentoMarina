@@ -8,7 +8,9 @@ import theboys.sorrentomarina.actions.actionsUtente.MostraInfoAction;
 import theboys.sorrentomarina.actions.actionsUtils.Action;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
+/**
+ * @author theBoys
+ */
 public class MostraInfoActionTest extends ActionSetup{
 
   @Override

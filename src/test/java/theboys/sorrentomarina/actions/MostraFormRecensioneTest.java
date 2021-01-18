@@ -9,7 +9,9 @@ import theboys.sorrentomarina.models.modelsUtente.Turista;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-
+/**
+ * @author theBoys
+ */
 public class MostraFormRecensioneTest extends ActionSetup{
 
   @Override
@@ -18,6 +20,9 @@ public class MostraFormRecensioneTest extends ActionSetup{
     super.setup();
   }
 
+  /**
+   *test controlla che la view ritornata è quella corretta, ossia la pagina di formRecensione
+   */
   @Test
   public void SuccessTextView() {
     Action ac = Mockito.mock(MostraFormRecensione.class, Mockito.CALLS_REAL_METHODS);
@@ -28,6 +33,9 @@ public class MostraFormRecensioneTest extends ActionSetup{
         "It should return the view path");
   }
 
+  /**
+   * Controlla che la view ritornata non è quella corretta, ritorna la pagina di login
+   */
   @Test
   public void FailureTextView() {
     Action ac = Mockito.mock(MostraFormRecensione.class, Mockito.CALLS_REAL_METHODS);

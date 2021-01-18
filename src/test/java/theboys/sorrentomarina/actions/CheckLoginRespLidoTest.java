@@ -8,11 +8,16 @@ import theboys.sorrentomarina.actions.actionsUtente.CheckLoginRespLido;
 import javax.servlet.ServletContext;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
+/**
+ * @author theBoys
+ */
 public class CheckLoginRespLidoTest extends ActionSetupDB{
 
   private CheckLoginRespLido crl;
 
+  /**
+   * Test nel caso fallisce la ricerca nel db del responsabile lido
+   */
   @Test
   public void textExecuteFailure() {
     Mockito.when(mockReq.getParameter("username")).thenReturn("Userna1");
@@ -31,6 +36,9 @@ public class CheckLoginRespLidoTest extends ActionSetupDB{
     assertEquals("/WEB-INF/views/login.jsp", result, "It should return the login page");
   }
 
+  /**
+   * Test nel caso va a buon fine la ricerca nel db del responsabile lido
+   */
   @Test
   public void testExecuteSuccess() {
     Mockito.when(mockReq.getParameter("username")).thenReturn("Username1");

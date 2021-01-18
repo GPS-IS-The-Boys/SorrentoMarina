@@ -11,13 +11,15 @@ import theboys.sorrentomarina.actions.actionsUtils.NotFoundAction;
  * @author theboys
  */
 public class NotFoundActionTest extends ActionSetup {
-
   @Override
   @BeforeEach
   public void setup(){
     super.setup();
   }
 
+  /**
+   * Test - esegue la view 404
+   */
   @Test
   public void testExecute() {
     NotFoundAction nfa = new NotFoundAction();

@@ -15,7 +15,9 @@ import javax.servlet.ServletContext;
 import java.sql.SQLException;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
+/**
+ * @author theBoys
+ */
 public class ModificaLidoActionTest extends ActionSetupDB {
 
   private ModificaLidoAction action;

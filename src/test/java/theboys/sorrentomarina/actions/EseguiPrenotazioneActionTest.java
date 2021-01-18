@@ -14,6 +14,9 @@ public class EseguiPrenotazioneActionTest extends ActionSetupDB {
 
   private EseguiPrenotazioneAction action;
 
+  /**
+   * test esegue la prenotazione di un turista  registrato
+   */
   @Test
   public void executeSuccessTuristaRegistrato(){
     Mockito.when(mockReq.getSession()).thenReturn(mockSession);
@@ -41,6 +44,9 @@ public class EseguiPrenotazioneActionTest extends ActionSetupDB {
     assertEquals(result, "/WEB-INF/views/prenotazioneConfermata.jsp");
   }
 
+  /**
+   * test esegue la prenotazione di un turista non registrato
+   */
   @Test
   public void executeSuccessTuristaNonRegistrato(){
     Mockito.when(mockReq.getSession()).thenReturn(mockSession);

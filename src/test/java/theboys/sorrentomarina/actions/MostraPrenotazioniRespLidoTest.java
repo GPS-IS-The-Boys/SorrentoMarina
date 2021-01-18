@@ -10,6 +10,9 @@ public class MostraPrenotazioniRespLidoTest extends ActionSetupDB {
 
   private MostraPrenotazioniRespLido sprl;
 
+  /**
+   * Test- mostra le prenotazioni all responsabile lido
+   */
   @Test
   public void ShowPrenotazioniRespLidoTest(){
     ServletContext ctx = Mockito.mock(ServletContext.class);
