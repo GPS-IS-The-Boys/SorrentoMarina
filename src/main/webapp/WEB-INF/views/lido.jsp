@@ -25,7 +25,7 @@
                                     <div class="blog_details">
                                         <h4>Descrizione</h4>
                                         <p>
-                                            ${lido.nome}, stabilimento balneare situato a Marina Di Sorrento. La sua meravigliosa spiaggia, accompagnata dalle comodità offerte dal
+                                            ${lido.nome}, stabilimento balneare situato a Marina Di Sorrento. La sua meravigliosa spiaggia, accompagnata dalle comodit&agrave; offerte dal
                                             lido contribuiranno a rende piacevole il tuo meritato relax.
                                         </p>
                                         <div>

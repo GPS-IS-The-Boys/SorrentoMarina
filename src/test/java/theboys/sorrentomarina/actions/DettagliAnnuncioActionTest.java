@@ -2,7 +2,7 @@ package theboys.sorrentomarina.actions;
 
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
-import theboys.sorrentomarina.models.ResponsabileLido;
+import theboys.sorrentomarina.actions.actionsAnnuncio.DettagliAnnuncioAction;
 
 import javax.servlet.ServletContext;
 

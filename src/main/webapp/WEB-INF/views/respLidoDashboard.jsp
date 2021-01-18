@@ -42,7 +42,7 @@
 
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Dashboard Responsabile ${lido.nome}</h1>
+            <h1 class="h3 mb-0 text-gray-800">Dashboard Responsabile Lido: ${lido.nome}</h1>
           </div>
 
           <!-- Content Row -->
@@ -148,6 +148,7 @@
                 </div>
                 <!-- Card Body -->
                 <div class="card-body">
+                  <p>${messaggio}</p>
                         <form method="post" action="creaAnnuncio">
                             <div class="form-row m-1">
                               <input type="text" name="titolo"
@@ -155,7 +156,7 @@
                             </div>
                             <div class="form-row m-1">
                               <input type="text" name="foto"
-                                     class="form-control bg-white" id="foto" placeholder="path della foto">
+                                     class="form-control bg-white" id="foto" placeholder="/images/logo.jpg">
                             </div>
                             <div class="form-row m-1">
                               <textarea class="form-control" maxlength="256" name="contenuto" id="contenuto" rows="5" placeholder="Aggiungi il contenuto dell'annuncio"></textarea>

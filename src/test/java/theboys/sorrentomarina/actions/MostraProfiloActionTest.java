@@ -2,9 +2,10 @@ package theboys.sorrentomarina.actions;
 
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
-import theboys.sorrentomarina.models.ResponsabileEnte;
-import theboys.sorrentomarina.models.ResponsabileLido;
-import theboys.sorrentomarina.models.Turista;
+import theboys.sorrentomarina.actions.actionsUtente.MostraProfiloAction;
+import theboys.sorrentomarina.models.modelsUtente.ResponsabileEnte;
+import theboys.sorrentomarina.models.modelsUtente.ResponsabileLido;
+import theboys.sorrentomarina.models.modelsUtente.Turista;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 /**
  * @author theBoys
@@ -37,7 +38,7 @@ public class MostraProfiloActionTest extends ActionSetup {
   @Test
   public void RespLidoSuccessTest(){
     Mockito.when(mockReq.getSession()).thenReturn(mockSession);
-    Mockito.when(mockReq.getSession().getAttribute("adminLido")).thenReturn(new ResponsabileLido(1, "", "", "", "", "", 1));
+    Mockito.when(mockReq.getSession().getAttribute("adminLido")).thenReturn(new ResponsabileLido(1, "", "", "", "", "", 1,1));
     Mockito.when(mockReq.getSession().getAttribute("adminEnte")).thenReturn(null);
     Mockito.when(mockReq.getSession().getAttribute("utente")).thenReturn(null);
 

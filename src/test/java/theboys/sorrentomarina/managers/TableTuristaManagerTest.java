@@ -2,11 +2,11 @@ package theboys.sorrentomarina.managers;
 
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
-import theboys.sorrentomarina.models.Turista;
+import theboys.sorrentomarina.managers.managersUtente.TableTuristaManager;
+import theboys.sorrentomarina.models.modelsUtente.Turista;
 
 import java.sql.SQLException;
 import java.util.List;
-import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
 

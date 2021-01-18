@@ -1,22 +1,20 @@
 package theboys.sorrentomarina.managers;
 
-import org.junit.Ignore;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
-import theboys.sorrentomarina.models.ResponsabileLido;
+import theboys.sorrentomarina.managers.managersUtente.TableResponsabileLidoManager;
+import theboys.sorrentomarina.models.modelsUtente.ResponsabileLido;
 
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static theboys.sorrentomarina.managers.IntegrationTestCase.mockDb;
 
 /**
  * @author theboys
  */
-@Disabled
-public class TableResponsabileLidoManagerTest {
+
+public class TableResponsabileLidoManagerTest extends IntegrationTestCase{
 
   TableResponsabileLidoManager manager;
 
@@ -26,7 +24,7 @@ public class TableResponsabileLidoManagerTest {
   @Test
   public void createTest() throws SQLException {
     manager = new TableResponsabileLidoManager(mockDb);
-    manager.create("Nome5", "Cognome5", "email5", "Username5", "Password5", 1);
+    manager.create("Nome5", "Cognome5", "email5", "Username5", "Password5", 1, 1);
     assertNotNull(manager.retriveById(5), "Deve ritornare not null");
   }
 
@@ -62,7 +60,7 @@ public class TableResponsabileLidoManagerTest {
   @Test
   public void updateTest() throws SQLException {
     manager = new TableResponsabileLidoManager(mockDb);
-    ResponsabileLido rl = new ResponsabileLido(1, "Carlo", "Cognome1", "Email1", "Username1", "password1", 1);
+    ResponsabileLido rl = new ResponsabileLido(1, "Carlo", "Cognome1", "Email1", "Username1", "password1",1, 1);
     manager.update(rl);
     assertEquals("Carlo", manager.retriveById(1).getNome(), "Deve tornare Carlo");
   }

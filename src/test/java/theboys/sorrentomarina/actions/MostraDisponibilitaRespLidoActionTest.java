@@ -2,7 +2,8 @@ package theboys.sorrentomarina.actions;
 
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
-import theboys.sorrentomarina.models.ResponsabileLido;
+import theboys.sorrentomarina.actions.actionsUtente.MostraDisponibilitaRespLidoAction;
+import theboys.sorrentomarina.models.modelsUtente.ResponsabileLido;
 
 import javax.servlet.ServletContext;
 
@@ -28,7 +29,7 @@ public class MostraDisponibilitaRespLidoActionTest extends ActionSetupDB {
 
     Mockito.when(mockReq.getParameter("dataInizio")).thenReturn("2021-01-01");
     Mockito.when(mockReq.getParameter("dataFine")).thenReturn("2021-01-01");
-    Mockito.when(mockReq.getSession().getAttribute("adminLido")).thenReturn(new ResponsabileLido(1, "nome", "indirizzo", "telefono", "email", "logo", 1));
+    Mockito.when(mockReq.getSession().getAttribute("adminLido")).thenReturn(new ResponsabileLido(1, "nome", "indirizzo", "telefono", "email", "logo", 1,1));
 
     action = new MostraDisponibilitaRespLidoAction();
 

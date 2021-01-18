@@ -1,11 +1,11 @@
 package theboys.sorrentomarina.managers;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
-import theboys.sorrentomarina.models.Lido;
-import theboys.sorrentomarina.models.Ombrellone;
-import theboys.sorrentomarina.models.Prenotazione;
+import theboys.sorrentomarina.managers.managersPrenotazione.TablePrenotazioneManager;
+import theboys.sorrentomarina.models.modelsLido.Lido;
+import theboys.sorrentomarina.models.modelsPrenotazione.Ombrellone;
+import theboys.sorrentomarina.models.modelsPrenotazione.Prenotazione;
 
-import java.io.FileNotFoundException;
 import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.List;
@@ -14,7 +14,7 @@ import static org.junit.jupiter.api.Assertions.*;
 /**
  * @author theboys
  */
-@Disabled
+
 public class TablePrenotazioneManagerTest extends IntegrationTestCase{
   TablePrenotazioneManager manager ;
 
@@ -155,7 +155,7 @@ public class TablePrenotazioneManagerTest extends IntegrationTestCase{
   @Test
   public void ombrelloniOccupatiTest() throws SQLException {
     manager = new TablePrenotazioneManager(mockDb);
-    Lido lido = new Lido(1, "Nome1", "Indirizzo1", "Telefono1", "email1", "logo1", 12.5F, 4, 5, 1);
+    Lido lido = new Lido(1, "Nome1", "Indirizzo1", "Telefono1", "email1", "logo1", 12.5F, 4, 5, 1, 1);
     List<String> list = manager.ombrelloniOccupati("2020-06-09", "2020-06-09", lido);
     assertEquals(1, list.size(), "It should return 1");
   }
@@ -188,12 +188,12 @@ public class TablePrenotazioneManagerTest extends IntegrationTestCase{
    * Controlla l'affluenza nei giorni della settimana
    * @throws SQLException
    */
+
   @Test
-  @Disabled
   public void getAffluenza() throws SQLException{
     manager = new TablePrenotazioneManager(mockDb);
     HashMap<String,Integer> map=manager.getAffluenza();
-    assertNull(map,"It should retrive the map");
+    assertNotNull(map,"It should retrive the map");
   }
 
   /**

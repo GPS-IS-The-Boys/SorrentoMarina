@@ -3,10 +3,9 @@ package theboys.sorrentomarina.actions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
-import theboys.sorrentomarina.models.Turista;
-
-import java.io.FileNotFoundException;
-import java.sql.SQLException;
+import theboys.sorrentomarina.actions.actionsUtente.MostraFormRegistrazioneAction;
+import theboys.sorrentomarina.actions.actionsUtils.Action;
+import theboys.sorrentomarina.models.modelsUtente.Turista;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 /**

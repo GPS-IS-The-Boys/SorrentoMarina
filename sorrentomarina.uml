@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>theboys.sorrentomarina</OriginalElement>
+  <nodes>
+    <node x="3.0" y="302.0">theboys.sorrentomarina.utils</node>
+    <node x="0.0" y="230.0">theboys.sorrentomarina.models</node>
+    <node x="-270.0" y="252.0">theboys.sorrentomarina.e2e</node>
+    <node x="4.0" y="80.0">theboys.sorrentomarina.router</node>
+    <node x="0.0" y="155.0">theboys.sorrentomarina.managers</node>
+    <node x="0.0" y="0.0">theboys.sorrentomarina.actions</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="theboys.sorrentomarina.router" target="theboys.sorrentomarina.actions">
+      <point x="0.0" y="-15.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="153.5" y="170.5" />
+  <SelectedNodes />
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>public</VISIBILITY>
+</Diagram>
+

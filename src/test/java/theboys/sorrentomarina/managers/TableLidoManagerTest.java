@@ -1,8 +1,9 @@
 package theboys.sorrentomarina.managers;
 
 import org.junit.jupiter.api.Test;
-import theboys.sorrentomarina.models.Lido;
-import theboys.sorrentomarina.models.Servizio;
+import theboys.sorrentomarina.managers.managersLido.TableLidoManager;
+import theboys.sorrentomarina.models.modelsLido.Lido;
+import theboys.sorrentomarina.models.modelsLido.Servizio;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -23,7 +24,7 @@ public class TableLidoManagerTest extends IntegrationTestCase {
   @Test
   public void createTest() throws SQLException {
     manager = new TableLidoManager(mockDb);
-    manager.create("Nome5", "Indirizzo5", "Telefono5", "email5", "logo5", 12.5F, 4, 5, 1);
+    manager.create("Nome5", "Indirizzo5", "Telefono5", "email5", "logo5", 12.5F, 4, 5, 1, 1);
     Lido lido = manager.retriveById(5);
     assertNotNull(lido, "Deve trovare il lido appena inserito");
   }
@@ -125,7 +126,7 @@ public class TableLidoManagerTest extends IntegrationTestCase {
   @Test
   public void updateTest() throws SQLException {
     manager = new TableLidoManager(mockDb);
-    Lido lido = new Lido(1, "Nome1", "Indirizzo1", "Telefono1", "email1", "logo1", 12.5F, 4, 5, 1);
+    Lido lido = new Lido(1, "Nome1", "Indirizzo1", "Telefono1", "email1", "logo1", 12.5F, 4, 5, 1, 1);
     lido.setNome("Test1");
     manager.update(lido);
     lido = manager.retriveById(1);

@@ -7,9 +7,9 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.mockito.Mockito;
-import theboys.sorrentomarina.actions.Action;
-import theboys.sorrentomarina.actions.ChainableAction;
-import theboys.sorrentomarina.actions.NotFoundAction;
+import theboys.sorrentomarina.actions.actionsUtils.Action;
+import theboys.sorrentomarina.actions.actionsUtils.ChainableAction;
+import theboys.sorrentomarina.actions.actionsUtils.NotFoundAction;
 
 /**
  *@author theboys

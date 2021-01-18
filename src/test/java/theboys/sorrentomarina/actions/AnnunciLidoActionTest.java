@@ -2,7 +2,8 @@ package theboys.sorrentomarina.actions;
 
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
-import theboys.sorrentomarina.models.Lido;
+import theboys.sorrentomarina.actions.actionsAnnuncio.AnnunciLidoAction;
+import theboys.sorrentomarina.models.modelsLido.Lido;
 
 import javax.servlet.ServletContext;
 
@@ -24,7 +25,7 @@ public class AnnunciLidoActionTest extends ActionSetupDB{
     Mockito.when(ctx.getAttribute("db")).thenReturn(mockConnection);
     Mockito.when(mockReq.getServletContext()).thenReturn(ctx);
     Mockito.when(mockReq.getSession()).thenReturn(mockSession);
-    Mockito.when(mockReq.getSession().getAttribute("lido")).thenReturn(new Lido(1, "nome", "indirizzo", "telefono", "email", "logo", 5.1F, 2, 2, 1));
+    Mockito.when(mockReq.getSession().getAttribute("lido")).thenReturn(new Lido(1, "nome", "indirizzo", "telefono", "email", "logo", 5.1F, 2, 2, 1,1));
 
     action = new AnnunciLidoAction();
 
