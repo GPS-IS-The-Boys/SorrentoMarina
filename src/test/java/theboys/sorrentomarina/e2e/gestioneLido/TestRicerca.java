@@ -1,4 +1,4 @@
-package theboys.sorrentomarina.e2e.gestioneUtente;
+package theboys.sorrentomarina.e2e.gestioneLido;
 
 import org.junit.Assert;
 import org.junit.Before;
