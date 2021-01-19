@@ -38,17 +38,6 @@ public class TableTuristaManagerTest extends IntegrationTestCase {
   }
 
   /**
-   * Testa la creazione, avvenuta tramite alla prenotazione
-   */
-  @Test
-  @Disabled
-  public void createTest3() throws SQLException {
-    manager = new TableTuristaManager(mockDb);
-    manager.create(5,"Nome5", "Cognome5", "Email5", "asd","asd");
-    assertNotNull(manager.retriveById(5), "Deve tornare un turista");
-  }
-
-  /**
    * testa il retrievebyid
    *
    * @throws SQLException

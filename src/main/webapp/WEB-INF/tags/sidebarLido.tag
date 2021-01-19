@@ -23,7 +23,7 @@
 
     <!-- Recensioni -->
     <li class="nav-item">
-        <a class="nav-link" href="recensioniLido">
+        <a class="nav-link" name="recensioniLido" href="recensioniLido">
             <i class="fa fa-comments"></i>
             <span>Recensioni</span></a>
     </li>

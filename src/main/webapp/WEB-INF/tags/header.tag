@@ -54,8 +54,8 @@
                           <ul class="submenu">
                             <li><p>Benvenuto ${utente.username}</p></li>
                             <li><a href="prenotazioniTurista">Le mie prenotazioni</a></li>
-                            <li><a href="profilo">Il mio profilo</a></li>
-                            <li><a href="logout">logout</a></li>
+                            <li><a id="profilo" href="profilo">Il mio profilo</a></li>
+                            <li><a name="logout" href="logout">logout</a></li>
                           </ul>
                         </li>
                       </c:when>
@@ -64,8 +64,8 @@
                           <ul class="submenu">
                             <li><p>Benvenuto ${adminLido.username}</p></li>
                             <li><a href="dashboard">Sezione Admin</a></li>
-                            <li><a href="profilo">Il mio profilo</a></li>
-                            <li><a href="logout">logout</a></li>
+                            <li><a id="profilo" href="profilo">Il mio profilo</a></li>
+                            <li><a name="logout" href="logout">logout</a></li>
                           </ul>
                         </li>
                       </c:when>
@@ -74,8 +74,8 @@
                           <ul class="submenu">
                             <li><p>Benvenuto ${adminEnte.username}</p></li>
                             <li><a href="dashboardEnte">Sezione Admin</a></li>
-                            <li><a href="profilo">Il mio profilo</a></li>
-                            <li><a href="logout">logout</a></li>
+                            <li><a id="profilo" href="profilo">Il mio profilo</a></li>
+                            <li><a name="logout" href="logout">logout</a></li>
                           </ul>
                         </li>
                       </c:when>

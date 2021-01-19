@@ -312,10 +312,7 @@
                   <c:forEach items="${mapPrenotazioni}" var="entry" varStatus="loop">#${loop.index+1}
                     <div class="row ">
                       <div class="col-xl-8 col-lg-8">
-                        <p>Da: ${entry.key.data_inizio}   a: ${entry.key.data_fine}, Costo: ${entry.key.costo}, Posti:${entry.key.num_posti}</p>
-                      </div>
-                      <div class="col-xl-4 col-lg-4">
-                        <p>Lido: ${entry.value}</p>
+                        <p>Da: ${entry.data_inizio}   a: ${entry.data_fine}, Costo: ${entry.costo}, Posti:${entry.num_posti}</p>
                       </div>
                     </div>
                   </c:forEach>

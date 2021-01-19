@@ -19,7 +19,7 @@
                             </div>
                         </div>
 
-                        <form action="" class="search-box">
+                        <form action="" name="RicercaForm" class="search-box">
                             <div class="container">
                                 <div class="row justify-content-lg-center">
                                     <div class="col-xl-9 col-lg-9 col-md-9">

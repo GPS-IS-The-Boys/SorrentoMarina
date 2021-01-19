@@ -61,7 +61,7 @@
               <div class="row md-1">
                 <a href="cancellaAnnuncio?id=${annuncio.id}" class="btn-primary btn-lg" style="margin: 5px">Cancella
                   annuncio</a>
-                <a class="btn-lg btn-primary" data-toggle="collapse" href="#collapseModifica${annuncio.id}"
+                <a class="btn-lg btn-primary" data-toggle="collapse" name="modifica${annuncio.id}" href="#collapseModifica${annuncio.id}"
                    style="margin: 5px" role="button"
                    aria-expanded="false" aria-controls="collapseModifica${annuncio.id}">
                   Modifica annuncio
@@ -69,7 +69,7 @@
               </div>
               <div class="row md-1">
                 <div class="collapse" id="collapseModifica${annuncio.id}">
-                    <form method="post" action="modificaAnnuncio">
+                    <form method="post" name="ModificaAnnuncio" action="modificaAnnuncio">
                       <div class="form-row m-1">
                         <input type="hidden" name="id" id="id" value="${annuncio.id}">
                         <input type="text" name="titolo" value="${annuncio.titolo}"

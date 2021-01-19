@@ -32,7 +32,7 @@ public class SystemTestCase  {
   @BeforeClass
   public static void setupClass() throws FileNotFoundException, SQLException {
     ChromeOptions chromeOptions = new ChromeOptions();
-    //chromeOptions.addArguments("--headless"); // per non lanciare gui
+    chromeOptions.addArguments("--headless"); // per non lanciare gui
     ChromeDriverManager .getInstance(DriverManagerType.CHROME).setup();
     driver = new ChromeDriver(chromeOptions);
   }

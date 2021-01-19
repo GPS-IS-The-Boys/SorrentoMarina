@@ -149,7 +149,7 @@
                 <!-- Card Body -->
                 <div class="card-body">
                   <p>${messaggio}</p>
-                        <form method="post" action="creaAnnuncio">
+                        <form method="post" name="CreazioneAnnuncioForm" action="creaAnnuncio">
                             <div class="form-row m-1">
                               <input type="text" name="titolo"
                                      class="form-control bg-white " maxlength="32" id="titolo" placeholder="Titolo" required>
