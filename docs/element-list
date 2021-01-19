@@ -6,6 +6,7 @@ theboys.sorrentomarina.actions.actionsRecensione
 theboys.sorrentomarina.actions.actionsUtente
 theboys.sorrentomarina.actions.actionsUtils
 theboys.sorrentomarina.e2e
+theboys.sorrentomarina.e2e.gestioneLido
 theboys.sorrentomarina.e2e.gestioneUtente
 theboys.sorrentomarina.managers
 theboys.sorrentomarina.managers.managersAnnuncio

@@ -17,6 +17,9 @@ public class TestDashboardLido extends SystemTestCase {
     driver = SystemTestCase.driver;
   }
 
+  /**
+   * Testa che ci siamo i permessi neccesserai per accedere alla dashboard
+   */
   @Test
   public void testDashboardOk(){
     driver.get("http://localhost:8080/SorrentoMarina/login");
