@@ -50,6 +50,9 @@ public class TableLidoManagerTest extends IntegrationTestCase {
     assertEquals(1, lido.size(), "Il nome trovare deve coincidere con quello cercato");
   }
 
+  /**
+   * Testa che il numero di lidi con determinati servizi sia corretto
+   */
   @Test
   public void retriveByServiziTest1() throws SQLException {
     manager = new TableLidoManager(mockDb);
@@ -58,6 +61,9 @@ public class TableLidoManagerTest extends IntegrationTestCase {
     assertEquals(0, lidi.size(), "Il numero di lidi che offrono i seguenti servizi");
   }
 
+  /**
+   * Testa che il numero di lidi con determinati servizi sia corretto
+   */
   @Test
   public void retriveByServiziTest2() throws SQLException {
     manager = new TableLidoManager(mockDb);
@@ -65,6 +71,10 @@ public class TableLidoManagerTest extends IntegrationTestCase {
     List<Lido> lidi = manager.retriveByServizi(servizio);
     assertEquals(4, lidi.size(), "Il numero di lidi che offrono i seguenti servizi");
   }
+
+  /**
+   * Testa che il numero di lidi con determinati servizi sia corretto
+   */
   @Test
   public void retriveByServiziTest3() throws SQLException {
     manager = new TableLidoManager(mockDb);
@@ -72,6 +82,10 @@ public class TableLidoManagerTest extends IntegrationTestCase {
     List<Lido> lidi = manager.retriveByServizi(servizio);
     assertEquals(0, lidi.size(), "Il numero di lidi che offrono i seguenti servizi");
   }
+
+  /**
+   * Testa che il numero di lidi con determinati servizi sia corretto
+   */
   @Test
   public void retriveByServiziTest4() throws SQLException {
     manager = new TableLidoManager(mockDb);
@@ -79,6 +93,10 @@ public class TableLidoManagerTest extends IntegrationTestCase {
     List<Lido> lidi = manager.retriveByServizi(servizio);
     assertEquals(3, lidi.size(), "Il numero di lidi che offrono i seguenti servizi");
   }
+
+  /**
+   * Testa che il numero di lidi con determinati servizi sia corretto
+   */
   @Test
   public void retriveByServiziTest5() throws SQLException {
     manager = new TableLidoManager(mockDb);
@@ -86,6 +104,10 @@ public class TableLidoManagerTest extends IntegrationTestCase {
     List<Lido> lidi = manager.retriveByServizi(servizio);
     assertEquals(3, lidi.size(), "Il numero di lidi che offrono i seguenti servizi");
   }
+
+  /**
+   * Testa che il numero di lidi con determinati servizi sia corretto
+   */
   @Test
   public void retriveByServiziTest6() throws SQLException {
     manager = new TableLidoManager(mockDb);
@@ -93,6 +115,10 @@ public class TableLidoManagerTest extends IntegrationTestCase {
     List<Lido> lidi = manager.retriveByServizi(servizio);
     assertEquals(3, lidi.size(), "Il numero di lidi che offrono i seguenti servizi");
   }
+
+  /**
+   * Testa che il numero di lidi con determinati servizi sia corretto
+   */
   @Test
   public void retriveByServiziTest7() throws SQLException {
     manager = new TableLidoManager(mockDb);
@@ -100,6 +126,10 @@ public class TableLidoManagerTest extends IntegrationTestCase {
     List<Lido> lidi = manager.retriveByServizi(servizio);
     assertEquals(1, lidi.size(), "Il numero di lidi che offrono i seguenti servizi");
   }
+
+  /**
+   * Testa che il numero di lidi con determinati servizi sia corretto
+   */
   @Test
   public void retriveByServiziTest8() throws SQLException {
     manager = new TableLidoManager(mockDb);

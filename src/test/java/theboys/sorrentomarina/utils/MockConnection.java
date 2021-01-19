@@ -13,10 +13,18 @@ import java.sql.SQLException;
 public class MockConnection extends BasicDataSource {
   private static  MockConnection mockConnection = null;
 
+  /**
+   * Costruttore
+   */
   private MockConnection(){
     super();
   }
 
+  /**
+   * Istanziazione database
+   *
+   * @return una connessione al database
+   */
   public static MockConnection getInstance(){
     if(mockConnection == null){
       mockConnection = new MockConnection();
@@ -30,6 +38,12 @@ public class MockConnection extends BasicDataSource {
     return mockConnection;
   }
 
+  /**
+   * Inizializzazione database
+   *
+   * @throws SQLException
+   * @throws FileNotFoundException
+   */
   public void initeDb() throws SQLException, FileNotFoundException {
     mockConnection.getConnection().createStatement().execute("drop all objects delete files");
     Path path = Paths.get("src", "test", "resources", "backup.sql");
@@ -38,6 +52,11 @@ public class MockConnection extends BasicDataSource {
     RunScript.execute(mockConnection.getConnection(), new FileReader(file));
   }
 
+  /**
+   * Cancellazione database
+   *
+   * @throws SQLException
+   */
   public void clearDb() throws SQLException {
     mockConnection.getConnection().createStatement().execute("drop all objects delete files");
   }
