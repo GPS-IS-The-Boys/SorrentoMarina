@@ -57,11 +57,8 @@ public class MostraDashboardEnteAction implements Action {
       request.setAttribute("incassoTotale", prenotazioneManager.incassoConsorzio());
       request.setAttribute("numeroPrenotazioni", prenotazioneManager.prenotazioniTotali());
       List<Prenotazione> prenotazioneList = prenotazioneManager.retriveAll();
-      HashMap<Prenotazione, String> map = new HashMap<Prenotazione, String>();
-      for (Prenotazione p : prenotazioneList) {
-        map.put(p, lidoManager.retriveById(p.getId_lido()).getNome());
-      }
-      request.setAttribute("mapPrenotazioni", map);
+
+      request.setAttribute("mapPrenotazioni", prenotazioneList);
       return view("respEnteDashboard");
 
     } catch (SQLException throwables) {

@@ -16,7 +16,7 @@
                         <div class="row">
                             <div class="well col-lg-8 mb-5 mb-lg-0">
                                 <div class="button-group-area mt-40 text-center ">
-                                    <a href="formRecensione" class="genric-btn primary circle"> Aggiungi Recensione </a>
+                                    <a name="AggiungiRecensione" href="formRecensione" class="genric-btn primary circle"> Aggiungi Recensione </a>
                                 </div>
                                 <h2 class="mb-30">RECENSIONI</h2>
                                 <div class="list-group">
