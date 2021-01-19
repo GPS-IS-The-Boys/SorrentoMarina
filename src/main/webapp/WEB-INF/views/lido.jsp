@@ -38,7 +38,7 @@
                                             <i class="fas fa-envelope"></i>    Email: ${lido.email}
                                         </div>
                                         <div class="-align-right">
-                                            <i class="fas fa-money-bill-alt"></i>    Prezzo a persona: ${lido.prezzo_singolo}$
+                                            <i class="fas fa-money-bill-alt"></i>    Prezzo a persona: ${lido.prezzo_singolo}&euro;
                                         </div>
                                     </div>
                                     <div class="blog_details">

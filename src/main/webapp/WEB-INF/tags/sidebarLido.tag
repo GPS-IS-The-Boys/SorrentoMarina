@@ -9,7 +9,7 @@
 
     <!-- Prenotazione -->
     <li class="nav-item">
-        <a class="nav-link" href="mostraPrenotazione1">
+        <a class="nav-link" name="prenotazione" href="mostraPrenotazione1">
             <i class="fas fa-book-open"></i>
             <span>Prenotazione</span></a>
     </li>
