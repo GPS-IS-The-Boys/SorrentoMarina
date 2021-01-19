@@ -16,12 +16,18 @@ import theboys.sorrentomarina.actions.actionsUtils.NotFoundAction;
  */
 public class RouterTest {
 
+  /**
+   * Test - router
+   */
   @Test
   public void testCtor() {
     Router router = new Router(new HashMap<>());
-    assertNotNull(router, "It should create a non empty eouter");
+    assertNotNull(router, "It should create a non empty router");
   }
 
+  /**
+   * Test - senza percorso
+   */
   @Test
   public void testAddRouteWithNoRoutes() {
     Router router = new Router(new HashMap<>());
@@ -30,6 +36,9 @@ public class RouterTest {
     assertEquals(1, size, "It should initialize and add route");
   }
 
+  /**
+   * Test - con percorso
+   */
   @Test
   public void testAddRouteWithRoutes() {
     Router router = new Router(new HashMap<>());
@@ -39,6 +48,9 @@ public class RouterTest {
     assertEquals(2, size, "It sohuld append route");
   }
 
+  /**
+   * Testa la gestione del percorso con azione non registrata
+   */
   @Test
   public void testHandleRouteWithUnregisteredAction() {
     Router router = new Router(new HashMap<>());
@@ -47,6 +59,9 @@ public class RouterTest {
         "It should return NotFound Action");
   }
 
+  /**
+   * Testa la gestione del percorso con azione registrata
+   */
   @Test
   public void testHandleRouteWithRegisteredActions() {
     Router router = new Router(new HashMap<>());
@@ -57,6 +72,9 @@ public class RouterTest {
         "It should return a ChainableAction");
   }
 
+  /**
+   * Testa la gestione del percorso senza azione
+   */
   @Test
   public void testHandleRouteWithActionNotFound() {
     Router router = new Router(new HashMap<>());

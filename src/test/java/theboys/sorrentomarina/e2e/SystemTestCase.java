@@ -23,6 +23,12 @@ public class SystemTestCase  {
 
   protected static WebDriver driver;
 
+  /**
+   * Setup  della classe di testing
+   *
+   * @throws FileNotFoundException
+   * @throws SQLException
+   */
   @BeforeClass
   public static void setupClass() throws FileNotFoundException, SQLException {
     ChromeOptions chromeOptions = new ChromeOptions();

@@ -17,6 +17,9 @@ public class TestLoginTurista extends SystemTestCase {
     driver = SystemTestCase.driver;
   }
 
+  /**
+   * Test - testa la login del turista in caso di credenziali corrette
+   */
   @Test
   public void testLoginTuristaOk(){
     driver.get("http://localhost:8080/SorrentoMarina/login");
@@ -31,6 +34,9 @@ public class TestLoginTurista extends SystemTestCase {
 
   }
 
+  /**
+   * Test - testa la login del turista in caso di credenziali non corrette
+   */
   @Test
   public void testLoginTuristaUsernameNotOk(){
     driver.get("http://localhost:8080/SorrentoMarina/login");
@@ -45,6 +51,10 @@ public class TestLoginTurista extends SystemTestCase {
 
   }
 
+  /**
+   * Test - testa la login del turista in caso di credenziali non corrette
+   * username ok - password ko
+   */
   @Test
   public void testLoginTuristaPasswordNotOk(){
     driver.get("http://localhost:8080/SorrentoMarina/login");
@@ -59,6 +69,10 @@ public class TestLoginTurista extends SystemTestCase {
 
   }
 
+  /**
+   * Test - testa la login del turista in caso di credenziali non corrette
+   * username e password vuote
+   */
   @Test
   public void testLoginTuristaEmptyFields(){
     driver.get("http://localhost:8080/SorrentoMarina/login");
