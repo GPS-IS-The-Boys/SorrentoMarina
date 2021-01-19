@@ -168,7 +168,7 @@ public class ModificaLidoActionTest extends ActionSetupDB {
   }
 
   /**
-   * Test nel caso il parametro indirizzoLido è nullo
+   * Test nel caso il parametro indirizzoLido Ã¨ nullo
    */
   @Test
   public void ModificaLidoTestIndirizzoLidoNull(){
@@ -484,7 +484,7 @@ public class ModificaLidoActionTest extends ActionSetupDB {
     assertEquals("/WEB-INF/views/respLidoModifica.jsp", page);
   }
   /**
-   * Test nel caso il parametro emailLido è errato
+   * Test nel caso il parametro emailLido Ã¨ errato
    */
   @Test
   public void ModificaLidoTestEmailFormat(){
@@ -519,7 +519,7 @@ public class ModificaLidoActionTest extends ActionSetupDB {
     assertEquals("/WEB-INF/views/respLidoModifica.jsp", page);
   }
   /**
-   * Test nel caso il parametro telefonoLido è vuoto
+   * Test nel caso il parametro telefonoLido Ã¨ vuoto
    */
   @Test
   public void ModificaLidoTestTelefonoLenght(){
@@ -554,7 +554,7 @@ public class ModificaLidoActionTest extends ActionSetupDB {
     assertEquals("/WEB-INF/views/respLidoModifica.jsp", page);
   }
   /**
-   * Test nel caso il parametro logolLido è vuoto
+   * Test nel caso il parametro logolLido Ã¨ vuoto
    */
   @Test
   public void ModificaLidoTestLogoLenght(){
