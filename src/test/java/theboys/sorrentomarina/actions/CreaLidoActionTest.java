@@ -85,6 +85,10 @@ public class CreaLidoActionTest extends ActionSetupDB {
     assertEquals("redirect:/SorrentoMarina/dashboardEnte", page);
   }
 
+  /**
+   * Test - crea lido senza parametri di servizio
+   *
+   */
   @Test
   public void CreaLidotestExecuteSuccess2() {
     //parametri del lido
@@ -142,6 +146,9 @@ public class CreaLidoActionTest extends ActionSetupDB {
     assertEquals("redirect:/SorrentoMarina/dashboardEnte", page);
   }
 
+  /**
+   * Test - crea lido senza parametro nome
+   */
   @Test
   public void CreaLidotestExecuteNomeNull() {
     //parametri del lido
@@ -180,7 +187,9 @@ public class CreaLidoActionTest extends ActionSetupDB {
 
     assertEquals("/WEB-INF/views/creaLido.jsp", page);
   }
-
+  /**
+   * Test - crea lido senza parametro indirizzoLido
+   */
   @Test
   public void CreaLidotestExecuteIndirizzoNull() {
     //parametri del lido
@@ -219,7 +228,9 @@ public class CreaLidoActionTest extends ActionSetupDB {
 
     assertEquals("/WEB-INF/views/creaLido.jsp", page);
   }
-
+  /**
+   * Test - crea lido senza parametro emailLido
+   */
   @Test
   public void CreaLidotestExecuteEmailNull() {
     //parametri del lido
@@ -258,7 +269,9 @@ public class CreaLidoActionTest extends ActionSetupDB {
 
     assertEquals("/WEB-INF/views/creaLido.jsp", page);
   }
-
+  /**
+   * Test - crea lido con parametro TelefonoLido nullo
+   */
   @Test
   public void CreaLidotestExecuteTelefonoNull() {
     //parametri del lido
@@ -297,7 +310,9 @@ public class CreaLidoActionTest extends ActionSetupDB {
 
     assertEquals("/WEB-INF/views/creaLido.jsp", page);
   }
-
+  /**
+   * Test - crea lido con il parametro logoLido nullo
+   */
   @Test
   public void CreaLidotestExecuteLogoNull() {
     //parametri del lido
@@ -337,6 +352,9 @@ public class CreaLidoActionTest extends ActionSetupDB {
     assertEquals("/WEB-INF/views/creaLido.jsp", page);
   }
 
+  /**
+   * Test - crea lido parametro nome errato
+   */
   @Test
   public void CreaLidotestExecuteNomeLenght() {
     //parametri del lido
@@ -376,6 +394,9 @@ public class CreaLidoActionTest extends ActionSetupDB {
     assertEquals("/WEB-INF/views/creaLido.jsp", page);
   }
 
+  /**
+   * Test - crea lido con parametro indirizzoLido nullo
+   */
   @Test
   public void CreaLidotestExecuteIndirizzoLength() {
     //parametri del lido
@@ -414,7 +435,9 @@ public class CreaLidoActionTest extends ActionSetupDB {
 
     assertEquals("/WEB-INF/views/creaLido.jsp", page);
   }
-
+  /**
+   * Test - crea lido con parametro emailLido errato
+   */
   @Test
   public void CreaLidotestExecuteEmailNullFormat() {
     //parametri del lido
@@ -453,7 +476,9 @@ public class CreaLidoActionTest extends ActionSetupDB {
 
     assertEquals("/WEB-INF/views/creaLido.jsp", page);
   }
-
+  /**
+   * Test - crea lido con parametro telefonoLido errato
+   */
   @Test
   public void CreaLidotestExecuteTelefonoLenght() {
     //parametri del lido
@@ -492,7 +517,9 @@ public class CreaLidoActionTest extends ActionSetupDB {
 
     assertEquals("/WEB-INF/views/creaLido.jsp", page);
   }
-
+  /**
+   * Test - crea lido con parametro logoLido è errato
+   */
   @Test
   public void CreaLidotestExecuteLogoFormat() {
     //parametri del lido
@@ -531,7 +558,9 @@ public class CreaLidoActionTest extends ActionSetupDB {
 
     assertEquals("/WEB-INF/views/creaLido.jsp", page);
   }
-
+  /**
+   * Test - crea lido con parametro prezzo Nullo
+   */
   @Test
   public void CreaLidotestExecutePrezzoNull() {
     //parametri del lido
@@ -570,7 +599,9 @@ public class CreaLidoActionTest extends ActionSetupDB {
 
     assertEquals("/WEB-INF/views/creaLido.jsp", page);
   }
-
+  /**
+   * Test - crea lido con parametro RigheLido nullo
+   */
   @Test
   public void CreaLidotestExecuteRigheNull() {
     //parametri del lido
@@ -609,7 +640,9 @@ public class CreaLidoActionTest extends ActionSetupDB {
 
     assertEquals("/WEB-INF/views/creaLido.jsp", page);
   }
-
+  /**
+   * Test - crea lido con parametro colonneLido errato
+   */
   @Test
   public void CreaLidotestExecuteColonneNull() {
     //parametri del lido
@@ -648,7 +681,9 @@ public class CreaLidoActionTest extends ActionSetupDB {
 
     assertEquals("/WEB-INF/views/creaLido.jsp", page);
   }
-
+  /**
+   * Test - crea lido con parametro nomeResp nullo
+   */
   @Test
   public void CreaLidotestExecuteNomeRespNull() {
     //parametri del lido
@@ -687,7 +722,9 @@ public class CreaLidoActionTest extends ActionSetupDB {
 
     assertEquals("/WEB-INF/views/creaLido.jsp", page);
   }
-
+  /**
+   * Test - crea lido con parametro cognomeResp nullo
+   */
   @Test
   public void CreaLidotestExecuteCognomeRespNull() {
     //parametri del lido
@@ -726,7 +763,9 @@ public class CreaLidoActionTest extends ActionSetupDB {
 
     assertEquals("/WEB-INF/views/creaLido.jsp", page);
   }
-
+  /**
+   * Test - crea lido con parametro emailresp nullo
+   */
   @Test
   public void CreaLidotestExecuteEmailRespNull() {
     //parametri del lido
@@ -765,7 +804,9 @@ public class CreaLidoActionTest extends ActionSetupDB {
 
     assertEquals("/WEB-INF/views/creaLido.jsp", page);
   }
-
+  /**
+   * Test - crea lido con parametro usernameResp nullo
+   */
   @Test
   public void CreaLidotestExecuteUsernameNull() {
     //parametri del lido
@@ -805,6 +846,11 @@ public class CreaLidoActionTest extends ActionSetupDB {
     assertEquals("/WEB-INF/views/creaLido.jsp", page);
   }
 
+  /**
+   * Test - crea lido con parametro passwordResp nullo
+   *
+   */
+
   @Test
   public void CreaLidotestExecutePasswordNull() {
     //parametri del lido
@@ -843,7 +889,9 @@ public class CreaLidoActionTest extends ActionSetupDB {
 
     assertEquals("/WEB-INF/views/creaLido.jsp", page);
   }
-
+  /**
+   * Test - crea lido con parametro nomeResp vuoto
+   */
   @Test
   public void CreaLidotestExecuteNomeRespLenght() {
     //parametri del lido
@@ -882,7 +930,9 @@ public class CreaLidoActionTest extends ActionSetupDB {
 
     assertEquals("/WEB-INF/views/creaLido.jsp", page);
   }
-
+  /**
+   * Test - crea lido con parametro cognomeResp vuoto
+   */
   @Test
   public void CreaLidotestExecuteCognomeRespLenght() {
     //parametri del lido
@@ -921,7 +971,9 @@ public class CreaLidoActionTest extends ActionSetupDB {
 
     assertEquals("/WEB-INF/views/creaLido.jsp", page);
   }
-
+  /**
+   * Test - crea lido con parametro EmailResp errato
+   */
   @Test
   public void CreaLidotestExecuteEmailRespFormat() {
     //parametri del lido
@@ -960,7 +1012,9 @@ public class CreaLidoActionTest extends ActionSetupDB {
 
     assertEquals("/WEB-INF/views/creaLido.jsp", page);
   }
-
+  /**
+   * Test - crea lido con parametro usernameResp errato
+   */
   @Test
   public void CreaLidotestExecuteUsernameLenght() {
     //parametri del lido
@@ -999,7 +1053,9 @@ public class CreaLidoActionTest extends ActionSetupDB {
 
     assertEquals("/WEB-INF/views/creaLido.jsp", page);
   }
-
+  /**
+   * Test - crea lido con parametro passwordResp errato
+   */
   @Test
   public void CreaLidotestExecutePasswordLenght() {
     //parametri del lido
@@ -1038,7 +1094,9 @@ public class CreaLidoActionTest extends ActionSetupDB {
 
     assertEquals("/WEB-INF/views/creaLido.jsp", page);
   }
-
+  /**
+   * Test - crea lido con parametro nomeResp errato
+   */
   @Test
   public void CreaLidotestExecuteNomeRespFormat() {
     //parametri del lido
@@ -1077,7 +1135,9 @@ public class CreaLidoActionTest extends ActionSetupDB {
 
     assertEquals("/WEB-INF/views/creaLido.jsp", page);
   }
-
+  /**
+   * Test - crea lido con parametro cognomeResp errato
+   */
   @Test
   public void CreaLidotestExecuteCognomeRespFormat() {
     //parametri del lido
@@ -1116,7 +1176,9 @@ public class CreaLidoActionTest extends ActionSetupDB {
 
     assertEquals("/WEB-INF/views/creaLido.jsp", page);
   }
-
+  /**
+   * Test - crea lido con parametro  usernameResp errato
+   */
   @Test
   public void CreaLidotestExecuteUsernameFormat() {
     //parametri del lido
@@ -1155,7 +1217,9 @@ public class CreaLidoActionTest extends ActionSetupDB {
 
     assertEquals("/WEB-INF/views/creaLido.jsp", page);
   }
-
+  /**
+   * Test - crea lido con parametro passwordResp errato
+   */
   @Test
   public void CreaLidotestExecutePasswordFormat() {
     //parametri del lido

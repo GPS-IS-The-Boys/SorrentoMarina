@@ -81,6 +81,9 @@ public class AggiungiRecensioneChainableActionTest extends ActionSetupDB {
     assertEquals("/WEB-INF/views/500.jsp", page);
   }
 
+  /**
+   * test- aggiungi recensione parametro contenuto nullo
+   */
   @Test
   public void AggiungiRecensionetestExecuteContenutoNull() {
     Mockito.when(mockReq.getParameter("contenutoRecensione")).thenReturn(null);
@@ -98,6 +101,9 @@ public class AggiungiRecensioneChainableActionTest extends ActionSetupDB {
     assertEquals("/WEB-INF/views/formRecensione.jsp", page);
   }
 
+  /**
+   * test- aggiungi recensione parametro giudizio nullo
+   */
   @Test
   public void AggiungiRecensionetestExecuteGiudizioNull() {
     Mockito.when(mockReq.getParameter("contenutoRecensione")).thenReturn("Contenuto recensione");

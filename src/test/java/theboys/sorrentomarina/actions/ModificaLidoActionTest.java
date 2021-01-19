@@ -131,7 +131,9 @@ public class ModificaLidoActionTest extends ActionSetupDB {
     assertEquals("redirect:/SorrentoMarina/dashboard", page);
   }
 
-
+  /**
+   * Test nel caso il parametro nomeLido e nullo
+   */
   @Test
   public void ModificaLidoTestNomeLidoNull(){
     //parametri del lido
@@ -165,6 +167,9 @@ public class ModificaLidoActionTest extends ActionSetupDB {
     assertEquals("/WEB-INF/views/respLidoModifica.jsp", page);
   }
 
+  /**
+   * Test nel caso il parametro indirizzoLido è nullo
+   */
   @Test
   public void ModificaLidoTestIndirizzoLidoNull(){
     //parametri del lido
@@ -198,6 +203,9 @@ public class ModificaLidoActionTest extends ActionSetupDB {
     assertEquals("/WEB-INF/views/respLidoModifica.jsp", page);
   }
 
+  /**
+   * Test nel caso il parametro emailLido e nullo
+   */
   @Test
   public void ModificaLidoTestEmailNull(){
     //parametri del lido
@@ -230,7 +238,9 @@ public class ModificaLidoActionTest extends ActionSetupDB {
     String page = this.action.execute(mockReq, mockRes);
     assertEquals("/WEB-INF/views/respLidoModifica.jsp", page);
   }
-
+  /**
+   * Test nel caso il parametro telefonoLido e nullo
+   */
   @Test
   public void ModificaLidoTestTelefonoNull(){
     //parametri del lido
@@ -263,7 +273,9 @@ public class ModificaLidoActionTest extends ActionSetupDB {
     String page = this.action.execute(mockReq, mockRes);
     assertEquals("/WEB-INF/views/respLidoModifica.jsp", page);
   }
-
+  /**
+   * Test nel caso il parametro logoLido e nullo
+   */
   @Test
   public void ModificaLidoTestLogoNull(){
     //parametri del lido
@@ -296,7 +308,9 @@ public class ModificaLidoActionTest extends ActionSetupDB {
     String page = this.action.execute(mockReq, mockRes);
     assertEquals("/WEB-INF/views/respLidoModifica.jsp", page);
   }
-
+  /**
+   * Test nel caso il parametro prezzoLido e nullo
+   */
   @Test
   public void ModificaLidoTestPrezzoNull(){
     //parametri del lido
@@ -329,7 +343,9 @@ public class ModificaLidoActionTest extends ActionSetupDB {
     String page = this.action.execute(mockReq, mockRes);
     assertEquals("/WEB-INF/views/respLidoModifica.jsp", page);
   }
-
+  /**
+   * Test nel caso il parametro righeLido e nullo
+   */
   @Test
   public void ModificaLidoTestRigheNull(){
     //parametri del lido
@@ -362,7 +378,9 @@ public class ModificaLidoActionTest extends ActionSetupDB {
     String page = this.action.execute(mockReq, mockRes);
     assertEquals("/WEB-INF/views/respLidoModifica.jsp", page);
   }
-
+  /**
+   * Test nel caso il parametro collonneLido e nullo
+   */
   @Test
   public void ModificaLidoTestColonneNull(){
     //parametri del lido
@@ -395,7 +413,9 @@ public class ModificaLidoActionTest extends ActionSetupDB {
     String page = this.action.execute(mockReq, mockRes);
     assertEquals("/WEB-INF/views/respLidoModifica.jsp", page);
   }
-
+  /**
+   * Test nel caso il parametro nomeLido e vuoto,errato
+   */
   @Test
   public void ModificaLidoTestNomeLidoLenght(){
     //parametri del lido
@@ -428,7 +448,9 @@ public class ModificaLidoActionTest extends ActionSetupDB {
     String page = this.action.execute(mockReq, mockRes);
     assertEquals("/WEB-INF/views/respLidoModifica.jsp", page);
   }
-
+  /**
+   * Test nel caso il parametro indirizzoLido e vuoto
+   */
   @Test
   public void ModificaLidoTestIndirizzoLidoLenght(){
     //parametri del lido
@@ -461,7 +483,9 @@ public class ModificaLidoActionTest extends ActionSetupDB {
     String page = this.action.execute(mockReq, mockRes);
     assertEquals("/WEB-INF/views/respLidoModifica.jsp", page);
   }
-
+  /**
+   * Test nel caso il parametro emailLido è errato
+   */
   @Test
   public void ModificaLidoTestEmailFormat(){
     //parametri del lido
@@ -494,7 +518,9 @@ public class ModificaLidoActionTest extends ActionSetupDB {
     String page = this.action.execute(mockReq, mockRes);
     assertEquals("/WEB-INF/views/respLidoModifica.jsp", page);
   }
-
+  /**
+   * Test nel caso il parametro telefonoLido è vuoto
+   */
   @Test
   public void ModificaLidoTestTelefonoLenght(){
     //parametri del lido
@@ -527,7 +553,9 @@ public class ModificaLidoActionTest extends ActionSetupDB {
     String page = this.action.execute(mockReq, mockRes);
     assertEquals("/WEB-INF/views/respLidoModifica.jsp", page);
   }
-
+  /**
+   * Test nel caso il parametro logolLido è vuoto
+   */
   @Test
   public void ModificaLidoTestLogoLenght(){
     //parametri del lido

@@ -7,7 +7,9 @@ import theboys.sorrentomarina.models.modelsUtente.Turista;
 import javax.servlet.ServletContext;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
+/**
+ * @author theBoys
+ */
 public class MostraPrenotazioniTuristaTest extends ActionSetupDB {
 
   private MostraPrenotazioniTurista spt;

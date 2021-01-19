@@ -38,7 +38,9 @@ public class ModificaAnnuncioRespLidoActionTest extends ActionSetupDB {
 
     assertEquals("redirect:/SorrentoMarina/dashboard", page);
   }
-
+  /**
+   * test - crea annuncio con parametro titolo nullo
+   */
   @Test
   public void executeTitoloNull(){
     Mockito.when(mockReq.getParameter("titolo")).thenReturn(null);
@@ -58,7 +60,9 @@ public class ModificaAnnuncioRespLidoActionTest extends ActionSetupDB {
 
     assertEquals("/WEB-INF/views/respLidoAnnunci.jsp", page);
   }
-
+  /**
+   * test - crea annuncio con parametro foto nullo
+   */
   @Test
   public void executeFotoNull(){
     Mockito.when(mockReq.getParameter("titolo")).thenReturn("titolo");
@@ -78,7 +82,9 @@ public class ModificaAnnuncioRespLidoActionTest extends ActionSetupDB {
 
     assertEquals("/WEB-INF/views/respLidoAnnunci.jsp", page);
   }
-
+  /**
+   * test - crea annuncio con parametro contenuto nullo
+   */
   @Test
   public void executeContenutoNull(){
     Mockito.when(mockReq.getParameter("titolo")).thenReturn("titolo");

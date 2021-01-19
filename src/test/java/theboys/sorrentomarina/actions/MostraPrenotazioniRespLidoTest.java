@@ -5,13 +5,15 @@ import theboys.sorrentomarina.actions.actionsPrenotazione.MostraPrenotazioniResp
 import theboys.sorrentomarina.models.modelsUtente.ResponsabileLido;
 import javax.servlet.ServletContext;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
+/**
+ * @author theBoys
+ */
 public class MostraPrenotazioniRespLidoTest extends ActionSetupDB {
 
   private MostraPrenotazioniRespLido sprl;
 
   /**
-   * Test- mostra le prenotazioni all responsabile lido
+   * Test- mostra le prenotazioni al responsabile lido
    */
   @Test
   public void ShowPrenotazioniRespLidoTest(){
@@ -24,7 +26,9 @@ public class MostraPrenotazioniRespLidoTest extends ActionSetupDB {
     String page = this.sprl.execute(mockReq,mockRes);
     assertEquals("/WEB-INF/views/prenotazioniRespLido.jsp",page);
   }
-
+  /**
+   * Test- mostra la view 500
+   */
   @Test
   public void ShowPrenotazioniRespLido500(){
     ServletContext ctx = Mockito.mock(ServletContext.class);
@@ -37,6 +41,9 @@ public class MostraPrenotazioniRespLidoTest extends ActionSetupDB {
     assertEquals("/WEB-INF/views/500.jsp",page);
   }
 
+  /**
+   * test - mostra la prenotazione al responsabile lido
+   */
   @Test
   public void ShowPrenotazioniRespLidoNull(){
     ServletContext ctx = Mockito.mock(ServletContext.class);

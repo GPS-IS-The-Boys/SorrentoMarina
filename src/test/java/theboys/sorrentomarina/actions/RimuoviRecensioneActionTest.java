@@ -40,6 +40,9 @@ public class RimuoviRecensioneActionTest extends ActionSetupDB {
     assertEquals("redirect:/SorrentoMarina/dashboard", page, "Should return dashboard redirect");
   }
 
+  /**
+   * test Failu
+   */
   @Test
   public void FailureTest(){
     Mockito.when(mockReq.getParameter("id")).thenReturn("10");

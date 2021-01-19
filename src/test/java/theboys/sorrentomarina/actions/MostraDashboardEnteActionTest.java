@@ -8,7 +8,9 @@ import theboys.sorrentomarina.models.modelsUtente.ResponsabileEnte;
 import javax.servlet.ServletContext;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
+/**
+ * @author theBoys
+ */
 public class MostraDashboardEnteActionTest extends ActionSetupDB{
 
   private MostraDashboardEnteAction action;
@@ -29,7 +31,10 @@ public class MostraDashboardEnteActionTest extends ActionSetupDB{
     String result = action.execute(mockReq, mockRes);
     assertEquals(result, "/WEB-INF/views/respEnteDashboard.jsp");
   }
-
+  /**
+   * Test- mostra la view 403
+   *
+   **/
   @Test
   public void failureAccessExecute(){
     Mockito.when(mockReq.getSession()).thenReturn(mockSession);
