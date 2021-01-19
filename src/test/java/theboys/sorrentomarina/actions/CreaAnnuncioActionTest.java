@@ -72,6 +72,10 @@ public class CreaAnnuncioActionTest extends ActionSetupDB{
     assertEquals("/WEB-INF/views/500.jsp", page);
   }
 
+  /**
+   * Test - nel caso i dati non siano inseriti correttamente e non
+   *    * viene aggiunto l'annuncio, manca titolo
+   */
   @Test
   public void CreaAnnunciotestExecuteTitoloNull(){
     Mockito.when(mockReq.getParameter("titolo")).thenReturn(null);
@@ -90,6 +94,10 @@ public class CreaAnnuncioActionTest extends ActionSetupDB{
     assertEquals("/WEB-INF/views/respLidoDashboard.jsp", page);
   }
 
+  /**
+   * Test - nel caso i dati non siano inseriti correttamente e non
+   *    * viene aggiunto l'annuncio, manca foto
+   */
   @Test
   public void CreaAnnunciotestExecuteFotoNull(){
     Mockito.when(mockReq.getParameter("titolo")).thenReturn("titolo");
@@ -108,6 +116,10 @@ public class CreaAnnuncioActionTest extends ActionSetupDB{
     assertEquals("/WEB-INF/views/respLidoDashboard.jsp", page);
   }
 
+  /**
+   * test - nel caso i dati siano inseriti correttamente e
+   *    * viene aggiunto l'annuncio,
+   */
   @Test
   public void CreaAnnunciotestExecuteContenutoNull(){
     Mockito.when(mockReq.getParameter("titolo")).thenReturn("titolo");

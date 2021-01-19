@@ -9,7 +9,9 @@ import theboys.sorrentomarina.models.modelsUtente.ResponsabileLido;
 import javax.servlet.ServletContext;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
+/**
+ * @author theBoys
+ */
 public class MostraDashboardActionTest extends ActionSetupDB{
 
   /**
@@ -29,6 +31,9 @@ public class MostraDashboardActionTest extends ActionSetupDB{
         "It should return the view path");
   }
 
+  /**
+   * test - ritorna la view 500
+   */
   @Test
   public void executeTest500() {
     Action ac = Mockito.mock(MostraDashboardAction.class, Mockito.CALLS_REAL_METHODS);
@@ -41,7 +46,9 @@ public class MostraDashboardActionTest extends ActionSetupDB{
     assertEquals("/WEB-INF/views/500.jsp", result,
         "It should return the view path");
   }
-
+  /**
+   * test - ritorna la view 403
+   */
   @Test
   public void executeTest403() {
     Action ac = Mockito.mock(MostraDashboardAction.class, Mockito.CALLS_REAL_METHODS);

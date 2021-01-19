@@ -21,7 +21,7 @@ public class RimuoviLidoActionTest extends ActionSetupDB{
   private RimuoviLidoAction rla;
 
   /**
-   * Test- rimuove il lido
+   * Test- rimuove il lido con ruccesso
    */
   @Test
   public void SuccessTest(){
@@ -42,6 +42,9 @@ public class RimuoviLidoActionTest extends ActionSetupDB{
     assertEquals("redirect:/SorrentoMarina/dashboardEnte", page, "Should return dashboard redirect");
   }
 
+  /**
+   * test - test rimuovi lido fallito
+   */
   @Test
   public void FailureTest(){
     Mockito.when(mockReq.getParameter("id")).thenReturn(String.valueOf(10));

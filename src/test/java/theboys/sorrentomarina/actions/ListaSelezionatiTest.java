@@ -13,7 +13,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  */
 public class ListaSelezionatiTest extends ActionSetupDB{
   /**
-   * ()
+   * test - mostra la sita dei giorni selezionati
    */
   @Test
   public void testListaSelezionati(){

@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  */
 public class MostraPrenotazioneActionTest extends ActionSetup {
   /**
-   *
+   *test - mostra con successo la prenotazione
    */
   @Test
   public void executeSuccess(){

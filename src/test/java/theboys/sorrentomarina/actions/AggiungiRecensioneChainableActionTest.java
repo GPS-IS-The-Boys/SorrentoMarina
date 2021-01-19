@@ -98,6 +98,9 @@ public class AggiungiRecensioneChainableActionTest extends ActionSetupDB {
     assertEquals("/WEB-INF/views/formRecensione.jsp", page);
   }
 
+  /**
+   *
+   */
   @Test
   public void AggiungiRecensionetestExecuteGiudizioNull() {
     Mockito.when(mockReq.getParameter("contenutoRecensione")).thenReturn("Contenuto recensione");

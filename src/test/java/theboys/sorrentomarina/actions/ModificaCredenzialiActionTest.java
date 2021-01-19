@@ -225,6 +225,9 @@ public class ModificaCredenzialiActionTest extends ActionSetupDB {
     assertEquals("/WEB-INF/views/profilo.jsp", page);
   }
 
+  /**
+   * Testa la classe in caso di credenziali errate
+   */
   @Test
   public void ModificaCredenzialiFormatOldPassword(){
     Mockito.when(mockReq.getParameter("oldPassword")).thenReturn("pass");
@@ -244,7 +247,7 @@ public class ModificaCredenzialiActionTest extends ActionSetupDB {
   }
 
   /**
-   * Testa la classe in caso di credenziali scorrette
+   * Testa la classe in caso di credenziali  scorrette
    */
   @Test
   public void ModificaCredenzialiFormatNewPassword(){
@@ -263,7 +266,9 @@ public class ModificaCredenzialiActionTest extends ActionSetupDB {
     String page = this.mca.execute(mockReq, mockRes);
     assertEquals("/WEB-INF/views/profilo.jsp", page);
   }
-
+  /**
+   * Testa la classe in caso di credenziali scorrette
+   */
   @Test
   public void ModificaCredenzialiRespLidoPasswordNonCoincidono(){
     Mockito.when(mockReq.getParameter("oldPassword")).thenReturn("pa1");
