@@ -36,6 +36,7 @@ public class TestRegistrazioneTurista extends SystemTestCase {
     form.submit();
     Boolean isRegistrazioneOk = driver.getPageSource().contains("Benvenuto " + "matteomattei");
     Assert.assertTrue(isRegistrazioneOk);
+    driver.manage().deleteAllCookies();
   }
 
   @Test
