@@ -61,7 +61,8 @@
               <div class="row md-1">
                 <a href="cancellaAnnuncio?id=${annuncio.id}" class="btn-primary btn-lg" style="margin: 5px">Cancella
                   annuncio</a>
-                <a class="btn-lg btn-primary" data-toggle="collapse" name="modifica${annuncio.id}" href="#collapseModifica${annuncio.id}"
+                <a class="btn-lg btn-primary" data-toggle="collapse" name="modifica${annuncio.id}"
+                   href="#collapseModifica${annuncio.id}"
                    style="margin: 5px" role="button"
                    aria-expanded="false" aria-controls="collapseModifica${annuncio.id}">
                   Modifica annuncio
@@ -69,29 +70,28 @@
               </div>
               <div class="row md-1">
                 <div class="collapse" id="collapseModifica${annuncio.id}">
-                    <form method="post" name="ModificaAnnuncio" action="modificaAnnuncio">
-                      <div class="form-row m-1">
-                        <input type="hidden" name="id" id="id" value="${annuncio.id}">
-                        <input type="text" name="titolo" value="${annuncio.titolo}"
-                               class="form-control bg-white " id="titolo" placeholder="Titolo" required>
-                      </div>
-                      <div class="form-row m-1">
-                        <input type="text" name="foto" value="${annuncio.foto}"
-                               class="form-control bg-white" id="foto" placeholder="/images/logo.jpg">
-                      </div>
-                      <div class="form-row m-1">
+                  <form method="post" name="ModificaAnnuncio" action="modificaAnnuncio">
+                    <div class="form-row m-1">
+                      <input type="hidden" name="id" id="id" value="${annuncio.id}">
+                      <input type="text" name="titolo" value="${annuncio.titolo}"
+                             class="form-control bg-white " id="titolo" placeholder="Titolo" required>
+                    </div>
+                    <div class="form-row m-1">
+                      <input type="text" name="foto" value="${annuncio.foto}"
+                             class="form-control bg-white" id="foto" placeholder="/images/logo.jpg">
+                    </div>
+                    <div class="form-row m-1">
                           <textarea class="form-control" maxlength="256" name="contenuto" id="contenuto" rows="5"
                                     placeholder="Aggiungi il contenuto dell'annuncio">${annuncio.contenuto}</textarea>
+                    </div>
+                    <div class="form-row m-1">
+                      <div class="form-group col-lg-12 mx-auto mb-0">
+                        <button type="submit" class="btn-primary btn-primary py-2" style="border-radius: 5px">
+                          Modifica
+                        </button>
                       </div>
-                      <div class="form-row m-1">
-                        <div class="form-group col-lg-12 mx-auto mb-0">
-                          <button type="submit" class="btn-primary btn-primary py-2" style="border-radius: 5px">
-                            Modifica
-                          </button>
-                        </div>
-                      </div>
-                    </form>
-                  </div>
+                    </div>
+                  </form>
                 </div>
               </div>
             </c:forEach>
@@ -99,6 +99,7 @@
         </div>
       </div>
     </div>
+  </div>
 
   <!-- Scroll to Top Button-->
   <a class="scroll-to-top rounded" href="#page-top">
