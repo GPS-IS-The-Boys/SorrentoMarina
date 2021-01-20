@@ -18,7 +18,7 @@
                                     <article class="blog_item">
                                         <div class="blog_details">
                                             <p>${messaggio}</p>
-                                            <form action="addRecensione" name="addRecensione">
+                                            <form action="addRecensione" id="addRecensione">
                                                 <div class="title">
                                                     <h2 class="mb-30">VALUTA LA TUA ESPERIENZA</h2>
                                                 </div>
