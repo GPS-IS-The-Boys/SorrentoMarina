@@ -65,10 +65,6 @@ public class CreaLidoAction extends ChainableAction {
       }
 
       String logoLido = request.getParameter("logoLido");
-      if (!(logoLido != null && logoLido.trim().length() > 13)) {
-        request.setAttribute("messaggio", "Path logo del Lido non valido");
-        return view("creaLido");
-      }
 
       String strPrezzoLido = request.getParameter("prezzoLido");
       if (strPrezzoLido == null) {
@@ -141,6 +137,9 @@ public class CreaLidoAction extends ChainableAction {
       }
 
       //creo il lido
+      if(logoLido==null)
+        logoLido="";
+
       lidoManager.create(nomeLido, indirizzoLido, telefonoLido, emailLido, logoLido, prezzoLido,
           rigLido, colLido, 2, 2);
       //mi riprendo l'id

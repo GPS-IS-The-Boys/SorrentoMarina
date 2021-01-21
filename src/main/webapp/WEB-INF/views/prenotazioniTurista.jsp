@@ -38,6 +38,7 @@
                             <ul>
                                 <li><i class="far fa-clock"></i>Data inizio: ${prenotazione.value.getData_inizio()}</li>
                                 <li><i class="far fa-clock"></i>Data fine: ${prenotazione.value.getData_fine()}</li>
+                                <li><i class="far fa-clock"></i>Codice: ${prenotazione.value.getCodice()}</li>
                                 <li><i class="fas fa-map-marker-alt"></i>Sorrento</li>
                             </ul>
                         </div>

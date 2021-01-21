@@ -97,7 +97,14 @@ public class EseguiPrenotazioneAction implements Action {
       */
 
       //INVIO EMAIL
-      SendMail sender = new SendMail("Codice prenotazione", "Il tuo codice: " + codice, turista.getEmail());
+      SendMail sender = new SendMail("Codice prenotazione", "Gentile cliente grazie della prenotazione!" +
+                                                                        "\nIl tuo codice: " + codice+
+                                                                        "\nLido: "+lido.getNome()+
+                                                                        "\nPrezzo procapite: €"+lido.getPrezzo_singolo()+
+                                                                        "\nDa "+dataFine+" a "+dataFine+
+                                                                        "\nTotale soggiorno: €"+costo+
+                                                                        "\nGrazie.",
+          turista.getEmail());
       sender.send();
 
       return view("prenotazioneConfermata");

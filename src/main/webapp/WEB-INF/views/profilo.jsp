@@ -122,7 +122,7 @@
                 <h5 class="card-title"><i class="fa fa-user"></i>Dashboard</h5>
                 <p class="card-text">Come responsabile dell'ente puoi visualizzare le statistiche
                   di tutti i lidi della piattaforma nella dashboard a te dedicata </p>
-                <a href="dashboard" class="btn-primary btn-lg">Vai alla dashboard</a>
+                <a href="dashboardEnte" class="btn-primary btn-lg">Vai alla dashboard</a>
               </div>
             </div>
           </div>
