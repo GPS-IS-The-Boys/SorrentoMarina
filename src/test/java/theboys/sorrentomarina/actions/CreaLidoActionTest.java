@@ -349,7 +349,7 @@ public class CreaLidoActionTest extends ActionSetupDB {
 
     String page = this.action.execute(mockReq, mockRes);
 
-    assertEquals("/WEB-INF/views/creaLido.jsp", page);
+    assertEquals("redirect:/SorrentoMarina/dashboardEnte", page);
   }
 
   /**
@@ -556,7 +556,7 @@ public class CreaLidoActionTest extends ActionSetupDB {
 
     String page = this.action.execute(mockReq, mockRes);
 
-    assertEquals("/WEB-INF/views/creaLido.jsp", page);
+    assertEquals("redirect:/SorrentoMarina/dashboardEnte", page);
   }
   /**
    * Test - crea lido con parametro prezzo Nullo
