@@ -102,19 +102,19 @@
                   trovarci...ti aspettiamo</p>
                 <div class="select-suport-items">
                   <label class="single-items">Semplicit&agrave;
-                    <input type="checkbox" checked="checked">
+                    <input type="checkbox" checked="checked" disabled>
                     <span class="checkmark"></span>
                   </label>
                   <label class="single-items">Convenienza
-                    <input type="checkbox" checked="checked">
+                    <input type="checkbox" checked="checked" disabled>
                     <span class="checkmark"></span>
                   </label>
                   <label class="single-items">Precisione
-                    <input type="checkbox" checked="checked">
+                    <input type="checkbox" checked="checked" disabled>
                     <span class="checkmark"></span>
                   </label>
                   <label class="single-items">Affidabilit&agrave;.
-                    <input type="checkbox" checked="checked">
+                    <input type="checkbox" checked="checked" disabled>
                     <span class="checkmark"></span>
                   </label>
                 </div>

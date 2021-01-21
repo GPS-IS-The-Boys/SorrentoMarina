@@ -176,25 +176,25 @@
     <div class="form-group row">
       <label for="intestatario" class="col-sm-3 col-form-label">Intestatario</label>
       <div class="col-sm-8">
-        <input type="text" class="form-control" name="intestatario" id="intestatario" placeholder="">
+        <input type="text" class="form-control" name="intestatario" id="intestatario" placeholder="Nome">
       </div>
     </div>
     <div class="form-group row">
       <label for="numCarta" class="col-sm-3 col-form-label">N. Carta</label>
       <div class="col-sm-8">
-        <input type="text" class="form-control" name="numCarta" id="numCarta" placeholder="">
+        <input type="text" class="form-control" name="numCarta" id="numCarta" placeholder="xxxx-xxxx-xxxx-xxxx">
       </div>
     </div>
     <div class="form-group row">
       <label for="dataScadenza" class="col-sm-3 col-form-label">Data di scadenza</label>
       <div class="col-sm-8">
-        <input type="text" class="form-control" name="dataScadenza" id="dataScadenza" placeholder="">
+        <input type="text" class="form-control" name="dataScadenza" id="dataScadenza" placeholder="MM/YY">
       </div>
     </div>
     <div class="form-group row">
       <label for="cvv" class="col-sm-3 col-form-label">CVV</label>
       <div class="col-sm-8">
-        <input type="text" class="form-control" name="cvv" id="cvv" placeholder="">
+        <input type="text" class="form-control" name="cvv" id="cvv" placeholder="xxx">
       </div>
     </div>
     <!-- Tasti prec next -->
