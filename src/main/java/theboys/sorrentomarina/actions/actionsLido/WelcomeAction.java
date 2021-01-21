@@ -49,13 +49,14 @@ public class WelcomeAction implements Action {
 
       // se è stato inserito solo il nome effettuo una ricerca tramite nome
       if (nomeLido != null) {
-        List<Lido> lido = manager.retriveByName(nomeLido);
-        nomeLido = null;
-        if (lido != null) {
-          System.out.println(lido);
-          request.setAttribute("lidoRicerca", lido);
-          response.setStatus(HttpServletResponse.SC_ACCEPTED);
-          return view("index");
+        if(!nomeLido.equals("")) {
+          List<Lido> lido = manager.retriveByName(nomeLido);
+          nomeLido = null;
+          if (lido != null) {
+            request.setAttribute("lidoRicerca", lido);
+            response.setStatus(HttpServletResponse.SC_ACCEPTED);
+            return view("index");
+          }
         }
       }
       // se sono stati selezionati solo i servizi faccio una ricerca per servizi
