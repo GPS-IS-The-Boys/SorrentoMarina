@@ -13,7 +13,7 @@
           <div class="row">
             <div class="col-xl-12">
               <div class="hero-cap text-center">
-                <h1>About Us</h1>
+                <h1>Scopri qualcosa in pi&ugrave; su di noi</h1>
               </div>
             </div>
           </div>
@@ -69,7 +69,7 @@
                 <span class="flaticon-good"></span>
               </div>
               <div class="services-cap">
-                <h5>Il 98% dei turisti<br>sono soddisfatti</h5>
+                <h5>Il 90% dei turisti<br>&egrave; soddisfatto del servizio</h5>
               </div>
             </div>
           </div>
@@ -85,7 +85,7 @@
             <div class="support-location-img mb-50">
               <img src="<c:url value="/images/sfondoSorrento.jpg"/>" alt="">
               <div class="support-img-cap">
-                <span>Since 2020</span>
+                <span>Dal 2020</span>
               </div>
             </div>
           </div>
