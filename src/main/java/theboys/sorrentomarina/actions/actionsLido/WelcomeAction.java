@@ -48,13 +48,11 @@ public class WelcomeAction implements Action {
       if (servizio7 != null) servizio.setCanoa(true);
 
       // se è stato inserito solo il nome effettuo una ricerca tramite nome
-      System.out.println("nome "+nomeLido);
       if (nomeLido != null) {
         if(!nomeLido.equals("")) {
           List<Lido> lido = manager.retriveByName(nomeLido);
           nomeLido = null;
           if (lido != null) {
-            System.out.println(lido);
             request.setAttribute("lidoRicerca", lido);
             response.setStatus(HttpServletResponse.SC_ACCEPTED);
             return view("index");
