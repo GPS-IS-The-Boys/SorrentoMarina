@@ -43,7 +43,7 @@
   <!-- Contenitore principale -->
   <div class="text-center blog_details">
   <!-- Form data inzio data fine numero posti -->
-  <form action="eseguiPrenotazione1" name="eseguiPrenotazione1">
+  <form action="eseguiPrenotazione1" name="eseguiPrenotazione1" onsubmit="event.preventDefault();  validatePagamento(this)">
   <input id="1" value="${lido.num_righe}" type="hidden">
   <input id="2" value="${lido.num_colonne}" type="hidden">
   <input id="3" value="${lido.prezzo_singolo}" type="hidden">
@@ -206,7 +206,7 @@
           </a>
         </li>
         <li class="page-item -align-right">
-          <button type="submit" class="page-link" aria-label="Next" id="next5">
+          <button type="submit" class="page-link"  aria-label="Next" id="next5">
             <i class="ti-angle-right"></i>
           </button>
         </li>

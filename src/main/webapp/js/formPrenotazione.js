@@ -145,3 +145,38 @@ function prevPrenotazione3(){
     var div = document.getElementById("step4");
     div.classList.remove("active")
 }
+function validatePagamento(obj){
+    var valid=true;
+    var intestatario = $('#intestatario').val();
+    var numCarta = $('#numCarta').val();
+    var dataScadenza = $('#dataScadenza').val();
+    var cvv = $('#cvv').val();
+    if(!validateUser(intestatario)){
+        alert("Intestatario non valido");
+        valid=false;
+    }else if(!validateNumCarta(numCarta)){
+        alert("Numero di carta non valido");
+        valid=false;
+    }else if(!validateData(dataScadenza)){
+        alert("Data scadenza non valido");
+        valid=false;
+    }else if(!validateCvv(cvv)){
+        alert("CVV non valido");
+        valid=false;
+    }
+    if(valid)
+        obj.submit();
+}
+
+function validateNumCarta(carta){
+    var matchCarta=/^[0-9]{4}[-]{1}[0-9]{4}[-]{1}[0-9]{4}[-]{1}[0-9]{4}$/;
+    return matchCarta.test(String(carta).toLowerCase());
+}
+function validateData(data){
+    var matchScadenza=/^[0-9]{2}[/]{1}[0-9]{2}$/;
+    return matchScadenza.test(String(data).toLowerCase());
+}
+function validateCvv(cvv){
+    var matchCvv=/^[0-9]{3}$/;
+    return matchCvv.test(String(cvv).toLowerCase());
+}
