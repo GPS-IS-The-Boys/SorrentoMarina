@@ -23,10 +23,10 @@
                 <div class="col-xl-2 col-lg-3 col-md-3 col-sm-5">
                     <div class="single-footer-caption mb-50">
                         <div class="footer-tittle">
-                            <h4>Quick Links</h4>
+                            <h4>Link Rapidi</h4>
                             <ul>
-                                <li><a href="info">About</a></li>
-                                <li><a href="info">Offerte</a></li>
+                                <li><a href="/SorrentoMarina/">Home</a></li>
+                                <li><a href="info">Info</a></li>
                                 <li><a href="info">Contattaci</a></li>
                             </ul>
                         </div>
@@ -61,7 +61,7 @@
             <div class="row pt-padding">
                 <div class="col-xl-7 col-lg-7 col-md-7">
                     <div class="footer-copy-right">
-                        <p>Copyright &copy;2020 All rights reserved | SorrentoMarina</p>
+                        <p>Copyright &copy;2020 Tutti i diritti riservati | SorrentoMarina</p>
                     </div>
                 </div>
                 <div class="col-xl-5 col-lg-5 col-md-5">

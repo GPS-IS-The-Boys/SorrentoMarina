@@ -94,7 +94,7 @@
                                     </div>
                                     <div class="place-cap-bottom">
                                         <ul>
-                                            <li><i class="far fa-clock"></i>1 Day</li>
+                                            <li><i class="far fa-clock"></i>1 giorno</li>
                                             <li><i class="fas fa-map-marker-alt"></i>${lido.indirizzo}</li>
                                             <li><a href="lido?id=${lido.id}"><button class="genric-btn warning circle">Visita</button></a></li>
                                         </ul>
@@ -130,11 +130,11 @@
                                         <div class="place-cap">
                                             <div class="place-cap-top">
                                                 <h3><a href="#">${lido.nome}</a></h3>
-                                                <p class="dolor">$${lido.prezzo_singolo} <span>/ Per Person</span></p>
+                                                <p class="dolor">$${lido.prezzo_singolo} <span>/ A persona</span></p>
                                             </div>
                                             <div class="place-cap-bottom">
                                                 <ul>
-                                                    <li><i class="far fa-clock"></i>1 Day</li>
+                                                    <li><i class="far fa-clock"></i>1 giorno</li>
                                                     <li><i class="fas fa-map-marker-alt"></i>${lido.indirizzo}</li>
                                                     <li><a href="lido?id=${lido.id}"><button class="genric-btn warning circle">Visita</button></a></li>
                                                 </ul>
@@ -171,11 +171,11 @@
                                         <div class="place-cap">
                                             <div class="place-cap-top">
                                                 <h3><a href="lido?id=${lido.id}">${lido.nome}</a></h3>
-                                                <p class="dolor">$${lido.prezzo_singolo} <span>/ Per Person</span></p>
+                                                <p class="dolor">$${lido.prezzo_singolo} <span>/ A persona</span></p>
                                             </div>
                                             <div class="place-cap-bottom">
                                                 <ul>
-                                                    <li><i class="far fa-clock"></i>1 Day</li>
+                                                    <li><i class="far fa-clock"></i>1 giorno</li>
                                                     <li><i class="fas fa-map-marker-alt"></i>${lido.indirizzo}</li>
                                                     <li><a href="lido?id=${lido.id}"><button class="genric-btn warning circle">Visita</button></a></li>
                                                 </ul>
@@ -196,7 +196,7 @@
                         <div class="support-location-img mb-50">
                             <img src="<c:url value="/images/sfondoSorrento.jpg"/>" alt="">
                             <div class="support-img-cap">
-                                <span>Since 2020</span>
+                                <span>Dal 2020</span>
                             </div>
                         </div>
                     </div>
